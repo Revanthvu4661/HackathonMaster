@@ -1,9 +1,12 @@
 const fs = require('fs');
 
-let html = fs.readFileSync('projects.html', 'utf8');
+const files = fs.readdirSync('.').filter(f => f.endsWith('.html') || f === 'app_v2.js');
 
-// Replace standard github archive links with codeload links
-html = html.replace(/href="https:\/\/github\.com\/(.*?)\/(.*?)\/archive\/refs\/heads\/(main|master)\.zip"/g, 'href="https://codeload.github.com/$1/$2/zip/refs/heads/$3" download="$2.zip"');
-
-fs.writeFileSync('projects.html', html);
-console.log("Links fixed.");
+for (const file of files) {
+  let content = fs.readFileSync(file, 'utf8');
+  if (content.includes('calendar.html')) {
+    content = content.replaceAll('calendar.html', 'hackathons.html');
+    fs.writeFileSync(file, content);
+    console.log('Updated links in ' + file);
+  }
+}
