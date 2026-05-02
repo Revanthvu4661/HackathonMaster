@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Hackathons — Hackathon Master</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hackathon-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .hackathon-card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 10px 30px rgba(167, 139, 250, 0.1); }
+    .status-badge { position: absolute; top: 1.5rem; right: 1.5rem; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+    .status-live { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+    .status-upcoming { background: rgba(167, 139, 250, 0.2); color: #a78bfa; }
+    .hack-date { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; display: block; }
+    .hack-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+    .hack-org { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .hack-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .hack-prize { font-weight: 600; color: #06b6d4; margin-bottom: 1.5rem; display: block;}
+    .hack-actions { display: flex; gap: 1rem; }
+    .btn-gen-idea { flex: 1; padding: 0.8rem; text-align: center; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; cursor: pointer; border: none;}
+    .btn-gen-idea:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="generator.html" class="nav-link">Generator</a>
+        <a href="features.html" class="nav-link">AI Tools</a>
+        <a href="calendar.html" class="nav-link active">Live Hackathons</a>
+        <a href="projects.html" class="nav-link">Hackathon Repos</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-primary" id="launchBtn">Launch App</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 120px;">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">🗓️ Global Calendar</div>
+        <h2 class="section-title">Upcoming Hackathons</h2>
+        <p class="section-subtitle">Find your next competition and let Hackathon Master instantly generate a winning concept tailored to its themes.</p>
+      </div>
+
+      <div class="features-grid" id="hackathonGrid">
+        <!-- Hack 1 -->
+        <div class="hackathon-card">
+          <div class="status-badge status-live">Live Now</div>
+          <span class="hack-date">May 15 - May 17, 2026</span>
+          <h3 class="hack-title">ETHGlobal Superhack</h3>
+          <div class="hack-org">by ETHGlobal</div>
+          <span class="hack-prize">Prize Pool: $150,000</span>
+          <div class="hack-tags">
+            <span class="showcase-tag">Web3</span>
+            <span class="showcase-tag">DeFi</span>
+            <span class="showcase-tag">ZK</span>
+          </div>
+          <div class="hack-actions">
+            <button class="btn-gen-idea" onclick="generateFor('ETHGlobal Superhack: A Web3 DeFi app using Zero Knowledge Proofs')">Generate Idea</button>
+          </div>
+        </div>
+
+        <!-- Hack 2 -->
+        <div class="hackathon-card">
+          <div class="status-badge status-upcoming">Upcoming</div>
+          <span class="hack-date">June 10 - June 12, 2026</span>
+          <h3 class="hack-title">NASA Space Apps Challenge</h3>
+          <div class="hack-org">by NASA</div>
+          <span class="hack-prize">Prize Pool: Global Recognition</span>
+          <div class="hack-tags">
+            <span class="showcase-tag">Space Tech</span>
+            <span class="showcase-tag">Data Vis</span>
+            <span class="showcase-tag">Open Data</span>
+          </div>
+          <div class="hack-actions">
+            <button class="btn-gen-idea" onclick="generateFor('NASA Space Apps: An interactive 3D visualization tool for earth data')">Generate Idea</button>
+          </div>
+        </div>
+
+        <!-- Hack 3 -->
+        <div class="hackathon-card">
+          <div class="status-badge status-upcoming">Upcoming</div>
+          <span class="hack-date">July 1 - July 5, 2026</span>
+          <h3 class="hack-title">AI Agents Hackathon</h3>
+          <div class="hack-org">by Lablab.ai</div>
+          <span class="hack-prize">Prize Pool: $50,000</span>
+          <div class="hack-tags">
+            <span class="showcase-tag">AI/ML</span>
+            <span class="showcase-tag">Autonomous</span>
+            <span class="showcase-tag">LLMs</span>
+          </div>
+          <div class="hack-actions">
+            <button class="btn-gen-idea" onclick="generateFor('Lablab AI Hackathon: A multi-agent system for autonomous software development')">Generate Idea</button>
+          </div>
+        </div>
+
+        <!-- Hack 4 -->
+        <div class="hackathon-card">
+          <div class="status-badge status-upcoming">Upcoming</div>
+          <span class="hack-date">August 20 - August 22, 2026</span>
+          <h3 class="hack-title">MLH Global Hack Week</h3>
+          <div class="hack-org">by Major League Hacking</div>
+          <span class="hack-prize">Prize Pool: Hardware & Swag</span>
+          <div class="hack-tags">
+            <span class="showcase-tag">Beginner</span>
+            <span class="showcase-tag">Open Theme</span>
+          </div>
+          <div class="hack-actions">
+            <button class="btn-gen-idea" onclick="generateFor('MLH Hack Week: A beginner friendly community app for students')">Generate Idea</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function generateFor(preset) {
+      localStorage.setItem('presetProject', preset);
+      window.location.href = 'generator.html';
+    }
+  </script>
+</body>
+</html>

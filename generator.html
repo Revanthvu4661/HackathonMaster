@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hackathon Master — AI Hackathon Intelligence Platform</title>
+  <meta name="description" content="Hackathon Master is your AI-powered Project Intelligence Assistant. Plan, design, and accelerate any hackathon project with expert AI guidance on tech stack, architecture, UI/UX, APIs, and deployment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="brand-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#brandGrad)" stroke-width="1.5" fill="none"/>
+            <path d="M14 7L20 10.5V17.5L14 21L8 17.5V10.5L14 7Z" fill="url(#brandGrad)" opacity="0.4"/>
+            <circle cx="14" cy="14" r="3" fill="url(#brandGrad)"/>
+            <defs>
+              <linearGradient id="brandGrad" x1="2" y1="2" x2="26" y2="26">
+                <stop offset="0%" stop-color="#a78bfa"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="generator.html" class="nav-link active">Generator</a>
+        <a href="features.html" class="nav-link">AI Tools</a>
+        <a href="calendar.html" class="nav-link">Live Hackathons</a>
+        <a href="projects.html" class="nav-link">Hackathon Repos</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="btn-primary" id="launchBtn">Launch App</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="generator.html" class="mobile-link">Generator</a>
+    <a href="features.html" class="mobile-link">AI Tools</a>
+    <a href="calendar.html" class="mobile-link">Live Hackathons</a>
+    <a href="projects.html" class="mobile-link">Hackathon Repos</a>
+  </div>
+
+  <!-- ===== GENERATOR SECTION ===== -->
+  <section class="section generator-section" id="generator">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">🚀 Project Generator</div>
+        <h2 class="section-title">What Are You Building?</h2>
+        <p class="section-subtitle">Describe your hackathon idea, startup concept, or innovation challenge. Hackathon Master will architect your entire project.</p>
+      </div>
+
+      <!-- Input Panel -->
+      <div class="generator-panel">
+        <div class="input-area">
+          <div class="input-wrapper">
+            <textarea
+              id="projectInput"
+              class="project-textarea"
+              placeholder="Describe your project idea here...
+
+Example: 'A real-time mental health support app that uses AI to detect emotional distress from text messages and connects users with counselors...'
+
+Or try: 'Smart waste management system using IoT sensors and ML to optimize garbage collection routes in smart cities'"
+              rows="6"
+            ></textarea>
+            <div class="input-footer">
+              <div class="char-count"><span id="charCount">0</span> / 2000</div>
+              <div class="quick-examples">
+                <span class="examples-label">Try:</span>
+                <button class="example-chip" data-text="A multi-agent AI system where specialized LLMs collaborate to automate complex research workflows, built with LangChain and FastAPI.">Autonomous AI Agents</button>
+                <button class="example-chip" data-text="A privacy-preserving healthcare data marketplace using Zero-Knowledge Proofs (zk-SNARKs) and smart contracts on Ethereum.">Web3 zk-Healthcare</button>
+                <button class="example-chip" data-text="Real-time RAG (Retrieval-Augmented Generation) application that instantly analyzes live video feeds and embedded documents to answer user queries.">Live Video RAG App</button>
+                <button class="example-chip" data-text="A gamified carbon footprint tracker that uses IoT data and edge computing to calculate emissions instantly, rewarding users with tokens.">IoT Edge Sustainability</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mode Selector -->
+          <div class="mode-selector">
+            <div class="mode-label">Generation Mode:</div>
+            <div class="mode-options">
+              <button class="mode-btn active" id="modeComplete" data-mode="complete">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Complete Blueprint
+              </button>
+              <button class="mode-btn" id="modeFast" data-mode="fast">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Quick Overview
+              </button>
+              <button class="mode-btn" id="modePitch" data-mode="pitch">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Pitch Only
+              </button>
+            </div>
+          </div>
+
+          <button class="btn-generate" id="generateBtn" disabled>
+            <span class="btn-generate-text">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Generate Intelligence Report
+            </span>
+            <span class="btn-generate-loading" style="display:none">
+              <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+              Generating...
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Output Area -->
+      <div class="output-area" id="outputArea" style="display:none">
+        <!-- Tab Navigation -->
+        
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: flex-end;">
+          <button id="btnExportPDF" class="btn-outline btn-sm" style="display:flex; align-items:center; gap:0.5rem; border-color:#a78bfa; color:#a78bfa;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Export as PDF
+          </button>
+        </div>
+
+        <div class="output-tabs" id="outputTabs">
+          <button class="tab-btn active" data-tab="overview">📋 Overview</button>
+          <button class="tab-btn" data-tab="prompts">🔥 Prompts & Add-ons</button>
+          <button class="tab-btn" data-tab="workflow">🔄 Workflow</button>
+          <button class="tab-btn" data-tab="techstack">⚡ Tech Stack</button>
+          <button class="tab-btn" data-tab="ai">🧠 AI Integration</button>
+          <button class="tab-btn" data-tab="uiux">🎨 UI/UX</button>
+          <button class="tab-btn" data-tab="database">🗄️ Database</button>
+          <button class="tab-btn" data-tab="apis">🔌 APIs</button>
+          <button class="tab-btn" data-tab="github">🐙 GitHub Push</button>
+          <button class="tab-btn" data-tab="launch">🚀 Launch & Deploy</button>
+          <button class="tab-btn" data-tab="winsecrets">🏆 Win Secrets</button>
+          <button class="tab-btn" data-tab="pitch">🎤 Pitch</button>
+        </div>
+
+        <!-- Output Content -->
+        <div class="output-content" id="outputContent">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Output Actions -->
+        <div class="output-actions">
+          <button class="btn-ghost" id="copyBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Report
+          </button>
+          <button class="btn-ghost" id="downloadBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export PDF
+          </button>
+          <button class="btn-primary" id="regenerateBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Regenerate
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  
+
+  <!-- ===== AI TOOLS COMPARISON ===== -->
+  
+
+  <!-- ===== SHOWCASE SECTION ===== -->
+  
+
+  <!-- ===== CTA SECTION ===== -->
+  
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <div class="brand-icon small">
+            <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#footerGrad)" stroke-width="1.5" fill="none"/>
+              <circle cx="14" cy="14" r="3" fill="url(#footerGrad)"/>
+              <defs><linearGradient id="footerGrad" x1="2" y1="2" x2="26" y2="26"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
+        </div>
+        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="#generator">Generator</a>
+          <a href="#features">Features</a>
+          <a href="#tools">AI Tools</a>
+        </div>
+        <div class="footer-col">
+          <h4>Modes</h4>
+          <a href="#generator">Complete Blueprint</a>
+          <a href="#generator">Quick Overview</a>
+          <a href="#generator">Pitch Deck</a>
+          <a href="#generator">UI Generator</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hackathon Master — Win Every Competition</span>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- PDF Generation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script src="app_v2.js"></script>
+
+
+
+</body>
+</html>
