@@ -125,13 +125,23 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="nav-brand">
-          <div class="brand-icon small">
-            <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
-              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#footerGrad)" stroke-width="1.5" fill="none"/>
-              <circle cx="14" cy="14" r="3" fill="url(#footerGrad)"/>
-              <defs><linearGradient id="footerGrad" x1="2" y1="2" x2="26" y2="26"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+          <div class="brand-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#brandGrad)" stroke-width="1.5" fill="none"/>
+              <path d="M14 7L20 10.5V17.5L14 21L8 17.5V10.5L14 7Z" fill="url(#brandGrad)" opacity="0.4"/>
+              <circle cx="14" cy="14" r="3" fill="url(#brandGrad)"/>
+              <defs>
+                <linearGradient id="brandGrad" x1="2" y1="2" x2="26" y2="26">
+                  <stop offset="0%" stop-color="#a78bfa"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
             </svg>
           </div>
+          <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
+        </a>
+      </div>
           <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
         </div>
         <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
