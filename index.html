@@ -222,6 +222,15 @@
   <!-- PDF Generation Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+  <script>
+    // Force Home Page on Load
+    if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+      console.log("Home Page Active");
+      // Prevent any potential scrolls or redirects
+      window.scrollTo(0, 0);
+    }
+  </script>
   <script src="app_v2.js"></script>
 </body>
 </html>
+
