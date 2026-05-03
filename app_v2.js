@@ -142,27 +142,44 @@ async function callGeminiDeepSearch(prompt) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{
-          parts: [{ text: `Act as a Hackathon Master Architect. Perform a deep research on this problem statement: "${prompt}". 
-          Find real-world tech trends, specific GitHub repos, and existing competitor apps from Google Search.
-          Then, output a complete intelligence report covering:
-          1. Industry Insight (Detection)
-          2. Technical Stack (Specific and modern)
-          3. AI Implementation Strategy
-          4. Business Add-ons (Pro features)
-          5. A 1% Win Secret specific to this niche.
-          Return the data in a clean, professional format.` }]
+          parts: [{ text: `Act as a Senior Software Architect and Master Prompt Engineer. 
+          Perform a deep research on this problem statement: "${prompt}". 
+          
+          Generate a comprehensive, highly technical intelligence report in valid JSON format.
+          The JSON must include these exact keys:
+          - industry: The detected industry niche.
+          - overview: A detailed project summary and core value prop.
+          - techstack: A specific, modern stack (Next.js, FastAPI, etc.) with reasoning.
+          - ai_strategy: How to integrate LLMs or ML specifically for this idea.
+          - workflow: Step-by-step user journey.
+          - database: A precise DB schema (Prisma/PostgreSQL).
+          - apis: Specific REST or GraphQL endpoints needed.
+          - fe_prompt: An ADVANCED prompt for Cursor/v0 to build the frontend.
+          - be_prompt: An ADVANCED prompt to build the backend logic.
+          - db_prompt: An ADVANCED prompt to build the database layer.
+          - win_secret: A 1% winning strategy specific to this niche.
+
+          Be extremely specific. Avoid generic filler. Use markdown formatting within the strings where appropriate.` }]
         }],
         tools: [{ google_search_retrieval: {} }]
       })
     });
     
     const data = await response.json();
-    return data.candidates[0].content.parts[0].text;
+    const text = data.candidates[0].content.parts[0].text;
+    
+    // Attempt to extract JSON from the AI response (it might wrap it in ```json blocks)
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      return JSON.parse(jsonMatch[0]);
+    }
+    return null;
   } catch (err) {
     console.error('Gemini Search Error:', err);
     return null;
   }
 }
+
 
 // Generate Action
 if(generateBtn) generateBtn.addEventListener('click', () => {
@@ -228,19 +245,51 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
         const apiKey = localStorage.getItem('gemini_api_key');
         if (apiKey) {
            callGeminiDeepSearch(idea).then(result => {
-             if (result) {
-               // Update the report with REAL data
-               reportData.overview = result; 
-               populateReport(idea, { industry: 'Live Search Result', stack: 'AI Recommended', aiModel: 'Gemini 2.0', secret: 'See Analysis' });
+             if (result && typeof result === 'object') {
+               // Update EVERY section with real AI data
+               reportData.overview = result.overview;
+               reportData.techstack = result.techstack;
+               reportData.ai = result.ai_strategy;
+               reportData.workflow = result.workflow;
+               reportData.database = result.database;
+               reportData.apis = result.apis;
+               reportData.winsecrets = result.win_secret;
+               
+               // Build advanced custom prompts
+               reportData.prompts = `
+                 <h3>🔥 Advanced Master Prompts</h3>
+                 <p>Copy these advanced prompts into Cursor, v0, or Bolt.new to build your app in record time.</p>
+                 
+                 <div class="info-card">
+                   <h4>1. Frontend Architecture (UI/UX)</h4>
+                   <p class="code-block" style="font-size:0.85rem;">${result.fe_prompt}</p>
+                   <button class="btn-outline btn-sm copy-prompt-btn">Copy Advanced Prompt</button>
+                 </div>
+
+                 <div class="info-card" style="margin-top:1.5rem;">
+                   <h4>2. Backend & Logic Engine</h4>
+                   <p class="code-block" style="font-size:0.85rem;">${result.be_prompt}</p>
+                   <button class="btn-outline btn-sm copy-prompt-btn">Copy Advanced Prompt</button>
+                 </div>
+
+                 <div class="info-card" style="margin-top:1.5rem;">
+                   <h4>3. Database Layer & Schema</h4>
+                   <p class="code-block" style="font-size:0.85rem;">${result.db_prompt}</p>
+                   <button class="btn-outline btn-sm copy-prompt-btn">Copy Advanced Prompt</button>
+                 </div>
+               `;
+
+               populateReport(idea, { industry: result.industry, stack: result.techstack.substring(0, 50) + '...', aiModel: 'Gemini 2.0 (Grounded)', secret: 'Deep Intel Applied' });
              } else {
                const analysis = analyzeProblem(idea);
                populateReport(idea, analysis);
              }
              outputArea.style.display = 'block';
              outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-             showToast('Live Internet Intel Generated!');
+             showToast('Advanced Intelligence Generated!');
            });
         } else {
+
            const analysis = analyzeProblem(idea);
            populateReport(idea, analysis);
            outputArea.style.display = 'block';
