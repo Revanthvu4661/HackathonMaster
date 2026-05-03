@@ -142,24 +142,27 @@ async function callGeminiDeepSearch(prompt) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{
-          parts: [{ text: `Act as a Senior Software Architect and Master Prompt Engineer. 
-          Perform a deep research on this problem statement: "${prompt}". 
+          parts: [{ text: `Act as a 10x Lead Full-Stack Architect and Master Prompt Engineer. 
+          Perform a deep search on this problem statement: "${prompt}". 
           
-          Generate a comprehensive, highly technical intelligence report in valid JSON format.
-          The JSON must include these exact keys:
-          - industry: The detected industry niche.
-          - overview: A detailed project summary and core value prop.
-          - techstack: A specific, modern stack (Next.js, FastAPI, etc.) with reasoning.
-          - ai_strategy: How to integrate LLMs or ML specifically for this idea.
-          - workflow: Step-by-step user journey.
-          - database: A precise DB schema (Prisma/PostgreSQL).
-          - apis: Specific REST or GraphQL endpoints needed.
-          - fe_prompt: An ADVANCED prompt for Cursor/v0 to build the frontend.
-          - be_prompt: An ADVANCED prompt to build the backend logic.
-          - db_prompt: An ADVANCED prompt to build the database layer.
-          - win_secret: A 1% winning strategy specific to this niche.
+          Your goal is to generate a "MAX ADVANCED" version of the intelligence report. 
+          The prompts you generate MUST be so detailed that copy-pasting them into v0, Bolt.new, or Cursor will build a COMPLETE, beautiful, and functional website instantly.
 
-          Be extremely specific. Avoid generic filler. Use markdown formatting within the strings where appropriate.` }]
+          Generate a valid JSON object with these keys:
+          - industry: Precise industry niche.
+          - overview: High-level vision and roadmap.
+          - techstack: The most premium, scalable stack (e.g., Next.js 15, Lucide, Framer Motion, Shadcn UI).
+          - ai_strategy: Advanced AI integration (Agents, RAG, etc.).
+          - mega_prompt: A 1000+ word "One-Click Build" prompt for Bolt.new or Cursor. It must include:
+              - Full Design System (Colors, Typography, Glassmorphism).
+              - Complete Page Hierarchy (Home, Dashboard, Settings, etc.).
+              - Specific Component details (Hero with animations, Data tables, Charts).
+              - Working Logic (State management, API mock data, Form handling).
+          - database_schema: Advanced Prisma/SQL schema with relations.
+          - api_endpoints: Detailed REST/JSON API architecture.
+          - win_secret: The unique "Judge-Killer" feature that will win the hackathon.
+
+          Be extremely specific. Use technical terms. Make the UI/UX descriptions "Premium" and "Worthy of a Global Winner".` }]
         }],
         tools: [{ google_search_retrieval: {} }]
       })
@@ -168,7 +171,6 @@ async function callGeminiDeepSearch(prompt) {
     const data = await response.json();
     const text = data.candidates[0].content.parts[0].text;
     
-    // Attempt to extract JSON from the AI response (it might wrap it in ```json blocks)
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
       return JSON.parse(jsonMatch[0]);
@@ -179,6 +181,7 @@ async function callGeminiDeepSearch(prompt) {
     return null;
   }
 }
+
 
 
 // Generate Action
@@ -250,45 +253,56 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
                reportData.overview = result.overview;
                reportData.techstack = result.techstack;
                reportData.ai = result.ai_strategy;
-               reportData.workflow = result.workflow;
-               reportData.database = result.database;
-               reportData.apis = result.apis;
+               reportData.workflow = result.mega_prompt.substring(0, 500) + "... (See Prompts tab for full Build)";
+               reportData.database = result.database_schema;
+               reportData.apis = result.api_endpoints;
                reportData.winsecrets = result.win_secret;
                
-               // Build advanced custom prompts
+               // Max Advanced "Mega Prompt" Display
                reportData.prompts = `
-                 <h3>🔥 Advanced Master Prompts</h3>
-                 <p>Copy these advanced prompts into Cursor, v0, or Bolt.new to build your app in record time.</p>
-                 
-                 <div class="info-card">
-                   <h4>1. Frontend Architecture (UI/UX)</h4>
-                   <p class="code-block" style="font-size:0.85rem;">${result.fe_prompt}</p>
-                   <button class="btn-outline btn-sm copy-prompt-btn">Copy Advanced Prompt</button>
+                 <div class="mega-prompt-container" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(6, 182, 212, 0.1)); padding: 2rem; border-radius: 16px; border: 1px solid var(--accent-primary); margin-bottom: 2rem;">
+                   <h3 style="color: var(--accent-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                     MAX ADVANCED: One-Click Mega Prompt
+                   </h3>
+                   <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Copy this entire block into **Bolt.new**, **v0.dev**, or **Cursor** to build the complete website instantly.</p>
+                   
+                   <div class="code-block" style="max-height: 400px; overflow-y: auto; font-size: 0.8rem; line-height: 1.6; background: #0a0a0c; color: #e0e7ff;">
+                     ${result.mega_prompt.replace(/\n/g, '<br>')}
+                   </div>
+                   
+                   <button class="btn-primary copy-prompt-btn" style="margin-top: 1.5rem; width: 100%;">
+                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                     Copy Mega Prompt & Build Site
+                   </button>
                  </div>
 
-                 <div class="info-card" style="margin-top:1.5rem;">
-                   <h4>2. Backend & Logic Engine</h4>
-                   <p class="code-block" style="font-size:0.85rem;">${result.be_prompt}</p>
-                   <button class="btn-outline btn-sm copy-prompt-btn">Copy Advanced Prompt</button>
-                 </div>
-
-                 <div class="info-card" style="margin-top:1.5rem;">
-                   <h4>3. Database Layer & Schema</h4>
-                   <p class="code-block" style="font-size:0.85rem;">${result.db_prompt}</p>
-                   <button class="btn-outline btn-sm copy-prompt-btn">Copy Advanced Prompt</button>
+                 <h3>🛠️ Architecture Prompts</h3>
+                 <div class="card-grid">
+                   <div class="info-card">
+                     <h4>DB & Backend Structure</h4>
+                     <p class="code-block" style="font-size: 0.75rem;">${result.database_schema.substring(0, 200)}...</p>
+                     <button class="btn-outline btn-sm copy-prompt-btn">Copy DB Specs</button>
+                   </div>
+                   <div class="info-card">
+                     <h4>API & Logic Layer</h4>
+                     <p class="code-block" style="font-size: 0.75rem;">${result.api_endpoints.substring(0, 200)}...</p>
+                     <button class="btn-outline btn-sm copy-prompt-btn">Copy API Specs</button>
+                   </div>
                  </div>
                `;
 
-               populateReport(idea, { industry: result.industry, stack: result.techstack.substring(0, 50) + '...', aiModel: 'Gemini 2.0 (Grounded)', secret: 'Deep Intel Applied' });
+               populateReport(idea, { industry: result.industry, stack: result.techstack.substring(0, 50) + '...', aiModel: 'Gemini 2.0 (Max Advanced)', secret: 'Complete Build Prepared' });
              } else {
                const analysis = analyzeProblem(idea);
                populateReport(idea, analysis);
              }
              outputArea.style.display = 'block';
              outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-             showToast('Advanced Intelligence Generated!');
+             showToast('Max Advanced Intelligence Ready!');
            });
         } else {
+
 
            const analysis = analyzeProblem(idea);
            populateReport(idea, analysis);
