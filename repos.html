@@ -9,7 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Safety Redirect: If user lands here as the root page, force them back to Home
+    if (window.location.pathname === '/' || window.location.pathname.endsWith('projects.html')) {
+      window.location.href = 'index.html';
+    }
+  </script>
 </head>
+
 <body>
   <!-- Animated Background -->
   <div class="bg-orbs">
