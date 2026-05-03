@@ -1607,3 +1607,87 @@ button {
 .mobile-menu.active .mobile-link:nth-child(4) { transition-delay: 0.4s; }
 .mobile-menu.active .mobile-link:nth-child(5) { transition-delay: 0.5s; }
 
+/* Research Overlay */
+.research-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(15, 17, 26, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.research-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--border-radius-xl);
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.research-header {
+  margin-bottom: 2rem;
+}
+
+.research-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.research-steps {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.step {
+  padding: 0.75rem 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.step span {
+  font-weight: bold;
+}
+
+.step.active {
+  color: var(--accent-primary);
+  transform: translateX(10px);
+}
+
+.step.completed {
+  color: var(--success);
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  transition: width 0.5s ease;
+}
+
+

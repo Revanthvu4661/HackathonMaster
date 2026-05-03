@@ -102,32 +102,190 @@ if(modeBtns) modeBtns.forEach(btn => {
     currentMode = btn.getAttribute('data-mode');
   });
 });
+// AI Settings Modal
+const aiSettingsBtn = document.getElementById('aiSettingsBtn');
+const aiModal = document.getElementById('aiModal');
+const closeAiModal = document.getElementById('closeAiModal');
+const saveAiKey = document.getElementById('saveAiKey');
+const geminiKeyInput = document.getElementById('geminiKey');
+
+if (aiSettingsBtn) {
+  aiSettingsBtn.addEventListener('click', () => {
+    const savedKey = localStorage.getItem('gemini_api_key');
+    if (savedKey) geminiKeyInput.value = savedKey;
+    aiModal.style.display = 'flex';
+  });
+}
+
+if (closeAiModal) {
+  closeAiModal.addEventListener('click', () => aiModal.style.display = 'none');
+}
+
+if (saveAiKey) {
+  saveAiKey.addEventListener('click', () => {
+    const key = geminiKeyInput.value.trim();
+    if (key) {
+      localStorage.setItem('gemini_api_key', key);
+      showToast('AI Search Enabled!');
+      aiModal.style.display = 'none';
+    }
+  });
+}
+
+async function callGeminiDeepSearch(prompt) {
+  const apiKey = localStorage.getItem('gemini_api_key');
+  if (!apiKey) return null;
+
+  try {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{
+          parts: [{ text: `Act as a Hackathon Master Architect. Perform a deep research on this problem statement: "${prompt}". 
+          Find real-world tech trends, specific GitHub repos, and existing competitor apps from Google Search.
+          Then, output a complete intelligence report covering:
+          1. Industry Insight (Detection)
+          2. Technical Stack (Specific and modern)
+          3. AI Implementation Strategy
+          4. Business Add-ons (Pro features)
+          5. A 1% Win Secret specific to this niche.
+          Return the data in a clean, professional format.` }]
+        }],
+        tools: [{ google_search_retrieval: {} }]
+      })
+    });
+    
+    const data = await response.json();
+    return data.candidates[0].content.parts[0].text;
+  } catch (err) {
+    console.error('Gemini Search Error:', err);
+    return null;
+  }
+}
 
 // Generate Action
 if(generateBtn) generateBtn.addEventListener('click', () => {
   const idea = projectInput.value;
   if (idea.length < 10) return;
 
-  // Simulate loading
+  // Simulate Deep Research Phase
   generateBtn.disabled = true;
   btnGenerateText.style.display = 'none';
   btnGenerateLoading.style.display = 'flex';
   outputArea.style.display = 'none';
 
-  setTimeout(() => {
-    generateBtn.disabled = false;
-    btnGenerateText.style.display = 'flex';
-    btnGenerateLoading.style.display = 'none';
+  // Create or show the research progress overlay
+  let researchOverlay = document.getElementById('researchOverlay');
+  if (!researchOverlay) {
+    researchOverlay = document.createElement('div');
+    researchOverlay.id = 'researchOverlay';
+    researchOverlay.className = 'research-overlay';
+    document.body.appendChild(researchOverlay);
+  }
+  
+  researchOverlay.innerHTML = `
+    <div class="research-modal">
+      <div class="research-header">
+        <div class="research-icon">🔍</div>
+        <h3>Deep Search Intelligence</h3>
+      </div>
+      <div class="research-steps" id="researchSteps">
+        <div class="step active" id="step1"><span>•</span> Analyzing Problem Statement...</div>
+        <div class="step" id="step2"><span>•</span> Deep Searching Google & GitHub...</div>
+        <div class="step" id="step3"><span>•</span> Benchmarking Devpost Winners...</div>
+        <div class="step" id="step4"><span>•</span> Architecting Custom Solution...</div>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+    </div>
+  `;
+  researchOverlay.style.display = 'flex';
+
+  const steps = ['step1', 'step2', 'step3', 'step4'];
+  let currentStep = 0;
+
+  const runSteps = setInterval(() => {
+    if (currentStep > 0) {
+      document.getElementById(steps[currentStep-1]).classList.add('completed');
+      document.getElementById(steps[currentStep-1]).innerHTML = `<span>✓</span> ` + document.getElementById(steps[currentStep-1]).innerText.substring(2);
+    }
     
-    // Generate content based on input
-    populateReport(idea);
-    outputArea.style.display = 'block';
-    
-    // Scroll to output
-    outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    showToast('Intelligence Report Generated!');
-  }, 2500); // Fake delay
+    if (currentStep < steps.length) {
+      document.getElementById(steps[currentStep]).classList.add('active');
+      document.getElementById('progressBar').style.width = ((currentStep + 1) * 25) + '%';
+      currentStep++;
+    } else {
+      clearInterval(runSteps);
+      setTimeout(() => {
+        researchOverlay.style.display = 'none';
+        generateBtn.disabled = false;
+        btnGenerateText.style.display = 'flex';
+        btnGenerateLoading.style.display = 'none';
+        
+        // Intelligent Keyword Branching
+        const apiKey = localStorage.getItem('gemini_api_key');
+        if (apiKey) {
+           callGeminiDeepSearch(idea).then(result => {
+             if (result) {
+               // Update the report with REAL data
+               reportData.overview = result; 
+               populateReport(idea, { industry: 'Live Search Result', stack: 'AI Recommended', aiModel: 'Gemini 2.0', secret: 'See Analysis' });
+             } else {
+               const analysis = analyzeProblem(idea);
+               populateReport(idea, analysis);
+             }
+             outputArea.style.display = 'block';
+             outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             showToast('Live Internet Intel Generated!');
+           });
+        } else {
+           const analysis = analyzeProblem(idea);
+           populateReport(idea, analysis);
+           outputArea.style.display = 'block';
+           outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+           showToast('Deep Intelligence Report Generated!');
+        }
+      }, 1000);
+    }
+  }, 1200);
 });
+
+function analyzeProblem(idea) {
+  const text = idea.toLowerCase();
+  let analysis = {
+    industry: 'General Tech',
+    stack: 'Next.js + Tailwind + Supabase',
+    aiModel: 'Gemini 2.0 Flash',
+    secret: 'Focus on clean data visualization and seamless onboarding.'
+  };
+
+  if (text.includes('health') || text.includes('medical') || text.includes('doctor')) {
+    analysis.industry = 'Healthcare / MedTech';
+    analysis.stack = 'Next.js + Python FastAPI (for ML) + MongoDB (HIPAA compliant structures)';
+    analysis.aiModel = 'Med-PaLM 2 / Gemini Pro (Multi-modal)';
+    analysis.secret = 'Judges love data privacy. Emphasize Zero-Knowledge Proofs for patient data.';
+  } else if (text.includes('money') || text.includes('bank') || text.includes('fin') || text.includes('crypto')) {
+    analysis.industry = 'Fintech / DeFi';
+    analysis.stack = 'Next.js + Rust/Solana (if Web3) or Node.js + PostgreSQL (for transactional integrity)';
+    analysis.aiModel = 'Claude 3.5 Sonnet (for complex logic)';
+    analysis.secret = 'Show real-time transaction simulations. Use Plaid API to show you thought about bank linking.';
+  } else if (text.includes('green') || text.includes('earth') || text.includes('climat') || text.includes('eco')) {
+    analysis.industry = 'Sustainability / GreenTech';
+    analysis.stack = 'Next.js + Edge Functions + Time-series DB (InfluxDB) for sensor data';
+    analysis.aiModel = 'Gemini Flash (Low latency for sensor inputs)';
+    analysis.secret = 'Integrate a Carbon Footprint tracker. Use Google Maps Platform for visualization.';
+  } else if (text.includes('educat') || text.includes('school') || text.includes('learn')) {
+    analysis.industry = 'EdTech / Learning';
+    analysis.stack = 'Next.js + tRPC + Convex (for real-time multiplayer learning)';
+    analysis.aiModel = 'GPT-4o (for tutoring logic)';
+    analysis.secret = 'Gamification is key. Add a Streaks or Leaderboard component to your UI.';
+  }
+
+  return analysis;
+}
+
 
 }
 
@@ -374,7 +532,7 @@ git push -u origin main</div>
   `
 };
 
-function populateReport(ideaContext) {
+function populateReport(ideaContext, analysis) {
   // Add tabs logic
   const tabs = document.getElementById('outputTabs');
   const tabsContainer = tabs.querySelectorAll('.tab-btn');
@@ -388,13 +546,22 @@ function populateReport(ideaContext) {
     section.className = `output-section ${index === 0 ? 'active' : ''}`;
     section.id = `section-${key}`;
     
-    // Inject dynamic idea context slightly
+    // Inject dynamic idea context and analysis
     let html = reportData[key];
-    if (key === 'overview') {
-      html = html.replace('This is a high-potential project', `The concept of "${ideaContext.substring(0, 50)}..." is highly viable`);
+    
+    // Global Replacements based on Deep Intelligence
+    if (analysis) {
+      html = html.replace(/Next\.js \+ Tailwind \+ Framer Motion/g, analysis.stack);
+      html = html.replace(/Gemini 2\.0 Flash/g, analysis.aiModel);
+      html = html.replace(/A mediocre idea with a stunning UI/g, analysis.secret);
     }
+
+    if (key === 'overview') {
+      const industryBadge = analysis ? `<div class="section-badge" style="margin-bottom:1rem;">Detected: ${analysis.industry}</div>` : '';
+      html = industryBadge + html.replace('This is a high-potential project', `The concept of "${ideaContext.substring(0, 50)}..." is highly viable for the ${analysis ? analysis.industry : 'target'} market`);
+    }
+    
     if (key === 'prompts') {
-      // Escape HTML to prevent XSS from user input, just in case
       const safeIdea = ideaContext.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       html = html.replace(/\[IDEA\]/g, safeIdea);
     }
@@ -405,16 +572,12 @@ function populateReport(ideaContext) {
 
   // Tab switching
   tabsContainer.forEach(tab => {
-    // Remove old listeners by replacing clone
     const newTab = tab.cloneNode(true);
     tab.parentNode.replaceChild(newTab, tab);
     
     newTab.addEventListener('click', (e) => {
-      // Update active tab
       document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
       newTab.classList.add('active');
-      
-      // Update active content
       const targetId = `section-${newTab.getAttribute('data-tab')}`;
       document.querySelectorAll('.output-section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(targetId).classList.add('active');
@@ -433,6 +596,7 @@ function populateReport(ideaContext) {
     });
   });
 }
+
 
 // Action Buttons
 const copyBtn = document.getElementById("copyBtn");
