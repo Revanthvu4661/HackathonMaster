@@ -137,7 +137,7 @@ async function callGeminiDeepSearch(prompt) {
   if (!apiKey) return null;
 
   try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -164,7 +164,8 @@ async function callGeminiDeepSearch(prompt) {
 
           Be extremely specific. Use technical terms. Make the UI/UX descriptions "Premium" and "Worthy of a Global Winner".` }]
         }],
-        tools: [{ google_search: {} }]
+        tools: [{ google_search: {} }],
+        generationConfig: { temperature: 1.0 }
       })
     });
     
