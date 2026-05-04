@@ -60,14 +60,32 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 2rem;
-  background: rgba(15, 17, 26, 0.6);
-  border: 1px solid var(--border-color);
+  background: rgba(8, 10, 18, 0.7);
+  border: 1px solid var(--accent-primary);
   border-radius: 24px;
-  padding: 2rem;
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  margin-bottom: 3rem;
+  padding: 2.5rem;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.strat-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  animation: scan-line 4s linear infinite;
+}
+
+@keyframes scan-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 @media (max-width: 900px) {
@@ -97,24 +115,23 @@
 
 .strat-textarea {
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: #020408;
   border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 1.5rem;
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.6;
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: #a5f3fc; /* Cyan text */
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
   resize: vertical;
-  min-height: 200px;
+  min-height: 180px;
+  outline: none;
   transition: all 0.3s ease;
-  flex-grow: 1;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .strat-textarea:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.1);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
 }
 
 .strat-char-count {
@@ -222,6 +239,46 @@
   border-radius: 8px;
   padding: 4px;
   gap: 4px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.05);
+}
+
+.tab-btn.active {
+  color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.1);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+  position: relative;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 10px var(--accent-secondary);
 }
 
 .mode-pill {
@@ -482,4 +539,100 @@
   font-weight: 700;
   width: 30px;
   text-align: right;
+}
+/* Dashboard Components Styling */
+.output-section {
+  display: none;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.output-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.info-card {
+  background: rgba(13, 17, 28, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.info-card::before {
+  content: '/>';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-primary);
+  opacity: 0.4;
+}
+
+.info-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.info-card h4 {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: var(--accent-secondary);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Prompt Box Enhancements */
+.prompt-box {
+  border: 1px solid var(--border-color);
+  background: #020408;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.prompt-header {
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(139, 92, 246, 0.03);
+}
+
+.prompt-body {
+  font-family: 'JetBrains Mono', monospace;
+  color: #a5f3fc;
+  font-size: 0.85rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
+}
+
+/* Scrollbar Styling for Monospace areas */
+.prompt-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.prompt-body::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 3px;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-weight: 700;
 }
