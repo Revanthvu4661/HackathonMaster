@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         console.error("Analysis failed:", err);
-        showToast("Error generating analysis. Try again or check API key.");
+        showToast("Error: " + err.message);
         overlay.style.display = 'none';
         resetBtnState();
       }
@@ -316,15 +316,14 @@ document.addEventListener('DOMContentLoaded', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: systemPrompt }] }],
-        tools: [{ google_search_retrieval: {} }],
-        generationConfig: {
-          temperature: 0.7,
-          responseMimeType: "application/json"
-        }
+        tools: [{ google_search_retrieval: {} }]
       })
     });
     
-    if(!response.ok) throw new Error("API Network Error");
+    if(!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error?.message || "API Network Error");
+    }
     
     const data = await response.json();
     const text = data.candidates[0].content.parts[0].text;
