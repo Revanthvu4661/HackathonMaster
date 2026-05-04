@@ -419,9 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-      });
-    });
-
     // Copy prompt buttons
     document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
