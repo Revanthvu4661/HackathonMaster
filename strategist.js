@@ -317,6 +317,20 @@ document.addEventListener('DOMContentLoaded', () => {
         "business_angle": "...",
         "social_or_market_impact": "...",
         "one_line_winning_pitch": "..."
+      },
+      "prd": {
+        "project_name": "...",
+        "vision": "...",
+        "user_personas": ["...", "..."],
+        "core_features": [ { "feature": "...", "priority": "P0", "description": "..." } ],
+        "technical_requirements": {
+          "frontend": "...",
+          "backend": "...",
+          "database": "...",
+          "integrations": ["...", "..."]
+        },
+        "success_metrics": ["...", "..."],
+        "roadmap": ["...", "..."]
       }
     }`;
 
@@ -375,7 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
       priority: buildPriorityHTML(data.top_5_priority_addons, data.best_addons),
       features: buildFeaturesHTML(data.feature_ideas),
       prompts: buildPromptsHTML(data.prompt_pack),
-      judge: buildJudgeHTML(data.judge_strategy)
+      judge: buildJudgeHTML(data.judge_strategy),
+      prd: buildPRDHTML(data.prd || {})
     };
 
     contentBox.innerHTML = '';
@@ -404,6 +419,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+      });
+    });
+
     // Copy prompt buttons
     document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -415,6 +433,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+
+    // PRD Download Handling
+    const downloadPrdBtn = document.getElementById('downloadPrdBtn');
+    if(downloadPrdBtn) {
+      downloadPrdBtn.addEventListener('click', () => {
+        showToast("Generating PRD File...");
+        const prdElement = document.getElementById('prdDoc').cloneNode(true);
+        
+        // Final styling for clean PDF export
+        prdElement.style.background = 'white';
+        prdElement.style.color = '#1a1a1a';
+        prdElement.style.padding = '40px';
+        prdElement.style.boxShadow = 'none';
+        prdElement.style.border = 'none';
+        
+        // Clean up UI specific elements if any
+        prdElement.querySelectorAll('h1, h4').forEach(h => h.style.color = '#a78bfa');
+        prdElement.querySelectorAll('table').forEach(t => {
+           t.style.color = '#1a1a1a';
+           t.querySelectorAll('th, td').forEach(cell => cell.style.borderColor = '#e2e8f0');
+        });
+
+        const opt = {
+          margin:       0.5,
+          filename:     'Product_Requirements_Document.pdf',
+          image:        { type: 'jpeg', quality: 0.98 },
+          html2canvas:  { scale: 2 },
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        if(typeof html2pdf !== 'undefined') {
+          html2pdf().set(opt).from(prdElement).save().then(() => showToast("PRD Downloaded!"));
+        } else {
+          showToast("PDF Library not loaded.");
+        }
+      });
+    }
   }
 
   // --- HTML BUILDERS ---
@@ -636,6 +691,95 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
+  function buildPRDHTML(prd) {
+    if(!prd || !prd.project_name) return `<p>PRD data not available.</p>`;
+    
+    return `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
+        <h3>📄 Product Requirements Document (PRD)</h3>
+        <button class="btn-primary" id="downloadPrdBtn" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:0.5rem;"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          DOWNLOAD THE PRD FILE
+        </button>
+      </div>
+
+      <div id="prdDoc" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:20px; padding:3rem; color:var(--text-primary); line-height:1.6; max-width:900px; margin:0 auto; box-shadow:var(--shadow-lg);">
+        <div style="text-align:center; border-bottom:2px solid var(--accent-primary); padding-bottom:2rem; margin-bottom:3rem;">
+          <h1 style="font-size:2.5rem; margin-bottom:0.5rem;">${prd.project_name}</h1>
+          <p style="color:var(--text-secondary); font-size:1.1rem;">Product Requirements Document (PRD)</p>
+          <p style="font-size:0.9rem; margin-top:1rem; opacity:0.7;">Generated on ${new Date().toLocaleDateString()}</p>
+        </div>
+
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">1. PRODUCT VISION</h4>
+          <p>${prd.vision}</p>
+        </section>
+
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">2. USER PERSONAS</h4>
+          <ul style="padding-left:1.5rem;">
+            ${prd.user_personas.map(u => `<li style="margin-bottom:0.5rem;">${u}</li>`).join('')}
+          </ul>
+        </section>
+
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">3. CORE FEATURES (MVP)</h4>
+          <table style="width:100%; border-collapse:collapse; margin-top:1rem;">
+            <thead>
+              <tr style="background:rgba(255,255,255,0.05); text-align:left;">
+                <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Feature</th>
+                <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Priority</th>
+                <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${prd.core_features.map(f => `
+                <tr>
+                  <td style="padding:12px; border:1px solid rgba(255,255,255,0.1); font-weight:600;">${f.feature}</td>
+                  <td style="padding:12px; border:1px solid rgba(255,255,255,0.1);"><span style="padding:2px 8px; border-radius:4px; font-size:0.75rem; background:${f.priority === 'P0' ? '#ef4444' : '#f59e0b'}; color:white;">${f.priority}</span></td>
+                  <td style="padding:12px; border:1px solid rgba(255,255,255,0.1); font-size:0.9rem;">${f.description}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </section>
+
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">4. TECHNICAL REQUIREMENTS</h4>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem;">
+            <div>
+              <p><strong>Frontend:</strong> ${prd.technical_requirements.frontend}</p>
+              <p><strong>Backend:</strong> ${prd.technical_requirements.backend}</p>
+            </div>
+            <div>
+              <p><strong>Database:</strong> ${prd.technical_requirements.database}</p>
+              <p><strong>Integrations:</strong> ${prd.technical_requirements.integrations.join(', ')}</p>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">5. SUCCESS METRICS</h4>
+          <ul style="padding-left:1.5rem;">
+            ${prd.success_metrics.map(m => `<li style="margin-bottom:0.5rem;">${m}</li>`).join('')}
+          </ul>
+        </section>
+
+        <section>
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">6. DEVELOPMENT ROADMAP</h4>
+          <ul style="list-style:none; padding:0;">
+            ${prd.roadmap.map((step, i) => `
+              <li style="display:flex; gap:1rem; margin-bottom:1rem;">
+                <span style="min-width:24px; height:24px; background:var(--accent-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;">${i+1}</span>
+                <span>${step}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </section>
+      </div>
+    `;
+  }
+
   // Fallback JSON Generator (Hardcoded intelligent response if no API key)
   function generateFallbackJSON(problem, ctx) {
     const text = problem.toLowerCase();
@@ -752,6 +896,23 @@ document.addEventListener('DOMContentLoaded', () => {
         "business_angle": "B2B SaaS model with tiered pricing based on API usage.",
         "social_or_market_impact": "Significantly reduces wasted hours and improves accessibility.",
         "one_line_winning_pitch": "We're turning a 5-hour manual headache into a 5-second automated delight."
+      },
+      "prd": {
+        "project_name": "Hackathon Master Solution",
+        "vision": "To build an intelligent, scalable platform that solves the user's problem using cutting-edge AI.",
+        "user_personas": ["Developers", "Hackathon Participants", "Judges"],
+        "core_features": [
+          { "feature": "AI Strategy Engine", "priority": "P0", "description": "Core intelligence to analyze problem statements." },
+          { "feature": "Real-time Dashboard", "priority": "P0", "description": "Interactive UI to view results instantly." }
+        ],
+        "technical_requirements": {
+          "frontend": "Next.js + Tailwind CSS",
+          "backend": "Supabase / Node.js",
+          "database": "PostgreSQL",
+          "integrations": ["Gemini API", "GitHub API"]
+        },
+        "success_metrics": ["User adoption rate", "Time saved per project"],
+        "roadmap": ["MVP Launch", "Beta Testing", "Full Release"]
       }
     };
   }
