@@ -849,7 +849,7 @@ if(showcaseGrid) {
   document.querySelectorAll('.view-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       localStorage.setItem('presetProject', e.currentTarget.dataset.title);
-      window.location.href = 'generator.html';
+      window.location.href = 'strategist.html';
     });
   });
 }

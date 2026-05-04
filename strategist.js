@@ -97,6 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Check for preset project from other pages
+  const preset = localStorage.getItem('presetProject');
+  if (preset && stratProblem) {
+    stratProblem.value = preset;
+    // Trigger input event to update char count and button state
+    stratProblem.dispatchEvent(new Event('input'));
+    localStorage.removeItem('presetProject');
+  }
+
   document.querySelectorAll('.example-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       stratProblem.value = chip.getAttribute('data-strat');

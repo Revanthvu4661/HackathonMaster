@@ -43,15 +43,15 @@
               </linearGradient>
             </defs>
           </svg>
-        </a>
+        </div>
         <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
-      </div>
+      </a>
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Home</a>
         <a href="strategist.html" class="nav-link">Strategist</a>
         <a href="features.html" class="nav-link">AI Tools</a>
         <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
+        <a href="repos.html" class="nav-link active">Hackathon Repos</a>
       </div>
       <div class="nav-actions">
         <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
@@ -70,7 +70,6 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" class="mobile-link">Home</a>
     <a href="strategist.html" class="mobile-link">Strategist</a>
-        <a href="strategist.html" class="nav-link">Strategist</a>
     <a href="features.html" class="mobile-link">AI Tools</a>
     <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
     <a href="repos.html" class="mobile-link">Hackathon Repos</a>
@@ -107,7 +106,7 @@
       <style>
         .filter-btn { transition: all 0.3s ease; }
         .filter-btn:hover { background: var(--border-color) !important; color: white !important; }
-        .filter-btn.active { background: linear-gradient(135deg, var(--primary), var(--secondary)) !important; color: white !important; border-color: transparent !important; }
+        .filter-btn.active { background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important; color: white !important; border-color: transparent !important; }
       </style>
 
       <div class="showcase-grid" id="projectGrid">
@@ -116,15 +115,10 @@
     </div>
   </section>
 
-  
-  <!-- ===== CTA SECTION ===== -->
-  
-
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="nav-brand">
+    <div class="footer-inner" style="flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
+      <div class="footer-brand" style="display:flex; flex-direction:column; align-items:center;">
         <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
           <div class="brand-icon">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -141,24 +135,20 @@
           </div>
           <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
         </a>
+        <p class="footer-tagline" style="margin-top:0.75rem;">Your ultimate AI co-founder for winning hackathons.</p>
       </div>
-          <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
-        </div>
-        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
+      <div class="footer-links" style="justify-content: center;">
+        <div class="footer-col" style="text-align:center;">
           <h4>Platform</h4>
-          <a href="#generator">Generator</a>
-          <a href="#features">Features</a>
-          <a href="#tools">AI Tools</a>
+          <a href="strategist.html">Strategist</a>
+          <a href="features.html">AI Tools</a>
+          <a href="hackathons.html">Live Hackathons</a>
         </div>
-        <div class="footer-col">
+        <div class="footer-col" style="text-align:center;">
           <h4>Modes</h4>
-          <a href="#generator">Complete Blueprint</a>
-          <a href="#generator">Quick Overview</a>
-          <a href="#generator">Pitch Deck</a>
-          <a href="#generator">UI Generator</a>
+          <a href="strategist.html">Full Strategy</a>
+          <a href="strategist.html">Quick Wins</a>
+          <a href="strategist.html">Judge Lens</a>
         </div>
       </div>
     </div>
