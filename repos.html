@@ -154,6 +154,10 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Hackathon Master — Win Every Competition</span>
+      <span style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-secondary);">
+        Created by
+        <span style="background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
+      </span>
     </div>
   </footer>
 
@@ -165,5 +169,16 @@
 
   <script src="app_v2.js"></script>
   <script src="projects_app.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+    }
+  </script>
 </body>
 </html>

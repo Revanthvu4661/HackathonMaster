@@ -170,6 +170,13 @@
   gap: 1rem;
 }
 
+@media (max-width: 600px) {
+  .strat-field-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
 .strat-field-row > div {
   flex: 1;
   display: flex;
