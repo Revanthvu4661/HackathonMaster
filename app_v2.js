@@ -870,11 +870,11 @@ if(preset && pInput && gBtn) {
 // Button interactions
 const lBtn = document.getElementById("launchBtn");
 if(lBtn) lBtn.addEventListener('click', () => {
-  window.location.href = 'generator.html';
+  window.location.href = 'strategist.html';
 });
 const hgBtn = document.getElementById("heroGenerateBtn");
 if(hgBtn) hgBtn.addEventListener('click', () => {
-  window.location.href = 'generator.html';
+  window.location.href = 'strategist.html';
 });
 const hsBtn = document.getElementById("heroShowcaseBtn");
 if(hsBtn) hsBtn.addEventListener('click', () => {
@@ -882,7 +882,7 @@ if(hsBtn) hsBtn.addEventListener('click', () => {
 });
 const cBtn = document.getElementById("ctaBtn");
 if(cBtn) cBtn.addEventListener('click', () => {
-  window.location.href = 'generator.html';
+  window.location.href = 'strategist.html';
 });
 
 // Trigger scroll check on load
