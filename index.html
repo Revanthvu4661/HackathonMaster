@@ -168,9 +168,8 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="nav-brand">
+    <div class="footer-inner" style="flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
+      <div class="footer-brand" style="display:flex; flex-direction:column; align-items:center;">
         <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
           <div class="brand-icon">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -187,35 +186,32 @@
           </div>
           <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
         </a>
+        <p class="footer-tagline" style="margin-top:0.75rem;">Your ultimate AI co-founder for winning hackathons.</p>
       </div>
-          <span class="brand-name">Hackathon<span class="brand-accent">Master</span></span>
-        </div>
-        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
+      <div class="footer-links" style="justify-content: center;">
+        <div class="footer-col" style="text-align:center;">
           <h4>Platform</h4>
-          <a href="#generator">Generator</a>
-          <a href="#features">Features</a>
-          <a href="#tools">AI Tools</a>
+          <a href="strategist.html">Strategist</a>
+          <a href="features.html">AI Tools</a>
+          <a href="hackathons.html">Live Hackathons</a>
         </div>
-        <div class="footer-col">
+        <div class="footer-col" style="text-align:center;">
           <h4>Modes</h4>
-          <a href="#generator">Complete Blueprint</a>
-          <a href="#generator">Quick Overview</a>
-          <a href="#generator">Pitch Deck</a>
-          <a href="#generator">UI Generator</a>
+          <a href="strategist.html">Full Strategy</a>
+          <a href="strategist.html">Quick Wins</a>
+          <a href="strategist.html">Judge Lens</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Hackathon Master — Win Every Competition</span>
       <span style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-secondary);">
-        Crafted with <span style="color:#e05252;">❤️</span> by
+        Created by
         <span style="background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
       </span>
     </div>
   </footer>
+
 
   <!-- Toast Notification -->
   <div class="toast" id="toast"></div>
