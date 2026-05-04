@@ -327,16 +327,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     const data = await response.json();
-    const text = data.candidates[0].content.parts[0].text;
     
-    try {
-      return JSON.parse(text);
-    } catch(e) {
-      // Fallback regex extraction if model wraps in markdown
-      const jsonMatch = text.match(/\{[\s\S]*\}/);
-      if(jsonMatch) return JSON.parse(jsonMatch[0]);
-      throw e;
+    // When Google Search grounding is active, the response may contain multiple parts.
+    // We must gather ALL text parts and concatenate them instead of assuming parts[0] has text.
+    const candidate = data.candidates[0];
+    if (!candidate) throw new Error("No response candidates returned from API.");
+    
+    const allText = (candidate.content?.parts || [])
+      .filter(p => p.text)
+      .map(p => p.text)
+      .join('');
+    
+    if (!allText) throw new Error("API returned an empty response. Please try again.");
+    
+    // Extract JSON from the full text (model may wrap in markdown code blocks)
+    const jsonMatch = allText.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      return JSON.parse(jsonMatch[0]);
     }
+    
+    // Try direct parse as last resort
+    return JSON.parse(allText);
   }
 
   // --- RENDER JSON TO UI ---
