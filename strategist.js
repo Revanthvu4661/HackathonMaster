@@ -161,6 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const fallbackResult = generateFallbackJSON(problem, context);
             latestAnalysisJson = fallbackResult;
             renderStrategyJSON(fallbackResult);
+            
+            // Add a clear warning that this is offline data
+            const pitchBanner = document.getElementById('stratPitchBanner');
+            const warningHtml = `<div style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 0.9rem; color: #fca5a5;">
+              <strong>⚠️ OFFLINE SIMULATION MODE:</strong> The output below is a generic simulation because no API Key was provided. To get LIVE Web Search results (like real GitHub repos and dynamic market research), please click "Set API Key" at the top of the page.
+            </div>`;
+            pitchBanner.insertAdjacentHTML('beforebegin', warningHtml);
+            
             completeProgressUI();
           }, 3500); // simulate delay
         }
@@ -245,8 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
     - Time Limit: ${ctx.time}
     - Team: ${ctx.team}
     
-    Analyze the problem deeply. If Google Search tool is available, use it to research existing solutions.
-    Generate the absolute BEST, most innovative, and demo-friendly add-ons. 
+    Analyze the problem deeply. YOU MUST use the Google Search tool to research the current market, find REAL GitHub repositories, and discover active APIs related to the problem. Do not hallucinate repos; find real ones.
+    Generate the absolute BEST, most innovative, and demo-friendly add-ons based on live internet data. 
     Write master-level prompts for Cursor/Bolt.new.
     
     You MUST output valid JSON ONLY, strictly matching this exact schema:
@@ -610,16 +618,84 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fallback JSON Generator (Hardcoded intelligent response if no API key)
   function generateFallbackJSON(problem, ctx) {
+    const text = problem.toLowerCase();
+    
+    // Default Web3 / Gen Tech Addons
+    let addons = [
+      {
+        "addon_name": "Magic One-Click Summary",
+        "category": "AI",
+        "what_it_does": "Instantly summarizes complex data into actionable insights using an LLM.",
+        "why_it_improves_the_solution": "Shows immediate AI value without complex user flows.",
+        "hackathon_value": "Highly demo-able. Looks like magic on screen.",
+        "implementation_difficulty": "Easy",
+        "estimated_build_time": "1 hour",
+        "recommended_stack": "Next.js API route + OpenAI SDK",
+        "apis_or_tools": ["OpenAI / Gemini"],
+        "demo_impact_score": 9,
+        "judge_wow_score": 8
+      },
+      {
+        "addon_name": "Real-time Collaboration Cursor",
+        "category": "Collaboration",
+        "what_it_does": "Shows multiple users interacting on the same screen (like Figma).",
+        "why_it_improves_the_solution": "Proves the app is enterprise-ready and scalable.",
+        "hackathon_value": "Judges love multiplayer features. It guarantees high technical scores.",
+        "implementation_difficulty": "Medium",
+        "estimated_build_time": "2 hours",
+        "recommended_stack": "Liveblocks or Supabase Presence",
+        "apis_or_tools": ["Liveblocks"],
+        "demo_impact_score": 10,
+        "judge_wow_score": 9
+      }
+    ];
+    let insights = ["Basic CRUD dashboards", "Siloed data systems"];
+    let marketGap = "Current solutions lack predictive AI capabilities and seamless modern integrations.";
+
+    if (text.includes('health') || text.includes('med')) {
+      addons[0] = {
+        "addon_name": "Symptom Checker Chatbot",
+        "category": "AI",
+        "what_it_does": "Conversational AI that triages symptoms before showing results.",
+        "why_it_improves_the_solution": "Modernizes the patient intake experience.",
+        "hackathon_value": "Judges love healthcare bots. Easy to demo.",
+        "implementation_difficulty": "Medium",
+        "estimated_build_time": "3 hours",
+        "recommended_stack": "Gemini API + React Chat Component",
+        "apis_or_tools": ["Gemini 2.0"],
+        "demo_impact_score": 9,
+        "judge_wow_score": 9
+      };
+      marketGap = "Healthcare systems are usually too hard for elderly users to navigate.";
+      insights = ["Complex hospital portals", "WebMD generic searches"];
+    } else if (text.includes('fin') || text.includes('money') || text.includes('crypto')) {
+      addons[0] = {
+        "addon_name": "Real-time Transaction Simulator",
+        "category": "FinTech",
+        "what_it_does": "Shows live mock money transfers across the screen.",
+        "why_it_improves_the_solution": "Makes the financial app feel alive.",
+        "hackathon_value": "Dynamic visuals always score higher.",
+        "implementation_difficulty": "Hard",
+        "estimated_build_time": "4 hours",
+        "recommended_stack": "WebSockets + Framer Motion",
+        "apis_or_tools": ["Plaid API (Mock)"],
+        "demo_impact_score": 10,
+        "judge_wow_score": 9
+      };
+      marketGap = "Financial apps often lack real-time transparent tracking.";
+      insights = ["Legacy banking apps", "Complex crypto exchanges"];
+    }
+
     return {
       "problem_analysis": {
         "refined_problem": "A streamlined, intelligent solution targeting: " + problem.substring(0, 50) + "...",
         "target_users": ["Primary Stakeholders", "End Consumers", "System Admins"],
         "core_pain_points": ["Manual data entry and inefficiency", "Lack of real-time insights", "Poor user experience in legacy tools"],
-        "market_gap": "Current solutions lack predictive AI capabilities and seamless modern integrations.",
+        "market_gap": marketGap,
         "winning_product_direction": "An AI-first, mobile-responsive web app with real-time data synchronization."
       },
       "research_insights": {
-        "existing_solution_patterns": ["Basic CRUD dashboards", "Siloed data systems"],
+        "existing_solution_patterns": insights,
         "common_weaknesses": ["No offline support", "Clunky UI/UX", "High latency"],
         "emerging_opportunities": ["Edge AI processing", "Automated RAG workflows"],
         "useful_tools_apis": [
@@ -627,37 +703,10 @@ document.addEventListener('DOMContentLoaded', () => {
           {"name": "Groq", "type": "LLM API", "why_it_matters": "Blazing fast inference for demo magic."}
         ]
       },
-      "best_addons": [
-        {
-          "addon_name": "Magic One-Click Summary",
-          "category": "AI",
-          "what_it_does": "Instantly summarizes complex data into actionable insights using an LLM.",
-          "why_it_improves_the_solution": "Shows immediate AI value without complex user flows.",
-          "hackathon_value": "Highly demo-able. Looks like magic on screen.",
-          "implementation_difficulty": "Easy",
-          "estimated_build_time": "1 hour",
-          "recommended_stack": "Next.js API route + OpenAI SDK",
-          "apis_or_tools": ["OpenAI / Gemini"],
-          "demo_impact_score": 9,
-          "judge_wow_score": 8
-        },
-        {
-          "addon_name": "Real-time Collaboration Cursor",
-          "category": "Collaboration",
-          "what_it_does": "Shows multiple users interacting on the same screen (like Figma).",
-          "why_it_improves_the_solution": "Proves the app is enterprise-ready and scalable.",
-          "hackathon_value": "Judges love multiplayer features. It guarantees high technical scores.",
-          "implementation_difficulty": "Medium",
-          "estimated_build_time": "2 hours",
-          "recommended_stack": "Liveblocks or Supabase Presence",
-          "apis_or_tools": ["Liveblocks"],
-          "demo_impact_score": 10,
-          "judge_wow_score": 9
-        }
-      ],
+      "best_addons": addons,
       "top_5_priority_addons": [
-        {"rank": 1, "addon_name": "Magic One-Click Summary", "reason": "Fastest way to integrate AI."},
-        {"rank": 2, "addon_name": "Real-time Collaboration Cursor", "reason": "Highest technical wow factor."}
+        {"rank": 1, "addon_name": addons[0].addon_name, "reason": "Fastest way to integrate AI."},
+        {"rank": 2, "addon_name": addons[1].addon_name, "reason": "Highest technical wow factor."}
       ],
       "feature_ideas": {
         "must_have_features": ["User Authentication", "Core Data Input Form", "Result Dashboard"],
