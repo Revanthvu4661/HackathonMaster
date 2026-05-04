@@ -623,24 +623,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function buildFeaturesHTML(data) {
     return `
       <h3>✅ Feature Priority Matrix</h3>
-      <div class="card-grid" style="margin-top:1.5rem;">
+      <div class="card-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-top:1.5rem;">
         
-        <div class="info-card" style="border-top: 4px solid var(--error);">
+        <div class="info-card" style="border-top: 4px solid #ef4444;">
           <h4>Must Have (MVP)</h4>
           <ul style="padding-left:1.5rem; margin-top:1rem; font-size:0.9rem;">
             ${data.must_have_features.map(f => `<li style="margin-bottom:0.5rem;">${f}</li>`).join('')}
           </ul>
         </div>
         
-        <div class="info-card" style="border-top: 4px solid var(--accent-primary);">
-          <h4>Nice to Have</h4>
+        <div class="info-card" style="border-top: 4px solid #a78bfa;">
+          <h4>Nice to Have (If Time Permits)</h4>
           <ul style="padding-left:1.5rem; margin-top:1rem; font-size:0.9rem;">
             ${data.nice_to_have_features.map(f => `<li style="margin-bottom:0.5rem;">${f}</li>`).join('')}
           </ul>
         </div>
         
-        <div class="info-card" style="border-top: 4px solid var(--text-muted);">
-          <h4>Future Scope</h4>
+        <div class="info-card" style="border-top: 4px solid #64748b;">
+          <h4>Future Scope (Mention in Pitch)</h4>
           <ul style="padding-left:1.5rem; margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
             ${data.future_scope.map(f => `<li style="margin-bottom:0.5rem;">${f}</li>`).join('')}
           </ul>
@@ -685,26 +685,26 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <h3>🏆 Judge Presentation Strategy</h3>
       
-      <div class="info-card" style="border-color:var(--accent-primary); margin-bottom:1.5rem; background: rgba(139, 92, 246, 0.05);">
-        <h4>The "Wow Factor"</h4>
-        <p style="font-size:1.1rem; color: var(--accent-primary); font-weight: 700;">${data.wow_factor}</p>
+      <div class="info-card" style="background:rgba(167, 139, 250, 0.1); border-color:var(--accent-primary); margin-bottom:1.5rem;">
+        <h4 style="color:var(--accent-primary);">The "Wow Factor"</h4>
+        <p style="font-size:1.05rem;">${data.wow_factor}</p>
       </div>
 
       <div class="card-grid" style="margin-bottom:1.5rem;">
         <div class="info-card">
-          <h4>💼 Business Angle</h4>
+          <h4>💼 Business Viability Angle</h4>
           <p>${data.business_angle}</p>
         </div>
         <div class="info-card">
-          <h4>🌍 Market Impact</h4>
+          <h4>🌍 Market / Social Impact</h4>
           <p>${data.social_or_market_impact}</p>
         </div>
       </div>
 
       <h4>Optimal Demo Flow (2 Minutes)</h4>
-      <div class="info-card" style="margin-top:1rem; background: #020408;">
+      <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:1.5rem; margin-top:1rem; border:1px solid rgba(255,255,255,0.05);">
         <ol style="margin:0; padding-left:1.5rem;">
-          ${data.best_demo_flow.map(step => `<li style="margin-bottom:1rem; line-height:1.5; color: var(--text-secondary);">${step}</li>`).join('')}
+          ${data.best_demo_flow.map(step => `<li style="margin-bottom:1rem; line-height:1.5;">${step}</li>`).join('')}
         </ol>
       </div>
     `;
@@ -715,85 +715,85 @@ document.addEventListener('DOMContentLoaded', () => {
     
     return `
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
-        <h3>📄 Product Requirements Document</h3>
-        <button class="btn-primary" id="downloadPrdBtn">
+        <h3>📄 Product Requirements Document (PRD)</h3>
+        <button class="btn-primary" id="downloadPrdBtn" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:0.5rem;"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          DOWNLOAD PRD FILE
+          DOWNLOAD THE PRD FILE
         </button>
       </div>
 
-      <div id="prdDoc" class="info-card" style="padding:3rem; line-height:1.6; max-width:900px; margin:0 auto; background: #05060b; border-color: var(--accent-primary);">
-        <div style="text-align:center; border-bottom:1px solid var(--border-color); padding-bottom:2rem; margin-bottom:3rem;">
-          <h1 style="font-size:2.5rem; margin-bottom:0.5rem; color: white;">${prd.project_name}</h1>
-          <p style="color:var(--accent-secondary); font-family: var(--font-mono); font-size: 0.9rem;">SYSTEM.PRD_VERSION.1.0.0</p>
-          <p style="font-size:0.8rem; margin-top:1rem; color: var(--text-muted);">AUTO-GENERATED ON ${new Date().toLocaleDateString()}</p>
+      <div id="prdDoc" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:20px; padding:3rem; color:var(--text-primary); line-height:1.6; max-width:900px; margin:0 auto; box-shadow:var(--shadow-lg);">
+        <div style="text-align:center; border-bottom:2px solid var(--accent-primary); padding-bottom:2rem; margin-bottom:3rem;">
+          <h1 style="font-size:2.5rem; margin-bottom:0.5rem;">${prd.project_name}</h1>
+          <p style="color:var(--text-secondary); font-size:1.1rem;">Product Requirements Document (PRD)</p>
+          <p style="font-size:0.9rem; margin-top:1rem; opacity:0.7;">Generated on ${new Date().toLocaleDateString()}</p>
         </div>
 
-        <section style="margin-bottom:3rem;">
-          <h4 style="color:var(--accent-primary);">01. PRODUCT VISION</h4>
-          <p style="color: var(--text-secondary);">${prd.vision}</p>
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">1. PRODUCT VISION</h4>
+          <p>${prd.vision}</p>
         </section>
 
-        <section style="margin-bottom:3rem;">
-          <h4 style="color:var(--accent-primary);">02. USER PERSONAS</h4>
-          <ul style="padding-left:1.5rem; color: var(--text-secondary);">
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">2. USER PERSONAS</h4>
+          <ul style="padding-left:1.5rem;">
             ${prd.user_personas.map(u => `<li style="margin-bottom:0.5rem;">${u}</li>`).join('')}
           </ul>
         </section>
 
-        <section style="margin-bottom:3rem;">
-          <h4 style="color:var(--accent-primary);">03. CORE FEATURES</h4>
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">3. CORE FEATURES (MVP)</h4>
           <table style="width:100%; border-collapse:collapse; margin-top:1rem;">
             <thead>
-              <tr style="background:rgba(139, 92, 246, 0.1); text-align:left;">
-                <th style="padding:12px; border:1px solid var(--border-color); color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">FEATURE</th>
-                <th style="padding:12px; border:1px solid var(--border-color); color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">PRIORITY</th>
-                <th style="padding:12px; border:1px solid var(--border-color); color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">DESCRIPTION</th>
+              <tr style="background:rgba(255,255,255,0.05); text-align:left;">
+                <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Feature</th>
+                <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Priority</th>
+                <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Description</th>
               </tr>
             </thead>
             <tbody>
               ${prd.core_features.map(f => `
                 <tr>
-                  <td style="padding:12px; border:1px solid var(--border-color); font-weight:600; color: white;">${f.feature}</td>
-                  <td style="padding:12px; border:1px solid var(--border-color);"><span class="status-badge" style="background:${f.priority === 'P0' ? 'rgba(239, 68, 68, 0.2)' : 'rgba(245, 158, 11, 0.2)'}; color:${f.priority === 'P0' ? '#ef4444' : '#f59e0b'}; border: 1px solid currentColor;">${f.priority}</span></td>
-                  <td style="padding:12px; border:1px solid var(--border-color); font-size:0.9rem; color: var(--text-secondary);">${f.description}</td>
+                  <td style="padding:12px; border:1px solid rgba(255,255,255,0.1); font-weight:600;">${f.feature}</td>
+                  <td style="padding:12px; border:1px solid rgba(255,255,255,0.1);"><span style="padding:2px 8px; border-radius:4px; font-size:0.75rem; background:${f.priority === 'P0' ? '#ef4444' : '#f59e0b'}; color:white;">${f.priority}</span></td>
+                  <td style="padding:12px; border:1px solid rgba(255,255,255,0.1); font-size:0.9rem;">${f.description}</td>
                 </tr>
               `).join('')}
             </tbody>
           </table>
         </section>
 
-        <section style="margin-bottom:3rem;">
-          <h4 style="color:var(--accent-primary);">04. TECHNICAL STACK</h4>
-          <div class="card-grid" style="margin-top:1rem;">
-            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px;">
-              <p style="margin: 0;"><strong style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">FRONTEND:</strong> <span style="color: var(--text-secondary);">${prd.technical_requirements.frontend}</span></p>
-              <p style="margin: 10px 0 0;"><strong style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">BACKEND:</strong> <span style="color: var(--text-secondary);">${prd.technical_requirements.backend}</span></p>
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">4. TECHNICAL REQUIREMENTS</h4>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem;">
+            <div>
+              <p><strong>Frontend:</strong> ${prd.technical_requirements.frontend}</p>
+              <p><strong>Backend:</strong> ${prd.technical_requirements.backend}</p>
             </div>
-            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px;">
-              <p style="margin: 0;"><strong style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">DATABASE:</strong> <span style="color: var(--text-secondary);">${prd.technical_requirements.database}</span></p>
-              <p style="margin: 10px 0 0;"><strong style="color: var(--accent-secondary); font-family: var(--font-mono); font-size: 0.8rem;">SERVICES:</strong> <span style="color: var(--text-secondary);">${prd.technical_requirements.integrations.join(', ')}</span></p>
+            <div>
+              <p><strong>Database:</strong> ${prd.technical_requirements.database}</p>
+              <p><strong>Integrations:</strong> ${prd.technical_requirements.integrations.join(', ')}</p>
             </div>
           </div>
         </section>
 
-        <section style="margin-bottom:3rem;">
-          <h4 style="color:var(--accent-primary);">05. SUCCESS METRICS</h4>
-          <ul style="padding-left:1.5rem; color: var(--text-secondary);">
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">5. SUCCESS METRICS</h4>
+          <ul style="padding-left:1.5rem;">
             ${prd.success_metrics.map(m => `<li style="margin-bottom:0.5rem;">${m}</li>`).join('')}
           </ul>
         </section>
 
         <section>
-          <h4 style="color:var(--accent-primary);">06. EXECUTION ROADMAP</h4>
-          <div style="position: relative; padding-left: 2rem; border-left: 2px solid var(--accent-primary); margin-left: 1rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">6. DEVELOPMENT ROADMAP</h4>
+          <ul style="list-style:none; padding:0;">
             ${prd.roadmap.map((step, i) => `
-              <div style="margin-bottom: 2rem; position: relative;">
-                <span style="position: absolute; left: -2.65rem; width: 20px; height: 20px; background: var(--bg-dark); border: 2px solid var(--accent-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: var(--accent-primary);">${i+1}</span>
-                <span style="color: var(--text-secondary);">${step}</span>
-              </div>
+              <li style="display:flex; gap:1rem; margin-bottom:1rem;">
+                <span style="min-width:24px; height:24px; background:var(--accent-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;">${i+1}</span>
+                <span>${step}</span>
+              </li>
             `).join('')}
-          </div>
+          </ul>
         </section>
       </div>
     `;
