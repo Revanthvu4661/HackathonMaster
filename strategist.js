@@ -993,14 +993,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const stratExportPDF = document.getElementById('stratExportPDF');
   if(stratExportPDF) {
     stratExportPDF.addEventListener('click', () => {
-      showToast("Preparing High-Quality Report...");
+      showToast("Preparing PDF Report...");
       
       const tempDiv = document.createElement('div');
+      tempDiv.id = 'temp-pdf-export-div';
       tempDiv.style.position = 'absolute';
-      tempDiv.style.left = '-10000px';
+      tempDiv.style.left = '-9999px';
       tempDiv.style.top = '0';
       tempDiv.style.width = '800px'; 
       tempDiv.style.background = 'white';
+      tempDiv.style.zIndex = '-1000';
       document.body.appendChild(tempDiv);
 
       const pdfContainer = document.createElement('div');
@@ -1014,10 +1016,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const coverPage = document.createElement('div');
       coverPage.style.padding = '80px 60px';
       coverPage.style.textAlign = 'center';
-      coverPage.style.minHeight = '1000px';
+      coverPage.style.minHeight = '1050px'; // Exact page height
       coverPage.style.display = 'flex';
       coverPage.style.flexDirection = 'column';
       coverPage.style.justifyContent = 'center';
+      coverPage.style.boxSizing = 'border-box';
       coverPage.innerHTML = `
         <div style="margin-bottom: 40px;">
           <span style="font-size: 36px; font-weight: 800; letter-spacing: -1px; color: #0f172a;">Hackathon<span style="color: #a78bfa;">Master</span></span>
@@ -1041,66 +1044,76 @@ document.addEventListener('DOMContentLoaded', () => {
       const sections = originalContent.querySelectorAll('.output-section');
       
       sections.forEach((section, index) => {
-        // Add page break before every section except first
+        // Force a page break before every section
         const pageBreak = document.createElement('div');
+        pageBreak.style.height = '0px';
         pageBreak.style.pageBreakBefore = 'always';
         pdfContainer.appendChild(pageBreak);
 
         const sectionClone = section.cloneNode(true);
         sectionClone.style.display = 'block';
-        sectionClone.style.padding = '40px 60px';
+        sectionClone.style.padding = '50px 60px';
         sectionClone.style.width = '100%';
         sectionClone.style.boxSizing = 'border-box';
+        sectionClone.style.color = '#1e293b'; // Force dark text
         
         // Headers
-        sectionClone.querySelectorAll('h3').forEach(h => {
-          h.style.fontSize = '26px';
-          h.style.fontWeight = '800';
+        sectionClone.querySelectorAll('h3, h4, h2').forEach(h => {
           h.style.color = '#0f172a';
           h.style.borderBottom = '1px solid #f1f5f9';
           h.style.paddingBottom = '12px';
           h.style.marginBottom = '25px';
         });
 
-        // Cards
-        sectionClone.querySelectorAll('.info-card, .strat-addon-card, .prompt-box, .prd-section').forEach(card => {
+        // Cards and Content - FORCE VISIBILITY
+        sectionClone.querySelectorAll('.info-card, .strat-addon-card, .prompt-box, .prd-section, .feature-card, .judge-card').forEach(card => {
           card.style.background = '#ffffff';
+          card.style.color = '#1e293b';
           card.style.border = '1px solid #e2e8f0';
           card.style.borderRadius = '12px';
           card.style.padding = '20px';
           card.style.marginBottom = '20px';
           card.style.pageBreakInside = 'avoid';
           card.style.boxShadow = 'none';
-          card.style.color = '#1e293b';
+        });
+
+        // Ensure all spans/p/li are dark
+        sectionClone.querySelectorAll('span, p, li, div').forEach(el => {
+          if (!el.classList.contains('badge') && !el.classList.contains('tag')) {
+             el.style.color = '#334155';
+          }
         });
 
         // Prompt text
         sectionClone.querySelectorAll('.prompt-body').forEach(pb => {
-          pb.style.background = '#f1f5f9';
+          pb.style.background = '#f8fafc';
           pb.style.color = '#334155';
+          pb.style.padding = '15px';
+          pb.style.borderRadius = '8px';
           pb.style.fontSize = '12px';
-          pb.style.border = 'none';
+          pb.style.border = '1px solid #e2e8f0';
           pb.style.whiteSpace = 'pre-wrap';
           pb.style.overflowWrap = 'break-word';
         });
 
         // Clean up buttons
         sectionClone.querySelectorAll('button').forEach(b => b.remove());
-
+        
         pdfContainer.appendChild(sectionClone);
       });
 
       const opt = {
         margin:       0,
-        filename:     'Hackathon_Master_Strategy_Report.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
+        filename:     'Hackathon_Master_Full_Report.pdf',
+        image:        { type: 'jpeg', quality: 1.0 },
         html2canvas:  { 
           scale: 2, 
           useCORS: true, 
           letterRendering: true,
           width: 800,
           scrollY: 0,
-          windowWidth: 800
+          windowWidth: 800,
+          backgroundColor: '#ffffff'
         },
         jsPDF:        { unit: 'px', format: [800, 1050], orientation: 'portrait' }
       };
@@ -1108,7 +1121,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if(typeof html2pdf !== 'undefined') {
         html2pdf().set(opt).from(pdfContainer).save().then(() => {
           showToast("Report Downloaded!");
-          document.body.removeChild(tempDiv);
+          if(document.body.contains(tempDiv)) document.body.removeChild(tempDiv);
+        }).catch(err => {
+          console.error("PDF Export Error:", err);
+          showToast("Export failed.");
+          if(document.body.contains(tempDiv)) document.body.removeChild(tempDiv);
         });
       } else {
         showToast("PDF Library not loaded.");
