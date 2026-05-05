@@ -996,11 +996,10 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast("Preparing High-Quality Report...");
       
       const tempDiv = document.createElement('div');
-      tempDiv.style.position = 'fixed';
-      tempDiv.style.left = '0';
+      tempDiv.style.position = 'absolute';
+      tempDiv.style.left = '-10000px';
       tempDiv.style.top = '0';
       tempDiv.style.width = '800px'; 
-      tempDiv.style.zIndex = '-9999';
       tempDiv.style.background = 'white';
       document.body.appendChild(tempDiv);
 
@@ -1008,64 +1007,71 @@ document.addEventListener('DOMContentLoaded', () => {
       pdfContainer.style.background = 'white';
       pdfContainer.style.color = '#1e293b';
       pdfContainer.style.fontFamily = "'Inter', sans-serif";
+      pdfContainer.style.width = '100%';
       tempDiv.appendChild(pdfContainer);
       
       // COVER PAGE
       const coverPage = document.createElement('div');
-      coverPage.style.height = '1000px'; // Force full page
+      coverPage.style.padding = '80px 60px';
+      coverPage.style.textAlign = 'center';
+      coverPage.style.minHeight = '1000px';
       coverPage.style.display = 'flex';
       coverPage.style.flexDirection = 'column';
       coverPage.style.justifyContent = 'center';
-      coverPage.style.alignItems = 'center';
-      coverPage.style.textAlign = 'center';
-      coverPage.style.padding = '60px';
       coverPage.innerHTML = `
-        <div style="margin-bottom: 40px; transform: scale(1.5);">
-          <span style="font-size: 40px; font-weight: 900; letter-spacing: -1px; color: #0f172a;">Hackathon<span style="color: #a78bfa;">Master</span></span>
+        <div style="margin-bottom: 40px;">
+          <span style="font-size: 36px; font-weight: 800; letter-spacing: -1px; color: #0f172a;">Hackathon<span style="color: #a78bfa;">Master</span></span>
         </div>
-        <h1 style="font-size: 48px; font-weight: 800; color: #1e293b; margin-bottom: 20px; line-height: 1.1;">Strategic Intelligence Report</h1>
-        <div style="width: 100px; height: 6px; background: #a78bfa; margin: 0 auto 30px;"></div>
+        <h1 style="font-size: 44px; font-weight: 800; color: #1e293b; margin-bottom: 20px; line-height: 1.2;">Strategic Intelligence Report</h1>
+        <div style="width: 80px; height: 4px; background: #a78bfa; margin: 0 auto 30px;"></div>
         <p style="font-size: 18px; color: #64748b; max-width: 500px; margin: 0 auto 60px;">A comprehensive AI-driven breakdown of solution strategy, market research, and technical implementation.</p>
         
-        <div style="background: #f8fafc; border-radius: 20px; padding: 40px; border: 1px solid #e2e8f0; width: 100%; max-width: 650px;">
-          <h3 style="margin-top: 0; font-size: 14px; color: #a78bfa; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 15px;">The Winning Pitch</h3>
-          <p style="font-size: 22px; font-weight: 700; color: #0f172a; line-height: 1.4; margin: 0;">${document.getElementById('stratPitchBanner').innerText}</p>
+        <div style="background: #f8fafc; border-radius: 16px; padding: 35px; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto;">
+          <h3 style="margin-top: 0; font-size: 13px; color: #a78bfa; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 12px;">The Winning Pitch</h3>
+          <p style="font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.4; margin: 0;">${document.getElementById('stratPitchBanner').innerText}</p>
         </div>
 
-        <div style="margin-top: 80px; font-size: 14px; color: #94a3b8;">
+        <div style="margin-top: 60px; font-size: 14px; color: #94a3b8;">
           Generated on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}
         </div>
-        <div style="page-break-after: always;"></div>
       `;
       pdfContainer.appendChild(coverPage);
 
       const originalContent = document.getElementById('stratContent');
       const sections = originalContent.querySelectorAll('.output-section');
       
-      sections.forEach((section) => {
+      sections.forEach((section, index) => {
+        // Add page break before every section except first
+        const pageBreak = document.createElement('div');
+        pageBreak.style.pageBreakBefore = 'always';
+        pdfContainer.appendChild(pageBreak);
+
         const sectionClone = section.cloneNode(true);
         sectionClone.style.display = 'block';
         sectionClone.style.padding = '40px 60px';
+        sectionClone.style.width = '100%';
+        sectionClone.style.boxSizing = 'border-box';
         
         // Headers
         sectionClone.querySelectorAll('h3').forEach(h => {
-          h.style.fontSize = '28px';
+          h.style.fontSize = '26px';
           h.style.fontWeight = '800';
           h.style.color = '#0f172a';
-          h.style.borderBottom = '2px solid #f1f5f9';
-          h.style.paddingBottom = '15px';
-          h.style.marginBottom = '30px';
+          h.style.borderBottom = '1px solid #f1f5f9';
+          h.style.paddingBottom = '12px';
+          h.style.marginBottom = '25px';
         });
 
         // Cards
-        sectionClone.querySelectorAll('.info-card, .strat-addon-card, .prompt-box').forEach(card => {
+        sectionClone.querySelectorAll('.info-card, .strat-addon-card, .prompt-box, .prd-section').forEach(card => {
           card.style.background = '#ffffff';
           card.style.border = '1px solid #e2e8f0';
           card.style.borderRadius = '12px';
-          card.style.padding = '25px';
-          card.style.marginBottom = '25px';
+          card.style.padding = '20px';
+          card.style.marginBottom = '20px';
           card.style.pageBreakInside = 'avoid';
           card.style.boxShadow = 'none';
+          card.style.color = '#1e293b';
         });
 
         // Prompt text
@@ -1074,23 +1080,28 @@ document.addEventListener('DOMContentLoaded', () => {
           pb.style.color = '#334155';
           pb.style.fontSize = '12px';
           pb.style.border = 'none';
+          pb.style.whiteSpace = 'pre-wrap';
+          pb.style.overflowWrap = 'break-word';
         });
 
         // Clean up buttons
         sectionClone.querySelectorAll('button').forEach(b => b.remove());
 
         pdfContainer.appendChild(sectionClone);
-        
-        const spacer = document.createElement('div');
-        spacer.style.pageBreakAfter = 'always';
-        pdfContainer.appendChild(spacer);
       });
 
       const opt = {
         margin:       0,
-        filename:     'Hackathon_Strategy_Full_Report.pdf',
-        image:        { type: 'jpeg', quality: 1.0 },
-        html2canvas:  { scale: 2, useCORS: true, letterRendering: true, width: 800 },
+        filename:     'Hackathon_Master_Strategy_Report.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2, 
+          useCORS: true, 
+          letterRendering: true,
+          width: 800,
+          scrollY: 0,
+          windowWidth: 800
+        },
         jsPDF:        { unit: 'px', format: [800, 1050], orientation: 'portrait' }
       };
       
