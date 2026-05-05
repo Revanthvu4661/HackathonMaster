@@ -377,22 +377,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }`;
 
-    const endpoint = searchData ? 'v1' : 'v1beta';
-    const model = searchData ? 'gemini-2.5-flash' : 'gemini-1.5-flash';
-    
-    const requestBody = {
-      contents: [{ parts: [{ text: systemPrompt }] }],
-      generationConfig: { temperature: 1.0 }
-    };
-
-    if (!searchData) {
-      requestBody.tools = [{ google_search: {} }];
-    }
-
-    const response = await fetch(`https://generativelanguage.googleapis.com/${endpoint}/models/${model}:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(requestBody)
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: systemPrompt }] }],
+        tools: searchData ? [] : [{ google_search: {} }],
+        generationConfig: { temperature: 1.0 }
+      })
     });
     
     if(!response.ok) {
