@@ -293,87 +293,49 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }
 
-    const systemPrompt = `You are an elite Hackathon Solution Strategist, Product Architect, and Prompt Engineer.
-    
+    const systemPrompt = `You are a world-class AI Hackathon Strategist and Intelligent Search Engine. Provide high-quality, structured, and concise outputs while minimizing token usage.
+
     User Problem Statement: "${problem}"
-    Context:
-    - Theme: ${ctx.theme}
-    - Stack: ${ctx.stack}
-    - Time Limit: ${ctx.time}
-    - Team: ${ctx.team}
+    Context: Theme: ${ctx.theme}, Stack: ${ctx.stack}, Time: ${ctx.time}, Team: ${ctx.team}
     
     ${researchContext}
 
-    Analyze the problem deeply. ${searchData ? 'Use the provided RESEARCH DATA to inform your strategy.' : 'YOU MUST use the Google Search tool to research the current market.'} 
-    Find REAL GitHub repositories and discover active APIs related to the problem. Do not hallucinate repos; find real ones.
-    Generate the absolute BEST, most innovative, and demo-friendly add-ons. 
-    Write master-level prompts for Cursor/Bolt.new.
+    INSTRUCTIONS:
+    1. UNDERSTAND: Refine problem in 1-2 lines.
+    2. CORE SOLUTION: Direct implementation-focused approach.
+    3. SMART BREAKDOWN: Divide into Frontend, Backend, AI Integration, Database.
+    4. ADD-ONS: MAX 5 ONLY. High-impact, non-generic.
+    5. EXECUTION: Max 6 steps.
+    6. WINNING EDGE: 3 bullet points.
+
+    STRICT RULES:
+    - JSON ONLY. No emojis, no fluff, no storytelling. 
+    - Under 600 words total. Bullet points preferred.
     
-    You MUST output valid JSON ONLY, strictly matching this exact schema:
+    SCHEMA:
     {
       "problem_analysis": {
         "refined_problem": "...",
-        "target_users": ["...", "..."],
-        "core_pain_points": ["...", "..."],
-        "market_gap": "...",
+        "core_solution": "...",
+        "target_users": ["..."],
         "winning_product_direction": "..."
       },
-      "research_insights": {
-        "existing_solution_patterns": ["..."],
-        "common_weaknesses": ["..."],
-        "emerging_opportunities": ["..."],
-        "useful_tools_apis": [ { "name": "...", "type": "...", "why_it_matters": "..." } ]
+      "system_design": {
+        "frontend": "...",
+        "backend": "...",
+        "ai_integration": "...",
+        "database": "...",
+        "tech_stack_optimized": ["..."]
       },
       "best_addons": [
-        {
-          "addon_name": "...",
-          "category": "AI",
-          "what_it_does": "...",
-          "why_it_improves_the_solution": "...",
-          "hackathon_value": "...",
-          "implementation_difficulty": "Easy",
-          "estimated_build_time": "...",
-          "recommended_stack": "...",
-          "apis_or_tools": ["..."],
-          "demo_impact_score": 9,
-          "judge_wow_score": 9
-        }
-        // exactly 10 high-quality addons
+        { "addon_name": "...", "hackathon_value": "...", "demo_impact": 9 }
+      ], // MAX 5
       ],
-      "top_5_priority_addons": [ { "rank": 1, "addon_name": "...", "reason": "..." } ],
-      "feature_ideas": {
-        "must_have_features": ["..."],
-        "nice_to_have_features": ["..."],
-        "future_scope": ["..."]
-      },
-      "prompt_pack": {
-        "master_build_prompt": "...",
-        "frontend_ui_prompt": "...",
-        "backend_api_prompt": "...",
-        "database_prompt": "...",
-        "ai_integration_prompt": "...",
-        "pitch_demo_prompt": "..."
-      },
-      "judge_strategy": {
-        "wow_factor": "...",
-        "best_demo_flow": ["...", "..."],
-        "business_angle": "...",
-        "social_or_market_impact": "...",
-        "one_line_winning_pitch": "..."
-      },
-      "prd": {
-        "project_name": "...",
-        "vision": "...",
-        "user_personas": ["...", "..."],
-        "core_features": [ { "feature": "...", "priority": "P0", "description": "..." } ],
-        "technical_requirements": {
-          "frontend": "...",
-          "backend": "...",
-          "database": "...",
-          "integrations": ["...", "..."]
-        },
-        "success_metrics": ["...", "..."],
-        "roadmap": ["...", "..."]
+      "execution_plan": ["Step 1...", "Step 6..."],
+      "winning_edge": ["Point 1...", "Point 2...", "Point 3..."],
+      "ai_strategy": "...",
+      "prompts": {
+        "cursor_bolt_prompt": "..."
       }
     }`;
 
