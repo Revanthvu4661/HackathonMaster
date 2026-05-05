@@ -55,20 +55,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const key = localStorage.getItem('gemini_api_key');
     const serperKey = localStorage.getItem('serper_api_key');
     
-    if (key) {
+    if (key || serperKey) {
       apiKeyBanner.classList.add('success');
-      apiKeyBanner.innerHTML = `
+      apiKeyBanner.style.border = '1px solid var(--accent-primary)';
+      
+      let statusHtml = `
         <div class="api-key-banner-left">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <span><strong>AI Engine Active</strong>. ${serperKey ? 'Deep Search' : 'Standard'} mode enabled.</span>
+          <span>
+            <strong>Status:</strong> 
+            ${key ? '<span style="color:#10b981;">Gemini AI Active</span>' : '<span style="color:#f59e0b;">Gemini Missing (Using Offline Mode)</span>'} 
+            | 
+            ${serperKey ? '<span style="color:#10b981;">Deep Search Active</span>' : '<span style="color:#f59e0b;">Deep Search Inactive</span>'}
+          </span>
         </div>
-        <button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Clear Keys</button>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn-outline btn-sm" id="openApiKeyModal">Settings</button>
+          <button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Clear All</button>
+        </div>
       `;
+      
+      apiKeyBanner.innerHTML = statusHtml;
+      
       document.getElementById('clearApiKeyBtn').addEventListener('click', () => {
         localStorage.removeItem('gemini_api_key');
         localStorage.removeItem('serper_api_key');
         location.reload();
       });
+      
+      document.getElementById('openApiKeyModal').addEventListener('click', () => stratApiModal.style.display = 'flex');
     }
   }
 
