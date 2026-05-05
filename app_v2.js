@@ -139,7 +139,7 @@ async function callGeminiDeepSearch(prompt) {
   try {
         }],
         tools: [{ google_search: {} }],
-        generationConfig: { temperature: 1.0 }
+        generationConfig: { temperature: 0.4, maxOutputTokens: 350 }
       })
     });
     
