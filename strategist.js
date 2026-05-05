@@ -377,19 +377,48 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: systemPrompt }] }],
-        tools: searchData ? [] : [{ google_search: {} }],
-        generationConfig: { temperature: 1.0 }
-      })
-    });
-    
-    if(!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.error?.message || "API Network Error");
+    // Retry logic for Gemini API (Exponential Backoff)
+    let retries = 3;
+    let delay = 2000;
+    let response;
+    let lastError = "";
+
+    while (retries > 0) {
+      try {
+        response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: systemPrompt }] }],
+            tools: searchData ? [] : [{ google_search: {} }],
+            generationConfig: { temperature: 1.0 }
+          })
+        });
+
+        if (response.status === 429 || response.status === 503) {
+          const errData = await response.json().catch(() => ({}));
+          lastError = errData.error?.message || "Model Overloaded";
+          throw new Error("High Demand");
+        }
+
+        if (!response.ok) {
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.error?.message || "API Network Error");
+        }
+
+        // If we reach here, response is OK
+        break; 
+      } catch (err) {
+        if (err.message === "High Demand") {
+          retries--;
+          if (retries === 0) throw new Error(lastError);
+          showToast(`Model busy, retrying in ${delay/1000}s... (${retries} attempts left)`);
+          await new Promise(res => setTimeout(res, delay));
+          delay *= 2;
+        } else {
+          throw err;
+        }
+      }
     }
     
     const data = await response.json();

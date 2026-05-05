@@ -137,32 +137,6 @@ async function callGeminiDeepSearch(prompt) {
   if (!apiKey) return null;
 
   try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{ text: `Act as a 10x Lead Full-Stack Architect and Master Prompt Engineer. 
-          Perform a deep search on this problem statement: "${prompt}". 
-          
-          Your goal is to generate a "MAX ADVANCED" version of the intelligence report. 
-          The prompts you generate MUST be so detailed that copy-pasting them into v0, Bolt.new, or Cursor will build a COMPLETE, beautiful, and functional website instantly.
-
-          Generate a valid JSON object with these keys:
-          - industry: Precise industry niche.
-          - overview: High-level vision and roadmap.
-          - techstack: The most premium, scalable stack (e.g., Next.js 15, Lucide, Framer Motion, Shadcn UI).
-          - ai_strategy: Advanced AI integration (Agents, RAG, etc.).
-          - mega_prompt: A 1000+ word "One-Click Build" prompt for Bolt.new or Cursor. It must include:
-              - Full Design System (Colors, Typography, Glassmorphism).
-              - Complete Page Hierarchy (Home, Dashboard, Settings, etc.).
-              - Specific Component details (Hero with animations, Data tables, Charts).
-              - Working Logic (State management, API mock data, Form handling).
-          - database_schema: Advanced Prisma/SQL schema with relations.
-          - api_endpoints: Detailed REST/JSON API architecture.
-          - win_secret: The unique "Judge-Killer" feature that will win the hackathon.
-
-          Be extremely specific. Use technical terms. Make the UI/UX descriptions "Premium" and "Worthy of a Global Winner".` }]
         }],
         tools: [{ google_search: {} }],
         generationConfig: { temperature: 1.0 }
