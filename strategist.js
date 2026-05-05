@@ -49,20 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const stratCloseModal = document.getElementById('stratCloseModal');
   const stratSaveKey = document.getElementById('stratSaveKey');
   const stratApiKeyInput = document.getElementById('stratApiKeyInput');
+  const serperApiKeyInput = document.getElementById('serperApiKeyInput');
 
   function checkApiKey() {
     const key = localStorage.getItem('gemini_api_key');
+    const serperKey = localStorage.getItem('serper_api_key');
+    
     if (key) {
       apiKeyBanner.classList.add('success');
       apiKeyBanner.innerHTML = `
         <div class="api-key-banner-left">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <span><strong>Gemini AI Active</strong>. Live web search and deep analysis enabled.</span>
+          <span><strong>AI Engine Active</strong>. ${serperKey ? 'Deep Search' : 'Standard'} mode enabled.</span>
         </div>
-        <button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Clear Key</button>
+        <button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Clear Keys</button>
       `;
       document.getElementById('clearApiKeyBtn').addEventListener('click', () => {
         localStorage.removeItem('gemini_api_key');
+        localStorage.removeItem('serper_api_key');
         location.reload();
       });
     }
@@ -79,12 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if(stratSaveKey) {
     stratSaveKey.addEventListener('click', () => {
       const key = stratApiKeyInput.value.trim();
-      if(key) {
-        localStorage.setItem('gemini_api_key', key);
-        stratApiModal.style.display = 'none';
-        checkApiKey();
-        showToast('Gemini API Key saved locally!');
-      }
+      const sKey = serperApiKeyInput.value.trim();
+      
+      if(key) localStorage.setItem('gemini_api_key', key);
+      if(sKey) localStorage.setItem('serper_api_key', sKey);
+      
+      stratApiModal.style.display = 'none';
+      checkApiKey();
+      showToast('API Settings saved locally!');
     });
   }
 
@@ -140,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.style.display = 'flex';
       
       const apiKey = localStorage.getItem('gemini_api_key');
+      const serperKey = localStorage.getItem('serper_api_key');
       
       // Build Context
       const context = {
@@ -154,7 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (apiKey) {
           // Live API Call Phase
           simulateProgressUI(true);
-          const result = await callGeminiStrategist(apiKey, problem, context);
+          
+          let searchData = null;
+          if (serperKey) {
+            document.getElementById('stratProgressLabel').innerText = "Running Deep Search (Serper.dev)...";
+            searchData = await window.SerperProvider.deepResearch(problem, serperKey);
+          }
+
+          const result = await callGeminiStrategist(apiKey, problem, context, searchData);
           
           if(result && typeof result === 'object' && result.problem_analysis) {
              latestAnalysisJson = result;
@@ -252,7 +266,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- API CALL FUNCTION ---
-  async function callGeminiStrategist(apiKey, problem, ctx) {
+  async function callGeminiStrategist(apiKey, problem, ctx, searchData = null) {
+    let researchContext = "";
+    if (searchData) {
+      researchContext = `
+      CRITICAL RESEARCH DATA (From Serper.dev Deep Search):
+      ${searchData.aggregatedSnippets}
+      
+      PEOPLE ALSO ASK:
+      ${searchData.aggregatedPAA.map(p => p.question).join(", ")}
+      `;
+    }
+
     const systemPrompt = `You are an elite Hackathon Solution Strategist, Product Architect, and Prompt Engineer.
     
     User Problem Statement: "${problem}"
@@ -262,8 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
     - Time Limit: ${ctx.time}
     - Team: ${ctx.team}
     
-    Analyze the problem deeply. YOU MUST use the Google Search tool to research the current market, find REAL GitHub repositories, and discover active APIs related to the problem. Do not hallucinate repos; find real ones.
-    Generate the absolute BEST, most innovative, and demo-friendly add-ons based on live internet data. 
+    ${researchContext}
+
+    Analyze the problem deeply. ${searchData ? 'Use the provided RESEARCH DATA to inform your strategy.' : 'YOU MUST use the Google Search tool to research the current market.'} 
+    Find REAL GitHub repositories and discover active APIs related to the problem. Do not hallucinate repos; find real ones.
+    Generate the absolute BEST, most innovative, and demo-friendly add-ons. 
     Write master-level prompts for Cursor/Bolt.new.
     
     You MUST output valid JSON ONLY, strictly matching this exact schema:

@@ -278,18 +278,26 @@ The more detail you provide, the better the strategic output."
     <div class="research-modal" style="text-align:left;max-width:480px;">
       <h3 style="margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Gemini API Key
+        AI Configuration
       </h3>
       <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-        Enable live AI analysis powered by Gemini with Google Search grounding. Your key is stored locally in your browser and never sent to any server.
+        Enable live AI analysis and deep research. Your keys are stored locally in your browser and never sent to any server.
       </p>
+      
       <div style="margin-bottom:1.5rem;">
-        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Gemini API Key</label>
+        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Gemini API Key (Required for AI)</label>
         <input type="password" id="stratApiKeyInput" placeholder="AIza..." style="width:100%;padding:0.8rem;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid var(--border-color);color:white;outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
         <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Google AI Studio →</a>
       </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Serper.dev API Key (Required for Deep Search)</label>
+        <input type="password" id="serperApiKeyInput" placeholder="Your Serper Key..." style="width:100%;padding:0.8rem;border-radius:8px;background:rgba(0,0,0,0.2);border:1px solid var(--border-color);color:white;outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
+        <a href="https://serper.dev" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Serper.dev →</a>
+      </div>
+
       <div style="display:flex;gap:1rem;">
-        <button class="btn-primary" id="stratSaveKey" style="flex:1;">Save & Enable AI</button>
+        <button class="btn-primary" id="stratSaveKey" style="flex:1;">Save Settings</button>
         <button class="btn-outline" id="stratCloseModal" style="flex:1;">Close</button>
       </div>
     </div>
@@ -329,6 +337,7 @@ The more detail you provide, the better the strategic output."
 
   <div class="toast" id="toast"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="serper_provider.js"></script>
   <script src="strategist.js"></script>
   <script>
     // Mobile Menu Toggle
