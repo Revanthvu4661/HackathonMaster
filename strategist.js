@@ -316,25 +316,51 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       "problem_analysis": {
         "refined_problem": "...",
-        "core_solution": "...",
         "target_users": ["..."],
+        "core_pain_points": ["..."],
+        "market_gap": "...",
         "winning_product_direction": "..."
       },
-      "system_design": {
-        "frontend": "...",
-        "backend": "...",
-        "ai_integration": "...",
-        "database": "...",
-        "tech_stack_optimized": ["..."]
+      "research_insights": {
+        "existing_solution_patterns": ["..."],
+        "common_weaknesses": ["..."],
+        "emerging_opportunities": ["..."],
+        "useful_tools_apis": [{ "name": "...", "type": "...", "why_it_matters": "..." }]
       },
       "best_addons": [
-        { "addon_name": "...", "hackathon_value": "...", "demo_impact": 9 }
+        { "addon_name": "...", "category": "...", "what_it_does": "...", "why_it_improves_the_solution": "...", "hackathon_value": "...", "implementation_difficulty": "...", "estimated_build_time": "...", "recommended_stack": "...", "apis_or_tools": ["..."], "demo_impact_score": 9, "judge_wow_score": 9 }
       ],
-      "execution_plan": ["Step 1...", "Step 6..."],
-      "winning_edge": ["Point 1...", "Point 2...", "Point 3..."],
-      "ai_strategy": "...",
-      "prompts": {
-        "cursor_bolt_prompt": "..."
+      "top_5_priority_addons": [
+        { "rank": 1, "addon_name": "...", "reason": "..." }
+      ],
+      "feature_ideas": {
+        "must_have_features": ["..."],
+        "nice_to_have_features": ["..."],
+        "future_scope": ["..."]
+      },
+      "prompt_pack": {
+        "master_build_prompt": "...",
+        "frontend_ui_prompt": "...",
+        "backend_api_prompt": "...",
+        "database_prompt": "...",
+        "ai_integration_prompt": "...",
+        "pitch_demo_prompt": "..."
+      },
+      "judge_strategy": {
+        "wow_factor": "...",
+        "best_demo_flow": ["..."],
+        "business_angle": "...",
+        "social_or_market_impact": "...",
+        "one_line_winning_pitch": "..."
+      },
+      "prd": {
+        "project_name": "...",
+        "vision": "...",
+        "user_personas": ["..."],
+        "core_features": [{ "feature": "...", "priority": "P0", "description": "..." }],
+        "technical_requirements": { "frontend": "...", "backend": "...", "database": "...", "integrations": ["..."] },
+        "success_metrics": ["..."],
+        "roadmap": ["..."]
       }
     }`;
 
