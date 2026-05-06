@@ -370,6 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "user_personas": ["..."],
         "core_features": [{ "feature": "...", "priority": "P0", "description": "..." }],
         "technical_requirements": { "frontend": "...", "backend": "...", "database": "...", "integrations": ["..."] },
+        "data_models": [{ "model_name": "...", "fields": ["..."] }],
+        "api_endpoints": [{ "method": "...", "path": "...", "description": "..." }],
+        "security_considerations": ["..."],
+        "scalability_plan": ["..."],
         "success_metrics": ["..."],
         "roadmap": ["..."]
       }
@@ -811,10 +815,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
         <h3>📄 Product Requirements Document (PRD)</h3>
-        <button class="btn-primary" id="downloadPrdBtn" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:0.5rem;"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          DOWNLOAD THE PRD FILE
-        </button>
       </div>
 
       <div id="prdDoc" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:20px; padding:3rem; color:var(--text-primary); line-height:1.6; max-width:900px; margin:0 auto; box-shadow:var(--shadow-lg);">
@@ -879,7 +879,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </ul>
         </section>
 
-        <section>
+        <section style="margin-bottom:2.5rem;">
           <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">6. DEVELOPMENT ROADMAP</h4>
           <ul style="list-style:none; padding:0;">
             ${prd.roadmap.map((step, i) => `
@@ -890,6 +890,65 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('')}
           </ul>
         </section>
+
+        ${prd.data_models ? `
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">7. DATA MODELS</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1rem;">
+            ${prd.data_models.map(model => `
+              <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.5rem; flex:1; min-width:250px;">
+                <h5 style="color:var(--text-primary); margin-bottom:0.5rem;">${model.model_name}</h5>
+                <ul style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+                  ${model.fields.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+              </div>
+            `).join('')}
+          </div>
+        </section>` : ''}
+
+        ${prd.api_endpoints ? `
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">8. API ENDPOINTS</h4>
+          <table style="width:100%; border-collapse:collapse; margin-top:1rem; font-size:0.9rem;">
+            <thead>
+              <tr style="background:rgba(255,255,255,0.05); text-align:left;">
+                <th style="padding:10px; border:1px solid rgba(255,255,255,0.1);">Method</th>
+                <th style="padding:10px; border:1px solid rgba(255,255,255,0.1);">Endpoint</th>
+                <th style="padding:10px; border:1px solid rgba(255,255,255,0.1);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${prd.api_endpoints.map(api => `
+                <tr>
+                  <td style="padding:10px; border:1px solid rgba(255,255,255,0.1); font-weight:bold; color:${api.method === 'GET' ? '#34d399' : api.method === 'POST' ? '#60a5fa' : '#fbbf24'};">${api.method}</td>
+                  <td style="padding:10px; border:1px solid rgba(255,255,255,0.1); font-family:monospace;">${api.path}</td>
+                  <td style="padding:10px; border:1px solid rgba(255,255,255,0.1);">${api.description}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </section>` : ''}
+
+        ${prd.security_considerations ? `
+        <section style="margin-bottom:2.5rem;">
+          <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">9. SECURITY & SCALABILITY</h4>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem;">
+            <div style="background:rgba(255,255,255,0.02); border-radius:12px; padding:1.5rem;">
+              <h5 style="margin-bottom:0.5rem;">Security</h5>
+              <ul style="padding-left:1.5rem; font-size:0.9rem; color:var(--text-secondary);">
+                ${prd.security_considerations.map(s => `<li>${s}</li>`).join('')}
+              </ul>
+            </div>
+            ${prd.scalability_plan ? `
+            <div style="background:rgba(255,255,255,0.02); border-radius:12px; padding:1.5rem;">
+              <h5 style="margin-bottom:0.5rem;">Scalability</h5>
+              <ul style="padding-left:1.5rem; font-size:0.9rem; color:var(--text-secondary);">
+                ${prd.scalability_plan.map(s => `<li>${s}</li>`).join('')}
+              </ul>
+            </div>
+            ` : ''}
+          </div>
+        </section>` : ''}
       </div>
     `;
   }
@@ -1038,150 +1097,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if(latestAnalysisJson) {
         navigator.clipboard.writeText(JSON.stringify(latestAnalysisJson, null, 2))
           .then(() => showToast('JSON Copied to Clipboard!'));
-      }
-    });
-  }
-
-  const stratExportPDF = document.getElementById('stratExportPDF');
-  if(stratExportPDF) {
-    stratExportPDF.addEventListener('click', () => {
-      showToast("Preparing PDF Report...");
-      
-      const tempDiv = document.createElement('div');
-      tempDiv.id = 'temp-pdf-export-div';
-      tempDiv.style.position = 'absolute';
-      tempDiv.style.left = '-9999px';
-      tempDiv.style.top = '0';
-      tempDiv.style.width = '800px'; 
-      tempDiv.style.background = 'white';
-      tempDiv.style.zIndex = '-1000';
-      document.body.appendChild(tempDiv);
-
-      const pdfContainer = document.createElement('div');
-      pdfContainer.style.background = 'white';
-      pdfContainer.style.color = '#1e293b';
-      pdfContainer.style.fontFamily = "'Inter', sans-serif";
-      pdfContainer.style.width = '100%';
-      tempDiv.appendChild(pdfContainer);
-      
-      // COVER PAGE
-      const coverPage = document.createElement('div');
-      coverPage.style.padding = '80px 60px';
-      coverPage.style.textAlign = 'center';
-      coverPage.style.minHeight = '1050px'; // Exact page height
-      coverPage.style.display = 'flex';
-      coverPage.style.flexDirection = 'column';
-      coverPage.style.justifyContent = 'center';
-      coverPage.style.boxSizing = 'border-box';
-      coverPage.innerHTML = `
-        <div style="margin-bottom: 40px;">
-          <span style="font-size: 36px; font-weight: 800; letter-spacing: -1px; color: #0f172a;">Hackathon<span style="color: #a78bfa;">Master</span></span>
-        </div>
-        <h1 style="font-size: 44px; font-weight: 800; color: #1e293b; margin-bottom: 20px; line-height: 1.2;">Strategic Intelligence Report</h1>
-        <div style="width: 80px; height: 4px; background: #a78bfa; margin: 0 auto 30px;"></div>
-        <p style="font-size: 18px; color: #64748b; max-width: 500px; margin: 0 auto 60px;">A comprehensive AI-driven breakdown of solution strategy, market research, and technical implementation.</p>
-        
-        <div style="background: #f8fafc; border-radius: 16px; padding: 35px; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto;">
-          <h3 style="margin-top: 0; font-size: 13px; color: #a78bfa; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 12px;">The Winning Pitch</h3>
-          <p style="font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.4; margin: 0;">${document.getElementById('stratPitchBanner').innerText}</p>
-        </div>
-
-        <div style="margin-top: 60px; font-size: 14px; color: #94a3b8;">
-          Generated on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}
-        </div>
-      `;
-      pdfContainer.appendChild(coverPage);
-
-      const originalContent = document.getElementById('stratContent');
-      const sections = originalContent.querySelectorAll('.output-section');
-      
-      sections.forEach((section, index) => {
-        // Force a page break before every section
-        const pageBreak = document.createElement('div');
-        pageBreak.style.height = '0px';
-        pageBreak.style.pageBreakBefore = 'always';
-        pdfContainer.appendChild(pageBreak);
-
-        const sectionClone = section.cloneNode(true);
-        sectionClone.style.display = 'block';
-        sectionClone.style.padding = '50px 60px';
-        sectionClone.style.width = '100%';
-        sectionClone.style.boxSizing = 'border-box';
-        sectionClone.style.color = '#1e293b'; // Force dark text
-        
-        // Headers
-        sectionClone.querySelectorAll('h3, h4, h2').forEach(h => {
-          h.style.color = '#0f172a';
-          h.style.borderBottom = '1px solid #f1f5f9';
-          h.style.paddingBottom = '12px';
-          h.style.marginBottom = '25px';
-        });
-
-        // Cards and Content - FORCE VISIBILITY
-        sectionClone.querySelectorAll('.info-card, .strat-addon-card, .prompt-box, .prd-section, .feature-card, .judge-card').forEach(card => {
-          card.style.background = '#ffffff';
-          card.style.color = '#1e293b';
-          card.style.border = '1px solid #e2e8f0';
-          card.style.borderRadius = '12px';
-          card.style.padding = '20px';
-          card.style.marginBottom = '20px';
-          card.style.pageBreakInside = 'avoid';
-          card.style.boxShadow = 'none';
-        });
-
-        // Ensure all spans/p/li are dark
-        sectionClone.querySelectorAll('span, p, li, div').forEach(el => {
-          if (!el.classList.contains('badge') && !el.classList.contains('tag')) {
-             el.style.color = '#334155';
-          }
-        });
-
-        // Prompt text
-        sectionClone.querySelectorAll('.prompt-body').forEach(pb => {
-          pb.style.background = '#f8fafc';
-          pb.style.color = '#334155';
-          pb.style.padding = '15px';
-          pb.style.borderRadius = '8px';
-          pb.style.fontSize = '12px';
-          pb.style.border = '1px solid #e2e8f0';
-          pb.style.whiteSpace = 'pre-wrap';
-          pb.style.overflowWrap = 'break-word';
-        });
-
-        // Clean up buttons
-        sectionClone.querySelectorAll('button').forEach(b => b.remove());
-        
-        pdfContainer.appendChild(sectionClone);
-      });
-
-      const opt = {
-        margin:       0,
-        filename:     'Hackathon_Master_Full_Report.pdf',
-        image:        { type: 'jpeg', quality: 1.0 },
-        html2canvas:  { 
-          scale: 2, 
-          useCORS: true, 
-          letterRendering: true,
-          width: 800,
-          scrollY: 0,
-          windowWidth: 800,
-          backgroundColor: '#ffffff'
-        },
-        jsPDF:        { unit: 'px', format: [800, 1050], orientation: 'portrait' }
-      };
-      
-      if(typeof html2pdf !== 'undefined') {
-        html2pdf().set(opt).from(pdfContainer).save().then(() => {
-          showToast("Report Downloaded!");
-          if(document.body.contains(tempDiv)) document.body.removeChild(tempDiv);
-        }).catch(err => {
-          console.error("PDF Export Error:", err);
-          showToast("Export failed.");
-          if(document.body.contains(tempDiv)) document.body.removeChild(tempDiv);
-        });
-      } else {
-        showToast("PDF Library not loaded.");
-        document.body.removeChild(tempDiv);
       }
     });
   }
