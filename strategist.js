@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     STRICT RULES:
     - JSON ONLY. No emojis, no fluff, no storytelling. 
+    - NO MULTILINE STRINGS. You MUST escape all newlines as \\n inside strings.
     - Under 600 words total. Bullet points preferred.
     
     SCHEMA:
@@ -424,9 +425,29 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Extract JSON from the full text (model may wrap in markdown code blocks)
     const jsonMatch = allText.match(/\{[\s\S]*\}/);
+    
+    // Function to safely escape unescaped newlines/tabs inside JSON string literals
+    const sanitizeJsonString = (str) => {
+      let inString = false;
+      let escapeNext = false;
+      let res = '';
+      for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (escapeNext) { res += char; escapeNext = false; continue; }
+        if (char === '\\') { escapeNext = true; res += char; continue; }
+        if (char === '"') { inString = !inString; res += char; continue; }
+        if (inString && char === '\n') { res += '\\n'; continue; }
+        if (inString && char === '\t') { res += '\\t'; continue; }
+        if (inString && char === '\r') { res += '\\r'; continue; }
+        res += char;
+      }
+      return res;
+    };
+
     if (jsonMatch) {
       try {
-        return JSON.parse(jsonMatch[0]);
+        const sanitized = sanitizeJsonString(jsonMatch[0]);
+        return JSON.parse(sanitized);
       } catch (e) {
         console.warn("Regex matched but JSON parse failed, falling back to clean text", e);
       }
@@ -434,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Try direct parse as last resort, stripping markdown if present
     const cleanText = allText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    return JSON.parse(cleanText);
+    return JSON.parse(sanitizeJsonString(cleanText));
   }
 
   // --- RENDER JSON TO UI ---

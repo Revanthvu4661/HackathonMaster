@@ -153,15 +153,34 @@ async function callGeminiDeepSearch(prompt) {
     const text = data.candidates[0].content.parts[0].text;
     
     const jsonMatch = text.match(/\{[\s\S]*\}/);
+    
+    const sanitizeJsonString = (str) => {
+      let inString = false;
+      let escapeNext = false;
+      let res = '';
+      for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (escapeNext) { res += char; escapeNext = false; continue; }
+        if (char === '\\') { escapeNext = true; res += char; continue; }
+        if (char === '"') { inString = !inString; res += char; continue; }
+        if (inString && char === '\n') { res += '\\n'; continue; }
+        if (inString && char === '\t') { res += '\\t'; continue; }
+        if (inString && char === '\r') { res += '\\r'; continue; }
+        res += char;
+      }
+      return res;
+    };
+
     if (jsonMatch) {
       try {
-        return JSON.parse(jsonMatch[0]);
+        const sanitized = sanitizeJsonString(jsonMatch[0]);
+        return JSON.parse(sanitized);
       } catch (e) {
         console.warn("JSON parse failed on match", e);
       }
     }
     const cleanText = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    return JSON.parse(cleanText);
+    return JSON.parse(sanitizeJsonString(cleanText));
   } catch (err) {
     console.error('Gemini Search Error:', err);
     return null;
