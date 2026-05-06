@@ -329,7 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       "best_addons": [
         { "addon_name": "...", "hackathon_value": "...", "demo_impact": 9 }
-      ], // MAX 5
       ],
       "execution_plan": ["Step 1...", "Step 6..."],
       "winning_edge": ["Point 1...", "Point 2...", "Point 3..."],
@@ -353,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             contents: [{ parts: [{ text: systemPrompt }] }],
             tools: searchData ? [] : [{ google_search: {} }],
-            generationConfig: { temperature: 0.4, maxOutputTokens: 350 }
+            generationConfig: { temperature: 0.4, maxOutputTokens: 2500 }
           })
         });
 
@@ -400,11 +399,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Extract JSON from the full text (model may wrap in markdown code blocks)
     const jsonMatch = allText.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
-      return JSON.parse(jsonMatch[0]);
+      try {
+        return JSON.parse(jsonMatch[0]);
+      } catch (e) {
+        console.warn("Regex matched but JSON parse failed, falling back to clean text", e);
+      }
     }
     
-    // Try direct parse as last resort
-    return JSON.parse(allText);
+    // Try direct parse as last resort, stripping markdown if present
+    const cleanText = allText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    return JSON.parse(cleanText);
   }
 
   // --- RENDER JSON TO UI ---

@@ -145,7 +145,7 @@ async function callGeminiDeepSearch(prompt) {
           parts: [{ text: prompt }]
         }],
         tools: [{ google_search: {} }],
-        generationConfig: { temperature: 0.4, maxOutputTokens: 350 }
+        generationConfig: { temperature: 0.4, maxOutputTokens: 2500 }
       })
     });
     
@@ -154,9 +154,14 @@ async function callGeminiDeepSearch(prompt) {
     
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
-      return JSON.parse(jsonMatch[0]);
+      try {
+        return JSON.parse(jsonMatch[0]);
+      } catch (e) {
+        console.warn("JSON parse failed on match", e);
+      }
     }
-    return null;
+    const cleanText = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    return JSON.parse(cleanText);
   } catch (err) {
     console.error('Gemini Search Error:', err);
     return null;
