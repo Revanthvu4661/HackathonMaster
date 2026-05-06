@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             contents: [{ parts: [{ text: systemPrompt }] }],
             tools: searchData ? [] : [{ google_search: {} }],
-            generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
+            generationConfig: { temperature: 0.4, maxOutputTokens: 8192, responseMimeType: "application/json" }
           })
         });
 
