@@ -212,9 +212,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         console.error("Analysis failed:", err);
-        showToast("Error: " + err.message);
-        overlay.style.display = 'none';
-        resetBtnState();
+        showToast("Live API failed. Falling back to intelligent simulation.");
+        
+        const fallbackResult = generateFallbackJSON(problem, context);
+        latestAnalysisJson = fallbackResult;
+        renderStrategyJSON(fallbackResult);
+        
+        const pitchBanner = document.getElementById('stratPitchBanner');
+        const warningHtml = `<div style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 0.9rem; color: #fca5a5;">
+          <strong>⚠️ LIVE API ERROR (${err.message.substring(0, 50)}...):</strong> The AI failed to return valid data. The output below is an offline simulation.
+        </div>`;
+        pitchBanner.insertAdjacentHTML('beforebegin', warningHtml);
+        
+        completeProgressUI();
       }
     });
   }
@@ -379,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             contents: [{ parts: [{ text: systemPrompt }] }],
             tools: searchData ? [] : [{ google_search: {} }],
-            generationConfig: { temperature: 0.4, maxOutputTokens: 8192, responseMimeType: "application/json" }
+            generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
           })
         });
 
