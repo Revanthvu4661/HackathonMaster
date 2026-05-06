@@ -80,7 +80,6 @@ const modeBtns = document.querySelectorAll('.mode-btn');
 let currentMode = 'complete';
 
 // Input Handling
-if (projectInput) {
 if(projectInput) projectInput.addEventListener('input', () => {
   const count = projectInput.value.length;
   charCount.textContent = count + " / 2000";
@@ -137,6 +136,13 @@ async function callGeminiDeepSearch(prompt) {
   if (!apiKey) return null;
 
   try {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{
+          role: "user",
+          parts: [{ text: prompt }]
         }],
         tools: [{ google_search: {} }],
         generationConfig: { temperature: 0.4, maxOutputTokens: 350 }
@@ -322,9 +328,6 @@ function analyzeProblem(idea) {
   }
 
   return analysis;
-}
-
-
 }
 
 // Report Content Generation
