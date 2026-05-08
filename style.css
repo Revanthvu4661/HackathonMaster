@@ -348,11 +348,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
+  height: 40px;
+  background: transparent;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
+  transition: transform var(--transition-fast);
+}
+
+.nav-brand:hover .brand-logo {
+  transform: scale(1.05);
 }
 
 [data-theme="light"] .brand-icon {
