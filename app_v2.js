@@ -29,11 +29,13 @@ const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
     navbar.style.background = body.getAttribute('data-theme') === 'light' 
-      ? 'rgba(248, 250, 252, 0.9)' 
-      : 'rgba(15, 17, 26, 0.9)';
+      ? 'rgba(248, 250, 252, 0.95)' 
+      : 'rgba(15, 17, 26, 0.95)';
     navbar.style.boxShadow = 'var(--shadow-sm)';
   } else {
+    navbar.classList.remove('scrolled');
     navbar.style.background = body.getAttribute('data-theme') === 'light' 
       ? 'rgba(248, 250, 252, 0.7)' 
       : 'rgba(15, 17, 26, 0.6)';

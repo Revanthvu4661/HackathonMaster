@@ -34,6 +34,7 @@
   /* Layout */
   --max-width: 1200px;
   --nav-height: 100px;
+  --nav-height-shrink: 70px;
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
   --border-radius-lg: 16px;
@@ -320,7 +321,22 @@ button {
   -webkit-backdrop-filter: var(--glass-blur);
   background: rgba(15, 17, 26, 0.6);
   border-bottom: 1px solid var(--border-color);
-  transition: background var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  height: var(--nav-height-shrink);
+  background: rgba(15, 17, 26, 0.95) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.navbar.scrolled .brand-logo {
+  height: 55px;
+  width: 55px;
+}
+
+.navbar.scrolled .brand-icon {
+  height: var(--nav-height-shrink);
 }
 
 [data-theme="light"] .navbar {
