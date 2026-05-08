@@ -10,6 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="strategist.css" />
+  <!-- Mermaid.js for Architecture Diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ 
+      startOnLoad: false, 
+      theme: 'dark',
+      securityLevel: 'loose',
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+    });
+  </script>
 </head>
 <body>
   <!-- Animated Background -->
@@ -258,6 +268,7 @@ The more detail you provide, the better the strategic output."
           <button class="tab-btn" data-stab="prompts">🔥 Prompts</button>
           <button class="tab-btn" data-stab="judge">🏆 Judge Strategy</button>
           <button class="tab-btn" data-stab="prd">📄 PRD</button>
+          <button class="tab-btn" data-stab="architecture">🏗️ Architecture</button>
         </div>
 
         <!-- Tab Content -->
@@ -333,6 +344,7 @@ The more detail you provide, the better the strategic output."
 
   <div class="toast" id="toast"></div>
   <script src="serper_provider.js"></script>
+  <script src="offline_data_100.js"></script>
   <script src="strategist.js"></script>
   <script>
     // Mobile Menu Toggle

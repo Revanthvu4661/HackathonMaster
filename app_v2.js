@@ -131,9 +131,89 @@ if (saveAiKey) {
   });
 }
 
+const offlineKnowledgeBase = [
+  {
+    keywords: ["health", "medical", "doctor", "hospital", "patient", "disease"],
+    result: {
+      overview: "<h3>🚀 Project Understanding</h3><p>A comprehensive healthcare platform designed to bridge the gap between patients and medical professionals...</p>",
+      techstack: "Next.js + Python FastAPI + MongoDB Atlas + Med-PaLM 2",
+      ai_strategy: "Use Med-PaLM 2 or Gemini Pro for symptom analysis. Implement RAG (Retrieval-Augmented Generation) on medical literature.",
+      mega_prompt: "Act as an expert Full Stack HealthTech Developer. Build a Next.js frontend with Tailwind CSS and a Python FastAPI backend. Integrate patient dashboards, appointment scheduling, and a medical symptom checker. Use MongoDB for HIPAA-compliant data storage.",
+      database_schema: "Table Users {\n  id uuid [pk]\n  role enum('patient', 'doctor')\n  name varchar\n}\n\nTable Appointments {\n  id uuid [pk]\n  patient_id uuid\n  doctor_id uuid\n  date timestamp\n}",
+      api_endpoints: "POST /api/v1/auth/login\nGET /api/v1/patients/dashboard\nPOST /api/v1/ai/analyze-symptoms",
+      win_secret: "Focus on HIPAA compliance and Zero-Knowledge Proofs for patient data privacy. Judges love a secure medical app.",
+      industry: "Healthcare / MedTech"
+    }
+  },
+  {
+    keywords: ["finance", "money", "bank", "crypto", "defi", "trading", "wallet"],
+    result: {
+      overview: "<h3>🚀 Project Understanding</h3><p>A cutting-edge financial technology platform aimed at democratizing access to wealth management and decentralized finance...</p>",
+      techstack: "Next.js + Node.js/Express + PostgreSQL + Solana/Rust",
+      ai_strategy: "Use Claude 3.5 Sonnet or Gemini 2.0 Flash for real-time market sentiment analysis and predictive trading algorithms.",
+      mega_prompt: "Act as a Senior FinTech Engineer. Build a secure, high-performance financial dashboard using Next.js and Tailwind CSS. Implement real-time charts using lightweight-charts. Set up a Node.js backend with PostgreSQL for ACID transactions.",
+      database_schema: "Table Users {\n  id uuid [pk]\n  wallet_address varchar\n  balance decimal\n}\n\nTable Transactions {\n  id uuid [pk]\n  user_id uuid\n  amount decimal\n  status varchar\n}",
+      api_endpoints: "POST /api/v1/wallet/connect\nGET /api/v1/portfolio/stats\nPOST /api/v1/trade/execute",
+      win_secret: "Show real-time transaction simulations. Use Plaid API to show you thought about bank linking.",
+      industry: "Fintech / DeFi"
+    }
+  },
+  {
+    keywords: ["education", "school", "learning", "student", "course", "tutor"],
+    result: {
+      overview: "<h3>🚀 Project Understanding</h3><p>An intelligent educational platform that personalizes the learning experience and adapts to individual student needs...</p>",
+      techstack: "Next.js + tRPC + Convex + GPT-4o",
+      ai_strategy: "Implement an AI tutor using GPT-4o that adapts to the user's learning pace. Use Whisper for voice-to-text interactions.",
+      mega_prompt: "Act as an EdTech Architect. Create an interactive learning management system (LMS) using Next.js. Include a gamified dashboard, course modules, and an AI-powered chat interface for the virtual tutor.",
+      database_schema: "Table Students {\n  id uuid [pk]\n  name varchar\n  level int\n}\n\nTable Courses {\n  id uuid [pk]\n  title varchar\n  content text\n}\n\nTable Progress {\n  id uuid\n  student_id uuid\n  course_id uuid\n  completion_rate float\n}",
+      api_endpoints: "GET /api/v1/courses/enrolled\nPOST /api/v1/tutor/ask\nPUT /api/v1/progress/update",
+      win_secret: "Gamification is key. Add a Streaks or Leaderboard component to your UI. Show real-time multiplayer learning.",
+      industry: "EdTech / Learning"
+    }
+  },
+  {
+    keywords: ["green", "earth", "climate", "eco", "sustainability", "carbon"],
+    result: {
+      overview: "<h3>🚀 Project Understanding</h3><p>A sustainability platform focused on tracking, reducing, and offsetting carbon footprints through actionable data insights...</p>",
+      techstack: "Next.js + Edge Functions + InfluxDB + Google Maps Platform",
+      ai_strategy: "Use Gemini Flash to analyze satellite imagery or sensor data for environmental impact monitoring.",
+      mega_prompt: "Act as a GreenTech Developer. Build a sustainability dashboard with Next.js and Tailwind. Integrate interactive maps for tracking eco-metrics. Use InfluxDB for time-series sensor data.",
+      database_schema: "Table Users {\n  id uuid [pk]\n  company_name varchar\n}\n\nTable Emissions {\n  id uuid [pk]\n  user_id uuid\n  co2_amount decimal\n  timestamp datetime\n}\n\nTable Sensors {\n  id uuid\n  location varchar\n  status varchar\n}",
+      api_endpoints: "GET /api/v1/emissions/summary\nPOST /api/v1/sensors/data-ingest\nGET /api/v1/map/heatmap",
+      win_secret: "Integrate a Carbon Footprint tracker. Visualizing physical impact on a map makes the project feel tangible to judges.",
+      industry: "Sustainability / GreenTech"
+    }
+  }
+];
+
+const fallbackDefaultResult = {
+  overview: "<h3>🚀 Project Understanding</h3><p>An innovative solution addressing a unique market need with a scalable and intelligent architecture...</p>",
+  techstack: "Next.js + Node.js + Supabase",
+  ai_strategy: "Utilize Gemini 2.0 Flash for text analysis, automated content generation, and intelligent data routing.",
+  mega_prompt: "Act as an Expert Full-Stack Developer. Build a sleek, modern web application using Next.js, Tailwind CSS (dark mode), and Framer Motion for animations. Set up a Supabase backend for authentication and real-time database capabilities.",
+  database_schema: "Table Users {\n  id uuid [pk]\n  email varchar\n  created_at timestamp\n}\n\nTable Items {\n  id uuid [pk]\n  user_id uuid\n  title varchar\n  data jsonb\n}",
+  api_endpoints: "POST /api/v1/auth/signup\nGET /api/v1/items/list\nPOST /api/v1/items/create",
+  win_secret: "Focus on extremely high-quality UI/UX. A flawless, beautiful demo of a simple concept beats a buggy complex app.",
+  industry: "General Tech"
+};
+
+function getOfflineFallback(prompt) {
+  const text = prompt.toLowerCase();
+  const fullKb = typeof window !== 'undefined' && window.OFFLINE_KNOWLEDGE_BASE 
+    ? offlineKnowledgeBase.concat(window.OFFLINE_KNOWLEDGE_BASE) 
+    : offlineKnowledgeBase;
+    
+  for (const item of fullKb) {
+    if (item.keywords.some(kw => text.includes(kw))) {
+      return item.result;
+    }
+  }
+  return fallbackDefaultResult;
+}
+
 async function callGeminiDeepSearch(prompt) {
   const apiKey = localStorage.getItem('gemini_api_key');
-  if (!apiKey) return null;
+  if (!apiKey) return getOfflineFallback(prompt);
 
   try {
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
@@ -148,6 +228,11 @@ async function callGeminiDeepSearch(prompt) {
         generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
       })
     });
+    
+    if (!response.ok) {
+        console.warn("API response not ok, using offline fallback. Status: ", response.status);
+        return getOfflineFallback(prompt);
+    }
     
     const data = await response.json();
     const text = data.candidates[0].content.parts[0].text;
@@ -182,8 +267,8 @@ async function callGeminiDeepSearch(prompt) {
     const cleanText = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
     return JSON.parse(sanitizeJsonString(cleanText));
   } catch (err) {
-    console.error('Gemini Search Error:', err);
-    return null;
+    console.warn('Gemini Search Error, using offline fallback:', err);
+    return getOfflineFallback(prompt);
   }
 }
 
@@ -249,12 +334,10 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
         btnGenerateText.style.display = 'flex';
         btnGenerateLoading.style.display = 'none';
         
-        // Intelligent Keyword Branching
-        const apiKey = localStorage.getItem('gemini_api_key');
-        if (apiKey) {
-           callGeminiDeepSearch(idea).then(result => {
+        // Intelligent Keyword Branching & Fallback
+        callGeminiDeepSearch(idea).then(result => {
              if (result && typeof result === 'object') {
-               // Update EVERY section with real AI data
+               // Update EVERY section with real AI data (or offline fallback data)
                reportData.overview = result.overview;
                reportData.techstack = result.techstack;
                reportData.ai = result.ai_strategy;
@@ -297,24 +380,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
                  </div>
                `;
 
-               populateReport(idea, { industry: result.industry, stack: result.techstack.substring(0, 50) + '...', aiModel: 'Gemini 2.0 (Max Advanced)', secret: 'Complete Build Prepared' });
+               populateReport(idea, { industry: result.industry, stack: result.techstack.substring(0, 50) + '...', aiModel: 'Gemini 2.0 (Max Advanced) / Offline Base', secret: 'Complete Build Prepared' });
              } else {
                const analysis = analyzeProblem(idea);
                populateReport(idea, analysis);
              }
              outputArea.style.display = 'block';
              outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-             showToast('Max Advanced Intelligence Ready!');
-           });
-        } else {
-
-
-           const analysis = analyzeProblem(idea);
-           populateReport(idea, analysis);
-           outputArea.style.display = 'block';
-           outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-           showToast('Deep Intelligence Report Generated!');
-        }
+             showToast('Intelligence Report Ready!');
+        });
       }, 1000);
     }
   }, 1200);

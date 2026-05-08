@@ -489,7 +489,8 @@ document.addEventListener('DOMContentLoaded', () => {
       features: buildFeaturesHTML(data.feature_ideas),
       prompts: buildPromptsHTML(data.prompt_pack),
       judge: buildJudgeHTML(data.judge_strategy),
-      prd: buildPRDHTML(data.prd || {})
+      prd: buildPRDHTML(data.prd || {}),
+      architecture: buildArchitectureHTML(data)
     };
 
     contentBox.innerHTML = '';
@@ -517,6 +518,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById(targetId).classList.add('active');
       });
     });
+
+    // Initialize/Render Mermaid Diagrams
+    if (window.mermaid) {
+      setTimeout(() => {
+        try {
+          // Re-render Mermaid diagrams
+          mermaid.init(undefined, ".mermaid");
+        } catch (e) {
+          console.error("Mermaid init failed:", e);
+        }
+      }, 200);
+    }
 
     // Copy prompt buttons
     document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
@@ -815,6 +828,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
         <h3>📄 Product Requirements Document (PRD)</h3>
+        <button class="btn-primary btn-sm" id="downloadPrdBtn">Download PDF</button>
       </div>
 
       <div id="prdDoc" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:20px; padding:3rem; color:var(--text-primary); line-height:1.6; max-width:900px; margin:0 auto; box-shadow:var(--shadow-lg);">
@@ -953,9 +967,72 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // Fallback JSON Generator (Hardcoded intelligent response if no API key)
+  function buildArchitectureHTML(data) {
+    const prd = data.prd || {};
+    const tech = prd.technical_requirements || {};
+    const frontend = tech.frontend || "Frontend App";
+    const backend = tech.backend || "Backend API";
+    const database = tech.database || "Database";
+    const integrations = tech.integrations || [];
+
+    // Clean names for Mermaid (remove special characters that might break syntax)
+    const clean = (str) => str.replace(/[\[\]\(\)\{\}]/g, '').trim();
+
+    let mermaidDef = `graph TD
+    User((User/Client)) --> FE[${clean(frontend)}]
+    FE --> BE[${clean(backend)}]
+    BE --> DB[( ${clean(database)} )]
+    `;
+
+    integrations.forEach((int, index) => {
+      mermaidDef += `    BE --> INT${index}[${clean(int)}]\n`;
+    });
+
+    return `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
+        <h3>🏗️ System Architecture Diagram</h3>
+      </div>
+      <div class="info-card" style="background: rgba(0,0,0,0.3); padding: 3rem; border-radius: 20px; text-align: center; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05);">
+        <pre class="mermaid">
+${mermaidDef}
+        </pre>
+      </div>
+      <div style="margin-top: 2rem;">
+        <h4 style="margin-bottom: 1rem; color: var(--accent-primary);">Architecture Breakdown</h4>
+        <div class="card-grid">
+          <div class="info-card">
+            <h5 style="color:var(--accent-secondary); margin-bottom:0.5rem;">Frontend Layer</h5>
+            <p style="font-size:0.9rem;">${frontend}</p>
+          </div>
+          <div class="info-card">
+            <h5 style="color:var(--accent-secondary); margin-bottom:0.5rem;">Logic Layer</h5>
+            <p style="font-size:0.9rem;">${backend}</p>
+          </div>
+          <div class="info-card">
+            <h5 style="color:var(--accent-secondary); margin-bottom:0.5rem;">Data Layer</h5>
+            <p style="font-size:0.9rem;">${database}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Fallback JSON Generator — uses 100-item offline knowledge base
   function generateFallbackJSON(problem, ctx) {
     const text = problem.toLowerCase();
+
+    // Search the extended 100-item offline knowledge base first
+    const extKb = (typeof window !== 'undefined' && window.OFFLINE_KNOWLEDGE_BASE) ? window.OFFLINE_KNOWLEDGE_BASE : [];
+    let matched = extKb.find(item => item.keywords.some(kw => text.includes(kw)));
+    
+    let domainTech   = matched ? matched.result.techstack   : 'Next.js + Node.js + Supabase';
+    let domainAI     = matched ? matched.result.ai_strategy : 'Use Gemini 2.0 Flash for real-time analysis and content generation.';
+    let domainIndustry = matched ? matched.result.industry  : 'General Tech';
+    let domainSecret = matched ? matched.result.win_secret  : 'Focus on extreme UI polish and a flawless live demo moment.';
+    let domainMegaPrompt = matched ? matched.result.mega_prompt : 'Act as a Senior Full Stack Engineer. Build a sleek modern web application using Next.js and Tailwind CSS with dark mode, animations, and Supabase for auth and data.';
+    let domainAPIs   = matched ? matched.result.api_endpoints.split('\\n') : ['POST /api/v1/auth/login', 'GET /api/v1/dashboard', 'POST /api/v1/ai/process'];
+    let domainDB     = matched ? matched.result.database_schema : 'Table Users { id uuid [pk], email varchar }\\nTable Projects { id uuid [pk], user_id uuid, data jsonb }';
+
     
     // Default Web3 / Gen Tech Addons
     let addons = [
@@ -1025,70 +1102,84 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return {
       "problem_analysis": {
-        "refined_problem": "A streamlined, intelligent solution targeting: " + problem.substring(0, 50) + "...",
+        "refined_problem": "A streamlined, intelligent solution targeting: " + problem.substring(0, 80) + "...",
         "target_users": ["Primary Stakeholders", "End Consumers", "System Admins"],
-        "core_pain_points": ["Manual data entry and inefficiency", "Lack of real-time insights", "Poor user experience in legacy tools"],
-        "market_gap": marketGap,
-        "winning_product_direction": "An AI-first, mobile-responsive web app with real-time data synchronization."
+        "core_pain_points": ["Manual processes causing inefficiency", "Lack of real-time insights", "Poor UX in legacy tools"],
+        "market_gap": matched ? domainSecret : marketGap,
+        "winning_product_direction": "An AI-first, mobile-responsive web app with real-time data sync for " + domainIndustry + "."
       },
       "research_insights": {
         "existing_solution_patterns": insights,
         "common_weaknesses": ["No offline support", "Clunky UI/UX", "High latency"],
-        "emerging_opportunities": ["Edge AI processing", "Automated RAG workflows"],
+        "emerging_opportunities": ["Edge AI processing", "Automated RAG workflows", "Voice-first interfaces"],
         "useful_tools_apis": [
           {"name": "Supabase", "type": "Backend/DB", "why_it_matters": "Instant real-time Postgres and Auth."},
-          {"name": "Groq", "type": "LLM API", "why_it_matters": "Blazing fast inference for demo magic."}
+          {"name": "Groq", "type": "LLM API", "why_it_matters": "Blazing fast inference for demo magic."},
+          {"name": "Vercel AI SDK", "type": "AI Toolkit", "why_it_matters": "Streaming LLM responses with 3 lines of code."}
         ]
       },
       "best_addons": addons,
       "top_5_priority_addons": [
-        {"rank": 1, "addon_name": addons[0].addon_name, "reason": "Fastest way to integrate AI."},
-        {"rank": 2, "addon_name": addons[1].addon_name, "reason": "Highest technical wow factor."}
+        {"rank": 1, "addon_name": addons[0].addon_name, "reason": "Fastest way to integrate AI for a live demo."},
+        {"rank": 2, "addon_name": addons[1].addon_name, "reason": "Highest technical wow factor for judges."}
       ],
       "feature_ideas": {
-        "must_have_features": ["User Authentication", "Core Data Input Form", "Result Dashboard"],
-        "nice_to_have_features": ["Dark/Light Mode Toggle", "Export to PDF"],
-        "future_scope": ["Native iOS/Android App", "Enterprise SSO integration"]
+        "must_have_features": ["User Authentication", "Core Data Input Form", "AI Result Dashboard"],
+        "nice_to_have_features": ["Dark/Light Mode Toggle", "Export to PDF", "Real-time notifications"],
+        "future_scope": ["Native iOS/Android App", "Enterprise SSO integration", "API marketplace"]
       },
       "prompt_pack": {
-        "master_build_prompt": "Act as an expert Next.js and Tailwind developer. Build a modern web application for: " + problem + ". Use shadcn/ui components, Framer Motion for animations, and a dark theme. Create the entire UI layout including a sidebar navigation, a hero dashboard, and a settings page.",
-        "frontend_ui_prompt": "Create a responsive, glassmorphism-styled dashboard using React and Tailwind CSS.",
-        "backend_api_prompt": "Write a Node.js Express server with robust error handling for this idea.",
-        "database_prompt": "Generate a Prisma schema file supporting Users, Posts, and Analytics.",
-        "ai_integration_prompt": "Write a TypeScript function that calls the Gemini API to analyze text.",
-        "pitch_demo_prompt": "Write a 2-minute energetic hackathon pitch script."
+        "master_build_prompt": domainMegaPrompt,
+        "frontend_ui_prompt": "Create a responsive, glassmorphism-styled dashboard using React and Tailwind CSS for a " + domainIndustry + " app. Include a sidebar nav, stats cards, and a main content area with animated charts.",
+        "backend_api_prompt": "Write a Node.js Express server for a " + domainIndustry + " app. Include endpoints: " + domainAPIs.join(', ') + ". Add JWT auth, input validation, and robust error handling.",
+        "database_prompt": "Design a database schema for a " + domainIndustry + " application. Schema: " + domainDB,
+        "ai_integration_prompt": domainAI + " Write a TypeScript function that calls this AI model and streams the response back to the client.",
+        "pitch_demo_prompt": "Write a 2-minute energetic hackathon pitch for a " + domainIndustry + " app. Start with the problem, show the magic moment, briefly explain the tech stack, and close on the business opportunity."
       },
       "judge_strategy": {
-        "wow_factor": "The moment the data automatically formats and visualizes itself in real-time.",
+        "wow_factor": "The moment the AI analyzes the input and returns a structured, actionable result in under 2 seconds for " + domainIndustry + ".",
         "best_demo_flow": [
-          "Start at the problem: Show how annoying the manual process is.",
-          "Introduce the solution: Log in and show the clean dashboard.",
-          "The Magic Trick: Perform the core AI action live.",
-          "The Future: Show the analytics page and end on the business model."
+          "Start at the problem: Show how painful the current process is.",
+          "Introduce the solution: Log in and reveal the clean AI-powered dashboard.",
+          "The Magic Trick: Perform the core AI action live — watch results appear instantly.",
+          "Show breadth: Quickly tab through the other key features.",
+          "The Future: Show the analytics page and close on the business model."
         ],
-        "business_angle": "B2B SaaS model with tiered pricing based on API usage.",
-        "social_or_market_impact": "Significantly reduces wasted hours and improves accessibility.",
-        "one_line_winning_pitch": "We're turning a 5-hour manual headache into a 5-second automated delight."
+        "business_angle": "B2B SaaS model with tiered pricing based on usage. Target " + domainIndustry + " teams of 5-50 people.",
+        "social_or_market_impact": "Significantly reduces wasted hours and improves accessibility across the " + domainIndustry + " market.",
+        "one_line_winning_pitch": "We're turning a 5-hour " + domainIndustry + " headache into a 5-second automated delight — powered by AI."
       },
       "prd": {
-        "project_name": "Hackathon Master Solution",
-        "vision": "To build an intelligent, scalable platform that solves the user's problem using cutting-edge AI.",
-        "user_personas": ["Developers", "Hackathon Participants", "Judges"],
+        "project_name": "AI " + domainIndustry + " Platform",
+        "vision": "To build an intelligent, scalable " + domainIndustry + " platform that saves time, reduces errors, and delights users.",
+        "user_personas": ["Tech-savvy professionals in " + domainIndustry, "Non-technical end consumers", "Platform administrators"],
         "core_features": [
-          { "feature": "AI Strategy Engine", "priority": "P0", "description": "Core intelligence to analyze problem statements." },
-          { "feature": "Real-time Dashboard", "priority": "P0", "description": "Interactive UI to view results instantly." }
+          { "feature": "AI Analysis Engine", "priority": "P0", "description": "Core intelligence to process inputs for " + domainIndustry + "." },
+          { "feature": "Real-time Dashboard", "priority": "P0", "description": "Interactive UI to view AI results and domain metrics instantly." },
+          { "feature": "Export and Share", "priority": "P1", "description": "Export reports as PDF or share via a link." }
         ],
         "technical_requirements": {
-          "frontend": "Next.js + Tailwind CSS",
-          "backend": "Supabase / Node.js",
-          "database": "PostgreSQL",
-          "integrations": ["Gemini API", "GitHub API"]
+          "frontend": domainTech.split(' + ')[0] + " + Tailwind CSS + Framer Motion",
+          "backend": domainTech.split(' + ')[1] || "Node.js Express",
+          "database": domainTech.split(' + ')[2] || "Supabase (PostgreSQL)",
+          "integrations": ["Gemini API", "GitHub API", "Stripe"]
         },
-        "success_metrics": ["User adoption rate", "Time saved per project"],
-        "roadmap": ["MVP Launch", "Beta Testing", "Full Release"]
+        "data_models": [
+          { "model_name": "User", "fields": ["id: uuid", "email: varchar", "role: enum", "created_at: timestamp"] },
+          { "model_name": "Project", "fields": ["id: uuid", "user_id: uuid (FK)", "title: varchar", "data: jsonb"] }
+        ],
+        "api_endpoints": domainAPIs.map(ep => {
+          const parts = ep.trim().split(' ');
+          return { "method": parts[0] || "GET", "path": parts[1] || "/api/v1/data", "description": "Core endpoint for " + domainIndustry + " operations." };
+        }),
+        "security_considerations": ["JWT auth with refresh tokens", "Input sanitization", "Rate limiting"],
+        "scalability_plan": ["Docker containerization", "CDN for static assets", "DB read replicas for analytics"],
+        "success_metrics": ["100 signups in first week", "Core action < 3 seconds", "Judge score > 8/10"],
+        "roadmap": ["MVP Launch (Hackathon)", "Beta with 50 users", "V1.0 Public Release", "Enterprise rollout"]
       }
     };
   }
+
 
   // Export & Utility functions
   const stratCopyJson = document.getElementById('stratCopyJson');

@@ -503,3 +503,49 @@
   width: 30px;
   text-align: right;
 }
+
+/* Mermaid Diagram Styling */
+.mermaid {
+  background: transparent !important;
+  font-family: 'Outfit', sans-serif !important;
+  margin: 0 auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.2));
+}
+
+/* Customizing node look for premium feel */
+.mermaid .node rect, 
+.mermaid .node circle, 
+.mermaid .node ellipse, 
+.mermaid .node polygon, 
+.mermaid .node path {
+  fill: rgba(15, 17, 26, 0.8) !important;
+  stroke: var(--accent-primary) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .node label {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.mermaid .edgePath path {
+  stroke: var(--accent-secondary) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .marker {
+  fill: var(--accent-secondary) !important;
+  stroke: var(--accent-secondary) !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: rgba(15, 17, 26, 0.9) !important;
+  color: var(--text-secondary) !important;
+  padding: 2px 5px !important;
+  border-radius: 4px !important;
+}
