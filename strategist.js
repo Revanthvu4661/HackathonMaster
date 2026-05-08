@@ -511,11 +511,30 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.parentNode.replaceChild(newTab, tab);
       
       newTab.addEventListener('click', () => {
+        const tabType = newTab.getAttribute('data-stab');
         document.querySelectorAll('#stratTabs .tab-btn').forEach(t => t.classList.remove('active'));
         newTab.classList.add('active');
-        const targetId = `stab-${newTab.getAttribute('data-stab')}`;
+        
+        const targetId = `stab-${tabType}`;
         document.querySelectorAll('#stratContent .output-section').forEach(s => s.classList.remove('active'));
         document.getElementById(targetId).classList.add('active');
+
+        // Re-init Mermaid if switching to architecture tab
+        if (tabType === 'architecture' && window.mermaid) {
+          setTimeout(() => {
+            try {
+              const diag = document.getElementById('arch-diag');
+              if (diag && diag.getAttribute('data-diagram')) {
+                // Reset the content to the original Mermaid definition before rendering
+                diag.innerHTML = diag.getAttribute('data-diagram');
+                diag.removeAttribute('data-processed');
+                mermaid.init(undefined, diag);
+              }
+            } catch (e) {
+              console.error("Mermaid tab-switch init failed:", e);
+            }
+          }, 50);
+        }
       });
     });
 
@@ -992,10 +1011,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
         <h3>🏗️ System Architecture Diagram</h3>
       </div>
-      <div class="info-card" style="background: rgba(0,0,0,0.3); padding: 3rem; border-radius: 20px; text-align: center; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05);">
-        <pre class="mermaid">
+      <div class="info-card" style="background: rgba(0,0,0,0.3); padding: 3rem; border-radius: 20px; text-align: center; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); min-height: 300px; display: flex; align-items: center; justify-content: center;">
+        <div class="mermaid" id="arch-diag" data-diagram="${mermaidDef.replace(/"/g, '&quot;')}">
 ${mermaidDef}
-        </pre>
+        </div>
       </div>
       <div style="margin-top: 2rem;">
         <h4 style="margin-bottom: 1rem; color: var(--accent-primary);">Architecture Breakdown</h4>
