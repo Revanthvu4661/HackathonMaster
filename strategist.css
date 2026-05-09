@@ -212,6 +212,11 @@
   padding-right: 2.5rem;
 }
 
+.strat-select option {
+  background-color: #0f111a;
+  color: #ffffff;
+}
+
 /* Mode Pills */
 .strat-mode-pills {
   display: flex;
