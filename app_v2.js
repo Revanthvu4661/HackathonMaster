@@ -1,31 +1,8 @@
 // Global Logic Handled by theme.js (Theme, Nav Scroll, Hamburger)
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Application Logic
 
-  // Active section highlighting
-  let current = '';
-  
-  // Disabled scrollspy for multi-page routing
-
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('data-section') === current) {
-      link.classList.add('active');
-    }
-  });
-});
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  });
-});
 
 // Generator Logic
 const projectInput = document.getElementById('projectInput');
@@ -1091,4 +1068,6 @@ setTimeout(() => {
       slideCounter.innerText = (currentSlide + 1) + " / " + slides.length;
     }
   }
-}, 1000); // give DOM time to load
+}); // end DOMContentLoaded
+
+});

@@ -1292,7 +1292,27 @@ html[data-theme="light"] .tools-table tbody tr:hover {
   background: rgba(0, 0, 0, 0.02);
 }
 
+/* Rating Stars */
+.rating {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+}
+
+.star {
+  font-size: 14px;
+  color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.star.filled {
+  color: #fbbf24;
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
 .tool-name {
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.75rem;
