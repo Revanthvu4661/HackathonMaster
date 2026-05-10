@@ -1,46 +1,5 @@
-// Theme Toggling
-const themeToggle = document.getElementById('themeToggle');
-const moonIcon = document.getElementById('moonIcon');
-const sunIcon = document.getElementById('sunIcon');
-const body = document.body;
+// Global Logic Handled by theme.js (Theme, Nav Scroll, Hamburger)
 
-function setTheme(isDark) {
-  if (isDark) {
-    body.removeAttribute('data-theme');
-    moonIcon.style.display = 'block';
-    sunIcon.style.display = 'none';
-  } else {
-    body.setAttribute('data-theme', 'light');
-    moonIcon.style.display = 'none';
-    sunIcon.style.display = 'block';
-  }
-}
-
-themeToggle.addEventListener('click', () => {
-  const isDark = body.getAttribute('data-theme') === 'light';
-  setTheme(isDark);
-});
-
-// Navigation
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-    navbar.style.background = body.getAttribute('data-theme') === 'light' 
-      ? 'rgba(248, 250, 252, 0.95)' 
-      : 'rgba(15, 17, 26, 0.95)';
-    navbar.style.boxShadow = 'var(--shadow-sm)';
-  } else {
-    navbar.classList.remove('scrolled');
-    navbar.style.background = body.getAttribute('data-theme') === 'light' 
-      ? 'rgba(248, 250, 252, 0.7)' 
-      : 'rgba(15, 17, 26, 0.6)';
-    navbar.style.boxShadow = 'none';
-  }
 
   // Active section highlighting
   let current = '';

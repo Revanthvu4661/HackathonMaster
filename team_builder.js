@@ -1,32 +1,6 @@
-// team_builder.js
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Common UI elements like theme toggle
-  const themeToggle = document.getElementById('themeToggle');
-  const body = document.body;
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = body.getAttribute('data-theme') === 'light';
-      if (isDark) {
-        body.removeAttribute('data-theme');
-        document.getElementById('moonIcon').style.display = 'block';
-        document.getElementById('sunIcon').style.display = 'none';
-      } else {
-        body.setAttribute('data-theme', 'light');
-        document.getElementById('moonIcon').style.display = 'none';
-        document.getElementById('sunIcon').style.display = 'block';
-      }
-    });
-  }
+  // Global Logic Handled by theme.js
 
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if(hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-  }
 
   // --- Team Builder Specific Logic ---
   
