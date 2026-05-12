@@ -12,6 +12,7 @@
     .status-badge { position: absolute; top: 1.5rem; right: 1.5rem; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
     .status-live { background: rgba(16, 185, 129, 0.2); color: #10b981; }
     .status-upcoming { background: rgba(167, 139, 250, 0.2); color: #a78bfa; }
+    .status-ended { background: rgba(100, 116, 139, 0.2); color: #94a3b8; }
     .hack-date { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; display: block; }
     .hack-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
     .hack-org { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
@@ -68,75 +69,69 @@
       </div>
 
       <div class="features-grid" id="hackathonGrid">
-        <!-- Hack 1 -->
-        <div class="hackathon-card">
-          <div class="status-badge status-live">Live Now</div>
-          <span class="hack-date">May 15 - May 17, 2026</span>
-          <h3 class="hack-title">ETHGlobal Superhack</h3>
-          <div class="hack-org">by ETHGlobal</div>
-          <span class="hack-prize">Prize Pool: $150,000</span>
-          <div class="hack-tags">
-            <span class="showcase-tag">Web3</span>
-            <span class="showcase-tag">DeFi</span>
-            <span class="showcase-tag">ZK</span>
-          </div>
-          <div class="hack-actions">
-            <button class="btn-gen-idea" onclick="generateFor('ETHGlobal Superhack: A Web3 DeFi app using Zero Knowledge Proofs')">Generate Idea</button>
-          </div>
-        </div>
-
-        <!-- Hack 2 -->
-        <div class="hackathon-card">
-          <div class="status-badge status-upcoming">Upcoming</div>
-          <span class="hack-date">June 10 - June 12, 2026</span>
-          <h3 class="hack-title">NASA Space Apps Challenge</h3>
-          <div class="hack-org">by NASA</div>
-          <span class="hack-prize">Prize Pool: Global Recognition</span>
-          <div class="hack-tags">
-            <span class="showcase-tag">Space Tech</span>
-            <span class="showcase-tag">Data Vis</span>
-            <span class="showcase-tag">Open Data</span>
-          </div>
-          <div class="hack-actions">
-            <button class="btn-gen-idea" onclick="generateFor('NASA Space Apps: An interactive 3D visualization tool for earth data')">Generate Idea</button>
-          </div>
-        </div>
-
-        <!-- Hack 3 -->
-        <div class="hackathon-card">
-          <div class="status-badge status-upcoming">Upcoming</div>
-          <span class="hack-date">July 1 - July 5, 2026</span>
-          <h3 class="hack-title">AI Agents Hackathon</h3>
-          <div class="hack-org">by Lablab.ai</div>
-          <span class="hack-prize">Prize Pool: $50,000</span>
-          <div class="hack-tags">
-            <span class="showcase-tag">AI/ML</span>
-            <span class="showcase-tag">Autonomous</span>
-            <span class="showcase-tag">LLMs</span>
-          </div>
-          <div class="hack-actions">
-            <button class="btn-gen-idea" onclick="generateFor('Lablab AI Hackathon: A multi-agent system for autonomous software development')">Generate Idea</button>
-          </div>
-        </div>
-
-        <!-- Hack 4 -->
-        <div class="hackathon-card">
-          <div class="status-badge status-upcoming">Upcoming</div>
-          <span class="hack-date">August 20 - August 22, 2026</span>
-          <h3 class="hack-title">MLH Global Hack Week</h3>
-          <div class="hack-org">by Major League Hacking</div>
-          <span class="hack-prize">Prize Pool: Hardware & Swag</span>
-          <div class="hack-tags">
-            <span class="showcase-tag">Beginner</span>
-            <span class="showcase-tag">Open Theme</span>
-          </div>
-          <div class="hack-actions">
-            <button class="btn-gen-idea" onclick="generateFor('MLH Hack Week: A beginner friendly community app for students')">Generate Idea</button>
-          </div>
-        </div>
+        <!-- Dynamically populated by hackathons_config.js and render logic -->
       </div>
     </div>
   </section>
+
+  <script src="hackathons_config.js"></script>
+  <script>
+    function getStatus(start, end) {
+      const now = new Date();
+      const startDate = new Date(start);
+      const endDate = new Date(end);
+      
+      // Set hours to zero for clean comparison
+      now.setHours(0,0,0,0);
+      startDate.setHours(0,0,0,0);
+      endDate.setHours(23,59,59,999);
+
+      if (now < startDate) return { label: 'Upcoming', class: 'status-upcoming' };
+      if (now > endDate) return { label: 'Ended', class: 'status-ended' }; // We'll need a status-ended class in CSS
+      return { label: 'Live Now', class: 'status-live' };
+    }
+
+    function formatDateRange(start, end) {
+      const s = new Date(start);
+      const e = new Date(end);
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      
+      if (s.getMonth() === e.getMonth()) {
+        return `${months[s.getMonth()]} ${s.getDate()} - ${e.getDate()}, ${s.getFullYear()}`;
+      }
+      return `${months[s.getMonth()]} ${s.getDate()} - ${months[e.getMonth()]} ${e.getDate()}, ${s.getFullYear()}`;
+    }
+
+    function renderHackathons() {
+      const grid = document.getElementById('hackathonGrid');
+      if (!grid) return;
+      
+      grid.innerHTML = hackathons.map(h => {
+        const status = getStatus(h.startDate, h.endDate);
+        const dateStr = formatDateRange(h.startDate, h.endDate);
+        
+        return `
+          <div class="hackathon-card">
+            <div class="status-badge ${status.class}">${status.label}</div>
+            <span class="hack-date">${dateStr}</span>
+            <h3 class="hack-title">${h.title}</h3>
+            <div class="hack-org">by ${h.org}</div>
+            <span class="hack-prize">Prize Pool: ${h.prize}</span>
+            <div class="hack-tags">
+              ${h.tags.map(tag => `<span class="showcase-tag">${tag}</span>`).join('')}
+            </div>
+            <div class="hack-actions">
+              <button class="btn-gen-idea" onclick="generateFor('${h.idea.replace(/'/g, "\\'")}')">Generate Idea</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Run on load
+    document.addEventListener('DOMContentLoaded', renderHackathons);
+  </script>
+
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
