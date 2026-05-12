@@ -638,3 +638,85 @@
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
+
+/* Light Mode Overrides */
+html[data-theme="light"] .tb-stat-div {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .tb-role-card {
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+html[data-theme="light"] .tb-role-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+html[data-theme="light"] .tb-role-title,
+html[data-theme="light"] .tb-timeline-title,
+html[data-theme="light"] .tb-tool-info strong,
+html[data-theme="light"] .tb-ai-tools-list li strong {
+  color: var(--text-primary);
+}
+
+html[data-theme="light"] .tb-skill-tag {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+}
+
+html[data-theme="light"] .tb-skill-bar-bg {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .tb-tool-item,
+html[data-theme="light"] .tb-ai-tools-list li {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .tb-timeline-dot,
+html[data-theme="light"] .tb-timeline-content,
+html[data-theme="light"] .tb-skill-domain,
+html[data-theme="light"] .tb-collab-card,
+html[data-theme="light"] .tb-solo-card {
+  background: white;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .tb-chip {
+  color: #6d28d9;
+}
+
+html[data-theme="light"] .tb-chip.green {
+  color: #059669;
+}
+
+html[data-theme="light"] .tb-chip.blue {
+  color: #0891b2;
+}
+
+html[data-theme="light"] .tb-role-priority.critical {
+  color: #dc2626;
+}
+
+html[data-theme="light"] .tb-role-priority.high {
+  color: #ea580c;
+}
+
+html[data-theme="light"] .tb-role-priority.medium {
+  color: #7c3aed;
+}
+
+html[data-theme="light"] .tb-timeline-phase {
+  color: #6d28d9;
+}
+
+html[data-theme="light"] .tb-resp-list li {
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .tb-role-time {
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
