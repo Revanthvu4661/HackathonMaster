@@ -79,6 +79,10 @@
           RAR Hackathon Helper is your AI Project Intelligence Assistant. Enter any hackathon idea and get a complete blueprint — architecture, tech stack, UI/UX design, AI integrations, APIs, deployment, and a winning pitch strategy.
         </p>
         <div class="hero-actions">
+          <button class="btn-primary btn-lg" id="heroGenerateBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Generate My Project Now
+          </button>
           <button class="btn-outline btn-lg" id="heroShowcaseBtn">
             View Showcase
           </button>
@@ -208,6 +212,22 @@
       console.log("Home Page Active");
       // Prevent any potential scrolls or redirects
       window.scrollTo(0, 0);
+    }
+
+    // Hero Button Listeners
+    const heroGenBtn = document.getElementById('heroGenerateBtn');
+    const heroShowBtn = document.getElementById('heroShowcaseBtn');
+
+    if(heroGenBtn) {
+      heroGenBtn.addEventListener('click', () => {
+        window.location.href = 'strategist.html';
+      });
+    }
+
+    if(heroShowBtn) {
+      heroShowBtn.addEventListener('click', () => {
+        window.location.href = 'showcase.html';
+      });
     }
   </script>
   <script src="offline_data_100.js"></script>
