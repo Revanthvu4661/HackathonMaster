@@ -141,8 +141,12 @@ a:hover {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.5;
+  opacity: 0.35;
   animation: float 20s infinite ease-in-out alternate;
+}
+
+html[data-theme="light"] .orb {
+  opacity: 0.15;
 }
 
 .orb-1 {
@@ -197,7 +201,9 @@ a:hover {
 }
 
 html[data-theme="light"] .grid-overlay {
-  opacity: 0.4;
+  opacity: 0.3;
+  mask-image: radial-gradient(circle at center, black, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 90%);
 }
 
 /* Buttons */
@@ -682,6 +688,10 @@ html[data-theme="light"] .hero-badge {
   transform: scale(1.05) rotate(2deg);
 }
 
+html[data-theme="light"] .hero-logo-circle {
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.2);
+}
+
 .stat-number {
   font-size: 1.5rem;
   font-weight: 800;
@@ -1144,7 +1154,7 @@ html[data-theme="light"] .btn-generate:disabled {
 }
 
 .output-content .info-card {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(167, 139, 250, 0.05);
   border: 1px solid var(--border-highlight);
   border-radius: var(--border-radius-md);
   padding: 1.5rem;
@@ -1177,6 +1187,12 @@ html[data-theme="light"] .output-content .info-card {
   color: #d4d4d4;
   overflow-x: auto;
   border: 1px solid #333;
+}
+
+html[data-theme="light"] .output-content .code-block {
+  background: #f1f5f9;
+  color: #334155;
+  border-color: #e2e8f0;
 }
 
 .output-actions {
