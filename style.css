@@ -1788,3 +1788,193 @@ html[data-theme="light"] .footer {
 }
 
 
+/* ==========================================================================
+   PRINT STYLES - Optimized for High-Quality PDF Export
+   ========================================================================== */
+@media print {
+  /* 1. Hide Non-Printable UI Elements */
+  .navbar, 
+  .bg-orbs, 
+  .grid-overlay, 
+  .nav-actions, 
+  .hamburger, 
+  .mobile-menu, 
+  .strat-generate-btn, 
+  .btn-ghost, 
+  .api-key-banner, 
+  .floating-card, 
+  .toast, 
+  .btn-primary, 
+  .btn-outline, 
+  .export-btn, 
+  .strat-hero, 
+  .input-section,
+  #themeToggle,
+  .sound-toggle,
+  .timer-controls,
+  .input-group,
+  footer {
+    display: none !important;
+  }
+
+  /* 2. Reset Backgrounds & Typography */
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 11pt !important;
+  }
+
+  .dark-theme, .light-theme {
+    background: transparent !important;
+  }
+
+  /* 3. Global Color & Effect Reset */
+  *, h1, h2, h3, h4, h5, h6, p, span, div, li {
+    color: #000000 !important;
+    background: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* 4. Layout Optimization */
+  .section, 
+  .container, 
+  .section-inner, 
+  .checklist-container, 
+  .strat-panel, 
+  .countdown-container,
+  .strat-output-area {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+  }
+
+  main {
+    margin-top: 0 !important;
+    padding: 1cm !important;
+  }
+
+  /* 5. Strategist Specific Print Styles */
+  .strat-pitch-banner {
+    border: 2px solid #eeeeee !important;
+    background: #f8fafc !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    border-radius: 12px !important;
+    font-size: 1.5rem !important;
+    page-break-after: avoid;
+    display: block !important;
+  }
+
+  .strat-addon-card, 
+  .phase-card, 
+  .prompt-box, 
+  .timer-card,
+  .setup-card {
+    border: 1px solid #dddddd !important;
+    background: #ffffff !important;
+    margin-bottom: 2rem !important;
+    border-radius: 8px !important;
+    break-inside: avoid;
+  }
+
+  .prompt-header {
+    background: #f1f5f9 !important;
+    border-bottom: 1px solid #dddddd !important;
+    color: #334155 !important;
+  }
+
+  .prompt-body {
+    color: #1e293b !important;
+    max-height: none !important;
+    overflow: visible !important;
+    font-size: 9pt !important;
+    white-space: pre-wrap !important;
+  }
+
+  .mermaid {
+    filter: none !important;
+    margin: 2rem auto !important;
+    display: block !important;
+  }
+
+  /* Force Light Mode Mermaid node colors */
+  .mermaid .node rect, .mermaid .node circle, .mermaid .node path {
+    fill: #ffffff !important;
+    stroke: #333333 !important;
+  }
+  .mermaid .node label {
+    color: #000000 !important;
+  }
+
+  /* 6. Intelligent Page Breaks */
+  .report-section, 
+  .strat-card-list, 
+  .phases-grid > .phase-card,
+  .strat-output-title {
+    page-break-before: always;
+    margin-top: 2rem !important;
+  }
+
+  .report-section:first-of-type,
+  .strat-pitch-banner + .report-section {
+    page-break-before: auto;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  /* 7. Checklist Progress Preservation in Print */
+  .task-item {
+    border: 1px solid #eeeeee !important;
+    margin-bottom: 0.5rem !important;
+    background: #ffffff !important;
+    break-inside: avoid;
+  }
+
+  .task-item.completed {
+    background: #f0fdf4 !important;
+    border-color: #bbf7d0 !important;
+    opacity: 1 !important;
+  }
+
+  .task-item.completed .task-text {
+    text-decoration: none !important;
+    color: #166534 !important;
+    font-weight: bold;
+  }
+
+  .checkbox {
+    border-color: #333 !important;
+  }
+
+  .task-item.completed .checkbox {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+  }
+
+  /* 8. Links with URLs */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+}
