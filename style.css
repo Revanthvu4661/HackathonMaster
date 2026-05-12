@@ -461,6 +461,7 @@ html[data-theme="light"] .brand-icon {
 }
 
 .hamburger {
+  z-index: 2100;
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -503,7 +504,7 @@ html[data-theme="light"] .brand-icon {
   width: 100%;
   height: 100vh;
   background: var(--bg-dark);
-  z-index: 99;
+  z-index: 2000;
   display: flex;
   flex-direction: column;
   align-items: center;
