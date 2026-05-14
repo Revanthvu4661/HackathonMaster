@@ -418,59 +418,79 @@ SCHEMA:
   }
 
   function getFallbackTeamJSON(idea, ctx) {
+    const text = idea.toLowerCase();
+    const extKb = (typeof window !== 'undefined' && window.OFFLINE_KNOWLEDGE_BASE) ? window.OFFLINE_KNOWLEDGE_BASE : [];
+    
+    // Improved scoring match
+    let bestMatch = null;
+    let highestScore = 0;
+
+    extKb.forEach(item => {
+      let score = 0;
+      item.keywords.forEach(kw => {
+        if (text.includes(kw.toLowerCase())) score++;
+      });
+      if (score > highestScore) {
+        highestScore = score;
+        bestMatch = item;
+      }
+    });
+
+    if (bestMatch && bestMatch.team_result) {
+        // Customize the match based on user context
+        const result = JSON.parse(JSON.stringify(bestMatch.team_result));
+        result.solo_strategy.is_solo = ctx.size === 'solo';
+        if(result.solo_strategy.is_solo) {
+          result.solo_strategy.warning = "You are handling this project solo. Focus on MVP and leverage AI multipliers.";
+        }
+        return result;
+    }
+
+    // Generic fallback if no match found
     return {
       "project_summary": {
-        "name": "Generated Project Outline",
+        "name": "Custom Hackathon Blueprint",
         "complexity": "Medium",
-        "core_stack": ["React", "Node.js", "AI API"]
+        "core_stack": ["React", "Node.js", "Gemini AI"]
       },
       "roles": [
         {
-          "title": "Full Stack Dev",
+          "title": "Technical Lead",
           "type": "Engineering",
           "priority": "Critical",
-          "description": "Handles the core application logic and UI.",
-          "primary_skills": ["JavaScript", "React", "Node.js"],
-          "responsibilities": ["Setup repo", "Build UI", "Connect API"]
+          "description": "Drives architecture and core feature implementation.",
+          "primary_skills": ["Full Stack Development", "API Integration"],
+          "responsibilities": ["Project setup", "Core logic", "Deployment"]
         },
         {
-          "title": "AI/Data Engineer",
-          "type": "Engineering",
+          "title": "Product Designer",
+          "type": "Design",
           "priority": "High",
-          "description": "Integrates AI models and manages data flow.",
-          "primary_skills": ["Python", "Prompt Engineering"],
-          "responsibilities": ["Prompt design", "Model integration"]
+          "description": "Ensures premium UI/UX and user flow.",
+          "primary_skills": ["Figma", "Tailwind CSS", "Prototyping"],
+          "responsibilities": ["UI/UX Design", "Frontend polish"]
         }
       ],
       "skills_map": [
         {
-          "domain": "Frontend",
-          "required_skills": [{"name": "React", "level": "Expert"}, {"name": "CSS", "level": "Intermediate"}]
-        },
-        {
-          "domain": "Backend",
-          "required_skills": [{"name": "Node.js", "level": "Intermediate"}]
+          "domain": "Engineering",
+          "required_skills": [{"name": "JavaScript", "level": "Expert"}, {"name": "Database", "level": "Intermediate"}]
         }
       ],
       "task_timeline": [
         {
-          "phase": "0-4h Setup",
-          "tasks": ["Repo init", "Environment setup", "Basic UI scaffold"],
-          "roles_involved": ["Full Stack Dev", "AI/Data Engineer"]
-        },
-        {
-          "phase": "4-16h Build",
-          "tasks": ["Implement core features", "Integrate AI model"],
-          "roles_involved": ["Full Stack Dev", "AI/Data Engineer"]
+          "phase": "Phase 1: Foundation",
+          "tasks": ["Environment setup", "Basic UI scaffolding"],
+          "roles_involved": ["Technical Lead"]
         }
       ],
       "collaboration": {
-        "tools": [{"name": "GitHub", "use": "Source control"}, {"name": "Discord", "use": "Communication"}],
-        "protocols": ["Commit early", "Communicate blockers immediately"]
+        "tools": [{"name": "GitHub", "use": "Source Control"}, {"name": "Discord", "use": "Communication"}],
+        "protocols": ["Regular standups", "Code reviews"]
       },
       "solo_strategy": {
         "is_solo": ctx.size === "solo",
-        "warning": "You are doing everything alone. Leverage AI coding assistants to maximize output.",
+        "warning": "Leverage AI coding assistants to maximize your individual output.",
         "ai_tools": [{"name": "Cursor/Bolt", "use": "Code generation"}]
       }
     };

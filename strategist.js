@@ -1014,9 +1014,26 @@ ${mermaidDef}
   function generateFallbackJSON(problem, ctx) {
     const text = problem.toLowerCase();
 
-    // Search the extended 100-item offline knowledge base first
+    // Search the extended 1000-item offline knowledge base first
     const extKb = (typeof window !== 'undefined' && window.OFFLINE_KNOWLEDGE_BASE) ? window.OFFLINE_KNOWLEDGE_BASE : [];
-    let matched = extKb.find(item => item.keywords.some(kw => text.includes(kw)));
+    
+    // Improved scoring match
+    let matched = null;
+    let highestScore = 0;
+
+    extKb.forEach(item => {
+      let score = 0;
+      item.keywords.forEach(kw => {
+        if (text.includes(kw.toLowerCase())) score += 2;
+      });
+      if (item.result && item.result.industry && text.includes(item.result.industry.toLowerCase())) {
+        score += 3;
+      }
+      if (score > highestScore) {
+        highestScore = score;
+        matched = item;
+      }
+    });
     
     let domainTech   = matched ? matched.result.techstack   : 'Next.js + Node.js + Supabase';
     let domainAI     = matched ? matched.result.ai_strategy : 'Use Gemini 2.0 Flash for real-time analysis and content generation.';
