@@ -203,9 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-    });
-  }
-
   // Handle Nav History Click
   document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
@@ -232,9 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
     chip.addEventListener('click', () => {
       stratProblem.value = chip.getAttribute('data-strat');
       stratProblem.dispatchEvent(new Event('input'));
-    });
-  });
-
     });
   });
 
