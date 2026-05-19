@@ -2190,3 +2190,95 @@ html[data-theme="light"] .history-item:hover {
   justify-content: center;
   border: 2px solid var(--bg-dark);
 }
+
+/* --- Unified History Styling --- */
+.history-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 14px !important;
+  margin-bottom: 8px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.history-item:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(2px) !important;
+}
+
+.history-item-main {
+  flex: 1 !important;
+  min-width: 0 !important;
+  margin-right: 8px !important;
+}
+
+.history-item-title {
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: var(--text-light) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin-bottom: 4px !important;
+}
+
+.history-item-meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.history-item-tag {
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.history-item-tag.badge-strat {
+  background: rgba(139, 92, 246, 0.15) !important;
+  color: #a78bfa !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+}
+
+.history-item-tag.badge-tb {
+  background: rgba(14, 165, 233, 0.15) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(14, 165, 233, 0.2) !important;
+}
+
+.history-item-date {
+  font-size: 0.7rem !important;
+  color: var(--text-muted) !important;
+}
+
+.history-delete-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  color: rgba(239, 68, 68, 0.4) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.history-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: rgba(239, 68, 68, 1) !important;
+}
+
+/* Float toggle button styles - hidden globally by default */
+.history-toggle {
+  display: none !important;
+}

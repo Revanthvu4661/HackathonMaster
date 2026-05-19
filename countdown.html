@@ -1,568 +1,569 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hackathon Countdown | RAR Hackathon Helper</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <style>
-    :root {
-      --timer-font: 'Outfit', sans-serif;
-    }
-
-    .countdown-container {
-      max-width: 900px;
-      margin: 120px auto 60px;
-      padding: 0 2rem;
-    }
-
-    .setup-card, .timer-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur));
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 3rem;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .setup-card h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      color: var(--text-primary);
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s;
-    }
-
-    .form-group input:focus {
-      border-color: var(--accent-primary);
-    }
-
-    .timer-display {
-      font-family: var(--timer-font);
-      font-size: clamp(4rem, 15vw, 8rem);
-      font-weight: 700;
-      letter-spacing: -2px;
-      margin: 2rem 0;
-      color: var(--text-primary);
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .timer-unit {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .unit-label {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: -1rem;
-    }
-
-    .milestones {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .milestone {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 1.5rem;
-      border-radius: 16px;
-      border: 1px solid var(--glass-border);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .milestone.active {
-      border-color: var(--success);
-      background: rgba(16, 185, 129, 0.1);
-      transform: translateY(-5px);
-    }
-
-    .milestone.active::after {
-      content: '✓';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: var(--success);
-      font-weight: bold;
-    }
-
-    .milestone-percentage {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .milestone-title {
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .timer-controls {
-      margin-top: 3rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .hackathon-title-display {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--accent-primary);
-    }
-
-    .sound-toggle {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    /* Progress Bar */
-    .progress-container {
-      width: 100%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 4px;
-      margin: 2rem 0;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--accent-gradient);
-      width: 0%;
-      transition: width 1s linear;
-    }
-
-    @media (max-width: 600px) {
-      .milestones {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body class="dark-theme">
-  <!-- Animated Background -->
-  <div class="bg-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-  <div class="grid-overlay"></div>
-
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
-        <div class="brand-icon">
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="strategist.html" class="nav-link">Strategist</a>
-        <a href="checklist.html" class="nav-link">Checklist</a>
-        <a href="features.html" class="nav-link">AI Tools</a>
-        <a href="countdown.html" class="nav-link active">Sprint Timer</a>
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-      </div>
-      <div class="nav-actions">
-        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="mobile-link">Home</a>
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-    <a href="features.html" class="mobile-link">AI Tools</a>
-    <a href="countdown.html" class="mobile-link active">Sprint Timer</a>
-    <a href="team_builder.html" class="mobile-link">Team Builder</a>
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
-    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
-  </div>
-
-  <main class="countdown-container">
-    <!-- Setup Form -->
-    <div id="setupView" class="setup-card">
-      <h1>Start Your Sprint</h1>
-      <p style="color: var(--text-secondary); margin-bottom: 2rem;">Track your progress and hit your milestones on time.</p>
-      
-      <div class="form-group">
-        <label for="hackathonName">Hackathon Name</label>
-        <input type="text" id="hackathonName" placeholder="e.g. Google Gemini Hackathon">
-      </div>
-      
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-        <div class="form-group">
-          <label for="startTime">Start Date & Time</label>
-          <input type="datetime-local" id="startTime">
-        </div>
-        <div class="form-group">
-          <label for="endTime">Submission Deadline</label>
-          <input type="datetime-local" id="endTime">
-        </div>
-      </div>
-
-      <button class="btn-primary btn-lg" id="startTimerBtn" style="width: 100%; margin-top: 1rem;">
-        Initialize Countdown
-      </button>
-    </div>
-
-    <!-- Live Timer -->
-    <div id="timerView" class="timer-card" style="display: none; position: relative;">
-      <div class="sound-toggle" id="soundToggle">
-        <svg id="soundOnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-        <svg id="soundOffIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-        <span>Alerts On</span>
-      </div>
-
-      <div class="hackathon-title-display" id="displayTitle">Hackathon Name</div>
-      <div style="color: var(--text-secondary); font-size: 0.9rem;">Submission Deadline</div>
-
-      <div class="timer-display">
-        <div class="timer-unit">
-          <span id="hours">00</span>
-          <span class="unit-label">Hours</span>
-        </div>
-        <span>:</span>
-        <div class="timer-unit">
-          <span id="minutes">00</span>
-          <span class="unit-label">Min</span>
-        </div>
-        <span>:</span>
-        <div class="timer-unit">
-          <span id="seconds">00</span>
-          <span class="unit-label">Sec</span>
-        </div>
-      </div>
-
-      <div class="progress-container">
-        <div class="progress-fill" id="progressBar"></div>
-      </div>
-
-      <div class="milestones">
-        <div class="milestone" id="milestone1">
-          <span class="milestone-percentage">33%</span>
-          <span class="milestone-title">Ideation Phase</span>
-        </div>
-        <div class="milestone" id="milestone2">
-          <span class="milestone-percentage">66%</span>
-          <span class="milestone-title">MVP Complete</span>
-        </div>
-        <div class="milestone" id="milestone3">
-          <span class="milestone-percentage">90%</span>
-          <span class="milestone-title">Polishing Polish</span>
-        </div>
-      </div>
-
-      <div class="timer-controls">
-        <button class="btn-outline" id="resetBtn">Reset Timer</button>
-      </div>
-    </div>
-  </main>
-
-  <script src="theme.js"></script>
-  <script>
-    const setupView = document.getElementById('setupView');
-    const timerView = document.getElementById('timerView');
-    const startBtn = document.getElementById('startTimerBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const soundToggle = document.getElementById('soundToggle');
-    
-    let timerInterval;
-    let soundEnabled = true;
-    let milestoneAlerts = { m1: false, m2: false, m3: false };
-
-    // Audio context for beep
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    function playBeep(freq = 440) {
-      if (!soundEnabled) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.5);
-    }
-
-    function updateTimer() {
-      const state = JSON.parse(localStorage.getItem('hackathonTimer'));
-      if (!state) return;
-
-      const now = new Date().getTime();
-      const start = new Date(state.start).getTime();
-      const end = new Date(state.end).getTime();
-      
-      const totalTime = end - start;
-      const timeLeft = end - now;
-      const timeElapsed = now - start;
-      
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
-        document.getElementById('progressBar').style.width = '100%';
-        return;
-      }
-
-      // Calculations
-      const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-      // Progress and Milestones
-      const percentage = Math.min((timeElapsed / totalTime) * 100, 100);
-      document.getElementById('progressBar').style.width = percentage + '%';
-
-      if (percentage >= 33 && !milestoneAlerts.m1) {
-        document.getElementById('milestone1').classList.add('active');
-        playBeep(440);
-        milestoneAlerts.m1 = true;
-      }
-      if (percentage >= 66 && !milestoneAlerts.m2) {
-        document.getElementById('milestone2').classList.add('active');
-        playBeep(554.37); // C#
-        milestoneAlerts.m2 = true;
-      }
-      if (percentage >= 90 && !milestoneAlerts.m3) {
-        document.getElementById('milestone3').classList.add('active');
-        playBeep(659.25); // E
-        milestoneAlerts.m3 = true;
-      }
-    }
-
-    startBtn.addEventListener('click', () => {
-      const name = document.getElementById('hackathonName').value;
-      const start = document.getElementById('startTime').value;
-      const end = document.getElementById('endTime').value;
-
-      if (!name || !start || !end) {
-        alert('Please fill in all fields');
-        return;
-      }
-
-      const state = { name, start, end };
-      localStorage.setItem('hackathonTimer', JSON.stringify(state));
-      initTimer(state);
-    });
-
-    resetBtn.addEventListener('click', () => {
-      if (confirm('Are you sure you want to reset the timer?')) {
-        clearInterval(timerInterval);
-        localStorage.removeItem('hackathonTimer');
-        setupView.style.display = 'block';
-        timerView.style.display = 'none';
-        milestoneAlerts = { m1: false, m2: false, m3: false };
-        document.querySelectorAll('.milestone').forEach(m => m.classList.remove('active'));
-      }
-    });
-
-    soundToggle.addEventListener('click', () => {
-      soundEnabled = !soundEnabled;
-      document.getElementById('soundOnIcon').style.display = soundEnabled ? 'block' : 'none';
-      document.getElementById('soundOffIcon').style.display = soundEnabled ? 'none' : 'block';
-      soundToggle.querySelector('span').textContent = soundEnabled ? 'Alerts On' : 'Alerts Off';
-    });
-
-    function initTimer(state) {
-      setupView.style.display = 'none';
-      timerView.style.display = 'block';
-      document.getElementById('displayTitle').textContent = state.name;
-      
-      // Initial milestone check
-      const now = new Date().getTime();
-      const start = new Date(state.start).getTime();
-      const end = new Date(state.end).getTime();
-      const percentage = ((now - start) / (end - start)) * 100;
-      
-      if (percentage >= 33) { document.getElementById('milestone1').classList.add('active'); milestoneAlerts.m1 = true; }
-      if (percentage >= 66) { document.getElementById('milestone2').classList.add('active'); milestoneAlerts.m2 = true; }
-      if (percentage >= 90) { document.getElementById('milestone3').classList.add('active'); milestoneAlerts.m3 = true; }
-
-      updateTimer();
-      timerInterval = setInterval(updateTimer, 1000);
-    }
-
-    // Load state
-    window.addEventListener('load', () => {
-      const saved = localStorage.getItem('hackathonTimer');
-      if (saved) {
-        initTimer(JSON.parse(saved));
-      } else {
-        // Set default dates for convenience
-        const now = new Date();
-        document.getElementById('startTime').value = now.toISOString().slice(0, 16);
-        const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-        document.getElementById('endTime').value = tomorrow.toISOString().slice(0, 16);
-      }
-    });
-  </script>
-
-  <!-- History Sidebar -->
-  <div class="history-sidebar" id="historySidebar">
-    <div class="history-header">
-      <h3>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-        Recent Solutions
-      </h3>
-      <button class="close-history" id="closeHistory">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="history-list" id="historyList">
-      <div class="history-empty">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-        <p>No recent solutions found.</p>
-      </div>
-    </div>
-  </div>
-
-  <button id="historyToggle" class="history-toggle"
-    onclick="document.getElementById('historySidebar').classList.add('open')"
-    title="View Recent Solutions">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-    History
-    <span id="historyBadge" class="history-badge" style="display:none;">0</span>
-  </button>
-
-  <script>
-    // History Sidebar Logic
-    (function() {
-      const sidebar = document.getElementById('historySidebar');
-      const closeBtn = document.getElementById('closeHistory');
-      const toggleBtn = document.getElementById('historyToggle');
-      const badge = document.getElementById('historyBadge');
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
-      }
-
-      // Close on backdrop click
-      document.addEventListener('click', (e) => {
-        if (sidebar && sidebar.classList.contains('open') &&
-            !sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
-          sidebar.classList.remove('open');
-        }
-      });
-
-      // Also wire nav triggers
-      document.querySelectorAll('.history-nav-trigger').forEach(el => {
-        el.addEventListener('click', (e) => {
-          e.preventDefault();
-          sidebar.classList.add('open');
-        });
-      });
-
-      // Render history from localStorage
-      function renderHistory() {
-        const list = document.getElementById('historyList');
-        if (!list) return;
-        const raw = localStorage.getItem('strat_history');
-        const history = raw ? JSON.parse(raw) : [];
-        if (history.length === 0) {
-          list.innerHTML = `<div class="history-empty">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3;margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-            <p>No recent solutions found.</p>
-          </div>`;
-          if (badge) badge.style.display = 'none';
-          return;
-        }
-        if (badge) {
-          badge.textContent = history.length;
-          badge.style.display = 'flex';
-        }
-        list.innerHTML = history.map((item, i) => `
-          <div class="history-item" onclick="loadHistory(${i})">
-            <div class="history-item-title">${(item.problem || 'Untitled Project').substring(0, 60)}${(item.problem || '').length > 60 ? '...' : ''}</div>
-            <div class="history-item-meta">
-              <span class="history-item-tag">${item.industry || 'General'}</span>
-              <span>${item.timestamp ? new Date(item.timestamp).toLocaleDateString() : ''}</span>
-            </div>
-          </div>
-        `).join('');
-      }
-
-      renderHistory();
-
-      window.loadHistory = function(index) {
-        const raw = localStorage.getItem('strat_history');
-        const history = raw ? JSON.parse(raw) : [];
-        const item = history[index];
-        if (!item) return;
-        // Store the full item so strategist can restore it
-        localStorage.setItem('latest_strat_result', JSON.stringify(item));
-        localStorage.setItem('presetProject', (item.problem || '').substring(0, 100));
-        window.location.href = 'strategist.html';
-      };
-    })();
-  </script>
-
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon Countdown | RAR Hackathon Helper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <style>
+    :root {
+      --timer-font: 'Outfit', sans-serif;
+    }
+
+    .countdown-container {
+      max-width: 900px;
+      margin: 120px auto 60px;
+      padding: 0 2rem;
+    }
+
+    .setup-card, .timer-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .setup-card h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--accent-primary);
+    }
+
+    .timer-display {
+      font-family: var(--timer-font);
+      font-size: clamp(4rem, 15vw, 8rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      margin: 2rem 0;
+      color: var(--text-primary);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .timer-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .unit-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: -1rem;
+    }
+
+    .milestones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .milestone {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .milestone.active {
+      border-color: var(--success);
+      background: rgba(16, 185, 129, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .milestone.active::after {
+      content: '✓';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    .milestone-percentage {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .milestone-title {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .timer-controls {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hackathon-title-display {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent-primary);
+    }
+
+    .sound-toggle {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent-gradient);
+      width: 0%;
+      transition: width 1s linear;
+    }
+
+    @media (max-width: 600px) {
+      .milestones {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <!-- Animated Background -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
+        <div class="brand-icon">
+          <img src="logo.png" alt="RAR Logo" class="brand-logo">
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="strategist.html" class="nav-link">Strategist</a>
+        <a href="checklist.html" class="nav-link">Checklist</a>
+        <a href="features.html" class="nav-link">AI Tools</a>
+        <a href="countdown.html" class="nav-link active">Sprint Timer</a>
+        <a href="team_builder.html" class="nav-link">Team Builder</a>
+        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
+        <a href="repos.html" class="nav-link">Hackathon Repos</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="strategist.html" class="mobile-link">Strategist</a>
+    <a href="checklist.html" class="mobile-link">Checklist</a>
+    <a href="features.html" class="mobile-link">AI Tools</a>
+    <a href="countdown.html" class="mobile-link active">Sprint Timer</a>
+    <a href="team_builder.html" class="mobile-link">Team Builder</a>
+    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
+    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
+  </div>
+
+  <main class="countdown-container">
+    <!-- Setup Form -->
+    <div id="setupView" class="setup-card">
+      <h1>Start Your Sprint</h1>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem;">Track your progress and hit your milestones on time.</p>
+      
+      <div class="form-group">
+        <label for="hackathonName">Hackathon Name</label>
+        <input type="text" id="hackathonName" placeholder="e.g. Google Gemini Hackathon">
+      </div>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="form-group">
+          <label for="startTime">Start Date & Time</label>
+          <input type="datetime-local" id="startTime">
+        </div>
+        <div class="form-group">
+          <label for="endTime">Submission Deadline</label>
+          <input type="datetime-local" id="endTime">
+        </div>
+      </div>
+
+      <button class="btn-primary btn-lg" id="startTimerBtn" style="width: 100%; margin-top: 1rem;">
+        Initialize Countdown
+      </button>
+    </div>
+
+    <!-- Live Timer -->
+    <div id="timerView" class="timer-card" style="display: none; position: relative;">
+      <div class="sound-toggle" id="soundToggle">
+        <svg id="soundOnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        <svg id="soundOffIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <span>Alerts On</span>
+      </div>
+
+      <div class="hackathon-title-display" id="displayTitle">Hackathon Name</div>
+      <div style="color: var(--text-secondary); font-size: 0.9rem;">Submission Deadline</div>
+
+      <div class="timer-display">
+        <div class="timer-unit">
+          <span id="hours">00</span>
+          <span class="unit-label">Hours</span>
+        </div>
+        <span>:</span>
+        <div class="timer-unit">
+          <span id="minutes">00</span>
+          <span class="unit-label">Min</span>
+        </div>
+        <span>:</span>
+        <div class="timer-unit">
+          <span id="seconds">00</span>
+          <span class="unit-label">Sec</span>
+        </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+
+      <div class="milestones">
+        <div class="milestone" id="milestone1">
+          <span class="milestone-percentage">33%</span>
+          <span class="milestone-title">Ideation Phase</span>
+        </div>
+        <div class="milestone" id="milestone2">
+          <span class="milestone-percentage">66%</span>
+          <span class="milestone-title">MVP Complete</span>
+        </div>
+        <div class="milestone" id="milestone3">
+          <span class="milestone-percentage">90%</span>
+          <span class="milestone-title">Polishing Polish</span>
+        </div>
+      </div>
+
+      <div class="timer-controls">
+        <button class="btn-outline" id="resetBtn">Reset Timer</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="theme.js"></script>
+  <script>
+    const setupView = document.getElementById('setupView');
+    const timerView = document.getElementById('timerView');
+    const startBtn = document.getElementById('startTimerBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const soundToggle = document.getElementById('soundToggle');
+    
+    let timerInterval;
+    let soundEnabled = true;
+    let milestoneAlerts = { m1: false, m2: false, m3: false };
+
+    // Audio context for beep
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep(freq = 440) {
+      if (!soundEnabled) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.5);
+    }
+
+    function updateTimer() {
+      const state = JSON.parse(localStorage.getItem('hackathonTimer'));
+      if (!state) return;
+
+      const now = new Date().getTime();
+      const start = new Date(state.start).getTime();
+      const end = new Date(state.end).getTime();
+      
+      const totalTime = end - start;
+      const timeLeft = end - now;
+      const timeElapsed = now - start;
+      
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        document.getElementById('progressBar').style.width = '100%';
+        return;
+      }
+
+      // Calculations
+      const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+      // Progress and Milestones
+      const percentage = Math.min((timeElapsed / totalTime) * 100, 100);
+      document.getElementById('progressBar').style.width = percentage + '%';
+
+      if (percentage >= 33 && !milestoneAlerts.m1) {
+        document.getElementById('milestone1').classList.add('active');
+        playBeep(440);
+        milestoneAlerts.m1 = true;
+      }
+      if (percentage >= 66 && !milestoneAlerts.m2) {
+        document.getElementById('milestone2').classList.add('active');
+        playBeep(554.37); // C#
+        milestoneAlerts.m2 = true;
+      }
+      if (percentage >= 90 && !milestoneAlerts.m3) {
+        document.getElementById('milestone3').classList.add('active');
+        playBeep(659.25); // E
+        milestoneAlerts.m3 = true;
+      }
+    }
+
+    startBtn.addEventListener('click', () => {
+      const name = document.getElementById('hackathonName').value;
+      const start = document.getElementById('startTime').value;
+      const end = document.getElementById('endTime').value;
+
+      if (!name || !start || !end) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const state = { name, start, end };
+      localStorage.setItem('hackathonTimer', JSON.stringify(state));
+      initTimer(state);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset the timer?')) {
+        clearInterval(timerInterval);
+        localStorage.removeItem('hackathonTimer');
+        setupView.style.display = 'block';
+        timerView.style.display = 'none';
+        milestoneAlerts = { m1: false, m2: false, m3: false };
+        document.querySelectorAll('.milestone').forEach(m => m.classList.remove('active'));
+      }
+    });
+
+    soundToggle.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      document.getElementById('soundOnIcon').style.display = soundEnabled ? 'block' : 'none';
+      document.getElementById('soundOffIcon').style.display = soundEnabled ? 'none' : 'block';
+      soundToggle.querySelector('span').textContent = soundEnabled ? 'Alerts On' : 'Alerts Off';
+    });
+
+    function initTimer(state) {
+      setupView.style.display = 'none';
+      timerView.style.display = 'block';
+      document.getElementById('displayTitle').textContent = state.name;
+      
+      // Initial milestone check
+      const now = new Date().getTime();
+      const start = new Date(state.start).getTime();
+      const end = new Date(state.end).getTime();
+      const percentage = ((now - start) / (end - start)) * 100;
+      
+      if (percentage >= 33) { document.getElementById('milestone1').classList.add('active'); milestoneAlerts.m1 = true; }
+      if (percentage >= 66) { document.getElementById('milestone2').classList.add('active'); milestoneAlerts.m2 = true; }
+      if (percentage >= 90) { document.getElementById('milestone3').classList.add('active'); milestoneAlerts.m3 = true; }
+
+      updateTimer();
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    // Load state
+    window.addEventListener('load', () => {
+      const saved = localStorage.getItem('hackathonTimer');
+      if (saved) {
+        initTimer(JSON.parse(saved));
+      } else {
+        // Set default dates for convenience
+        const now = new Date();
+        document.getElementById('startTime').value = now.toISOString().slice(0, 16);
+        const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+        document.getElementById('endTime').value = tomorrow.toISOString().slice(0, 16);
+      }
+    });
+  </script>
+
+  <!-- History Sidebar -->
+  <div class="history-sidebar" id="historySidebar">
+    <div class="history-header">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        Recent Solutions
+      </h3>
+      <button class="close-history" id="closeHistory">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="history-list" id="historyList">
+      <div class="history-empty">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        <p>No recent solutions found.</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="historyToggle" class="history-toggle"
+    onclick="document.getElementById('historySidebar').classList.add('open')"
+    title="View Recent Solutions">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+    History
+    <span id="historyBadge" class="history-badge" style="display:none;">0</span>
+  </button>
+
+  <script>
+    // History Sidebar Logic
+    (function() {
+      const sidebar = document.getElementById('historySidebar');
+      const closeBtn = document.getElementById('closeHistory');
+      const toggleBtn = document.getElementById('historyToggle');
+      const badge = document.getElementById('historyBadge');
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
+      }
+
+      // Close on backdrop click
+      document.addEventListener('click', (e) => {
+        if (sidebar && sidebar.classList.contains('open') &&
+            !sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+          sidebar.classList.remove('open');
+        }
+      });
+
+      // Also wire nav triggers
+      document.querySelectorAll('.history-nav-trigger').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          sidebar.classList.add('open');
+        });
+      });
+
+      // Render history from localStorage
+      function renderHistory() {
+        const list = document.getElementById('historyList');
+        if (!list) return;
+        const raw = localStorage.getItem('strat_history');
+        const history = raw ? JSON.parse(raw) : [];
+        if (history.length === 0) {
+          list.innerHTML = `<div class="history-empty">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3;margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+            <p>No recent solutions found.</p>
+          </div>`;
+          if (badge) badge.style.display = 'none';
+          return;
+        }
+        if (badge) {
+          badge.textContent = history.length;
+          badge.style.display = 'flex';
+        }
+        list.innerHTML = history.map((item, i) => `
+          <div class="history-item" onclick="loadHistory(${i})">
+            <div class="history-item-title">${(item.problem || 'Untitled Project').substring(0, 60)}${(item.problem || '').length > 60 ? '...' : ''}</div>
+            <div class="history-item-meta">
+              <span class="history-item-tag">${item.industry || 'General'}</span>
+              <span>${item.timestamp ? new Date(item.timestamp).toLocaleDateString() : ''}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      renderHistory();
+
+      window.loadHistory = function(index) {
+        const raw = localStorage.getItem('strat_history');
+        const history = raw ? JSON.parse(raw) : [];
+        const item = history[index];
+        if (!item) return;
+        // Store the full item so strategist can restore it
+        localStorage.setItem('latest_strat_result', JSON.stringify(item));
+        localStorage.setItem('presetProject', (item.problem || '').substring(0, 100));
+        window.location.href = 'strategist.html';
+      };
+    })();
+  </script>
+
+  <script src="history_manager.js"></script>
+</body>
+</html>
