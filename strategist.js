@@ -92,6 +92,133 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- History Management ---
+  const historySidebar = document.getElementById('historySidebar');
+  const historyToggle = document.getElementById('historyToggle');
+  const closeHistory = document.getElementById('closeHistory');
+  const historyList = document.getElementById('historyList');
+  const historyBadge = document.getElementById('historyBadge');
+
+  let history = JSON.parse(localStorage.getItem('strat_history') || '[]');
+
+  function updateHistoryUI() {
+    if (historyList) {
+      if (history.length === 0) {
+        historyList.innerHTML = `
+          <div class="history-empty">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+            <p>No recent solutions found.</p>
+          </div>
+        `;
+        historyBadge.style.display = 'none';
+      } else {
+        historyBadge.style.display = 'flex';
+        historyBadge.textContent = history.length;
+        historyList.innerHTML = history.map((item, index) => `
+          <div class="history-item" data-index="${index}">
+            <div class="history-item-title">${item.problem.substring(0, 60)}${item.problem.length > 60 ? '...' : ''}</div>
+            <div class="history-item-meta">
+              <span class="history-item-tag">${item.industry || 'General'}</span>
+              <span class="history-item-date">${new Date(item.timestamp).toLocaleDateString()}</span>
+            </div>
+          </div>
+        `).join('');
+
+        // Add listeners to items
+        document.querySelectorAll('.history-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const index = item.getAttribute('data-index');
+            const savedData = history[index];
+            loadSavedSolution(savedData);
+            historySidebar.classList.remove('open');
+          });
+        });
+      }
+    }
+  }
+
+  function saveToHistory(problem, result) {
+    const newItem = {
+      problem: problem,
+      result: result,
+      context: {
+        theme: ctxTheme ? ctxTheme.value : '',
+        stack: ctxStack ? ctxStack.value : '',
+        time: ctxTime ? ctxTime.value : '',
+        team: ctxTeam ? ctxTeam.value : '',
+        mode: currentMode
+      },
+      industry: result.problem_analysis?.industry || result.industry || 'General',
+      timestamp: new Date().getTime()
+    };
+    
+    // Remove duplicates of the same problem
+    history = history.filter(h => h.problem !== problem);
+    
+    // Add to beginning
+    history.unshift(newItem);
+    
+    // Keep only last 10
+    if (history.length > 10) history.pop();
+    
+    localStorage.setItem('strat_history', JSON.stringify(history));
+    localStorage.setItem('latest_strat_result', JSON.stringify(newItem));
+    updateHistoryUI();
+  }
+
+  function loadSavedSolution(data) {
+    stratProblem.value = data.problem;
+    stratProblem.dispatchEvent(new Event('input'));
+    
+    // Restore optional context fields if available
+    if (data.context) {
+      if (ctxTheme && data.context.theme) ctxTheme.value = data.context.theme;
+      if (ctxStack && data.context.stack) ctxStack.value = data.context.stack;
+      if (ctxTime && data.context.time) ctxTime.value = data.context.time;
+      if (ctxTeam && data.context.team) ctxTeam.value = data.context.team;
+      if (data.context.mode) {
+        currentMode = data.context.mode;
+        document.querySelectorAll('.mode-pill').forEach(pill => {
+          if (pill.getAttribute('data-stratmode') === currentMode) {
+            pill.classList.add('active');
+          } else {
+            pill.classList.remove('active');
+          }
+        });
+      }
+    }
+    
+    // Re-render the output with saved data (Fixed: Pass data.result as a single argument)
+    renderStrategyJSON(data.result);
+    
+    // Show output area
+    document.getElementById('stratOutput').style.display = 'block';
+    document.getElementById('stratOutput').scrollIntoView({ behavior: 'smooth' });
+    showToast('Loaded from history');
+  }
+
+  if (historyToggle) {
+    historyToggle.addEventListener('click', () => {
+      historySidebar.classList.add('open');
+    });
+  }
+
+    });
+  }
+
+  // Handle Nav History Click
+  document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      historySidebar.classList.add('open');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(mobileMenu) mobileMenu.classList.remove('active');
+    });
+  });
+
+  // Initial UI Update
+  updateHistoryUI();
+
   // Check for preset project from other pages
   const preset = localStorage.getItem('presetProject');
   if (preset && stratProblem) {
@@ -108,13 +235,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelectorAll('.mode-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.mode-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentMode = pill.getAttribute('data-stratmode');
     });
   });
+
+  // --- Auto-Restore Latest Result ---
+  const latestStr = localStorage.getItem('latest_strat_result');
+  if (latestStr) {
+    try {
+      const latest = JSON.parse(latestStr);
+      // Only restore if not older than 1 hour (to keep it fresh)
+      const now = new Date().getTime();
+      if (now - latest.timestamp < 86400000) {
+        loadSavedSolution(latest);
+      }
+    } catch (e) {
+      console.error("Failed to auto-restore latest strategist result", e);
+    }
+  }
 
   // Global var to store latest JSON result
   let latestAnalysisJson = null;
@@ -162,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if(result && typeof result === 'object' && result.problem_analysis) {
              latestAnalysisJson = result;
              renderStrategyJSON(result);
+             saveToHistory(problem, result);
              completeProgressUI();
           } else {
              throw new Error("Invalid JSON returned from AI");
@@ -173,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fallbackResult = generateFallbackJSON(problem, context);
             latestAnalysisJson = fallbackResult;
             renderStrategyJSON(fallbackResult);
+            saveToHistory(problem, fallbackResult);
             
             // Add a clear warning that this is offline data
             const pitchBanner = document.getElementById('stratPitchBanner');
@@ -191,6 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fallbackResult = generateFallbackJSON(problem, context);
         latestAnalysisJson = fallbackResult;
         renderStrategyJSON(fallbackResult);
+        saveToHistory(problem, fallbackResult);
         
         const pitchBanner = document.getElementById('stratPitchBanner');
         const warningHtml = `<div style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 0.9rem; color: #fca5a5;">
@@ -268,184 +408,145 @@ document.addEventListener('DOMContentLoaded', () => {
   async function callGeminiStrategist(apiKey, problem, ctx, searchData = null) {
     let researchContext = "";
     if (searchData) {
-      researchContext = `
-      CRITICAL RESEARCH DATA (From Serper.dev Deep Search):
-      ${searchData.aggregatedSnippets}
-      
-      PEOPLE ALSO ASK:
-      ${searchData.aggregatedPAA.map(p => p.question).join(", ")}
-      `;
+      researchContext = "CRITICAL RESEARCH DATA (From Serper.dev Deep Search):\n" +
+        searchData.aggregatedSnippets + "\n\nPEOPLE ALSO ASK:\n" +
+        searchData.aggregatedPAA.map(p => p.question).join(", ");
     }
 
-    const systemPrompt = `You are a world-class AI Hackathon Strategist and Intelligent Search Engine. Provide high-quality, structured, and concise outputs while minimizing token usage.
+    const systemPrompt = `You are a world-class AI Hackathon Strategist. Analyze the problem and return ONLY a valid JSON object — no markdown, no code blocks, no explanation, no trailing text.
 
-    User Problem Statement: "${problem}"
-    Context: Theme: ${ctx.theme}, Stack: ${ctx.stack}, Time: ${ctx.time}, Team: ${ctx.team}
-    
-    ${researchContext}
+User Problem Statement: "${problem}"
+Context: Theme: ${ctx.theme}, Stack: ${ctx.stack}, Time: ${ctx.time}, Team: ${ctx.team}
+${researchContext}
 
-    INSTRUCTIONS:
-    1. UNDERSTAND: Refine problem in 1-2 lines.
-    2. CORE SOLUTION: Direct implementation-focused approach.
-    3. SMART BREAKDOWN: Divide into Frontend, Backend, AI Integration, Database.
-    4. ADD-ONS: MAX 5 ONLY. High-impact, non-generic.
-    5. EXECUTION: Max 6 steps.
-    6. WINNING EDGE: 3 bullet points.
+RULES:
+- Return ONLY raw JSON. No markdown fences. No commentary before or after.
+- All string values MUST be single-line. Escape newlines as \\n inside strings.
+- Keep each string value under 200 characters.
 
-    STRICT RULES:
-    - JSON ONLY. No emojis, no fluff, no storytelling. 
-    - NO MULTILINE STRINGS. You MUST escape all newlines as \\n inside strings.
-    - Under 600 words total. Bullet points preferred.
-    
-    SCHEMA:
-    {
-      "problem_analysis": {
-        "refined_problem": "...",
-        "target_users": ["..."],
-        "core_pain_points": ["..."],
-        "market_gap": "...",
-        "winning_product_direction": "..."
-      },
-      "research_insights": {
-        "existing_solution_patterns": ["..."],
-        "common_weaknesses": ["..."],
-        "emerging_opportunities": ["..."],
-        "useful_tools_apis": [{ "name": "...", "type": "...", "why_it_matters": "..." }]
-      },
-      "best_addons": [
-        { "addon_name": "...", "category": "...", "what_it_does": "...", "why_it_improves_the_solution": "...", "hackathon_value": "...", "implementation_difficulty": "...", "estimated_build_time": "...", "recommended_stack": "...", "apis_or_tools": ["..."], "demo_impact_score": 9, "judge_wow_score": 9 }
-      ],
-      "top_5_priority_addons": [
-        { "rank": 1, "addon_name": "...", "reason": "..." }
-      ],
-      "feature_ideas": {
-        "must_have_features": ["..."],
-        "nice_to_have_features": ["..."],
-        "future_scope": ["..."]
-      },
-      "prompt_pack": {
-        "master_build_prompt": "...",
-        "frontend_ui_prompt": "...",
-        "backend_api_prompt": "...",
-        "database_prompt": "...",
-        "ai_integration_prompt": "...",
-        "pitch_demo_prompt": "..."
-      },
-      "judge_strategy": {
-        "wow_factor": "...",
-        "best_demo_flow": ["..."],
-        "business_angle": "...",
-        "social_or_market_impact": "...",
-        "one_line_winning_pitch": "..."
-      },
-      "prd": {
-        "project_name": "...",
-        "vision": "...",
-        "user_personas": ["..."],
-        "core_features": [{ "feature": "...", "priority": "P0", "description": "..." }],
-        "technical_requirements": { "frontend": "...", "backend": "...", "database": "...", "integrations": ["..."] },
-        "data_models": [{ "model_name": "...", "fields": ["..."] }],
-        "api_endpoints": [{ "method": "...", "path": "...", "description": "..." }],
-        "security_considerations": ["..."],
-        "scalability_plan": ["..."],
-        "success_metrics": ["..."],
-        "roadmap": ["..."]
+Return this exact JSON structure with all fields filled:
+{"problem_analysis":{"refined_problem":"...","target_users":["..."],"core_pain_points":["..."],"market_gap":"...","winning_product_direction":"..."},"research_insights":{"existing_solution_patterns":["..."],"common_weaknesses":["..."],"emerging_opportunities":["..."],"useful_tools_apis":[{"name":"...","type":"...","why_it_matters":"..."}]},"best_addons":[{"addon_name":"...","category":"...","what_it_does":"...","why_it_improves_the_solution":"...","hackathon_value":"...","implementation_difficulty":"Easy","estimated_build_time":"2h","recommended_stack":"...","apis_or_tools":["..."],"demo_impact_score":9,"judge_wow_score":9}],"top_5_priority_addons":[{"rank":1,"addon_name":"...","reason":"..."}],"feature_ideas":{"must_have_features":["..."],"nice_to_have_features":["..."],"future_scope":["..."]},"prompt_pack":{"master_build_prompt":"...","frontend_ui_prompt":"...","backend_api_prompt":"...","database_prompt":"...","ai_integration_prompt":"...","pitch_demo_prompt":"..."},"judge_strategy":{"wow_factor":"...","best_demo_flow":["..."],"business_angle":"...","social_or_market_impact":"...","one_line_winning_pitch":"..."},"prd":{"project_name":"...","vision":"...","user_personas":["..."],"core_features":[{"feature":"...","priority":"P0","description":"..."}],"technical_requirements":{"frontend":"...","backend":"...","database":"...","integrations":["..."]},"data_models":[{"model_name":"...","fields":["..."]}],"api_endpoints":[{"method":"POST","path":"/api/...","description":"..."}],"security_considerations":["..."],"scalability_plan":["..."],"success_metrics":["..."],"roadmap":["..."]}}`;
+
+    // -- Robust JSON repair ---------------------------------------------------
+    const repairJson = (raw) => {
+      let s = raw.trim();
+      // 1. Strip markdown fences
+      s = s.replace(/^` + "``" + `(?:json)?\s*/i, '').replace(/\s*` + "``" + `\s*$/i, '').trim();
+      // 2. Normalise smart/curly quotes
+      s = s.replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'")
+           .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"');
+      // 3. Remove BOM
+      s = s.replace(/^\uFEFF/, '');
+      // 4. Walk the string escaping bare control chars inside JSON strings
+      let out = '', inStr = false, esc = false;
+      for (let i = 0; i < s.length; i++) {
+        const ch = s[i], code = s.charCodeAt(i);
+        if (esc) { out += ch; esc = false; continue; }
+        if (ch === '\\') { esc = true; out += ch; continue; }
+        if (ch === '"') { inStr = !inStr; out += ch; continue; }
+        if (inStr) {
+          if (code === 0x0A) { out += '\\n'; continue; }
+          if (code === 0x0D) { out += '\\r'; continue; }
+          if (code === 0x09) { out += '\\t'; continue; }
+          if (code < 0x20) { out += '\\u' + code.toString(16).padStart(4,'0'); continue; }
+        }
+        out += ch;
       }
-    }`;
+      s = out;
+      // 5. Close unterminated string
+      if (inStr) s += '"';
+      // 6. Remove trailing commas before } or ]
+      s = s.replace(/,\s*([}\]])/g, '$1');
+      // 7. Balance braces/brackets
+      let braces = 0, brackets = 0;
+      for (const ch of s) {
+        if (ch === '{') braces++;
+        else if (ch === '}') braces--;
+        else if (ch === '[') brackets++;
+        else if (ch === ']') brackets--;
+      }
+      while (brackets > 0) { s += ']'; brackets--; }
+      while (braces > 0) { s += '}'; braces--; }
+      return s;
+    };
 
-    // Retry logic for Gemini API (Exponential Backoff)
-    let retries = 3;
-    let delay = 2000;
-    let response;
-    let lastError = "";
+    // -- Multi-strategy parse -------------------------------------------------
+    const tryParse = (text) => {
+      try { return JSON.parse(text); } catch (_) {}
+      const m = text.match(/\{[\s\S]*\}/);
+      if (m) {
+        try { return JSON.parse(repairJson(m[0])); } catch (_) {}
+      }
+      try { return JSON.parse(repairJson(text)); } catch (_) {}
+      if (m) {
+        let partial = m[0];
+        const lastComma = partial.lastIndexOf(',');
+        if (lastComma > partial.length * 0.5) {
+          try { return JSON.parse(repairJson(partial.substring(0, lastComma))); } catch (_) {}
+        }
+      }
+      return null;
+    };
 
+    // -- Retry loop with exponential backoff ----------------------------------
+    let retries = 3, delay = 2000, response, lastError = "";
     while (retries > 0) {
       try {
-        response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: systemPrompt }] }],
-            tools: searchData ? [] : [{ google_search: {} }],
-            generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-          })
-        });
-
+        response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: systemPrompt }] }],
+              // NOTE: google_search tool is intentionally REMOVED.
+              // It conflicts with responseMimeType:application/json and causes
+              // Gemini to inject citation text that breaks JSON parsing.
+              generationConfig: {
+                temperature: 0.3,
+                maxOutputTokens: 8192,
+                responseMimeType: "application/json"
+              }
+            })
+          }
+        );
         if (response.status === 429 || response.status === 503) {
           const errData = await response.json().catch(() => ({}));
           lastError = errData.error?.message || "Model Overloaded";
           throw new Error("High Demand");
         }
-
         if (!response.ok) {
           const errData = await response.json().catch(() => ({}));
           throw new Error(errData.error?.message || "API Network Error");
         }
-
-        // If we reach here, response is OK
-        break; 
+        break;
       } catch (err) {
         if (err.message === "High Demand") {
           retries--;
           if (retries === 0) throw new Error(lastError);
-          showToast(`Model busy, retrying in ${delay/1000}s... (${retries} attempts left)`);
-          await new Promise(res => setTimeout(res, delay));
+          showToast(`Model busy, retrying in ${delay/1000}s... (${retries} left)`);
+          await new Promise(r => setTimeout(r, delay));
           delay *= 2;
         } else {
           throw err;
         }
       }
     }
-    
+
     const data = await response.json();
-    
-    // When Google Search grounding is active, the response may contain multiple parts.
-    // We must gather ALL text parts and concatenate them instead of assuming parts[0] has text.
-    const candidate = data.candidates[0];
+    const candidate = data.candidates?.[0];
     if (!candidate) throw new Error("No response candidates returned from API.");
-    
+
     const allText = (candidate.content?.parts || [])
-      .filter(p => p.text)
-      .map(p => p.text)
-      .join('');
-    
+      .filter(p => p.text).map(p => p.text).join('');
     if (!allText) throw new Error("API returned an empty response. Please try again.");
-    
-    // Extract JSON from the full text (model may wrap in markdown code blocks)
-    const jsonMatch = allText.match(/\{[\s\S]*\}/);
-    
-    // Function to safely escape unescaped newlines/tabs inside JSON string literals
-    const sanitizeJsonString = (str) => {
-      let inString = false;
-      let escapeNext = false;
-      let res = '';
-      for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        if (escapeNext) { res += char; escapeNext = false; continue; }
-        if (char === '\\') { escapeNext = true; res += char; continue; }
-        if (char === '"') { inString = !inString; res += char; continue; }
-        if (inString && char === '\n') { res += '\\n'; continue; }
-        if (inString && char === '\t') { res += '\\t'; continue; }
-        if (inString && char === '\r') { res += '\\r'; continue; }
-        res += char;
-      }
-      return res;
-    };
 
-    if (jsonMatch) {
-      try {
-        const sanitized = sanitizeJsonString(jsonMatch[0]);
-        return JSON.parse(sanitized);
-      } catch (e) {
-        console.warn("Regex matched but JSON parse failed, falling back to clean text", e);
-      }
-    }
-    
-    // Try direct parse as last resort, stripping markdown if present
-    const cleanText = allText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    return JSON.parse(sanitizeJsonString(cleanText));
+    const parsed = tryParse(allText);
+    if (parsed) return parsed;
+
+    console.error("All JSON parse strategies failed. Raw API text:", allText.substring(0, 800));
+    throw new Error("JSON parse failed after all repair attempts. Please try again.");
   }
-
   // --- RENDER JSON TO UI ---
   function renderStrategyJSON(data) {
     const contentBox = document.getElementById('stratContent');

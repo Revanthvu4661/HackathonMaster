@@ -76,6 +76,109 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- History Management ---
+  const historySidebar = document.getElementById('historySidebar');
+  const historyToggle = document.getElementById('historyToggle');
+  const closeHistory = document.getElementById('closeHistory');
+  const historyList = document.getElementById('historyList');
+  const historyBadge = document.getElementById('historyBadge');
+
+  let tbHistory = JSON.parse(localStorage.getItem('tb_history') || '[]');
+
+  function updateTbHistoryUI() {
+    if (historyList) {
+      if (tbHistory.length === 0) {
+        historyList.innerHTML = `
+          <div class="history-empty">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+            <p>No recent teams found.</p>
+          </div>
+        `;
+        historyBadge.style.display = 'none';
+      } else {
+        historyBadge.style.display = 'flex';
+        historyBadge.textContent = tbHistory.length;
+        historyList.innerHTML = tbHistory.map((item, index) => `
+          <div class="history-item" data-index="${index}">
+            <div class="history-item-title">${item.idea.substring(0, 60)}${item.idea.length > 60 ? '...' : ''}</div>
+            <div class="history-item-meta">
+              <span class="history-item-tag">${item.domain || 'Auto'}</span>
+              <span class="history-item-date">${new Date(item.timestamp).toLocaleDateString()}</span>
+            </div>
+          </div>
+        `).join('');
+
+        document.querySelectorAll('.history-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const index = item.getAttribute('data-index');
+            const savedData = tbHistory[index];
+            loadSavedTeam(savedData);
+            historySidebar.classList.remove('open');
+          });
+        });
+      }
+    }
+  }
+
+  function saveTbToHistory(idea, result, domain) {
+    const newItem = {
+      idea: idea,
+      result: result,
+      domain: domain || 'Auto',
+      timestamp: new Date().getTime()
+    };
+    tbHistory = tbHistory.filter(h => h.idea !== idea);
+    tbHistory.unshift(newItem);
+    if (tbHistory.length > 10) tbHistory.pop();
+    localStorage.setItem('tb_history', JSON.stringify(tbHistory));
+    localStorage.setItem('latest_tb_result', JSON.stringify(newItem));
+    updateTbHistoryUI();
+  }
+
+  function loadSavedTeam(data) {
+    tbIdea.value = data.idea;
+    tbIdea.dispatchEvent(new Event('input'));
+    latestTeamData = data.result;
+    renderTeamBuilderJSON(data.result);
+    document.getElementById('tbOutput').style.display = 'block';
+    document.getElementById('tbOutput').scrollIntoView({ behavior: 'smooth' });
+    showToast('Loaded from history');
+  }
+
+  if (historyToggle) {
+    historyToggle.addEventListener('click', () => historySidebar.classList.add('open'));
+  }
+
+  if (closeHistory) {
+    closeHistory.addEventListener('click', () => historySidebar.classList.remove('open'));
+  }
+
+  // Handle Nav History Click
+  document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      historySidebar.classList.add('open');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(mobileMenu) mobileMenu.classList.remove('active');
+    });
+  });
+
+  // --- Auto-Restore Latest Team ---
+  const latestTbStr = localStorage.getItem('latest_tb_result');
+  if (latestTbStr) {
+    try {
+      const latest = JSON.parse(latestTbStr);
+      const now = new Date().getTime();
+      if (now - latest.timestamp < 86400000) {
+        loadSavedTeam(latest);
+      }
+    } catch (e) {
+      console.error("Failed to auto-restore latest team builder result", e);
+    }
+  }
+
+  updateTbHistoryUI();
+
   // Action
   let latestTeamData = null;
 
@@ -106,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await callGeminiTeamBuilder(apiKey, idea, context);
           latestTeamData = result;
           renderTeamBuilderJSON(result, true);
+          saveTbToHistory(idea, result, context.domain);
           completeProgressUI();
         } else {
           simulateProgressUI(false);
@@ -113,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fallbackResult = getFallbackTeamJSON(idea, context);
             latestTeamData = fallbackResult;
             renderTeamBuilderJSON(fallbackResult, false);
+            saveTbToHistory(idea, fallbackResult, context.domain);
             completeProgressUI();
           }, 3500);
         }
@@ -122,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fallbackResult = getFallbackTeamJSON(idea, context);
         latestTeamData = fallbackResult;
         renderTeamBuilderJSON(fallbackResult, false);
+        saveTbToHistory(idea, fallbackResult, context.domain);
         completeProgressUI();
       }
     });
@@ -235,7 +341,7 @@ SCHEMA:
   }
 }`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -248,8 +354,45 @@ SCHEMA:
     const data = await response.json();
     const text = data.candidates[0].content.parts[0].text;
     const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (jsonMatch) return JSON.parse(jsonMatch[0]);
-    return JSON.parse(text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim());
+
+    const repairJson = (str) => {
+      let res = str.trim();
+      let inString = false;
+      let escapeNext = false;
+      let sanitized = '';
+      for (let i = 0; i < res.length; i++) {
+        const char = res[i];
+        if (escapeNext) { sanitized += char; escapeNext = false; continue; }
+        if (char === '\\') { escapeNext = true; sanitized += char; continue; }
+        if (char === '"') { inString = !inString; sanitized += char; continue; }
+        if (inString && char === '\n') { sanitized += '\\n'; continue; }
+        if (inString && char === '\t') { sanitized += '\\t'; continue; }
+        if (inString && char === '\r') { sanitized += '\\r'; continue; }
+        sanitized += char;
+      }
+      res = sanitized;
+      if (inString) res += '"';
+      let braceCount = 0;
+      let bracketCount = 0;
+      for (let i = 0; i < res.length; i++) {
+        if (res[i] === '{') braceCount++;
+        else if (res[i] === '}') braceCount--;
+        else if (res[i] === '[') bracketCount++;
+        else if (res[i] === ']') bracketCount--;
+      }
+      while (bracketCount > 0) { res += ']'; bracketCount--; }
+      while (braceCount > 0) { res += '}'; braceCount--; }
+      return res;
+    };
+
+    if (jsonMatch) {
+      try {
+        return JSON.parse(repairJson(jsonMatch[0]));
+      } catch (e) {
+        console.warn("JSON parse failed even after repair", e);
+      }
+    }
+    return JSON.parse(repairJson(text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()));
   }
 
   // --- RENDER LOGIC ---

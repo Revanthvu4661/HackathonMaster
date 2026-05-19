@@ -80,7 +80,139 @@ const fallbackDefaultResult = {
   industry: "General Tech"
 };
 
-function getOfflineFallback(prompt) {
+  // --- History Management ---
+  const historySidebar = document.getElementById('historySidebar');
+  const historyToggle = document.getElementById('historyToggle');
+  const closeHistory = document.getElementById('closeHistory');
+  const historyList = document.getElementById('historyList');
+  const historyBadge = document.getElementById('historyBadge');
+
+  let history = JSON.parse(localStorage.getItem('strat_history') || '[]');
+
+  function updateHistoryUI() {
+    if (historyList) {
+      if (history.length === 0) {
+        historyList.innerHTML = `
+          <div class="history-empty">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+            <p>No recent solutions found.</p>
+          </div>
+        `;
+        historyBadge.style.display = 'none';
+      } else {
+        historyBadge.style.display = 'flex';
+        historyBadge.textContent = history.length;
+        historyList.innerHTML = history.map((item, index) => `
+          <div class="history-item" data-index="${index}">
+            <div class="history-item-title">${item.problem.substring(0, 60)}${item.problem.length > 60 ? '...' : ''}</div>
+            <div class="history-item-meta">
+              <span class="history-item-tag">${item.industry || 'General'}</span>
+              <span class="history-item-date">${new Date(item.timestamp).toLocaleDateString()}</span>
+            </div>
+          </div>
+        `).join('');
+
+        document.querySelectorAll('.history-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const index = item.getAttribute('data-index');
+            const savedData = history[index];
+            loadSavedSolution(savedData);
+            historySidebar.classList.remove('open');
+          });
+        });
+      }
+    }
+  }
+
+  function saveToHistory(problem, result) {
+    const newItem = {
+      problem: problem,
+      result: result,
+      industry: result.industry || 'General',
+      timestamp: new Date().getTime()
+    };
+    history = history.filter(h => h.problem !== problem);
+    history.unshift(newItem);
+    if (history.length > 10) history.pop();
+    localStorage.setItem('strat_history', JSON.stringify(history));
+    localStorage.setItem('latest_strat_result', JSON.stringify(newItem));
+    updateHistoryUI();
+  }
+
+  function loadSavedSolution(data) {
+    projectInput.value = data.problem;
+    projectInput.dispatchEvent(new Event('input'));
+    
+    const res = data.result;
+    if (res.overview) {
+      reportData.overview = res.overview;
+      reportData.techstack = res.techstack;
+      reportData.ai = res.ai_strategy;
+      reportData.workflow = (res.mega_prompt || '').substring(0, 500) + "...";
+      reportData.database = res.database_schema;
+      reportData.apis = res.api_endpoints;
+      reportData.winsecrets = res.win_secret;
+      
+      // Update prompts view if it's there
+      if (res.mega_prompt) {
+         reportData.prompts = `
+          <div class="mega-prompt-container" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(6, 182, 212, 0.1)); padding: 2rem; border-radius: 16px; border: 1px solid var(--accent-primary); margin-bottom: 2rem;">
+            <h3 style="color: var(--accent-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              MAX ADVANCED: One-Click Mega Prompt
+            </h3>
+            <div class="code-block" style="max-height: 400px; overflow-y: auto; font-size: 0.8rem; line-height: 1.6; background: #0a0a0c; color: #e0e7ff;">
+              ${res.mega_prompt.replace(/\n/g, '<br>')}
+            </div>
+            <button class="btn-primary copy-prompt-btn" style="margin-top: 1.5rem; width: 100%;">Copy Mega Prompt</button>
+          </div>
+        `;
+      }
+    }
+    
+    populateReport(data.problem, { industry: data.industry, stack: (res.techstack || '').substring(0, 50), aiModel: 'Restored from History' });
+    
+    outputArea.style.display = 'block';
+    outputArea.scrollIntoView({ behavior: 'smooth' });
+    showToast('Loaded from history');
+  }
+
+  if (historyToggle) {
+    historyToggle.addEventListener('click', () => historySidebar.classList.add('open'));
+  }
+
+  if (closeHistory) {
+    closeHistory.addEventListener('click', () => historySidebar.classList.remove('open'));
+  }
+
+  // Handle Nav History Click
+  document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      historySidebar.classList.add('open');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(mobileMenu) mobileMenu.classList.remove('active');
+    });
+  });
+
+  // --- Auto-Restore Latest Result ---
+  const latestStr = localStorage.getItem('latest_strat_result');
+  if (latestStr) {
+    try {
+      const latest = JSON.parse(latestStr);
+      // Only restore if not older than 1 hour (to keep it fresh)
+      const now = new Date().getTime();
+      if (now - latest.timestamp < 86400000) {
+        loadSavedSolution(latest);
+      }
+    } catch (e) {
+      console.error("Failed to auto-restore latest strategist result", e);
+    }
+  }
+
+  updateHistoryUI();
+
+  function getOfflineFallback(prompt) {
   const text = prompt.toLowerCase();
   const extKb = (typeof window !== 'undefined' && window.OFFLINE_KNOWLEDGE_BASE) ? window.OFFLINE_KNOWLEDGE_BASE : [];
   
@@ -136,33 +268,46 @@ async function callGeminiDeepSearch(prompt) {
     
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     
-    const sanitizeJsonString = (str) => {
+    // Robust JSON Repair Function
+    const repairJson = (str) => {
+      let res = str.trim();
       let inString = false;
       let escapeNext = false;
-      let res = '';
-      for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        if (escapeNext) { res += char; escapeNext = false; continue; }
-        if (char === '\\') { escapeNext = true; res += char; continue; }
-        if (char === '"') { inString = !inString; res += char; continue; }
-        if (inString && char === '\n') { res += '\\n'; continue; }
-        if (inString && char === '\t') { res += '\\t'; continue; }
-        if (inString && char === '\r') { res += '\\r'; continue; }
-        res += char;
+      let sanitized = '';
+      for (let i = 0; i < res.length; i++) {
+        const char = res[i];
+        if (escapeNext) { sanitized += char; escapeNext = false; continue; }
+        if (char === '\\') { escapeNext = true; sanitized += char; continue; }
+        if (char === '"') { inString = !inString; sanitized += char; continue; }
+        if (inString && char === '\n') { sanitized += '\\n'; continue; }
+        if (inString && char === '\t') { sanitized += '\\t'; continue; }
+        if (inString && char === '\r') { sanitized += '\\r'; continue; }
+        sanitized += char;
       }
+      res = sanitized;
+      if (inString) res += '"';
+      let braceCount = 0;
+      let bracketCount = 0;
+      for (let i = 0; i < res.length; i++) {
+        if (res[i] === '{') braceCount++;
+        else if (res[i] === '}') braceCount--;
+        else if (res[i] === '[') bracketCount++;
+        else if (res[i] === ']') bracketCount--;
+      }
+      while (bracketCount > 0) { res += ']'; bracketCount--; }
+      while (braceCount > 0) { res += '}'; braceCount--; }
       return res;
     };
 
     if (jsonMatch) {
       try {
-        const sanitized = sanitizeJsonString(jsonMatch[0]);
-        return JSON.parse(sanitized);
+        return JSON.parse(repairJson(jsonMatch[0]));
       } catch (e) {
-        console.warn("JSON parse failed on match", e);
+        console.warn("JSON parse failed on match even after repair", e);
       }
     }
     const cleanText = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    return JSON.parse(sanitizeJsonString(cleanText));
+    return JSON.parse(repairJson(cleanText));
   } catch (err) {
     console.warn('Gemini Search Error, using offline fallback:', err);
     return getOfflineFallback(prompt);
@@ -242,6 +387,8 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
                reportData.database = result.database_schema;
                reportData.apis = result.api_endpoints;
                reportData.winsecrets = result.win_secret;
+                
+               saveToHistory(idea, result);
                
                // Max Advanced "Mega Prompt" Display
                reportData.prompts = `

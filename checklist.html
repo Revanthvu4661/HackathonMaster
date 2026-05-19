@@ -469,5 +469,105 @@
       }
     };
   </script>
+
+  <!-- History Sidebar -->
+  <div class="history-sidebar" id="historySidebar">
+    <div class="history-header">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        Recent Solutions
+      </h3>
+      <button class="close-history" id="closeHistory">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="history-list" id="historyList">
+      <div class="history-empty">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        <p>No recent solutions found.</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="historyToggle" class="history-toggle"
+    onclick="document.getElementById('historySidebar').classList.add('open')"
+    title="View Recent Solutions">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+    History
+    <span id="historyBadge" class="history-badge" style="display:none;">0</span>
+  </button>
+
+  <script>
+    // History Sidebar Logic
+    (function() {
+      const sidebar = document.getElementById('historySidebar');
+      const closeBtn = document.getElementById('closeHistory');
+      const toggleBtn = document.getElementById('historyToggle');
+      const badge = document.getElementById('historyBadge');
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
+      }
+
+      // Close on backdrop click
+      document.addEventListener('click', (e) => {
+        if (sidebar && sidebar.classList.contains('open') &&
+            !sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+          sidebar.classList.remove('open');
+        }
+      });
+
+      // Also wire nav triggers
+      document.querySelectorAll('.history-nav-trigger').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          sidebar.classList.add('open');
+        });
+      });
+
+      // Render history from localStorage
+      function renderHistory() {
+        const list = document.getElementById('historyList');
+        if (!list) return;
+        const raw = localStorage.getItem('strat_history');
+        const history = raw ? JSON.parse(raw) : [];
+        if (history.length === 0) {
+          list.innerHTML = `<div class="history-empty">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3;margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+            <p>No recent solutions found.</p>
+          </div>`;
+          if (badge) badge.style.display = 'none';
+          return;
+        }
+        if (badge) {
+          badge.textContent = history.length;
+          badge.style.display = 'flex';
+        }
+        list.innerHTML = history.map((item, i) => `
+          <div class="history-item" onclick="loadHistory(${i})">
+            <div class="history-item-title">${(item.problem || 'Untitled Project').substring(0, 60)}${(item.problem || '').length > 60 ? '...' : ''}</div>
+            <div class="history-item-meta">
+              <span class="history-item-tag">${item.industry || 'General'}</span>
+              <span>${item.timestamp ? new Date(item.timestamp).toLocaleDateString() : ''}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      renderHistory();
+
+      window.loadHistory = function(index) {
+        const raw = localStorage.getItem('strat_history');
+        const history = raw ? JSON.parse(raw) : [];
+        const item = history[index];
+        if (!item) return;
+        // Store the full item so strategist can restore it
+        localStorage.setItem('latest_strat_result', JSON.stringify(item));
+        localStorage.setItem('presetProject', (item.problem || '').substring(0, 100));
+        window.location.href = 'strategist.html';
+      };
+    })();
+  </script>
+
 </body>
 </html>
