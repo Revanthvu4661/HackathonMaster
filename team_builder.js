@@ -6,7 +6,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   // Global Logic Handled by theme.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,7 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
+
 
 
 
@@ -54,7 +102,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const tbIdea = document.getElementById('tbIdea');
+  // latestTeamData declared at the top of the file
+
+
+
+
+
+
+
+
 
 
 
@@ -70,6 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const tbGenerateBtn = document.getElementById('tbGenerateBtn');
 
 
@@ -78,7 +151,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const tbBtnText = document.getElementById('tbBtnText');
+
+
+
+
+
+
+
+
 
 
 
@@ -102,7 +191,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const ctxSize = document.getElementById('tbTeamSize');
+
+
+
+
+
+
+
+
 
 
 
@@ -118,7 +231,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const ctxDomain = document.getElementById('tbDomain');
+
+
+
+
+
+
+
+
 
 
 
@@ -142,7 +271,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // API Key Management
+
+
+
+
+
+
+
+
 
 
 
@@ -158,7 +311,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const openApiKeyModal = document.getElementById('tbOpenApiKeyModal');
+
+
+
+
+
+
+
+
 
 
 
@@ -174,6 +343,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const tbCloseModal = document.getElementById('tbCloseModal');
 
 
@@ -182,7 +359,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const tbSaveKey = document.getElementById('tbSaveKey');
+
+
+
+
+
+
+
+
 
 
 
@@ -206,7 +399,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function checkApiKey() {
+
+
+
+
+
+
+
+
 
 
 
@@ -222,7 +439,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     if (key) {
+
+
+
+
+
+
+
+
 
 
 
@@ -238,7 +471,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       apiKeyBanner.innerHTML = `
+
+
+
+
+
+
+
+
 
 
 
@@ -254,7 +503,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+
+
+
+
+
+
+
+
 
 
 
@@ -270,7 +535,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -286,7 +567,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           <button class="btn-outline btn-sm" id="tbOpenApiKeyModal">Settings</button>
+
+
+
+
+
+
+
+
 
 
 
@@ -302,7 +599,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -318,7 +631,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       document.getElementById('clearApiKeyBtn').addEventListener('click', () => {
+
+
+
+
+
+
+
+
 
 
 
@@ -334,7 +663,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         location.reload();
+
+
+
+
+
+
+
+
 
 
 
@@ -350,7 +695,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       document.getElementById('tbOpenApiKeyModal').addEventListener('click', () => tbApiModal.style.display = 'flex');
+
+
+
+
+
+
+
+
 
 
 
@@ -366,7 +727,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -398,7 +783,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if(openApiKeyModal) openApiKeyModal.addEventListener('click', () => tbApiModal.style.display = 'flex');
+
+
+
+
+
+
+
+
 
 
 
@@ -414,7 +823,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   if(tbSaveKey) {
+
+
+
+
+
+
+
+
 
 
 
@@ -430,7 +855,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const key = tbApiKeyInput.value.trim();
+
+
+
+
+
+
+
+
 
 
 
@@ -446,7 +887,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       tbApiModal.style.display = 'none';
+
+
+
+
+
+
+
+
 
 
 
@@ -462,7 +919,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       showToast('API Key saved locally!');
+
+
+
+
+
+
+
+
 
 
 
@@ -478,7 +951,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -502,7 +999,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   if(tbIdea) {
+
+
+
+
+
+
+
+
 
 
 
@@ -518,7 +1031,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const count = tbIdea.value.length;
+
+
+
+
+
+
+
+
 
 
 
@@ -534,6 +1063,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       tbGenerateBtn.disabled = count < 20;
 
 
@@ -542,7 +1079,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -566,7 +1119,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   document.querySelectorAll('.example-chip').forEach(chip => {
+
+
+
+
+
+
+
+
 
 
 
@@ -582,7 +1159,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       tbIdea.value = chip.getAttribute('data-idea');
+
+
+
+
+
+
+
+
 
 
 
@@ -598,7 +1191,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -622,7 +1231,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // --- History Management ---
+
+
+
+
+
+
+
+
 
 
 
@@ -638,7 +1271,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const historyToggle = document.getElementById('historyToggle');
+
+
+
+
+
+
+
+
 
 
 
@@ -654,6 +1303,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const historyList = document.getElementById('historyList');
 
 
@@ -662,7 +1319,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   const historyBadge = document.getElementById('historyBadge');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -694,9 +1375,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   window.updateTbHistoryUI = updateTbHistoryUI;
 
+
+
   function updateTbHistoryUI() {
+
+
+
+
+
+
+
+
 
 
 
@@ -712,7 +1419,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       if (tbHistory.length === 0) {
+
+
+
+
+
+
+
+
 
 
 
@@ -728,7 +1451,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           <div class="history-empty">
+
+
+
+
+
+
+
+
 
 
 
@@ -744,6 +1483,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             <p>No recent teams found.</p>
 
 
@@ -752,7 +1499,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -768,7 +1531,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         historyBadge.style.display = 'none';
+
+
+
+
+
+
+
+
 
 
 
@@ -784,7 +1563,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         historyBadge.style.display = 'flex';
+
+
+
+
+
+
+
+
 
 
 
@@ -800,7 +1595,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         historyList.innerHTML = tbHistory.map((item, index) => `
+
+
+
+
+
+
+
+
 
 
 
@@ -816,7 +1627,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             <div class="history-item-title">${item.idea.substring(0, 60)}${item.idea.length > 60 ? '...' : ''}</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -832,7 +1659,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
               <span class="history-item-tag">${item.domain || 'Auto'}</span>
+
+
+
+
+
+
+
+
 
 
 
@@ -848,6 +1691,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             </div>
 
 
@@ -856,7 +1707,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -880,7 +1747,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         document.querySelectorAll('.history-item').forEach(item => {
+
+
+
+
+
+
+
+
 
 
 
@@ -896,7 +1787,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             const index = item.getAttribute('data-index');
+
+
+
+
+
+
+
+
 
 
 
@@ -912,7 +1819,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             loadSavedTeam(savedData);
+
+
+
+
+
+
+
+
 
 
 
@@ -928,7 +1851,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           });
+
+
+
+
+
+
+
+
 
 
 
@@ -944,7 +1883,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -960,7 +1915,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -984,7 +1963,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     const newItem = {
+
+
+
+
+
+
+
+
 
 
 
@@ -1000,7 +1995,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       result: result,
+
+
+
+
+
+
+
+
 
 
 
@@ -1016,7 +2027,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       timestamp: new Date().getTime()
+
+
+
+
+
+
+
+
 
 
 
@@ -1032,7 +2059,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     tbHistory = tbHistory.filter(h => h.idea !== idea);
+
+
+
+
+
+
+
+
 
 
 
@@ -1048,7 +2091,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     if (tbHistory.length > 10) tbHistory.pop();
+
+
+
+
+
+
+
+
 
 
 
@@ -1064,7 +2123,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     localStorage.setItem('latest_tb_result', JSON.stringify(newItem));
+
+
+
+
+
+
+
+
 
 
 
@@ -1080,7 +2155,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1098,7 +2197,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.loadSavedTeam = loadSavedTeam;
 
+
+
   function loadSavedTeam(data) {
+
+
+
+
+
+
+
+
 
 
 
@@ -1114,7 +2223,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     tbIdea.dispatchEvent(new Event('input'));
+
+
+
+
+
+
+
+
 
 
 
@@ -1130,7 +2255,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     renderTeamBuilderJSON(data.result);
+
+
+
+
+
+
+
+
 
 
 
@@ -1146,7 +2287,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     document.getElementById('tbOutput').scrollIntoView({ behavior: 'smooth' });
+
+
+
+
+
+
+
+
 
 
 
@@ -1162,7 +2319,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1186,6 +2367,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     historyToggle.addEventListener('click', () => historySidebar.classList.add('open'));
 
 
@@ -1194,7 +2383,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1218,6 +2431,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     closeHistory.addEventListener('click', () => historySidebar.classList.remove('open'));
 
 
@@ -1226,7 +2447,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1250,7 +2495,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
+
+
+
+
+
+
+
+
 
 
 
@@ -1266,7 +2527,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       e.preventDefault();
+
+
+
+
+
+
+
+
 
 
 
@@ -1282,7 +2559,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const mobileMenu = document.getElementById('mobileMenu');
+
+
+
+
+
+
+
+
 
 
 
@@ -1298,7 +2591,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -1322,7 +2631,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // --- Auto-Restore Latest Team ---
+
+
+
+
+
+
+
+
 
 
 
@@ -1338,7 +2671,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   if (latestTbStr) {
+
+
+
+
+
+
+
+
 
 
 
@@ -1354,7 +2703,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const latest = JSON.parse(latestTbStr);
+
+
+
+
+
+
+
+
 
 
 
@@ -1370,7 +2735,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       if (true) {
+
+
+
+
+
+
+
+
 
 
 
@@ -1386,7 +2767,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -1402,7 +2799,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       console.error("Failed to auto-restore latest team builder result", e);
+
+
+
+
+
+
+
+
 
 
 
@@ -1418,7 +2831,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1450,7 +2887,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Action
+
+
+
+
+
+
+
+
 
 
 
@@ -1474,7 +2935,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if(tbGenerateBtn) {
+
+
+
+
+
+
+
+
 
 
 
@@ -1490,7 +2975,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const idea = tbIdea.value;
+
+
+
+
+
+
+
+
 
 
 
@@ -1514,7 +3015,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       tbGenerateBtn.disabled = true;
+
+
+
+
+
+
+
+
 
 
 
@@ -1530,7 +3055,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       tbBtnLoading.style.display = 'flex';
+
+
+
+
+
+
+
+
 
 
 
@@ -1546,7 +3087,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       
+
+
+
+
+
+
+
+
 
 
 
@@ -1562,7 +3119,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       overlay.style.display = 'flex';
+
+
+
+
+
+
+
+
 
 
 
@@ -1578,7 +3151,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const apiKey = localStorage.getItem('gemini_api_key');
+
+
+
+
+
+
+
+
 
 
 
@@ -1594,7 +3183,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         size: ctxSize.value || '2',
+
+
+
+
+
+
+
+
 
 
 
@@ -1610,6 +3215,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         domain: ctxDomain.value || 'Auto',
 
 
@@ -1618,7 +3231,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         duration: ctxDuration.value || '24 hours'
+
+
+
+
+
+
+
+
 
 
 
@@ -1642,7 +3271,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       try {
+
+
+
+
+
+
+
+
 
 
 
@@ -1658,7 +3311,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           simulateProgressUI(true);
+
+
+
+
+
+
+
+
 
 
 
@@ -1674,7 +3343,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           latestTeamData = result;
+
+
+
+
+
+
+
+
 
 
 
@@ -1690,7 +3375,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           saveTbToHistory(idea, result, context.domain);
+
+
+
+
+
+
+
+
 
 
 
@@ -1706,7 +3407,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         } else {
+
+
+
+
+
+
+
+
 
 
 
@@ -1722,7 +3439,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           setTimeout(() => {
+
+
+
+
+
+
+
+
 
 
 
@@ -1738,7 +3471,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             latestTeamData = fallbackResult;
+
+
+
+
+
+
+
+
 
 
 
@@ -1754,7 +3503,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             saveTbToHistory(idea, fallbackResult, context.domain);
+
+
+
+
+
+
+
+
 
 
 
@@ -1770,7 +3535,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
           }, 3500);
+
+
+
+
+
+
+
+
 
 
 
@@ -1786,7 +3567,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       } catch (err) {
+
+
+
+
+
+
+
+
 
 
 
@@ -1802,7 +3599,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         showToast("Live API failed. Falling back to simulation.");
+
+
+
+
+
+
+
+
 
 
 
@@ -1818,7 +3631,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         latestTeamData = fallbackResult;
+
+
+
+
+
+
+
+
 
 
 
@@ -1834,7 +3663,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         saveTbToHistory(idea, fallbackResult, context.domain);
+
+
+
+
+
+
+
+
 
 
 
@@ -1850,7 +3695,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -1866,7 +3727,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1890,7 +3775,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     const steps = ['tbstep1', 'tbstep2', 'tbstep3', 'tbstep4', 'tbstep5'];
+
+
+
+
+
+
+
+
 
 
 
@@ -1906,6 +3807,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     const label = document.getElementById('tbProgressLabel');
 
 
@@ -1914,7 +3823,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     
+
+
+
+
+
+
+
+
 
 
 
@@ -1930,7 +3855,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const el = document.getElementById(id);
+
+
+
+
+
+
+
+
 
 
 
@@ -1946,7 +3887,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       el.querySelector('.step-dot').innerHTML = '';
+
+
+
+
+
+
+
+
 
 
 
@@ -1962,6 +3919,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     bar.style.width = '0%';
 
 
@@ -1970,7 +3935,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     
+
+
+
+
+
+
+
+
 
 
 
@@ -1986,7 +3967,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     const intervalTime = isLive ? 1500 : 700;
+
+
+
+
+
+
+
+
 
 
 
@@ -2002,7 +3999,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     window.tbProgressInterval = setInterval(() => {
+
+
+
+
+
+
+
+
 
 
 
@@ -2018,7 +4031,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         const prev = document.getElementById(steps[current-1]);
+
+
+
+
+
+
+
+
 
 
 
@@ -2034,7 +4063,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         prev.classList.add('completed');
+
+
+
+
+
+
+
+
 
 
 
@@ -2050,7 +4095,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -2066,7 +4127,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         const curr = document.getElementById(steps[current]);
+
+
+
+
+
+
+
+
 
 
 
@@ -2082,7 +4159,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         curr.querySelector('.step-dot').innerHTML = '•';
+
+
+
+
+
+
+
+
 
 
 
@@ -2098,7 +4191,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         if(isLive && current === 2) label.innerText = "Analyzing team combinations...";
+
+
+
+
+
+
+
+
 
 
 
@@ -2114,7 +4223,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       } else {
+
+
+
+
+
+
+
+
 
 
 
@@ -2130,7 +4255,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -2146,7 +4287,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2170,7 +4335,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     clearInterval(window.tbProgressInterval);
+
+
+
+
+
+
+
+
 
 
 
@@ -2186,7 +4367,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     setTimeout(() => {
+
+
+
+
+
+
+
+
 
 
 
@@ -2202,7 +4399,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       const output = document.getElementById('tbOutput');
+
+
+
+
+
+
+
+
 
 
 
@@ -2218,7 +4431,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+
+
+
+
+
+
+
 
 
 
@@ -2234,7 +4463,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       tbGenerateBtn.disabled = false;
+
+
+
+
+
+
+
+
 
 
 
@@ -2250,7 +4495,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       tbBtnLoading.style.display = 'none';
+
+
+
+
+
+
+
+
 
 
 
@@ -2266,6 +4527,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     }, 500);
 
 
@@ -2274,7 +4543,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2298,7 +4591,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   function showToast(message) {
+
+
+
+
+
+
+
+
 
 
 
@@ -2314,7 +4623,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     if(toast) {
+
+
+
+
+
+
+
+
 
 
 
@@ -2330,7 +4655,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         toast.style.display = 'block';
+
+
+
+
+
+
+
+
 
 
 
@@ -2346,7 +4687,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         setTimeout(() => {
+
+
+
+
+
+
+
+
 
 
 
@@ -2362,7 +4719,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
             setTimeout(() => toast.style.display = 'none', 300);
+
+
+
+
+
+
+
+
 
 
 
@@ -2378,7 +4751,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -2402,7 +4791,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // --- API CALL FUNCTION ---
+
+
+
+
+
+
+
+
 
 
 
@@ -2418,7 +4831,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
     const systemPrompt = `You are an expert technical recruiter and hackathon strategist.
+
+
+
+
+
+
+
+
 
 
 
@@ -2442,7 +4871,31 @@ Given the hackathon idea, team size, current skills, and duration, output a JSON
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Idea: "${idea}"
+
+
+
+
+
+
+
+
 
 
 
@@ -2458,7 +4911,23 @@ Size: ${ctx.size}
 
 
 
+
+
+
+
+
+
+
+
 User Skills: ${ctx.skills}
+
+
+
+
+
+
+
+
 
 
 
@@ -2474,7 +4943,31 @@ Domain: ${ctx.domain}
 
 
 
+
+
+
+
+
+
+
+
 Duration: ${ctx.duration}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2506,7 +4999,31 @@ STRICT JSON ONLY. No markdown outside the JSON block.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SCHEMA:
+
+
+
+
+
+
+
+
 
 
 
@@ -2522,7 +5039,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   "project_summary": { "name": "...", "complexity": "Low/Medium/High", "core_stack": ["..."] },
+
+
+
+
+
+
+
+
 
 
 
@@ -2538,7 +5071,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     { 
+
+
+
+
+
+
+
+
 
 
 
@@ -2554,7 +5103,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       "type": "Engineering", 
+
+
+
+
+
+
+
+
 
 
 
@@ -2570,7 +5135,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       "description": "...", 
+
+
+
+
+
+
+
+
 
 
 
@@ -2586,7 +5167,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       "responsibilities": ["..."] 
+
+
+
+
+
+
+
+
 
 
 
@@ -2602,7 +5199,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   ],
+
+
+
+
+
+
+
+
 
 
 
@@ -2618,6 +5231,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     { "domain": "Frontend", "required_skills": [{"name": "React", "level": "Expert"}] }
 
 
@@ -2626,7 +5247,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   ],
+
+
+
+
+
+
+
+
 
 
 
@@ -2642,7 +5279,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     { "phase": "Ideation (0-2h)", "tasks": ["..."], "roles_involved": ["Frontend Lead"] }
+
+
+
+
+
+
+
+
 
 
 
@@ -2658,7 +5311,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   "collaboration": {
+
+
+
+
+
+
+
+
 
 
 
@@ -2674,7 +5343,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     "protocols": ["..."]
+
+
+
+
+
+
+
+
 
 
 
@@ -2690,7 +5375,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   "solo_strategy": {
+
+
+
+
+
+
+
+
 
 
 
@@ -2706,7 +5407,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     "warning": "...",
+
+
+
+
+
+
+
+
 
 
 
@@ -2722,7 +5439,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2746,7 +5479,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let selectedModel = 'gemini-2.5-flash';
+
+
+
+
+
+
+
+
 
 
 
@@ -2762,7 +5519,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     
+
+
+
+
+
+
+
+
 
 
 
@@ -2778,7 +5551,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
+
+
+
+
+
+
+
+
 
 
 
@@ -2794,7 +5583,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         headers: { 'Content-Type': 'application/json' },
+
+
+
+
+
+
+
+
 
 
 
@@ -2810,7 +5615,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           contents: [{ parts: [{ text: systemPrompt }] }],
+
+
+
+
+
+
+
+
 
 
 
@@ -2826,6 +5647,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         })
 
 
@@ -2834,7 +5663,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       });
+
+
+
+
+
+
+
+
 
 
 
@@ -2850,7 +5695,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       if (response.status === 429) {
+
+
+
+
+
+
+
+
 
 
 
@@ -2866,7 +5727,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         console.warn("Gemini 2.5 Flash quota exceeded. Switching to stable Gemini 2.0 Flash fallback...");
+
+
+
+
+
+
+
+
 
 
 
@@ -2882,7 +5759,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
+
+
+
+
+
+
+
+
 
 
 
@@ -2898,7 +5791,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           headers: { 'Content-Type': 'application/json' },
+
+
+
+
+
+
+
+
 
 
 
@@ -2914,7 +5823,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
             contents: [{ parts: [{ text: systemPrompt }] }],
+
+
+
+
+
+
+
+
 
 
 
@@ -2930,7 +5855,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           })
+
+
+
+
+
+
+
+
 
 
 
@@ -2946,7 +5887,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -2962,7 +5919,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       selectedModel = 'gemini-2.0-flash';
+
+
+
+
+
+
+
+
 
 
 
@@ -2978,7 +5951,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         method: 'POST',
+
+
+
+
+
+
+
+
 
 
 
@@ -2994,7 +5983,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         body: JSON.stringify({
+
+
+
+
+
+
+
+
 
 
 
@@ -3010,7 +6015,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3026,6 +6047,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       });
 
 
@@ -3034,7 +6063,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3058,6 +6111,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     const data = await response.json();
 
 
@@ -3066,7 +6127,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     const text = data.candidates[0].content.parts[0].text;
+
+
+
+
+
+
+
+
 
 
 
@@ -3090,7 +6167,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const repairJson = (str) => {
+
+
+
+
+
+
+
+
 
 
 
@@ -3106,7 +6207,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       let inString = false;
+
+
+
+
+
+
+
+
 
 
 
@@ -3122,6 +6239,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       let sanitized = '';
 
 
@@ -3130,7 +6255,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       for (let i = 0; i < res.length; i++) {
+
+
+
+
+
+
+
+
 
 
 
@@ -3146,7 +6287,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         if (escapeNext) { sanitized += char; escapeNext = false; continue; }
+
+
+
+
+
+
+
+
 
 
 
@@ -3162,7 +6319,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         if (char === '"') { inString = !inString; sanitized += char; continue; }
+
+
+
+
+
+
+
+
 
 
 
@@ -3178,7 +6351,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         if (inString && char === '\t') { sanitized += '\\t'; continue; }
+
+
+
+
+
+
+
+
 
 
 
@@ -3194,6 +6383,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         sanitized += char;
 
 
@@ -3202,7 +6399,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3218,7 +6431,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       if (inString) res += '"';
+
+
+
+
+
+
+
+
 
 
 
@@ -3234,7 +6463,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       let bracketCount = 0;
+
+
+
+
+
+
+
+
 
 
 
@@ -3250,7 +6495,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         if (res[i] === '{') braceCount++;
+
+
+
+
+
+
+
+
 
 
 
@@ -3266,7 +6527,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         else if (res[i] === '[') bracketCount++;
+
+
+
+
+
+
+
+
 
 
 
@@ -3282,7 +6559,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3298,7 +6591,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       while (braceCount > 0) { res += '}'; braceCount--; }
+
+
+
+
+
+
+
+
 
 
 
@@ -3314,7 +6623,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3338,7 +6671,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       try {
+
+
+
+
+
+
+
+
 
 
 
@@ -3354,7 +6703,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       } catch (e) {
+
+
+
+
+
+
+
+
 
 
 
@@ -3370,7 +6735,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3386,6 +6767,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     return JSON.parse(repairJson(text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()));
 
 
@@ -3394,7 +6783,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3418,7 +6831,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   function renderTeamBuilderJSON(data, isLive) {
+
+
+
+
+
+
+
+
 
 
 
@@ -3434,7 +6863,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     summaryBanner.innerHTML = '';
+
+
+
+
+
+
+
+
 
 
 
@@ -3450,7 +6895,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     if(!isLive) {
+
+
+
+
+
+
+
+
 
 
 
@@ -3466,7 +6927,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3490,7 +6975,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       <div class="tb-summary-icon">🎯</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3506,7 +7007,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         <h3>${data.project_summary.name || "Project Blueprint"}</h3>
+
+
+
+
+
+
+
+
 
 
 
@@ -3522,7 +7039,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3538,6 +7071,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         ${data.project_summary.core_stack.map(s => `<span class="tb-chip blue">${s}</span>`).join('')}
 
 
@@ -3546,7 +7087,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3570,7 +7127,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const htmlMap = {
+
+
+
+
+
+
+
+
 
 
 
@@ -3586,7 +7167,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       skills: buildSkillsHTML(data.skills_map),
+
+
+
+
+
+
+
+
 
 
 
@@ -3602,7 +7199,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       collab: buildCollabHTML(data.collaboration),
+
+
+
+
+
+
+
+
 
 
 
@@ -3618,7 +7231,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3642,7 +7279,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     contentBox.innerHTML = '';
+
+
+
+
+
+
+
+
 
 
 
@@ -3658,7 +7311,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     Object.keys(htmlMap).forEach(key => {
+
+
+
+
+
+
+
+
 
 
 
@@ -3674,7 +7343,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       section.className = `output-section ${key === 'roles' ? 'active' : ''}`;
+
+
+
+
+
+
+
+
 
 
 
@@ -3690,7 +7375,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       section.innerHTML = htmlMap[key];
+
+
+
+
+
+
+
+
 
 
 
@@ -3706,7 +7407,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3730,7 +7455,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     tabs.forEach(tab => {
+
+
+
+
+
+
+
+
 
 
 
@@ -3746,7 +7487,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       tab.parentNode.replaceChild(newTab, tab);
+
+
+
+
+
+
+
+
 
 
 
@@ -3762,7 +7519,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         const tabType = newTab.getAttribute('data-tbtab');
+
+
+
+
+
+
+
+
 
 
 
@@ -3778,7 +7551,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         newTab.classList.add('active');
+
+
+
+
+
+
+
+
 
 
 
@@ -3794,7 +7583,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         document.getElementById(`tbtab-${tabType}`).classList.add('active');
+
+
+
+
+
+
+
+
 
 
 
@@ -3810,6 +7615,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     });
 
 
@@ -3818,7 +7631,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3842,7 +7679,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       if(p.includes('Critical')) return ['#ef4444', '#b91c1c'];
+
+
+
+
+
+
+
+
 
 
 
@@ -3858,7 +7711,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       if(p.includes('Medium')) return ['#a78bfa', '#7c3aed'];
+
+
+
+
+
+
+
+
 
 
 
@@ -3874,7 +7743,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3898,7 +7791,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     return `<div class="tb-roles-grid">
+
+
+
+
+
+
+
+
 
 
 
@@ -3914,7 +7823,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         const pClass = r.priority.toLowerCase();
+
+
+
+
+
+
+
+
 
 
 
@@ -3930,7 +7855,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         return `<div class="tb-role-card" style="--role-color-a:${colors[0]}; --role-color-b:${colors[1]}">
+
+
+
+
+
+
+
+
 
 
 
@@ -3946,7 +7887,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
             <div class="tb-role-avatar">${r.title[0]}</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3962,7 +7919,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
               <h4 class="tb-role-title">${r.title}</h4>
+
+
+
+
+
+
+
+
 
 
 
@@ -3978,6 +7951,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
             </div>
 
 
@@ -3986,7 +7967,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4002,7 +7999,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <p class="tb-role-desc">${r.description}</p>
+
+
+
+
+
+
+
+
 
 
 
@@ -4018,7 +8031,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <div class="tb-skills-cloud">
+
+
+
+
+
+
+
+
 
 
 
@@ -4034,7 +8063,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4050,7 +8095,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <ul class="tb-resp-list">
+
+
+
+
+
+
+
+
 
 
 
@@ -4066,7 +8127,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -4082,7 +8159,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }).join('')}
+
+
+
+
+
+
+
+
 
 
 
@@ -4098,7 +8191,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4122,7 +8239,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     return `<div class="tb-skills-map">
+
+
+
+
+
+
+
+
 
 
 
@@ -4138,7 +8271,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         <div class="tb-skill-domain-header">
+
+
+
+
+
+
+
+
 
 
 
@@ -4154,7 +8303,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <h4>${d.domain}</h4>
+
+
+
+
+
+
+
+
 
 
 
@@ -4170,7 +8335,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         ${d.required_skills.map(s => {
+
+
+
+
+
+
+
+
 
 
 
@@ -4186,7 +8367,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
            if(s.level==='Expert') fill=90;
+
+
+
+
+
+
+
+
 
 
 
@@ -4202,7 +8399,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
            else if(s.level==='Beginner') fill=30;
+
+
+
+
+
+
+
+
 
 
 
@@ -4218,7 +8431,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
              <div class="tb-skill-bar-top">
+
+
+
+
+
+
+
+
 
 
 
@@ -4234,7 +8463,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
                <span class="tb-skill-bar-level">${s.level}</span>
+
+
+
+
+
+
+
+
 
 
 
@@ -4250,7 +8495,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
              <div class="tb-skill-bar-bg"><div class="tb-skill-bar-fill" style="width:${fill}%"></div></div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4266,7 +8527,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         }).join('')}
+
+
+
+
+
+
+
+
 
 
 
@@ -4282,6 +8559,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     </div>`;
 
 
@@ -4290,7 +8575,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4314,7 +8623,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     return `<div class="tb-timeline">
+
+
+
+
+
+
+
+
 
 
 
@@ -4330,7 +8655,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         <div class="tb-timeline-dot">⏱️</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4346,7 +8687,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <div class="tb-timeline-phase">${t.phase}</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4362,7 +8719,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <ul class="tb-timeline-tasks">
+
+
+
+
+
+
+
+
 
 
 
@@ -4378,7 +8751,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -4394,7 +8783,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
             ${t.roles_involved.map(r => `<span class="tb-timeline-role-badge">${r}</span>`).join('')}
+
+
+
+
+
+
+
+
 
 
 
@@ -4410,7 +8815,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4426,6 +8847,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     </div>`;
 
 
@@ -4434,7 +8863,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4458,6 +8911,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     return `<div class="tb-collab-grid">
 
 
@@ -4466,7 +8927,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       <div class="tb-collab-card">
+
+
+
+
+
+
+
+
 
 
 
@@ -4482,7 +8959,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         <div class="tb-tool-list">
+
+
+
+
+
+
+
+
 
 
 
@@ -4498,7 +8991,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
             <div class="tb-tool-icon">🔧</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4514,7 +9023,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           </div>`).join('')}
+
+
+
+
+
+
+
+
 
 
 
@@ -4530,7 +9055,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4546,7 +9087,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         <h4><span style="font-size:1.2rem">📜</span> Team Protocols</h4>
+
+
+
+
+
+
+
+
 
 
 
@@ -4562,7 +9119,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           ${c.protocols.map((p, i) => `<li><span class="num">${i+1}</span>${p}</li>`).join('')}
+
+
+
+
+
+
+
+
 
 
 
@@ -4578,7 +9151,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4594,7 +9183,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4618,7 +9231,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     if(!s || !s.warning) return '<p>No solo strategy generated.</p>';
+
+
+
+
+
+
+
+
 
 
 
@@ -4634,7 +9263,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       <div class="tb-solo-warning"><strong>Heads up:</strong> ${s.warning}</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4650,7 +9295,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         <div class="tb-solo-card">
+
+
+
+
+
+
+
+
 
 
 
@@ -4666,7 +9327,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           <ul class="tb-ai-tools-list">
+
+
+
+
+
+
+
+
 
 
 
@@ -4682,7 +9359,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -4698,7 +9391,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4714,7 +9423,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4738,7 +9471,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     const text = idea.toLowerCase();
+
+
+
+
+
+
+
+
 
 
 
@@ -4754,7 +9503,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     
+
+
+
+
+
+
+
+
 
 
 
@@ -4770,7 +9535,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     let bestMatch = null;
+
+
+
+
+
+
+
+
 
 
 
@@ -4794,7 +9575,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     extKb.forEach(item => {
+
+
+
+
+
+
+
+
 
 
 
@@ -4810,7 +9615,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       item.keywords.forEach(kw => {
+
+
+
+
+
+
+
+
 
 
 
@@ -4826,7 +9647,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       });
+
+
+
+
+
+
+
+
 
 
 
@@ -4842,7 +9679,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         highestScore = score;
+
+
+
+
+
+
+
+
 
 
 
@@ -4858,7 +9711,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -4882,7 +9751,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if (bestMatch && bestMatch.team_result) {
+
+
+
+
+
+
+
+
 
 
 
@@ -4898,7 +9791,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         const result = JSON.parse(JSON.stringify(bestMatch.team_result));
+
+
+
+
+
+
+
+
 
 
 
@@ -4914,7 +9823,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         if(result.solo_strategy.is_solo) {
+
+
+
+
+
+
+
+
 
 
 
@@ -4930,6 +9855,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         }
 
 
@@ -4938,7 +9871,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         return result;
+
+
+
+
+
+
+
+
 
 
 
@@ -4962,7 +9911,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Generic fallback if no match found
+
+
+
+
+
+
+
+
 
 
 
@@ -4978,7 +9951,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       "project_summary": {
+
+
+
+
+
+
+
+
 
 
 
@@ -4994,7 +9983,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         "complexity": "Medium",
+
+
+
+
+
+
+
+
 
 
 
@@ -5010,7 +10015,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       },
+
+
+
+
+
+
+
+
 
 
 
@@ -5026,7 +10047,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         {
+
+
+
+
+
+
+
+
 
 
 
@@ -5042,7 +10079,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "type": "Engineering",
+
+
+
+
+
+
+
+
 
 
 
@@ -5058,7 +10111,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "description": "Drives architecture and core feature implementation.",
+
+
+
+
+
+
+
+
 
 
 
@@ -5074,7 +10143,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "responsibilities": ["Project setup", "Core logic", "Deployment"]
+
+
+
+
+
+
+
+
 
 
 
@@ -5090,7 +10175,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         {
+
+
+
+
+
+
+
+
 
 
 
@@ -5106,7 +10207,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "type": "Design",
+
+
+
+
+
+
+
+
 
 
 
@@ -5122,7 +10239,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "description": "Ensures premium UI/UX and user flow.",
+
+
+
+
+
+
+
+
 
 
 
@@ -5138,7 +10271,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "responsibilities": ["UI/UX Design", "Frontend polish"]
+
+
+
+
+
+
+
+
 
 
 
@@ -5154,7 +10303,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       ],
+
+
+
+
+
+
+
+
 
 
 
@@ -5170,7 +10335,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         {
+
+
+
+
+
+
+
+
 
 
 
@@ -5186,7 +10367,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "required_skills": [{"name": "JavaScript", "level": "Expert"}, {"name": "Database", "level": "Intermediate"}]
+
+
+
+
+
+
+
+
 
 
 
@@ -5202,7 +10399,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       ],
+
+
+
+
+
+
+
+
 
 
 
@@ -5218,7 +10431,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         {
+
+
+
+
+
+
+
+
 
 
 
@@ -5234,7 +10463,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
           "tasks": ["Environment setup", "Basic UI scaffolding"],
+
+
+
+
+
+
+
+
 
 
 
@@ -5250,7 +10495,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -5266,7 +10527,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       "collaboration": {
+
+
+
+
+
+
+
+
 
 
 
@@ -5282,7 +10559,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         "protocols": ["Regular standups", "Code reviews"]
+
+
+
+
+
+
+
+
 
 
 
@@ -5298,7 +10591,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       "solo_strategy": {
+
+
+
+
+
+
+
+
 
 
 
@@ -5314,7 +10623,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
         "warning": "Leverage AI coding assistants to maximize your individual output.",
+
+
+
+
+
+
+
+
 
 
 
@@ -5330,6 +10655,14 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
       }
 
 
@@ -5338,7 +10671,23 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
     };
+
+
+
+
+
+
+
+
 
 
 
@@ -5362,7 +10711,31 @@ SCHEMA:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
