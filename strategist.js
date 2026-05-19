@@ -2,7 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   // Global Logic Handled by theme.js
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18,7 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const stratProblem = document.getElementById('stratProblem');
+
+
+
+
 
 
 
@@ -26,7 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const stratGenerateBtn = document.getElementById('stratGenerateBtn');
+
+
+
+
 
 
 
@@ -34,11 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const stratBtnLoading = document.getElementById('stratBtnLoading');
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -46,7 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const ctxStack = document.getElementById('ctxStack');
+
+
+
+
 
 
 
@@ -54,11 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const ctxTeam = document.getElementById('ctxTeam');
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -70,7 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   // API Key Management
+
+
+
+
 
 
 
@@ -78,7 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const openApiKeyModal = document.getElementById('openApiKeyModal');
+
+
+
+
 
 
 
@@ -86,7 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const stratCloseModal = document.getElementById('stratCloseModal');
+
+
+
+
 
 
 
@@ -94,7 +186,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const stratApiKeyInput = document.getElementById('stratApiKeyInput');
+
+
+
+
 
 
 
@@ -106,7 +206,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   function checkApiKey() {
+
+
+
+
 
 
 
@@ -114,7 +226,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     const serperKey = localStorage.getItem('serper_api_key');
+
+
+
+
 
 
 
@@ -122,7 +242,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     if (key || serperKey) {
+
+
+
+
 
 
 
@@ -130,11 +258,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       apiKeyBanner.style.border = '1px solid var(--accent-primary)';
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -142,7 +282,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         <div class="api-key-banner-left">
+
+
+
+
 
 
 
@@ -150,7 +298,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           <span>
+
+
+
+
 
 
 
@@ -158,7 +314,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             ${key ? '<span style="color:#10b981;">Gemini AI Active</span>' : '<span style="color:#f59e0b;">Gemini Missing (Using Offline Mode)</span>'} 
+
+
+
+
 
 
 
@@ -166,7 +330,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             ${serperKey ? '<span style="color:#10b981;">Deep Search Active</span>' : '<span style="color:#f59e0b;">Deep Search Inactive</span>'}
+
+
+
+
 
 
 
@@ -174,7 +346,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -182,7 +362,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           <button class="btn-outline btn-sm" id="openApiKeyModal">Settings</button>
+
+
+
+
 
 
 
@@ -190,7 +378,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -198,7 +394,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -206,7 +410,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -214,7 +426,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         localStorage.removeItem('gemini_api_key');
+
+
+
+
 
 
 
@@ -222,7 +442,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         location.reload();
+
+
+
+
 
 
 
@@ -230,7 +458,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -238,11 +474,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -258,7 +510,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   if(openApiKeyModal) {
+
+
+
+
 
 
 
@@ -266,7 +530,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -274,11 +546,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratCloseModal.addEventListener('click', () => stratApiModal.style.display = 'none');
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -286,7 +570,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratSaveKey.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -294,11 +586,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const sKey = serperApiKeyInput.value.trim();
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -306,7 +610,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       if(sKey) localStorage.setItem('serper_api_key', sKey);
+
+
+
+
 
 
 
@@ -314,7 +626,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       stratApiModal.style.display = 'none';
+
+
+
+
 
 
 
@@ -322,7 +642,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       showToast('API Settings saved locally!');
+
+
+
+
 
 
 
@@ -330,7 +658,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -342,7 +682,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   if(stratProblem) {
+
+
+
+
 
 
 
@@ -350,7 +698,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const count = stratProblem.value.length;
+
+
+
+
 
 
 
@@ -358,11 +714,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       stratGenerateBtn.disabled = count < 20;
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -374,7 +742,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   // --- History Management ---
+
+
+
+
 
 
 
@@ -382,7 +762,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const historyToggle = document.getElementById('historyToggle');
+
+
+
+
 
 
 
@@ -390,11 +778,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const historyList = document.getElementById('historyList');
 
 
 
+
+
+
+
   const historyBadge = document.getElementById('historyBadge');
+
+
+
+
+
+
+
+
 
 
 
@@ -410,8 +814,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   window.updateHistoryUI = updateHistoryUI;
+
   function updateHistoryUI() {
+
+
+
+
 
 
 
@@ -419,7 +836,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       if (history.length === 0) {
+
+
+
+
 
 
 
@@ -427,7 +852,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           <div class="history-empty">
+
+
+
+
 
 
 
@@ -435,11 +868,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             <p>No recent solutions found.</p>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -447,7 +892,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         historyBadge.style.display = 'none';
+
+
+
+
 
 
 
@@ -455,7 +908,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         historyBadge.style.display = 'flex';
+
+
+
+
 
 
 
@@ -463,7 +924,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         historyList.innerHTML = history.map((item, index) => `
+
+
+
+
 
 
 
@@ -471,7 +940,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             <div class="history-item-title">${item.problem.substring(0, 60)}${item.problem.length > 60 ? '...' : ''}</div>
+
+
+
+
 
 
 
@@ -479,7 +956,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
               <span class="history-item-tag">${item.industry || 'General'}</span>
+
+
+
+
 
 
 
@@ -487,11 +972,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             </div>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -503,7 +1000,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
         // Add listeners to items
+
+
+
+
 
 
 
@@ -511,7 +1020,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           item.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -519,7 +1036,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             const savedData = history[index];
+
+
+
+
 
 
 
@@ -527,7 +1052,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             historySidebar.classList.remove('open');
+
+
+
+
 
 
 
@@ -535,7 +1068,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -543,11 +1084,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -559,7 +1116,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     const newItem = {
+
+
+
+
 
 
 
@@ -567,7 +1132,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       result: result,
+
+
+
+
 
 
 
@@ -575,7 +1148,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         theme: ctxTheme ? ctxTheme.value : '',
+
+
+
+
 
 
 
@@ -583,7 +1164,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         time: ctxTime ? ctxTime.value : '',
+
+
+
+
 
 
 
@@ -591,7 +1180,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         mode: currentMode
+
+
+
+
 
 
 
@@ -599,7 +1196,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       industry: result.problem_analysis?.industry || result.industry || 'General',
+
+
+
+
 
 
 
@@ -607,11 +1212,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     };
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -619,11 +1236,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     history = history.filter(h => h.problem !== problem);
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -631,11 +1260,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     history.unshift(newItem);
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -643,7 +1284,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     if (history.length > 10) history.pop();
+
+
+
+
 
 
 
@@ -651,7 +1300,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     if (window.HistoryManager) { window.HistoryManager.saveStrategistResult(problem, result, { theme: ctxTheme ? ctxTheme.value : '', stack: ctxStack ? ctxStack.value : '', time: ctxTime ? ctxTime.value : '', team: ctxTeam ? ctxTeam.value : '', mode: currentMode }); } else { localStorage.setItem('strat_history', JSON.stringify(history)); }
+
+
+
+
 
 
 
@@ -659,11 +1316,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     updateHistoryUI();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -672,7 +1345,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   window.loadSavedSolution = loadSavedSolution;
+
   function loadSavedSolution(data) {
+
+
+
+
 
 
 
@@ -680,11 +1358,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratProblem.dispatchEvent(new Event('input'));
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -692,7 +1382,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     if (data.context) {
+
+
+
+
 
 
 
@@ -700,7 +1398,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       if (ctxStack && data.context.stack) ctxStack.value = data.context.stack;
+
+
+
+
 
 
 
@@ -708,7 +1414,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       if (ctxTeam && data.context.team) ctxTeam.value = data.context.team;
+
+
+
+
 
 
 
@@ -716,7 +1430,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         currentMode = data.context.mode;
+
+
+
+
 
 
 
@@ -724,7 +1446,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           if (pill.getAttribute('data-stratmode') === currentMode) {
+
+
+
+
 
 
 
@@ -732,7 +1462,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           } else {
+
+
+
+
 
 
 
@@ -740,7 +1478,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           }
+
+
+
+
 
 
 
@@ -748,7 +1494,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -756,7 +1510,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -764,7 +1526,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     renderStrategyJSON(data.result);
+
+
+
+
 
 
 
@@ -772,7 +1542,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     // Show output area
+
+
+
+
 
 
 
@@ -780,7 +1558,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     document.getElementById('stratOutput').scrollIntoView({ behavior: 'smooth' });
+
+
+
+
 
 
 
@@ -788,7 +1574,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -800,7 +1598,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     historyToggle.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -808,11 +1614,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -824,7 +1646,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
+
+
+
+
 
 
 
@@ -832,7 +1662,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       e.preventDefault();
+
+
+
+
 
 
 
@@ -840,7 +1678,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const mobileMenu = document.getElementById('mobileMenu');
+
+
+
+
 
 
 
@@ -848,11 +1694,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   });
+
+
+
+
+
+
+
+
 
 
 
@@ -864,7 +1726,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   updateHistoryUI();
+
+
+
+
+
+
+
+
 
 
 
@@ -876,7 +1750,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   const preset = localStorage.getItem('presetProject');
+
+
+
+
 
 
 
@@ -884,7 +1766,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratProblem.value = preset;
+
+
+
+
 
 
 
@@ -892,7 +1782,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratProblem.dispatchEvent(new Event('input'));
+
+
+
+
 
 
 
@@ -900,7 +1798,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -912,7 +1822,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     chip.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -920,11 +1838,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       stratProblem.dispatchEvent(new Event('input'));
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -936,7 +1866,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   // --- Auto-Restore Latest Result ---
+
+
+
+
 
 
 
@@ -944,7 +1886,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   if (latestStr) {
+
+
+
+
 
 
 
@@ -952,7 +1902,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const latest = JSON.parse(latestStr);
+
+
+
+
 
 
 
@@ -960,11 +1918,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const now = new Date().getTime();
 
 
 
-      if (now - latest.timestamp < 86400000) {
+
+
+
+
+      if (true) {
+
+
+
+
 
 
 
@@ -972,7 +1942,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -980,7 +1958,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       console.error("Failed to auto-restore latest strategist result", e);
+
+
+
+
 
 
 
@@ -988,7 +1974,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1000,7 +1998,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   let latestAnalysisJson = null;
+
+
+
+
+
+
+
+
 
 
 
@@ -1012,7 +2022,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   if(stratGenerateBtn) {
+
+
+
+
 
 
 
@@ -1020,7 +2038,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const problem = stratProblem.value;
+
+
+
+
 
 
 
@@ -1032,7 +2058,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       // UI State
+
+
+
+
 
 
 
@@ -1040,7 +2078,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       stratBtnText.style.display = 'none';
+
+
+
+
 
 
 
@@ -1048,11 +2094,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       document.getElementById('stratOutput').style.display = 'none';
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -1060,11 +2118,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       overlay.style.display = 'flex';
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -1072,7 +2142,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       const serperKey = localStorage.getItem('serper_api_key');
+
+
+
+
 
 
 
@@ -1080,7 +2158,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       // Build Context
+
+
+
+
 
 
 
@@ -1088,7 +2174,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         theme: ctxTheme.value || 'Not specified',
+
+
+
+
 
 
 
@@ -1096,7 +2190,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         time: ctxTime.value || 'Not specified',
+
+
+
+
 
 
 
@@ -1104,7 +2206,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         mode: currentMode
+
+
+
+
 
 
 
@@ -1116,7 +2226,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
       try {
+
+
+
+
 
 
 
@@ -1124,7 +2246,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           // Live API Call Phase
+
+
+
+
 
 
 
@@ -1132,7 +2262,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           
+
+
+
+
 
 
 
@@ -1140,7 +2278,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           if (serperKey) {
+
+
+
+
 
 
 
@@ -1148,11 +2294,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             searchData = await window.SerperProvider.deepResearch(problem, serperKey);
 
 
 
+
+
+
+
           }
+
+
+
+
+
+
+
+
 
 
 
@@ -1164,7 +2326,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           
+
+
+
+
 
 
 
@@ -1172,7 +2342,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
              latestAnalysisJson = result;
+
+
+
+
 
 
 
@@ -1180,7 +2358,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
              saveToHistory(problem, result);
+
+
+
+
 
 
 
@@ -1188,7 +2374,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           } else {
+
+
+
+
 
 
 
@@ -1196,7 +2390,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           }
+
+
+
+
 
 
 
@@ -1204,7 +2406,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           // Offline Fallback Phase
+
+
+
+
 
 
 
@@ -1212,7 +2422,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
           setTimeout(() => {
+
+
+
+
 
 
 
@@ -1220,7 +2438,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             latestAnalysisJson = fallbackResult;
+
+
+
+
 
 
 
@@ -1228,11 +2454,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             saveToHistory(problem, fallbackResult);
 
 
 
+
+
+
+
             
+
+
+
+
 
 
 
@@ -1240,7 +2478,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             const pitchBanner = document.getElementById('stratPitchBanner');
+
+
+
+
 
 
 
@@ -1248,7 +2494,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
               <strong>⚠️ OFFLINE SIMULATION MODE:</strong> The output below is a generic simulation because no API Key was provided. To get LIVE Web Search results (like real GitHub repos and dynamic market research), please click "Set API Key" at the top of the page.
+
+
+
+
 
 
 
@@ -1256,7 +2510,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             pitchBanner.insertAdjacentHTML('beforebegin', warningHtml);
+
+
+
+
 
 
 
@@ -1264,7 +2526,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
             completeProgressUI();
+
+
+
+
 
 
 
@@ -1272,7 +2542,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -1280,7 +2558,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         console.error("Analysis failed:", err);
+
+
+
+
 
 
 
@@ -1288,7 +2574,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -1296,7 +2590,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         latestAnalysisJson = fallbackResult;
+
+
+
+
 
 
 
@@ -1304,11 +2606,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         saveToHistory(problem, fallbackResult);
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -1316,7 +2630,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         const warningHtml = `<div style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 0.9rem; color: #fca5a5;">
+
+
+
+
 
 
 
@@ -1324,7 +2646,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         </div>`;
+
+
+
+
 
 
 
@@ -1332,7 +2662,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -1340,7 +2678,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1348,7 +2694,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1360,7 +2718,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     const steps = ['sstep1', 'sstep2', 'sstep3', 'sstep4', 'sstep5'];
+
+
+
+
 
 
 
@@ -1368,11 +2734,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     const label = document.getElementById('stratProgressLabel');
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -1380,7 +2758,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     steps.forEach(id => {
+
+
+
+
 
 
 
@@ -1388,7 +2774,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       el.classList.remove('active', 'completed');
+
+
+
+
 
 
 
@@ -1396,7 +2790,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -1404,7 +2806,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -1412,7 +2822,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     const intervalTime = isLive ? 2000 : 700; // Fake progress speed
+
+
+
+
 
 
 
@@ -1420,7 +2838,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     window.stratProgressInterval = setInterval(() => {
+
+
+
+
 
 
 
@@ -1428,7 +2854,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         const prev = document.getElementById(steps[current-1]);
+
+
+
+
 
 
 
@@ -1436,7 +2870,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         prev.classList.add('completed');
+
+
+
+
 
 
 
@@ -1444,7 +2886,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1452,7 +2902,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       if (current < steps.length) {
+
+
+
+
 
 
 
@@ -1460,7 +2918,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         curr.classList.add('active');
+
+
+
+
 
 
 
@@ -1468,7 +2934,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -1476,7 +2950,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         if(isLive && current === 1) label.innerText = "Querying live search for competitors...";
+
+
+
+
 
 
 
@@ -1484,7 +2966,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -1492,7 +2982,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       } else {
+
+
+
+
 
 
 
@@ -1500,7 +2998,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1508,7 +3014,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1520,7 +3038,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     clearInterval(window.stratProgressInterval);
+
+
+
+
 
 
 
@@ -1528,7 +3054,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -1536,7 +3070,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       document.getElementById('stratOverlay').style.display = 'none';
+
+
+
+
 
 
 
@@ -1544,7 +3086,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       output.style.display = 'block';
+
+
+
+
 
 
 
@@ -1552,7 +3102,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -1560,7 +3118,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       showToast('Strategic Analysis Complete!');
+
+
+
+
 
 
 
@@ -1568,7 +3134,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1580,7 +3158,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratGenerateBtn.disabled = false;
+
+
+
+
 
 
 
@@ -1588,7 +3174,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     stratBtnLoading.style.display = 'none';
+
+
+
+
 
 
 
@@ -1600,7 +3194,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
   // --- API CALL FUNCTION ---
+
+
+
+
 
 
 
@@ -1608,7 +3214,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
     let researchContext = "";
+
+
+
+
 
 
 
@@ -1616,7 +3230,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
       researchContext = "CRITICAL RESEARCH DATA (From Serper.dev Deep Search):\n" +
+
+
+
+
 
 
 
@@ -1624,11 +3246,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
         searchData.aggregatedPAA.map(p => p.question).join(", ");
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -1644,11 +3282,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
 User Problem Statement: "${problem}"
 
 
 
+
+
+
+
 Context: Theme: ${ctx.theme}, Stack: ${ctx.stack}, Time: ${ctx.time}, Team: ${ctx.team}
+
+
+
+
 
 
 
@@ -1660,7 +3314,19 @@ ${researchContext}
 
 
 
+
+
+
+
+
+
+
+
 RULES:
+
+
+
+
 
 
 
@@ -1668,7 +3334,15 @@ RULES:
 
 
 
+
+
+
+
 - All string values MUST be single-line. Escape newlines as \\n inside strings.
+
+
+
+
 
 
 
@@ -1680,7 +3354,19 @@ RULES:
 
 
 
+
+
+
+
+
+
+
+
 Return this exact JSON structure with all fields filled:
+
+
+
+
 
 
 
@@ -1692,7 +3378,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     // -- Robust JSON repair ---------------------------------------------------
+
+
+
+
 
 
 
@@ -1700,7 +3398,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       let s = raw.trim();
+
+
+
+
 
 
 
@@ -1708,7 +3414,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       s = s.replace(/^` + "``" + `(?:json)?\s*/i, '').replace(/\s*` + "``" + `\s*$/i, '').trim();
+
+
+
+
 
 
 
@@ -1716,7 +3430,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       s = s.replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'")
+
+
+
+
 
 
 
@@ -1724,7 +3446,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       // 3. Remove BOM
+
+
+
+
 
 
 
@@ -1732,7 +3462,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       // 4. Walk the string escaping bare control chars inside JSON strings
+
+
+
+
 
 
 
@@ -1740,7 +3478,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       for (let i = 0; i < s.length; i++) {
+
+
+
+
 
 
 
@@ -1748,7 +3494,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         if (esc) { out += ch; esc = false; continue; }
+
+
+
+
 
 
 
@@ -1756,7 +3510,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         if (ch === '"') { inStr = !inStr; out += ch; continue; }
+
+
+
+
 
 
 
@@ -1764,7 +3526,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           if (code === 0x0A) { out += '\\n'; continue; }
+
+
+
+
 
 
 
@@ -1772,7 +3542,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           if (code === 0x09) { out += '\\t'; continue; }
+
+
+
+
 
 
 
@@ -1780,7 +3558,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -1788,7 +3574,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1796,7 +3590,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       // 5. Close unterminated string
+
+
+
+
 
 
 
@@ -1804,7 +3606,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       // 6. Remove trailing commas before } or ]
+
+
+
+
 
 
 
@@ -1812,7 +3622,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       // 7. Balance braces/brackets
+
+
+
+
 
 
 
@@ -1820,7 +3638,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       for (const ch of s) {
+
+
+
+
 
 
 
@@ -1828,7 +3654,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         else if (ch === '}') braces--;
+
+
+
+
 
 
 
@@ -1836,7 +3670,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         else if (ch === ']') brackets--;
+
+
+
+
 
 
 
@@ -1844,7 +3686,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       while (brackets > 0) { s += ']'; brackets--; }
+
+
+
+
 
 
 
@@ -1852,11 +3702,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       return s;
 
 
 
+
+
+
+
     };
+
+
+
+
+
+
+
+
 
 
 
@@ -1868,7 +3734,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const tryParse = (text) => {
+
+
+
+
 
 
 
@@ -1876,11 +3750,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       const m = text.match(/\{[\s\S]*\}/);
 
 
 
+
+
+
+
       if (m) {
+
+
+
+
 
 
 
@@ -1888,7 +3774,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1896,7 +3790,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       if (m) {
+
+
+
+
 
 
 
@@ -1904,7 +3806,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         const lastComma = partial.lastIndexOf(',');
+
+
+
+
 
 
 
@@ -1912,7 +3822,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           try { return JSON.parse(repairJson(partial.substring(0, lastComma))); } catch (_) {}
+
+
+
+
 
 
 
@@ -1920,7 +3838,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1928,7 +3854,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     };
+
+
+
+
+
+
+
+
 
 
 
@@ -1940,7 +3878,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     let retries = 3, delay = 2000, response, lastError = "";
+
+
+
+
 
 
 
@@ -1948,7 +3894,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     while (retries > 0) {
+
+
+
+
 
 
 
@@ -1956,7 +3910,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         response = await fetch(
+
+
+
+
 
 
 
@@ -1964,7 +3926,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           {
+
+
+
+
 
 
 
@@ -1972,7 +3942,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             headers: { 'Content-Type': 'application/json' },
+
+
+
+
 
 
 
@@ -1980,7 +3958,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               contents: [{ parts: [{ text: systemPrompt }] }],
+
+
+
+
 
 
 
@@ -1988,7 +3974,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               // It conflicts with responseMimeType:application/json and causes
+
+
+
+
 
 
 
@@ -1996,7 +3990,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               generationConfig: {
+
+
+
+
 
 
 
@@ -2004,7 +4006,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 maxOutputTokens: 8192,
+
+
+
+
 
 
 
@@ -2012,7 +4022,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               }
+
+
+
+
 
 
 
@@ -2020,7 +4038,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           }
+
+
+
+
 
 
 
@@ -2028,11 +4054,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         if (response.status === 429) {
 
 
 
+
+
+
+
           const errData = await response.json().catch(() => ({}));
+
+
+
+
 
 
 
@@ -2040,7 +4078,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           if (selectedModel === 'gemini-2.0-flash') {
+
+
+
+
 
 
 
@@ -2048,7 +4094,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             showToast("[API Warning] Gemini 2.0 Quota reached. Switching to stable Gemini 1.5 Flash fallback...");
+
+
+
+
 
 
 
@@ -2056,7 +4110,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             await new Promise(r => setTimeout(r, 1000));
+
+
+
+
 
 
 
@@ -2064,7 +4126,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           }
+
+
+
+
 
 
 
@@ -2072,7 +4142,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -2080,7 +4158,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           const errData = await response.json().catch(() => ({}));
+
+
+
+
 
 
 
@@ -2088,11 +4174,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           throw new Error("High Demand");
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -2100,7 +4198,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           const errData = await response.json().catch(() => ({}));
+
+
+
+
 
 
 
@@ -2108,7 +4214,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -2116,7 +4230,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       } catch (err) {
+
+
+
+
 
 
 
@@ -2124,7 +4246,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           retries--;
+
+
+
+
 
 
 
@@ -2132,7 +4262,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           showToast(`Model busy, retrying in ${delay/1000}s... (${retries} left)`);
+
+
+
+
 
 
 
@@ -2140,7 +4278,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           delay *= 2;
+
+
+
+
 
 
 
@@ -2148,7 +4294,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           throw err;
+
+
+
+
 
 
 
@@ -2156,11 +4310,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       }
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -2172,7 +4342,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const candidate = data.candidates?.[0];
+
+
+
+
 
 
 
@@ -2184,11 +4362,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     const allText = (candidate.content?.parts || [])
 
 
 
+
+
+
+
       .filter(p => p.text).map(p => p.text).join('');
+
+
+
+
 
 
 
@@ -2200,7 +4394,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     const parsed = tryParse(allText);
+
+
+
+
 
 
 
@@ -2212,7 +4418,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     console.error("All JSON parse strategies failed. Raw API text:", allText.substring(0, 800));
+
+
+
+
 
 
 
@@ -2220,7 +4438,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -2228,7 +4454,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   function renderStrategyJSON(data) {
+
+
+
+
 
 
 
@@ -2236,7 +4470,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const pitchBanner = document.getElementById('stratPitchBanner');
+
+
+
+
 
 
 
@@ -2244,7 +4486,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     // Set Pitch Banner
+
+
+
+
 
 
 
@@ -2256,7 +4506,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     // Build Tabs HTML
+
+
+
+
 
 
 
@@ -2264,7 +4526,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       analysis: buildAnalysisHTML(data.problem_analysis),
+
+
+
+
 
 
 
@@ -2272,7 +4542,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       addons: buildAddonsHTML(data.best_addons),
+
+
+
+
 
 
 
@@ -2280,7 +4558,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       features: buildFeaturesHTML(data.feature_ideas),
+
+
+
+
 
 
 
@@ -2288,7 +4574,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       judge: buildJudgeHTML(data.judge_strategy),
+
+
+
+
 
 
 
@@ -2296,11 +4590,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       architecture: buildArchitectureHTML(data)
 
 
 
+
+
+
+
     };
+
+
+
+
+
+
+
+
 
 
 
@@ -2312,7 +4622,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -2320,7 +4638,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       const section = document.createElement('div');
+
+
+
+
 
 
 
@@ -2328,7 +4654,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       section.id = `stab-${key}`;
+
+
+
+
 
 
 
@@ -2336,11 +4670,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       contentBox.appendChild(section);
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -2352,7 +4702,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const tabs = document.querySelectorAll('#stratTabs .tab-btn');
+
+
+
+
 
 
 
@@ -2360,7 +4718,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       // Remove old listeners by cloning
+
+
+
+
 
 
 
@@ -2368,7 +4734,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       tab.parentNode.replaceChild(newTab, tab);
+
+
+
+
 
 
 
@@ -2376,7 +4750,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       newTab.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -2384,7 +4766,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         document.querySelectorAll('#stratTabs .tab-btn').forEach(t => t.classList.remove('active'));
+
+
+
+
 
 
 
@@ -2392,7 +4782,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -2400,7 +4798,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         document.querySelectorAll('#stratContent .output-section').forEach(s => s.classList.remove('active'));
+
+
+
+
 
 
 
@@ -2412,7 +4818,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         // Re-init Mermaid if switching to architecture tab
+
+
+
+
 
 
 
@@ -2420,7 +4838,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           setTimeout(() => {
+
+
+
+
 
 
 
@@ -2428,7 +4854,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               const diag = document.getElementById('arch-diag');
+
+
+
+
 
 
 
@@ -2436,7 +4870,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 // Reset the content to the original Mermaid definition before rendering
+
+
+
+
 
 
 
@@ -2444,7 +4886,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 diag.removeAttribute('data-processed');
+
+
+
+
 
 
 
@@ -2452,7 +4902,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               }
+
+
+
+
 
 
 
@@ -2460,7 +4918,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               console.error("Mermaid tab-switch init failed:", e);
+
+
+
+
 
 
 
@@ -2468,7 +4934,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           }, 50);
+
+
+
+
 
 
 
@@ -2476,11 +4950,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       });
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -2492,7 +4982,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     if (window.mermaid) {
+
+
+
+
 
 
 
@@ -2500,7 +4998,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         try {
+
+
+
+
 
 
 
@@ -2508,7 +5014,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           mermaid.init(undefined, ".mermaid");
+
+
+
+
 
 
 
@@ -2516,7 +5030,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           console.error("Mermaid init failed:", e);
+
+
+
+
 
 
 
@@ -2524,11 +5046,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       }, 200);
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -2540,7 +5078,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
+
+
+
+
 
 
 
@@ -2548,7 +5094,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         const textToCopy = e.target.closest('.prompt-box').querySelector('.prompt-body').innerText;
+
+
+
+
 
 
 
@@ -2556,7 +5110,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           const orig = e.target.innerHTML;
+
+
+
+
 
 
 
@@ -2564,7 +5126,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           setTimeout(() => e.target.innerHTML = orig, 2000);
+
+
+
+
 
 
 
@@ -2572,11 +5142,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       });
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -2588,7 +5174,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const downloadPrdBtn = document.getElementById('downloadPrdBtn');
+
+
+
+
 
 
 
@@ -2596,7 +5190,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       downloadPrdBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -2604,7 +5206,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -2612,7 +5222,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         tempDiv.style.position = 'fixed';
+
+
+
+
 
 
 
@@ -2620,7 +5238,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         tempDiv.style.top = '0';
+
+
+
+
 
 
 
@@ -2628,11 +5254,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         tempDiv.style.zIndex = '-9999';
 
 
 
+
+
+
+
         tempDiv.style.background = 'white';
+
+
+
+
 
 
 
@@ -2644,7 +5282,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         const prdElement = document.getElementById('prdDoc').cloneNode(true);
+
+
+
+
 
 
 
@@ -2652,7 +5302,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         prdElement.style.background = 'white';
+
+
+
+
 
 
 
@@ -2660,7 +5318,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         prdElement.style.border = 'none';
+
+
+
+
 
 
 
@@ -2668,7 +5334,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -2676,11 +5350,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         prdElement.querySelectorAll('h1').forEach(h => {
 
 
 
+
+
+
+
           h.style.color = '#a78bfa';
+
+
+
+
 
 
 
@@ -2688,7 +5374,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -2696,7 +5390,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           h.style.color = '#a78bfa';
+
+
+
+
 
 
 
@@ -2704,7 +5406,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           h.style.paddingBottom = '10px';
+
+
+
+
 
 
 
@@ -2712,7 +5422,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         });
+
+
+
+
+
+
+
+
 
 
 
@@ -2724,11 +5446,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
            t.style.pageBreakInside = 'avoid';
 
 
 
+
+
+
+
            t.querySelectorAll('th').forEach(th => th.style.background = '#f8fafc');
+
+
+
+
 
 
 
@@ -2740,7 +5474,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         const opt = {
+
+
+
+
 
 
 
@@ -2748,7 +5494,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           filename:     'Product_Requirements_Document.pdf',
+
+
+
+
 
 
 
@@ -2756,11 +5510,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           html2canvas:  { scale: 2, width: 800 },
 
 
 
+
+
+
+
           jsPDF:        { unit: 'px', format: [800, 1050], orientation: 'portrait' }
+
+
+
+
 
 
 
@@ -2772,7 +5538,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         if(typeof html2pdf !== 'undefined') {
+
+
+
+
 
 
 
@@ -2780,7 +5558,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             showToast("PRD Downloaded!");
+
+
+
+
 
 
 
@@ -2788,7 +5574,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           });
+
+
+
+
 
 
 
@@ -2796,7 +5590,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           showToast("PDF Library not loaded.");
+
+
+
+
 
 
 
@@ -2804,7 +5606,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -2812,11 +5622,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2828,7 +5654,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   function buildAnalysisHTML(data) {
+
+
+
+
 
 
 
@@ -2836,7 +5670,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <h3>🎯 Problem Refinement & Direction</h3>
+
+
+
+
 
 
 
@@ -2844,7 +5686,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <h4 style="color:var(--accent-primary); margin-bottom:0.5rem;">Winning Product Direction</h4>
+
+
+
+
 
 
 
@@ -2852,7 +5702,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2860,11 +5718,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div class="card-grid">
 
 
 
+
+
+
+
         <div class="info-card">
+
+
+
+
 
 
 
@@ -2872,11 +5742,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <p>${data.refined_problem}</p>
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -2884,7 +5766,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <h4>Market Gap Opportunity</h4>
+
+
+
+
 
 
 
@@ -2892,11 +5782,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </div>
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -2908,7 +5814,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <ul style="padding-left:1.5rem;">
+
+
+
+
 
 
 
@@ -2916,7 +5830,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </ul>
+
+
+
+
 
 
 
@@ -2924,7 +5846,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+
+
+
+
 
 
 
@@ -2932,7 +5862,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2940,7 +5878,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2952,7 +5902,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -2960,11 +5918,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div class="card-grid">
 
 
 
+
+
+
+
         <div class="info-card">
+
+
+
+
 
 
 
@@ -2972,7 +5942,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <ul style="padding-left:1.5rem; margin-top:0.5rem;">
+
+
+
+
 
 
 
@@ -2980,11 +5958,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </ul>
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -2992,7 +5982,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <h4>Emerging Opportunities</h4>
+
+
+
+
 
 
 
@@ -3000,7 +5998,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             ${data.emerging_opportunities.map(o => `<li style="color:#10b981; margin-bottom:0.5rem;">${o}</li>`).join('')}
+
+
+
+
 
 
 
@@ -3008,11 +6014,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </div>
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3024,7 +6046,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div class="strat-card-list">
+
+
+
+
 
 
 
@@ -3032,7 +6062,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <div class="info-card" style="background:rgba(0,0,0,0.3);">
+
+
+
+
 
 
 
@@ -3040,7 +6078,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <h5 style="margin:0; font-size:1.1rem; color:var(--accent-secondary);">${tool.name}</h5>
+
+
+
+
 
 
 
@@ -3048,7 +6094,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -3056,7 +6110,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -3064,7 +6126,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -3072,7 +6142,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3084,7 +6166,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     if(!addons || !addons.length) return `<p>No addons generated.</p>`;
+
+
+
+
 
 
 
@@ -3092,7 +6182,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -3100,7 +6198,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <h3>🧩 10 High-Impact Add-ons</h3>
+
+
+
+
 
 
 
@@ -3108,7 +6214,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -3116,7 +6230,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div class="strat-card-list">
+
+
+
+
 
 
 
@@ -3124,7 +6246,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <div class="strat-addon-card">
+
+
+
+
 
 
 
@@ -3132,7 +6262,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <div class="addon-cat">${addon.category}</div>
+
+
+
+
 
 
 
@@ -3140,7 +6278,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <p class="addon-desc"><strong>What it does:</strong> ${addon.what_it_does}</p>
+
+
+
+
 
 
 
@@ -3148,11 +6294,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             
 
 
 
+
+
+
+
             <div class="score-row">
+
+
+
+
 
 
 
@@ -3160,7 +6318,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <div class="score-bar-bg"><div class="score-bar-fill" style="width:${(addon.judge_wow_score/10)*100}%"></div></div>
+
+
+
+
 
 
 
@@ -3168,7 +6334,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -3176,7 +6350,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <span class="score-label">Demo Impact</span>
+
+
+
+
 
 
 
@@ -3184,11 +6366,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <span class="score-value">${addon.demo_impact_score}/10</span>
 
 
 
+
+
+
+
             </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3200,7 +6398,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <span class="meta-chip">⏱️ ${addon.estimated_build_time}</span>
+
+
+
+
 
 
 
@@ -3208,7 +6414,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -3216,7 +6430,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         `).join('')}
+
+
+
+
 
 
 
@@ -3224,11 +6446,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     `;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3240,7 +6478,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     if(!top5 || !top5.length) return `<p>Data missing</p>`;
+
+
+
+
 
 
 
@@ -3248,7 +6494,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -3256,7 +6510,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <p style="margin-bottom:2rem; color:var(--text-secondary);">If you only have time to build a few things, build these. They offer the highest ROI for your demo.</p>
+
+
+
+
 
 
 
@@ -3264,7 +6526,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div style="display:flex; flex-direction:column; gap:1rem;">
+
+
+
+
 
 
 
@@ -3272,7 +6542,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           // Find full details if possible
+
+
+
+
 
 
 
@@ -3280,7 +6558,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           return `
+
+
+
+
 
 
 
@@ -3288,7 +6574,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <div style="font-size:2.5rem; font-weight:800; color:var(--accent-primary); opacity:0.8; line-height:1;">#${item.rank}</div>
+
+
+
+
 
 
 
@@ -3296,7 +6590,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <h4 style="margin-bottom:0.25rem; font-size:1.2rem;">${item.addon_name}</h4>
+
+
+
+
 
 
 
@@ -3304,7 +6606,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               ${fullData ? `<p style="font-size:0.8rem; margin-top:0.5rem; color:#10b981;">Stack: ${fullData.recommended_stack}</p>` : ''}
+
+
+
+
 
 
 
@@ -3312,7 +6622,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -3320,7 +6638,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         }).join('')}
+
+
+
+
 
 
 
@@ -3328,11 +6654,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     `;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3344,7 +6686,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -3352,11 +6702,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div class="card-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-top:1.5rem;">
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -3364,11 +6726,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <h4>Must Have (MVP)</h4>
 
 
 
+
+
+
+
           <ul style="padding-left:1.5rem; margin-top:1rem; font-size:0.9rem;">
+
+
+
+
 
 
 
@@ -3376,7 +6750,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </ul>
+
+
+
+
 
 
 
@@ -3384,7 +6766,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         
+
+
+
+
 
 
 
@@ -3392,7 +6782,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <h4>Nice to Have (If Time Permits)</h4>
+
+
+
+
 
 
 
@@ -3400,7 +6798,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             ${data.nice_to_have_features.map(f => `<li style="margin-bottom:0.5rem;">${f}</li>`).join('')}
+
+
+
+
 
 
 
@@ -3408,7 +6814,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -3416,7 +6830,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <div class="info-card" style="border-top: 4px solid #64748b;">
+
+
+
+
 
 
 
@@ -3424,7 +6846,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <ul style="padding-left:1.5rem; margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+
+
+
+
 
 
 
@@ -3432,11 +6862,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </ul>
 
 
 
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3448,11 +6894,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     `;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3464,7 +6926,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const keys = [
+
+
+
+
 
 
 
@@ -3472,7 +6942,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       { id: 'frontend_ui_prompt', title: '🎨 Frontend & UI/UX Prompt' },
+
+
+
+
 
 
 
@@ -3480,7 +6958,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       { id: 'database_prompt', title: '🗄️ Database Schema Prompt' },
+
+
+
+
 
 
 
@@ -3488,7 +6974,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       { id: 'pitch_demo_prompt', title: '🎤 Pitch & Demo Script Prompt' }
+
+
+
+
 
 
 
@@ -3500,7 +6994,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -3508,7 +7014,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <h3>🔥 AI Generation Prompt Pack</h3>
+
+
+
+
 
 
 
@@ -3516,7 +7030,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3528,7 +7054,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         if(!prompts[k.id]) return '';
+
+
+
+
 
 
 
@@ -3536,7 +7070,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <div class="prompt-box">
+
+
+
+
 
 
 
@@ -3544,7 +7086,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <h4>${k.title}</h4>
+
+
+
+
 
 
 
@@ -3552,7 +7102,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -3560,7 +7118,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -3568,7 +7134,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       }).join('')}
+
+
+
+
 
 
 
@@ -3576,7 +7150,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3588,7 +7174,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -3596,7 +7190,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -3604,7 +7206,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <h4 style="color:var(--accent-primary);">The "Wow Factor"</h4>
+
+
+
+
 
 
 
@@ -3612,7 +7222,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3624,7 +7246,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <div class="info-card">
+
+
+
+
 
 
 
@@ -3632,11 +7262,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <p>${data.business_angle}</p>
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -3644,7 +7286,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <h4>🌍 Market / Social Impact</h4>
+
+
+
+
 
 
 
@@ -3652,11 +7302,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </div>
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3668,7 +7334,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:1.5rem; margin-top:1rem; border:1px solid rgba(255,255,255,0.05);">
+
+
+
+
 
 
 
@@ -3676,7 +7350,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           ${data.best_demo_flow.map(step => `<li style="margin-bottom:1rem; line-height:1.5;">${step}</li>`).join('')}
+
+
+
+
 
 
 
@@ -3684,7 +7366,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -3692,7 +7382,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3704,7 +7406,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     if(!prd || !prd.project_name) return `<p>PRD data not available.</p>`;
+
+
+
+
 
 
 
@@ -3712,7 +7422,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     return `
+
+
+
+
 
 
 
@@ -3720,7 +7438,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <h3>📄 Product Requirements Document (PRD)</h3>
+
+
+
+
 
 
 
@@ -3728,7 +7454,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -3740,7 +7478,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <div style="text-align:center; border-bottom:2px solid var(--accent-primary); padding-bottom:2rem; margin-bottom:3rem;">
+
+
+
+
 
 
 
@@ -3748,11 +7494,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <p style="color:var(--text-secondary); font-size:1.1rem;">Product Requirements Document (PRD)</p>
 
 
 
+
+
+
+
           <p style="font-size:0.9rem; margin-top:1rem; opacity:0.7;">Generated on ${new Date().toLocaleDateString()}</p>
+
+
+
+
 
 
 
@@ -3764,7 +7522,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -3772,7 +7542,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <p>${prd.vision}</p>
+
+
+
+
 
 
 
@@ -3784,7 +7562,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -3792,7 +7582,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <ul style="padding-left:1.5rem;">
+
+
+
+
 
 
 
@@ -3800,7 +7598,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </ul>
+
+
+
+
 
 
 
@@ -3812,7 +7618,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -3820,7 +7638,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <table style="width:100%; border-collapse:collapse; margin-top:1rem;">
+
+
+
+
 
 
 
@@ -3828,7 +7654,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <tr style="background:rgba(255,255,255,0.05); text-align:left;">
+
+
+
+
 
 
 
@@ -3836,7 +7670,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 <th style="padding:12px; border:1px solid rgba(255,255,255,0.1);">Priority</th>
+
+
+
+
 
 
 
@@ -3844,7 +7686,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               </tr>
+
+
+
+
 
 
 
@@ -3852,7 +7702,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <tbody>
+
+
+
+
 
 
 
@@ -3860,7 +7718,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 <tr>
+
+
+
+
 
 
 
@@ -3868,7 +7734,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                   <td style="padding:12px; border:1px solid rgba(255,255,255,0.1);"><span style="padding:2px 8px; border-radius:4px; font-size:0.75rem; background:${f.priority === 'P0' ? '#ef4444' : '#f59e0b'}; color:white;">${f.priority}</span></td>
+
+
+
+
 
 
 
@@ -3876,7 +7750,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 </tr>
+
+
+
+
 
 
 
@@ -3884,7 +7766,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             </tbody>
+
+
+
+
 
 
 
@@ -3892,6 +7782,10 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </section>
 
 
@@ -3900,7 +7794,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -3908,11 +7814,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem;">
 
 
 
+
+
+
+
             <div>
+
+
+
+
 
 
 
@@ -3920,11 +7838,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <p><strong>Backend:</strong> ${prd.technical_requirements.backend}</p>
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -3932,7 +7862,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <p><strong>Database:</strong> ${prd.technical_requirements.database}</p>
+
+
+
+
 
 
 
@@ -3940,7 +7878,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -3948,6 +7894,10 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </section>
 
 
@@ -3956,7 +7906,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -3964,7 +7926,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <ul style="padding-left:1.5rem;">
+
+
+
+
 
 
 
@@ -3972,11 +7942,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </ul>
 
 
 
+
+
+
+
         </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -3988,7 +7974,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <h4 style="color:var(--accent-primary); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.5rem; margin-bottom:1rem;">6. DEVELOPMENT ROADMAP</h4>
+
+
+
+
 
 
 
@@ -3996,7 +7990,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             ${prd.roadmap.map((step, i) => `
+
+
+
+
 
 
 
@@ -4004,7 +8006,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 <span style="min-width:24px; height:24px; background:var(--accent-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;">${i+1}</span>
+
+
+
+
 
 
 
@@ -4012,7 +8022,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               </li>
+
+
+
+
 
 
 
@@ -4020,11 +8038,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           </ul>
 
 
 
+
+
+
+
         </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -4036,7 +8070,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -4044,7 +8086,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1rem;">
+
+
+
+
 
 
 
@@ -4052,7 +8102,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.5rem; flex:1; min-width:250px;">
+
+
+
+
 
 
 
@@ -4060,7 +8118,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 <ul style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.9rem;">
+
+
+
+
 
 
 
@@ -4068,7 +8134,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 </ul>
+
+
+
+
 
 
 
@@ -4076,7 +8150,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             `).join('')}
+
+
+
+
 
 
 
@@ -4084,7 +8166,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </section>` : ''}
+
+
+
+
+
+
+
+
 
 
 
@@ -4096,7 +8190,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -4104,7 +8206,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <table style="width:100%; border-collapse:collapse; margin-top:1rem; font-size:0.9rem;">
+
+
+
+
 
 
 
@@ -4112,7 +8222,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <tr style="background:rgba(255,255,255,0.05); text-align:left;">
+
+
+
+
 
 
 
@@ -4120,7 +8238,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 <th style="padding:10px; border:1px solid rgba(255,255,255,0.1);">Endpoint</th>
+
+
+
+
 
 
 
@@ -4128,7 +8254,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               </tr>
+
+
+
+
 
 
 
@@ -4136,7 +8270,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <tbody>
+
+
+
+
 
 
 
@@ -4144,7 +8286,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 <tr>
+
+
+
+
 
 
 
@@ -4152,7 +8302,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                   <td style="padding:10px; border:1px solid rgba(255,255,255,0.1); font-family:monospace;">${api.path}</td>
+
+
+
+
 
 
 
@@ -4160,7 +8318,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
                 </tr>
+
+
+
+
 
 
 
@@ -4168,7 +8334,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             </tbody>
+
+
+
+
 
 
 
@@ -4176,7 +8350,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </section>` : ''}
+
+
+
+
+
+
+
+
 
 
 
@@ -4188,7 +8374,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <section style="margin-bottom:2.5rem;">
+
+
+
+
 
 
 
@@ -4196,11 +8390,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem;">
 
 
 
+
+
+
+
             <div style="background:rgba(255,255,255,0.02); border-radius:12px; padding:1.5rem;">
+
+
+
+
 
 
 
@@ -4208,7 +8414,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <ul style="padding-left:1.5rem; font-size:0.9rem; color:var(--text-secondary);">
+
+
+
+
 
 
 
@@ -4216,11 +8430,23 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               </ul>
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -4228,7 +8454,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             <div style="background:rgba(255,255,255,0.02); border-radius:12px; padding:1.5rem;">
+
+
+
+
 
 
 
@@ -4236,7 +8470,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               <ul style="padding-left:1.5rem; font-size:0.9rem; color:var(--text-secondary);">
+
+
+
+
 
 
 
@@ -4244,7 +8486,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
               </ul>
+
+
+
+
 
 
 
@@ -4252,7 +8502,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
             ` : ''}
+
+
+
+
 
 
 
@@ -4260,7 +8518,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         </section>` : ''}
+
+
+
+
 
 
 
@@ -4268,11 +8534,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     `;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4284,7 +8566,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const prd = data.prd || {};
+
+
+
+
 
 
 
@@ -4292,7 +8582,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const frontend = tech.frontend || "Frontend App";
+
+
+
+
 
 
 
@@ -4300,7 +8598,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     const database = tech.database || "Database";
+
+
+
+
 
 
 
@@ -4312,7 +8618,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     // Clean names for Mermaid (remove special characters that might break syntax)
+
+
+
+
 
 
 
@@ -4324,7 +8642,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
+
+
+
+
     let mermaidDef = `graph TD
+
+
+
+
 
 
 
@@ -4332,7 +8662,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     FE --> BE[${clean(backend)}]
+
+
+
+
 
 
 
@@ -4340,7 +8678,19 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
     `;
+
+
+
+
+
+
+
+
 
 
 
@@ -4352,11 +8702,27 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       mermaidDef += `    BE --> INT${index}[${clean(int)}]\n`;
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -4368,7 +8734,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
+
+
+
+
 
 
 
@@ -4376,7 +8750,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -4384,7 +8766,15 @@ Return this exact JSON structure with all fields filled:
 
 
 
+
+
+
+
         <div class="mermaid" id="arch-diag" data-diagram="${mermaidDef.replace(/"/g, '&quot;')}">
+
+
+
+
 
 
 
@@ -4392,11 +8782,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
         </div>
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -4404,7 +8806,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         <h4 style="margin-bottom: 1rem; color: var(--accent-primary);">Architecture Breakdown</h4>
+
+
+
+
 
 
 
@@ -4412,7 +8822,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           <div class="info-card">
+
+
+
+
 
 
 
@@ -4420,7 +8838,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
             <p style="font-size:0.9rem;">${frontend}</p>
+
+
+
+
 
 
 
@@ -4428,7 +8854,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           <div class="info-card">
+
+
+
+
 
 
 
@@ -4436,11 +8870,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
             <p style="font-size:0.9rem;">${backend}</p>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -4448,7 +8894,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
             <h5 style="color:var(--accent-secondary); margin-bottom:0.5rem;">Data Layer</h5>
+
+
+
+
 
 
 
@@ -4456,7 +8910,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -4464,7 +8926,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -4472,7 +8942,19 @@ ${mermaidDef}
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4484,7 +8966,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
   function generateFallbackJSON(problem, ctx) {
+
+
+
+
 
 
 
@@ -4496,7 +8986,19 @@ ${mermaidDef}
 
 
 
+
+
+
+
+
+
+
+
     // Search the extended 1000-item offline knowledge base first
+
+
+
+
 
 
 
@@ -4504,7 +9006,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4512,7 +9022,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     let matched = null;
+
+
+
+
 
 
 
@@ -4524,7 +9042,19 @@ ${mermaidDef}
 
 
 
+
+
+
+
+
+
+
+
     extKb.forEach(item => {
+
+
+
+
 
 
 
@@ -4532,7 +9062,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       item.keywords.forEach(kw => {
+
+
+
+
 
 
 
@@ -4540,7 +9078,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       });
+
+
+
+
 
 
 
@@ -4548,11 +9094,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
         score += 3;
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -4560,7 +9118,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         highestScore = score;
+
+
+
+
 
 
 
@@ -4568,7 +9134,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -4576,7 +9150,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4584,7 +9166,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     let domainAI     = matched ? matched.result.ai_strategy : 'Use Gemini 2.0 Flash for real-time analysis and content generation.';
+
+
+
+
 
 
 
@@ -4592,7 +9182,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     let domainSecret = matched ? matched.result.win_secret  : 'Focus on extreme UI polish and a flawless live demo moment.';
+
+
+
+
 
 
 
@@ -4600,7 +9198,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     let domainAPIs   = matched ? matched.result.api_endpoints.split('\\n') : ['POST /api/v1/auth/login', 'GET /api/v1/dashboard', 'POST /api/v1/ai/process'];
+
+
+
+
 
 
 
@@ -4612,7 +9218,19 @@ ${mermaidDef}
 
 
 
+
+
+
+
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4620,11 +9238,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
     let addons = [
 
 
 
+
+
+
+
       {
+
+
+
+
 
 
 
@@ -4632,7 +9262,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "category": "AI",
+
+
+
+
 
 
 
@@ -4640,7 +9278,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "why_it_improves_the_solution": "Shows immediate AI value without complex user flows.",
+
+
+
+
 
 
 
@@ -4648,7 +9294,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "implementation_difficulty": "Easy",
+
+
+
+
 
 
 
@@ -4656,7 +9310,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "recommended_stack": "Next.js API route + OpenAI SDK",
+
+
+
+
 
 
 
@@ -4664,7 +9326,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "demo_impact_score": 9,
+
+
+
+
 
 
 
@@ -4672,7 +9342,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       },
+
+
+
+
 
 
 
@@ -4680,7 +9358,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "addon_name": "Real-time Collaboration Cursor",
+
+
+
+
 
 
 
@@ -4688,7 +9374,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "what_it_does": "Shows multiple users interacting on the same screen (like Figma).",
+
+
+
+
 
 
 
@@ -4696,7 +9390,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "hackathon_value": "Judges love multiplayer features. It guarantees high technical scores.",
+
+
+
+
 
 
 
@@ -4704,7 +9406,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "estimated_build_time": "2 hours",
+
+
+
+
 
 
 
@@ -4712,7 +9422,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "apis_or_tools": ["Liveblocks"],
+
+
+
+
 
 
 
@@ -4720,7 +9438,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "judge_wow_score": 9
+
+
+
+
 
 
 
@@ -4728,11 +9454,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
     ];
 
 
 
+
+
+
+
     let insights = ["Basic CRUD dashboards", "Siloed data systems"];
+
+
+
+
 
 
 
@@ -4744,11 +9482,27 @@ ${mermaidDef}
 
 
 
+
+
+
+
+
+
+
+
     if (text.includes('health') || text.includes('med')) {
 
 
 
+
+
+
+
       addons[0] = {
+
+
+
+
 
 
 
@@ -4756,7 +9510,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "category": "AI",
+
+
+
+
 
 
 
@@ -4764,7 +9526,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "why_it_improves_the_solution": "Modernizes the patient intake experience.",
+
+
+
+
 
 
 
@@ -4772,7 +9542,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "implementation_difficulty": "Medium",
+
+
+
+
 
 
 
@@ -4780,7 +9558,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "recommended_stack": "Gemini API + React Chat Component",
+
+
+
+
 
 
 
@@ -4788,7 +9574,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "demo_impact_score": 9,
+
+
+
+
 
 
 
@@ -4796,7 +9590,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       };
+
+
+
+
 
 
 
@@ -4804,7 +9606,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       insights = ["Complex hospital portals", "WebMD generic searches"];
+
+
+
+
 
 
 
@@ -4812,7 +9622,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       addons[0] = {
+
+
+
+
 
 
 
@@ -4820,7 +9638,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "category": "FinTech",
+
+
+
+
 
 
 
@@ -4828,7 +9654,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "why_it_improves_the_solution": "Makes the financial app feel alive.",
+
+
+
+
 
 
 
@@ -4836,7 +9670,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "implementation_difficulty": "Hard",
+
+
+
+
 
 
 
@@ -4844,7 +9686,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "recommended_stack": "WebSockets + Framer Motion",
+
+
+
+
 
 
 
@@ -4852,7 +9702,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "demo_impact_score": 10,
+
+
+
+
 
 
 
@@ -4860,7 +9718,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       };
+
+
+
+
 
 
 
@@ -4868,7 +9734,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       insights = ["Legacy banking apps", "Complex crypto exchanges"];
+
+
+
+
 
 
 
@@ -4880,7 +9754,19 @@ ${mermaidDef}
 
 
 
+
+
+
+
+
+
+
+
     return {
+
+
+
+
 
 
 
@@ -4888,7 +9774,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "refined_problem": "A streamlined, intelligent solution targeting: " + problem.substring(0, 80) + "...",
+
+
+
+
 
 
 
@@ -4896,7 +9790,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "core_pain_points": ["Manual processes causing inefficiency", "Lack of real-time insights", "Poor UX in legacy tools"],
+
+
+
+
 
 
 
@@ -4904,11 +9806,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "winning_product_direction": "An AI-first, mobile-responsive web app with real-time data sync for " + domainIndustry + "."
 
 
 
+
+
+
+
       },
+
+
+
+
 
 
 
@@ -4916,7 +9830,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "existing_solution_patterns": insights,
+
+
+
+
 
 
 
@@ -4924,7 +9846,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "emerging_opportunities": ["Edge AI processing", "Automated RAG workflows", "Voice-first interfaces"],
+
+
+
+
 
 
 
@@ -4932,7 +9862,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           {"name": "Supabase", "type": "Backend/DB", "why_it_matters": "Instant real-time Postgres and Auth."},
+
+
+
+
 
 
 
@@ -4940,7 +9878,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           {"name": "Vercel AI SDK", "type": "AI Toolkit", "why_it_matters": "Streaming LLM responses with 3 lines of code."}
+
+
+
+
 
 
 
@@ -4948,7 +9894,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       },
+
+
+
+
 
 
 
@@ -4956,7 +9910,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       "top_5_priority_addons": [
+
+
+
+
 
 
 
@@ -4964,7 +9926,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         {"rank": 2, "addon_name": addons[1].addon_name, "reason": "Highest technical wow factor for judges."}
+
+
+
+
 
 
 
@@ -4972,7 +9942,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       "feature_ideas": {
+
+
+
+
 
 
 
@@ -4980,7 +9958,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "nice_to_have_features": ["Dark/Light Mode Toggle", "Export to PDF", "Real-time notifications"],
+
+
+
+
 
 
 
@@ -4988,7 +9974,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       },
+
+
+
+
 
 
 
@@ -4996,7 +9990,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "master_build_prompt": domainMegaPrompt,
+
+
+
+
 
 
 
@@ -5004,7 +10006,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "backend_api_prompt": "Write a Node.js Express server for a " + domainIndustry + " app. Include endpoints: " + domainAPIs.join(', ') + ". Add JWT auth, input validation, and robust error handling.",
+
+
+
+
 
 
 
@@ -5012,7 +10022,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "ai_integration_prompt": domainAI + " Write a TypeScript function that calls this AI model and streams the response back to the client.",
+
+
+
+
 
 
 
@@ -5020,7 +10038,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       },
+
+
+
+
 
 
 
@@ -5028,7 +10054,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "wow_factor": "The moment the AI analyzes the input and returns a structured, actionable result in under 2 seconds for " + domainIndustry + ".",
+
+
+
+
 
 
 
@@ -5036,7 +10070,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           "Start at the problem: Show how painful the current process is.",
+
+
+
+
 
 
 
@@ -5044,7 +10086,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           "The Magic Trick: Perform the core AI action live — watch results appear instantly.",
+
+
+
+
 
 
 
@@ -5052,11 +10102,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
           "The Future: Show the analytics page and close on the business model."
 
 
 
+
+
+
+
         ],
+
+
+
+
 
 
 
@@ -5064,7 +10126,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "social_or_market_impact": "Significantly reduces wasted hours and improves accessibility across the " + domainIndustry + " market.",
+
+
+
+
 
 
 
@@ -5072,7 +10142,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       },
+
+
+
+
 
 
 
@@ -5080,7 +10158,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "project_name": "AI " + domainIndustry + " Platform",
+
+
+
+
 
 
 
@@ -5088,7 +10174,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "user_personas": ["Tech-savvy professionals in " + domainIndustry, "Non-technical end consumers", "Platform administrators"],
+
+
+
+
 
 
 
@@ -5096,7 +10190,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           { "feature": "AI Analysis Engine", "priority": "P0", "description": "Core intelligence to process inputs for " + domainIndustry + "." },
+
+
+
+
 
 
 
@@ -5104,11 +10206,23 @@ ${mermaidDef}
 
 
 
+
+
+
+
           { "feature": "Export and Share", "priority": "P1", "description": "Export reports as PDF or share via a link." }
 
 
 
+
+
+
+
         ],
+
+
+
+
 
 
 
@@ -5116,7 +10230,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           "frontend": domainTech.split(' + ')[0] + " + Tailwind CSS + Framer Motion",
+
+
+
+
 
 
 
@@ -5124,7 +10246,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           "database": domainTech.split(' + ')[2] || "Supabase (PostgreSQL)",
+
+
+
+
 
 
 
@@ -5132,7 +10262,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         },
+
+
+
+
 
 
 
@@ -5140,7 +10278,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           { "model_name": "User", "fields": ["id: uuid", "email: varchar", "role: enum", "created_at: timestamp"] },
+
+
+
+
 
 
 
@@ -5148,7 +10294,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         ],
+
+
+
+
 
 
 
@@ -5156,7 +10310,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
           const parts = ep.trim().split(' ');
+
+
+
+
 
 
 
@@ -5164,7 +10326,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         }),
+
+
+
+
 
 
 
@@ -5172,7 +10342,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "scalability_plan": ["Docker containerization", "CDN for static assets", "DB read replicas for analytics"],
+
+
+
+
 
 
 
@@ -5180,7 +10358,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         "roadmap": ["MVP Launch (Hackathon)", "Beta with 50 users", "V1.0 Public Release", "Enterprise rollout"]
+
+
+
+
 
 
 
@@ -5188,11 +10374,31 @@ ${mermaidDef}
 
 
 
+
+
+
+
     };
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5208,7 +10414,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
   const stratCopyJson = document.getElementById('stratCopyJson');
+
+
+
+
 
 
 
@@ -5216,7 +10430,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     stratCopyJson.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -5224,7 +10446,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
         navigator.clipboard.writeText(JSON.stringify(latestAnalysisJson, null, 2))
+
+
+
+
 
 
 
@@ -5232,7 +10462,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -5240,7 +10478,19 @@ ${mermaidDef}
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5252,7 +10502,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
   if(stratReanalyze) {
+
+
+
+
 
 
 
@@ -5260,7 +10518,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
       document.getElementById('stratOutput').style.display = 'none';
+
+
+
+
 
 
 
@@ -5268,11 +10534,27 @@ ${mermaidDef}
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5284,7 +10566,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
   function showToast(message) {
+
+
+
+
 
 
 
@@ -5292,7 +10582,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     toast.innerHTML = `<span>${message}</span>`;
+
+
+
+
 
 
 
@@ -5300,7 +10598,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
     setTimeout(() => toast.classList.remove('show'), 3000);
+
+
+
+
 
 
 
@@ -5308,7 +10614,15 @@ ${mermaidDef}
 
 
 
+
+
+
+
 });
+
+
+
+
 
 
 
