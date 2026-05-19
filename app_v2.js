@@ -6,7 +6,19 @@
 
 
 
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
+
+
+
 
 
 
@@ -22,7 +34,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Generator Logic
+
+
+
+
 
 
 
@@ -30,16 +58,34 @@ const projectInput = document.getElementById('projectInput');
 
 
 
+
+
+
+
 const charCount = document.getElementById('charCount');
+
+
+
+
 
 
 
 const generateBtn = document.getElementById('generateBtn');
 
+
+
   // Guard clause: Exit if we are not on the generator page
+
   if (!projectInput || !generateBtn) {
+
     return;
+
   }
+
+
+
+
+
 
 
 
@@ -48,7 +94,15 @@ const btnGenerateText = document.querySelector('.btn-generate-text');
 
 
 
+
+
+
+
 const btnGenerateLoading = document.querySelector('.btn-generate-loading');
+
+
+
+
 
 
 
@@ -56,7 +110,15 @@ const outputArea = document.getElementById('outputArea');
 
 
 
+
+
+
+
 const outputContent = document.getElementById('outputContent');
+
+
+
+
 
 
 
@@ -64,7 +126,19 @@ const exampleChips = document.querySelectorAll('.example-chip');
 
 
 
+
+
+
+
 const modeBtns = document.querySelectorAll('.mode-btn');
+
+
+
+
+
+
+
+
 
 
 
@@ -80,7 +154,19 @@ let currentMode = 'complete';
 
 
 
+
+
+
+
+
+
+
+
 // Input Handling
+
+
+
+
 
 
 
@@ -88,7 +174,15 @@ if(projectInput) projectInput.addEventListener('input', () => {
 
 
 
+
+
+
+
   const count = projectInput.value.length;
+
+
+
+
 
 
 
@@ -96,11 +190,27 @@ if(projectInput) projectInput.addEventListener('input', () => {
 
 
 
+
+
+
+
   generateBtn.disabled = count < 10;
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -112,7 +222,15 @@ if(exampleChips) exampleChips.forEach(chip => {
 
 
 
+
+
+
+
   chip.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -120,7 +238,15 @@ if(exampleChips) exampleChips.forEach(chip => {
 
 
 
+
+
+
+
     projectInput.dispatchEvent(new Event('input'));
+
+
+
+
 
 
 
@@ -128,7 +254,19 @@ if(exampleChips) exampleChips.forEach(chip => {
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -140,7 +278,15 @@ if(exampleChips) exampleChips.forEach(chip => {
 
 
 
+
+
+
+
 if(modeBtns) modeBtns.forEach(btn => {
+
+
+
+
 
 
 
@@ -148,7 +294,15 @@ if(modeBtns) modeBtns.forEach(btn => {
 
 
 
+
+
+
+
     if(modeBtns) modeBtns.forEach(b => b.classList.remove('active'));
+
+
+
+
 
 
 
@@ -156,7 +310,15 @@ if(modeBtns) modeBtns.forEach(btn => {
 
 
 
+
+
+
+
     currentMode = btn.getAttribute('data-mode');
+
+
+
+
 
 
 
@@ -164,7 +326,15 @@ if(modeBtns) modeBtns.forEach(btn => {
 
 
 
+
+
+
+
 });
+
+
+
+
 
 
 
@@ -172,7 +342,15 @@ if(modeBtns) modeBtns.forEach(btn => {
 
 
 
+
+
+
+
 const aiSettingsBtn = document.getElementById('aiSettingsBtn');
+
+
+
+
 
 
 
@@ -180,11 +358,23 @@ const aiModal = document.getElementById('aiModal');
 
 
 
+
+
+
+
 const closeAiModal = document.getElementById('closeAiModal');
 
 
 
+
+
+
+
 const saveAiKey = document.getElementById('saveAiKey');
+
+
+
+
 
 
 
@@ -196,7 +386,19 @@ const geminiKeyInput = document.getElementById('geminiKey');
 
 
 
+
+
+
+
+
+
+
+
 if (aiSettingsBtn) {
+
+
+
+
 
 
 
@@ -204,7 +406,15 @@ if (aiSettingsBtn) {
 
 
 
+
+
+
+
     const savedKey = localStorage.getItem('gemini_api_key');
+
+
+
+
 
 
 
@@ -212,7 +422,15 @@ if (aiSettingsBtn) {
 
 
 
+
+
+
+
     aiModal.style.display = 'flex';
+
+
+
+
 
 
 
@@ -220,7 +438,19 @@ if (aiSettingsBtn) {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -232,11 +462,27 @@ if (closeAiModal) {
 
 
 
+
+
+
+
   closeAiModal.addEventListener('click', () => aiModal.style.display = 'none');
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -248,7 +494,15 @@ if (saveAiKey) {
 
 
 
+
+
+
+
   saveAiKey.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -256,7 +510,15 @@ if (saveAiKey) {
 
 
 
+
+
+
+
     if (key) {
+
+
+
+
 
 
 
@@ -264,7 +526,15 @@ if (saveAiKey) {
 
 
 
+
+
+
+
       showToast('AI Search Enabled!');
+
+
+
+
 
 
 
@@ -272,11 +542,23 @@ if (saveAiKey) {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
   });
+
+
+
+
 
 
 
@@ -288,7 +570,19 @@ if (saveAiKey) {
 
 
 
+
+
+
+
+
+
+
+
 const fallbackDefaultResult = {
+
+
+
+
 
 
 
@@ -296,7 +590,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   techstack: "Next.js + Node.js + Supabase",
+
+
+
+
 
 
 
@@ -304,7 +606,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   mega_prompt: "Act as an Expert Full-Stack Developer. Build a sleek, modern web application using Next.js, Tailwind CSS (dark mode), and Framer Motion for animations. Set up a Supabase backend for authentication and real-time database capabilities.",
+
+
+
+
 
 
 
@@ -312,7 +622,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   api_endpoints: "POST /api/v1/auth/signup\nGET /api/v1/items/list\nPOST /api/v1/items/create",
+
+
+
+
 
 
 
@@ -320,7 +638,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   industry: "General Tech"
+
+
+
+
 
 
 
@@ -332,7 +658,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
   // --- History Management ---
+
+
+
+
 
 
 
@@ -340,7 +678,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   const historyToggle = document.getElementById('historyToggle');
+
+
+
+
 
 
 
@@ -348,11 +694,27 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   const historyList = document.getElementById('historyList');
 
 
 
+
+
+
+
   const historyBadge = document.getElementById('historyBadge');
+
+
+
+
+
+
+
+
 
 
 
@@ -368,7 +730,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
   function updateHistoryUI() {
+
+
+
+
 
 
 
@@ -376,7 +750,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       if (history.length === 0) {
+
+
+
+
 
 
 
@@ -384,7 +766,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
           <div class="history-empty">
+
+
+
+
 
 
 
@@ -392,11 +782,23 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             <p>No recent solutions found.</p>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -404,7 +806,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
         historyBadge.style.display = 'none';
+
+
+
+
 
 
 
@@ -412,7 +822,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
         historyBadge.style.display = 'flex';
+
+
+
+
 
 
 
@@ -420,7 +838,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
         historyList.innerHTML = history.map((item, index) => `
+
+
+
+
 
 
 
@@ -428,7 +854,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             <div class="history-item-title">${item.problem.substring(0, 60)}${item.problem.length > 60 ? '...' : ''}</div>
+
+
+
+
 
 
 
@@ -436,7 +870,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
               <span class="history-item-tag">${item.industry || 'General'}</span>
+
+
+
+
 
 
 
@@ -444,11 +886,23 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             </div>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -460,7 +914,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
         document.querySelectorAll('.history-item').forEach(item => {
+
+
+
+
 
 
 
@@ -468,7 +934,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             const index = item.getAttribute('data-index');
+
+
+
+
 
 
 
@@ -476,7 +950,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             loadSavedSolution(savedData);
+
+
+
+
 
 
 
@@ -484,7 +966,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
           });
+
+
+
+
 
 
 
@@ -492,7 +982,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -500,7 +998,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -512,7 +1022,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     const newItem = {
+
+
+
+
 
 
 
@@ -520,7 +1038,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       result: result,
+
+
+
+
 
 
 
@@ -528,7 +1054,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       timestamp: new Date().getTime()
+
+
+
+
 
 
 
@@ -536,7 +1070,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     history = history.filter(h => h.problem !== problem);
+
+
+
+
 
 
 
@@ -544,7 +1086,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     if (history.length > 10) history.pop();
+
+
+
+
 
 
 
@@ -552,7 +1102,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     localStorage.setItem('latest_strat_result', JSON.stringify(newItem));
+
+
+
+
 
 
 
@@ -560,7 +1118,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -572,7 +1142,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     projectInput.value = data.problem;
+
+
+
+
 
 
 
@@ -580,7 +1158,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -588,7 +1174,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     if (res.overview) {
+
+
+
+
 
 
 
@@ -596,7 +1190,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       reportData.techstack = res.techstack;
+
+
+
+
 
 
 
@@ -604,7 +1206,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       reportData.workflow = (res.mega_prompt || '').substring(0, 500) + "...";
+
+
+
+
 
 
 
@@ -612,7 +1222,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       reportData.apis = res.api_endpoints;
+
+
+
+
 
 
 
@@ -620,7 +1238,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       
+
+
+
+
 
 
 
@@ -628,7 +1254,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       if (res.mega_prompt) {
+
+
+
+
 
 
 
@@ -636,7 +1270,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
           <div class="mega-prompt-container" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(6, 182, 212, 0.1)); padding: 2rem; border-radius: 16px; border: 1px solid var(--accent-primary); margin-bottom: 2rem;">
+
+
+
+
 
 
 
@@ -644,7 +1286,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+
+
+
+
 
 
 
@@ -652,7 +1302,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             </h3>
+
+
+
+
 
 
 
@@ -660,7 +1318,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
               ${res.mega_prompt.replace(/\n/g, '<br>')}
+
+
+
+
 
 
 
@@ -668,7 +1334,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
             <button class="btn-primary copy-prompt-btn" style="margin-top: 1.5rem; width: 100%;">Copy Mega Prompt</button>
+
+
+
+
 
 
 
@@ -676,7 +1350,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
         `;
+
+
+
+
 
 
 
@@ -684,11 +1366,23 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -696,7 +1390,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -704,7 +1406,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     outputArea.scrollIntoView({ behavior: 'smooth' });
+
+
+
+
 
 
 
@@ -712,7 +1422,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -724,11 +1446,27 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     historyToggle.addEventListener('click', () => historySidebar.classList.add('open'));
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -740,11 +1478,27 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     closeHistory.addEventListener('click', () => historySidebar.classList.remove('open'));
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -756,7 +1510,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   document.querySelectorAll('.history-nav-trigger').forEach(trigger => {
+
+
+
+
 
 
 
@@ -764,7 +1526,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       e.preventDefault();
+
+
+
+
 
 
 
@@ -772,7 +1542,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       const mobileMenu = document.getElementById('mobileMenu');
+
+
+
+
 
 
 
@@ -780,7 +1558,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -792,7 +1578,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
   // --- Auto-Restore Latest Result ---
+
+
+
+
 
 
 
@@ -800,7 +1598,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   if (latestStr) {
+
+
+
+
 
 
 
@@ -808,7 +1614,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       const latest = JSON.parse(latestStr);
+
+
+
+
 
 
 
@@ -816,7 +1630,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       const now = new Date().getTime();
+
+
+
+
 
 
 
@@ -824,7 +1646,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
         loadSavedSolution(latest);
+
+
+
+
 
 
 
@@ -832,7 +1662,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     } catch (e) {
+
+
+
+
 
 
 
@@ -840,11 +1678,27 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -860,7 +1714,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
   function getOfflineFallback(prompt) {
+
+
+
+
 
 
 
@@ -868,7 +1734,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   const extKb = (typeof window !== 'undefined' && window.OFFLINE_KNOWLEDGE_BASE) ? window.OFFLINE_KNOWLEDGE_BASE : [];
+
+
+
+
 
 
 
@@ -876,11 +1750,23 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   // Improved scoring match
 
 
 
+
+
+
+
   let matched = null;
+
+
+
+
 
 
 
@@ -892,7 +1778,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
   extKb.forEach(item => {
+
+
+
+
 
 
 
@@ -900,7 +1798,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     item.keywords.forEach(kw => {
+
+
+
+
 
 
 
@@ -908,7 +1814,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -916,11 +1830,23 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       score += 3;
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -928,7 +1854,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
       highestScore = score;
+
+
+
+
 
 
 
@@ -936,7 +1870,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -948,7 +1890,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
+
+
+
+
   if (matched) {
+
+
+
+
 
 
 
@@ -956,7 +1910,15 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -964,7 +1926,19 @@ const fallbackDefaultResult = {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -976,7 +1950,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
   const apiKey = localStorage.getItem('gemini_api_key');
+
+
+
+
 
 
 
@@ -988,7 +1970,19 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
+
+
+
+
   let selectedModel = 'gemini-2.5-flash';
+
+
+
+
 
 
 
@@ -1000,7 +1994,19 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
+
+
+
+
   try {
+
+
+
+
 
 
 
@@ -1008,7 +2014,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       method: 'POST',
+
+
+
+
 
 
 
@@ -1016,7 +2030,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       body: JSON.stringify({
+
+
+
+
 
 
 
@@ -1024,7 +2046,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
           role: "user",
+
+
+
+
 
 
 
@@ -1032,7 +2062,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         }],
+
+
+
+
 
 
 
@@ -1040,7 +2078,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
+
+
+
+
 
 
 
@@ -1048,7 +2094,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -1056,7 +2110,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     if (response.status === 429) {
+
+
+
+
 
 
 
@@ -1064,7 +2126,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       console.warn("Gemini 2.5 Flash quota exceeded. Switching to stable Gemini 2.0 Flash fallback...");
+
+
+
+
 
 
 
@@ -1072,7 +2142,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         method: 'POST',
+
+
+
+
 
 
 
@@ -1080,7 +2158,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         body: JSON.stringify({
+
+
+
+
 
 
 
@@ -1088,7 +2174,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
             role: "user",
+
+
+
+
 
 
 
@@ -1096,7 +2190,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
           }],
+
+
+
+
 
 
 
@@ -1104,7 +2206,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
           generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
+
+
+
+
 
 
 
@@ -1112,7 +2222,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       });
+
+
+
+
 
 
 
@@ -1120,7 +2238,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
   } catch (err) {
+
+
+
+
 
 
 
@@ -1128,7 +2254,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
+
+
+
+
 
 
 
@@ -1136,7 +2270,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       headers: { 'Content-Type': 'application/json' },
+
+
+
+
 
 
 
@@ -1144,7 +2286,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         contents: [{
+
+
+
+
 
 
 
@@ -1152,7 +2302,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
           parts: [{ text: prompt }]
+
+
+
+
 
 
 
@@ -1160,7 +2318,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         tools: [{ google_search: {} }],
+
+
+
+
 
 
 
@@ -1168,11 +2334,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       })
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -1184,7 +2362,19 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
+
+
+
+
   try {
+
+
+
+
 
 
 
@@ -1192,7 +2382,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         console.warn("API response not ok, using offline fallback. Status: ", response.status);
+
+
+
+
 
 
 
@@ -1200,11 +2398,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -1212,11 +2422,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     const text = data.candidates[0].content.parts[0].text;
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -1224,7 +2446,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -1232,7 +2462,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     const repairJson = (str) => {
+
+
+
+
 
 
 
@@ -1240,7 +2478,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       let inString = false;
+
+
+
+
 
 
 
@@ -1248,11 +2494,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       let sanitized = '';
 
 
 
+
+
+
+
       for (let i = 0; i < res.length; i++) {
+
+
+
+
 
 
 
@@ -1260,7 +2518,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         if (escapeNext) { sanitized += char; escapeNext = false; continue; }
+
+
+
+
 
 
 
@@ -1268,7 +2534,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         if (char === '"') { inString = !inString; sanitized += char; continue; }
+
+
+
+
 
 
 
@@ -1276,7 +2550,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         if (inString && char === '\t') { sanitized += '\\t'; continue; }
+
+
+
+
 
 
 
@@ -1284,11 +2566,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         sanitized += char;
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1296,7 +2590,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       if (inString) res += '"';
+
+
+
+
 
 
 
@@ -1304,7 +2606,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       let bracketCount = 0;
+
+
+
+
 
 
 
@@ -1312,7 +2622,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         if (res[i] === '{') braceCount++;
+
+
+
+
 
 
 
@@ -1320,7 +2638,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         else if (res[i] === '[') bracketCount++;
+
+
+
+
 
 
 
@@ -1328,7 +2654,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1336,11 +2670,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
       while (braceCount > 0) { res += '}'; braceCount--; }
 
 
 
+
+
+
+
       return res;
+
+
+
+
 
 
 
@@ -1352,7 +2698,19 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
+
+
+
+
     if (jsonMatch) {
+
+
+
+
 
 
 
@@ -1360,7 +2718,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         return JSON.parse(repairJson(jsonMatch[0]));
+
+
+
+
 
 
 
@@ -1368,7 +2734,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
         console.warn("JSON parse failed on match even after repair", e);
+
+
+
+
 
 
 
@@ -1376,7 +2750,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -1384,7 +2766,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     return JSON.parse(repairJson(cleanText));
+
+
+
+
 
 
 
@@ -1392,7 +2782,15 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
     console.warn('Gemini Search Error, using offline fallback:', err);
+
+
+
+
 
 
 
@@ -1400,11 +2798,35 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
   }
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1424,11 +2846,23 @@ async function callGeminiDeepSearch(prompt) {
 
 
 
+
+
+
+
 if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   const idea = projectInput.value;
+
+
+
+
 
 
 
@@ -1440,7 +2874,19 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
   // Simulate Deep Research Phase
+
+
+
+
 
 
 
@@ -1448,11 +2894,23 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   btnGenerateText.style.display = 'none';
 
 
 
+
+
+
+
   btnGenerateLoading.style.display = 'flex';
+
+
+
+
 
 
 
@@ -1464,7 +2922,19 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
   // Create or show the research progress overlay
+
+
+
+
 
 
 
@@ -1472,7 +2942,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   if (!researchOverlay) {
+
+
+
+
 
 
 
@@ -1480,7 +2958,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     researchOverlay.id = 'researchOverlay';
+
+
+
+
 
 
 
@@ -1488,7 +2974,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     document.body.appendChild(researchOverlay);
+
+
+
+
 
 
 
@@ -1496,7 +2990,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -1504,7 +3006,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     <div class="research-modal">
+
+
+
+
 
 
 
@@ -1512,7 +3022,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         <div class="research-icon">🔍</div>
+
+
+
+
 
 
 
@@ -1520,7 +3038,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -1528,7 +3054,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         <div class="step active" id="step1"><span>•</span> Analyzing Problem Statement...</div>
+
+
+
+
 
 
 
@@ -1536,7 +3070,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         <div class="step" id="step3"><span>•</span> Benchmarking Devpost Winners...</div>
+
+
+
+
 
 
 
@@ -1544,7 +3086,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -1552,7 +3102,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         <div class="progress-bar-fill" id="progressBar"></div>
+
+
+
+
 
 
 
@@ -1560,11 +3118,23 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     </div>
 
 
 
+
+
+
+
   `;
+
+
+
+
 
 
 
@@ -1576,7 +3146,19 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
   const steps = ['step1', 'step2', 'step3', 'step4'];
+
+
+
+
 
 
 
@@ -1588,7 +3170,19 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
   const runSteps = setInterval(() => {
+
+
+
+
 
 
 
@@ -1596,7 +3190,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       document.getElementById(steps[currentStep-1]).classList.add('completed');
+
+
+
+
 
 
 
@@ -1604,7 +3206,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -1612,7 +3222,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     if (currentStep < steps.length) {
+
+
+
+
 
 
 
@@ -1620,7 +3238,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       document.getElementById('progressBar').style.width = ((currentStep + 1) * 25) + '%';
+
+
+
+
 
 
 
@@ -1628,7 +3254,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     } else {
+
+
+
+
 
 
 
@@ -1636,7 +3270,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       setTimeout(() => {
+
+
+
+
 
 
 
@@ -1644,7 +3286,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         generateBtn.disabled = false;
+
+
+
+
 
 
 
@@ -1652,7 +3302,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         btnGenerateLoading.style.display = 'none';
+
+
+
+
 
 
 
@@ -1660,7 +3318,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         // Intelligent Keyword Branching & Fallback
+
+
+
+
 
 
 
@@ -1668,7 +3334,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
              if (result && typeof result === 'object') {
+
+
+
+
 
 
 
@@ -1676,7 +3350,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                reportData.overview = result.overview;
+
+
+
+
 
 
 
@@ -1684,7 +3366,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                reportData.ai = result.ai_strategy;
+
+
+
+
 
 
 
@@ -1692,7 +3382,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                reportData.database = result.database_schema;
+
+
+
+
 
 
 
@@ -1700,7 +3398,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                reportData.winsecrets = result.win_secret;
+
+
+
+
 
 
 
@@ -1708,7 +3414,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                saveToHistory(idea, result);
+
+
+
+
 
 
 
@@ -1716,7 +3430,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                // Max Advanced "Mega Prompt" Display
+
+
+
+
 
 
 
@@ -1724,7 +3446,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                  <div class="mega-prompt-container" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(6, 182, 212, 0.1)); padding: 2rem; border-radius: 16px; border: 1px solid var(--accent-primary); margin-bottom: 2rem;">
+
+
+
+
 
 
 
@@ -1732,7 +3462,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+
+
+
+
 
 
 
@@ -1740,7 +3478,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                    </h3>
+
+
+
+
 
 
 
@@ -1748,7 +3494,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                    
+
+
+
+
 
 
 
@@ -1756,7 +3510,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                      ${result.mega_prompt.replace(/\n/g, '<br>')}
+
+
+
+
 
 
 
@@ -1764,7 +3526,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                    
+
+
+
+
 
 
 
@@ -1772,7 +3542,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+
+
+
+
 
 
 
@@ -1780,11 +3558,27 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                    </button>
 
 
 
+
+
+
+
                  </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -1796,11 +3590,23 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                  <div class="card-grid">
 
 
 
+
+
+
+
                    <div class="info-card">
+
+
+
+
 
 
 
@@ -1808,7 +3614,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                      <p class="code-block" style="font-size: 0.75rem;">${result.database_schema.substring(0, 200)}...</p>
+
+
+
+
 
 
 
@@ -1816,7 +3630,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                    </div>
+
+
+
+
 
 
 
@@ -1824,7 +3646,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                      <h4>API & Logic Layer</h4>
+
+
+
+
 
 
 
@@ -1832,7 +3662,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                      <button class="btn-outline btn-sm copy-prompt-btn">Copy API Specs</button>
+
+
+
+
 
 
 
@@ -1840,7 +3678,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                  </div>
+
+
+
+
 
 
 
@@ -1852,7 +3698,19 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
                populateReport(idea, { industry: result.industry, stack: result.techstack.substring(0, 50) + '...', aiModel: 'Gemini 2.0 (Max Advanced) / Offline Base', secret: 'Complete Build Prepared' });
+
+
+
+
 
 
 
@@ -1860,7 +3718,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
                const analysis = analyzeProblem(idea);
+
+
+
+
 
 
 
@@ -1868,7 +3734,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
              }
+
+
+
+
 
 
 
@@ -1876,7 +3750,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
              outputArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+
+
+
 
 
 
@@ -1884,7 +3766,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -1892,7 +3782,15 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -1900,7 +3798,19 @@ if(generateBtn) generateBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -1912,7 +3822,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
   const text = idea.toLowerCase();
+
+
+
+
 
 
 
@@ -1920,7 +3838,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     industry: 'General Tech',
+
+
+
+
 
 
 
@@ -1928,11 +3854,23 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     aiModel: 'Gemini 2.0 Flash',
 
 
 
+
+
+
+
     secret: 'Focus on clean data visualization and seamless onboarding.'
+
+
+
+
 
 
 
@@ -1944,7 +3882,19 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
+
+
+
+
   if (text.includes('health') || text.includes('medical') || text.includes('doctor')) {
+
+
+
+
 
 
 
@@ -1952,7 +3902,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.stack = 'Next.js + Python FastAPI (for ML) + MongoDB (HIPAA compliant structures)';
+
+
+
+
 
 
 
@@ -1960,7 +3918,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.secret = 'Judges love data privacy. Emphasize Zero-Knowledge Proofs for patient data.';
+
+
+
+
 
 
 
@@ -1968,7 +3934,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.industry = 'Fintech / DeFi';
+
+
+
+
 
 
 
@@ -1976,7 +3950,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.aiModel = 'Claude 3.5 Sonnet (for complex logic)';
+
+
+
+
 
 
 
@@ -1984,7 +3966,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
   } else if (text.includes('green') || text.includes('earth') || text.includes('climat') || text.includes('eco')) {
+
+
+
+
 
 
 
@@ -1992,7 +3982,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.stack = 'Next.js + Edge Functions + Time-series DB (InfluxDB) for sensor data';
+
+
+
+
 
 
 
@@ -2000,7 +3998,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.secret = 'Integrate a Carbon Footprint tracker. Use Google Maps Platform for visualization.';
+
+
+
+
 
 
 
@@ -2008,7 +4014,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.industry = 'EdTech / Learning';
+
+
+
+
 
 
 
@@ -2016,11 +4030,23 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
     analysis.aiModel = 'GPT-4o (for tutoring logic)';
 
 
 
+
+
+
+
     analysis.secret = 'Gamification is key. Add a Streaks or Leaderboard component to your UI.';
+
+
+
+
 
 
 
@@ -2032,11 +4058,31 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
+
+
+
+
   return analysis;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -2048,7 +4094,15 @@ function analyzeProblem(idea) {
 
 
 
+
+
+
+
 const reportData = {
+
+
+
+
 
 
 
@@ -2056,7 +4110,15 @@ const reportData = {
 
 
 
+
+
+
+
     <h3>🚀 Project Understanding</h3>
+
+
+
+
 
 
 
@@ -2064,11 +4126,23 @@ const reportData = {
 
 
 
+
+
+
+
     <div class="card-grid">
 
 
 
+
+
+
+
       <div class="info-card">
+
+
+
+
 
 
 
@@ -2076,7 +4150,15 @@ const reportData = {
 
 
 
+
+
+
+
         <p>To provide a seamless, scalable, and intelligent solution for the target demographic.</p>
+
+
+
+
 
 
 
@@ -2084,7 +4166,15 @@ const reportData = {
 
 
 
+
+
+
+
       <div class="info-card">
+
+
+
+
 
 
 
@@ -2092,11 +4182,23 @@ const reportData = {
 
 
 
+
+
+
+
         <p>Professionals, students, and businesses looking for efficiency and automation.</p>
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2104,7 +4206,15 @@ const reportData = {
 
 
 
+
+
+
+
         <h4>💡 Unique Value</h4>
+
+
+
+
 
 
 
@@ -2112,7 +4222,15 @@ const reportData = {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2120,7 +4238,15 @@ const reportData = {
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2128,7 +4254,15 @@ const reportData = {
 
 
 
+
+
+
+
     <h3>⚡ Recommended Tech Stack</h3>
+
+
+
+
 
 
 
@@ -2136,7 +4270,15 @@ const reportData = {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -2144,7 +4286,15 @@ const reportData = {
 
 
 
+
+
+
+
     <ul>
+
+
+
+
 
 
 
@@ -2152,11 +4302,27 @@ const reportData = {
 
 
 
+
+
+
+
       <li><strong>Alternatives:</strong> Vite + React (lighter), Nuxt.js (if Vue preferred).</li>
 
 
 
+
+
+
+
     </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -2168,7 +4334,15 @@ const reportData = {
 
 
 
+
+
+
+
     <ul>
+
+
+
+
 
 
 
@@ -2176,7 +4350,19 @@ const reportData = {
 
 
 
+
+
+
+
     </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -2188,7 +4374,15 @@ const reportData = {
 
 
 
+
+
+
+
     <ul>
+
+
+
+
 
 
 
@@ -2196,7 +4390,15 @@ const reportData = {
 
 
 
+
+
+
+
     </ul>
+
+
+
+
 
 
 
@@ -2204,7 +4406,15 @@ const reportData = {
 
 
 
+
+
+
+
   ai: `
+
+
+
+
 
 
 
@@ -2212,7 +4422,15 @@ const reportData = {
 
 
 
+
+
+
+
     <p>How to make this project truly "smart":</p>
+
+
+
+
 
 
 
@@ -2220,7 +4438,15 @@ const reportData = {
 
 
 
+
+
+
+
 // Pseudo-code for AI middleware
+
+
+
+
 
 
 
@@ -2228,11 +4454,23 @@ const aiAgent = new GeminiFlash({
 
 
 
+
+
+
+
   temperature: 0.7,
 
 
 
+
+
+
+
   systemPrompt: "You are an intelligent assistant for..."
+
+
+
+
 
 
 
@@ -2244,7 +4482,19 @@ const aiAgent = new GeminiFlash({
 
 
 
+
+
+
+
+
+
+
+
 async function processUserInput(data) {
+
+
+
+
 
 
 
@@ -2252,7 +4502,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
   return formatResponse(insight);
+
+
+
+
 
 
 
@@ -2260,11 +4518,23 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     </div>
 
 
 
+
+
+
+
     <ul>
+
+
+
+
 
 
 
@@ -2272,7 +4542,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <li><strong>Feature 1:</strong> Automated summarization of user inputs.</li>
+
+
+
+
 
 
 
@@ -2280,11 +4558,23 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     </ul>
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2292,7 +4582,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     <h3>🎨 UI/UX Design System</h3>
+
+
+
+
 
 
 
@@ -2300,7 +4598,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     <div>
+
+
+
+
 
 
 
@@ -2308,7 +4614,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <span class="badge" style="background:#a78bfa; color:#fff">Primary Accent</span>
+
+
+
+
 
 
 
@@ -2316,7 +4630,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -2324,7 +4646,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <li><strong>Theme:</strong> Dark Mode default with Glassmorphism (blur backdrops).</li>
+
+
+
+
 
 
 
@@ -2332,7 +4662,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <li><strong>Animations:</strong> Subtle float effects on cards, gradient text for main headlines, and smooth page transitions.</li>
+
+
+
+
 
 
 
@@ -2340,7 +4678,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2348,7 +4694,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     <h3>🔄 System Workflow</h3>
+
+
+
+
 
 
 
@@ -2356,7 +4710,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <li><strong>User Onboarding:</strong> Seamless OAuth login (Google/GitHub).</li>
+
+
+
+
 
 
 
@@ -2364,7 +4726,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <li><strong>Core Action:</strong> User inputs data -> Validated on frontend -> Sent to backend.</li>
+
+
+
+
 
 
 
@@ -2372,7 +4742,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
       <li><strong>Result View:</strong> Animated rendering of the final output with export options.</li>
+
+
+
+
 
 
 
@@ -2380,7 +4758,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2388,7 +4774,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
     <h3>🗄️ Database Schema</h3>
+
+
+
+
 
 
 
@@ -2396,7 +4790,15 @@ async function processUserInput(data) {
 
 
 
+
+
+
+
 Table Users {
+
+
+
+
 
 
 
@@ -2404,7 +4806,15 @@ Table Users {
 
 
 
+
+
+
+
   email varchar
+
+
+
+
 
 
 
@@ -2412,11 +4822,27 @@ Table Users {
 
 
 
+
+
+
+
   tier enum('free', 'pro')
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -2428,7 +4854,15 @@ Table Projects {
 
 
 
+
+
+
+
   id uuid [pk]
+
+
+
+
 
 
 
@@ -2436,7 +4870,15 @@ Table Projects {
 
 
 
+
+
+
+
   title varchar
+
+
+
+
 
 
 
@@ -2444,7 +4886,15 @@ Table Projects {
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -2452,7 +4902,15 @@ Table Projects {
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2460,7 +4918,15 @@ Table Projects {
 
 
 
+
+
+
+
     <h3>🔌 API Architecture</h3>
+
+
+
+
 
 
 
@@ -2468,7 +4934,15 @@ Table Projects {
 
 
 
+
+
+
+
       <li><code>POST /api/v1/auth</code> - Handle JWT generation</li>
+
+
+
+
 
 
 
@@ -2476,7 +4950,15 @@ Table Projects {
 
 
 
+
+
+
+
       <li><code>POST /api/v1/generate</code> - Main AI processing endpoint</li>
+
+
+
+
 
 
 
@@ -2484,7 +4966,15 @@ Table Projects {
 
 
 
+
+
+
+
     </ul>
+
+
+
+
 
 
 
@@ -2492,7 +4982,15 @@ Table Projects {
 
 
 
+
+
+
+
   prompts: `
+
+
+
+
 
 
 
@@ -2500,7 +4998,15 @@ Table Projects {
 
 
 
+
+
+
+
     <p>Copy and paste these exact prompts into Cursor, Bolt.new, or Windsurf to instantly generate your application code.</p>
+
+
+
+
 
 
 
@@ -2508,7 +5014,15 @@ Table Projects {
 
 
 
+
+
+
+
     <div class="info-card">
+
+
+
+
 
 
 
@@ -2516,11 +5030,23 @@ Table Projects {
 
 
 
+
+
+
+
       <div class="code-block" style="white-space: pre-wrap; font-family: var(--font-main);">"Act as an expert Next.js and Tailwind UI developer. I am building [IDEA]. Create a stunning, dark-mode first landing page and dashboard. Use glassmorphism, Framer Motion for subtle entry animations, and Lucide React icons. The UI should look like a premium, modern SaaS product. Do not use generic colors; use a sleek palette with deep purples and cyans."</div>
 
 
 
+
+
+
+
       <button class="btn-outline btn-sm copy-prompt-btn">Copy Prompt</button>
+
+
+
+
 
 
 
@@ -2532,7 +5058,19 @@ Table Projects {
 
 
 
+
+
+
+
+
+
+
+
     <div class="info-card" style="margin-top: 1.5rem;">
+
+
+
+
 
 
 
@@ -2540,7 +5078,15 @@ Table Projects {
 
 
 
+
+
+
+
       <div class="code-block" style="white-space: pre-wrap; font-family: var(--font-main);">"Act as a Senior Backend Architect. Create a Node.js Express server (or FastAPI) for [IDEA]. Implement 3 core REST API endpoints with robust error handling. Set up JWT authentication. Include a placeholder function for integrating the Gemini LLM API to process user inputs. Output the complete, modular folder structure and the main server file."</div>
+
+
+
+
 
 
 
@@ -2548,7 +5094,19 @@ Table Projects {
 
 
 
+
+
+
+
     </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -2560,7 +5118,15 @@ Table Projects {
 
 
 
+
+
+
+
       <h4>3. Database Schema Prompt</h4>
+
+
+
+
 
 
 
@@ -2568,11 +5134,27 @@ Table Projects {
 
 
 
+
+
+
+
       <button class="btn-outline btn-sm copy-prompt-btn">Copy Prompt</button>
 
 
 
+
+
+
+
     </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -2584,11 +5166,23 @@ Table Projects {
 
 
 
+
+
+
+
     <p>Supercharge your hackathon project with these powerful plug-and-play tools:</p>
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -2596,7 +5190,15 @@ Table Projects {
 
 
 
+
+
+
+
       <div class="info-card">
+
+
+
+
 
 
 
@@ -2604,7 +5206,15 @@ Table Projects {
 
 
 
+
+
+
+
         <p>Drop-in authentication. Forget building login screens; use Clerk to add social logins (Google, GitHub) in 5 minutes.</p>
+
+
+
+
 
 
 
@@ -2612,7 +5222,15 @@ Table Projects {
 
 
 
+
+
+
+
       <div class="info-card">
+
+
+
+
 
 
 
@@ -2620,7 +5238,15 @@ Table Projects {
 
 
 
+
+
+
+
         <p>If your idea has a "Pro" tier, integrating Stripe Checkout immediately proves business viability to judges.</p>
+
+
+
+
 
 
 
@@ -2628,7 +5254,15 @@ Table Projects {
 
 
 
+
+
+
+
       <div class="info-card">
+
+
+
+
 
 
 
@@ -2636,11 +5270,23 @@ Table Projects {
 
 
 
+
+
+
+
         <p>Send beautiful transactional emails or welcome sequences using React code. Extremely fast setup.</p>
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2648,7 +5294,15 @@ Table Projects {
 
 
 
+
+
+
+
         <h4>📈 PostHog (Analytics)</h4>
+
+
+
+
 
 
 
@@ -2656,7 +5310,15 @@ Table Projects {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2664,7 +5326,15 @@ Table Projects {
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2672,7 +5342,15 @@ Table Projects {
 
 
 
+
+
+
+
     <h3>🐙 Push to GitHub</h3>
+
+
+
+
 
 
 
@@ -2680,7 +5358,15 @@ Table Projects {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -2688,7 +5374,15 @@ Table Projects {
 
 
 
+
+
+
+
       <li><strong>Initialize your repository:</strong></li>
+
+
+
+
 
 
 
@@ -2696,11 +5390,23 @@ Table Projects {
 
 
 
+
+
+
+
     <div class="code-block">git init
 
 
 
+
+
+
+
 git add .
+
+
+
+
 
 
 
@@ -2712,7 +5418,19 @@ git commit -m "Initial commit: RAR Hackathon Helper Setup"</div>
 
 
 
+
+
+
+
+
+
+
+
     <ol start="2">
+
+
+
+
 
 
 
@@ -2720,7 +5438,15 @@ git commit -m "Initial commit: RAR Hackathon Helper Setup"</div>
 
 
 
+
+
+
+
     </ol>
+
+
+
+
 
 
 
@@ -2728,7 +5454,15 @@ git commit -m "Initial commit: RAR Hackathon Helper Setup"</div>
 
 
 
+
+
+
+
 git remote add origin https://github.com/yourusername/your-repo.git
+
+
+
+
 
 
 
@@ -2740,7 +5474,19 @@ git push -u origin main</div>
 
 
 
+
+
+
+
+
+
+
+
     <div style="margin-top:2rem;">
+
+
+
+
 
 
 
@@ -2748,7 +5494,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+
+
+
+
 
 
 
@@ -2756,7 +5510,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
       </a>
+
+
+
+
 
 
 
@@ -2764,7 +5526,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
   `,
+
+
+
+
 
 
 
@@ -2772,7 +5542,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     <h3>🚀 Launch & Deploy</h3>
+
+
+
+
 
 
 
@@ -2780,7 +5558,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -2788,7 +5574,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
       <div class="info-card">
+
+
+
+
 
 
 
@@ -2796,7 +5590,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <p>The absolute easiest way to host a React or Next.js app.</p>
+
+
+
+
 
 
 
@@ -2804,7 +5606,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
           <li>Push code to GitHub.</li>
+
+
+
+
 
 
 
@@ -2812,7 +5622,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
           <li>Import your GitHub repo.</li>
+
+
+
+
 
 
 
@@ -2820,7 +5638,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         </ol>
+
+
+
+
 
 
 
@@ -2828,7 +5654,19 @@ git push -u origin main</div>
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -2840,7 +5678,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <h4>☁️ Render (Backend / Python / Node)</h4>
+
+
+
+
 
 
 
@@ -2848,7 +5694,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <ol>
+
+
+
+
 
 
 
@@ -2856,7 +5710,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
           <li>Select "New Web Service".</li>
+
+
+
+
 
 
 
@@ -2864,7 +5726,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
           <li>Set Start Command (e.g., <code>npm start</code>) and Deploy.</li>
+
+
+
+
 
 
 
@@ -2872,7 +5742,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <a href="https://dashboard.render.com/" target="_blank" class="btn-outline btn-sm" style="margin-top:1rem; text-decoration:none;">Deploy on Render</a>
+
+
+
+
 
 
 
@@ -2880,11 +5758,23 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     </div>
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -2892,7 +5782,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     <p>Judges care about the demo! Ensure your deployed links are working perfectly before your presentation starts. Keep a local instance running as a backup.</p>
+
+
+
+
 
 
 
@@ -2900,7 +5798,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
   winsecrets: `
+
+
+
+
 
 
 
@@ -2908,7 +5814,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     <p>We analyzed the top 50 winning projects from MIT Reality Hack, ETHDenver, and global Devpost competitions. Here is what actually wins:</p>
+
+
+
+
 
 
 
@@ -2916,7 +5830,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     <div class="card-grid">
+
+
+
+
 
 
 
@@ -2924,7 +5846,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <h4>1. The "Magic Moment"</h4>
+
+
+
+
 
 
 
@@ -2932,11 +5862,23 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <p><strong>Action:</strong> Skip the login screen in your pitch. Jump straight into the core feature that feels like magic.</p>
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2944,7 +5886,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <h4>2. Hardware/Real-world Bridging</h4>
+
+
+
+
 
 
 
@@ -2952,11 +5902,23 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <p><strong>Action:</strong> Integrate Twilio for SMS, use the browser webcam for computer vision, or connect a dummy IoT sensor.</p>
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2964,7 +5926,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <h4>3. The "Business Viability" Fakeout</h4>
+
+
+
+
 
 
 
@@ -2972,11 +5942,23 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <p><strong>Action:</strong> Add a pricing page. Integrate a fake Stripe checkout. It shows you thought about the business model, not just the code.</p>
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -2984,7 +5966,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <h4>4. Unapologetic UI/UX Polish</h4>
+
+
+
+
 
 
 
@@ -2992,7 +5982,15 @@ git push -u origin main</div>
 
 
 
+
+
+
+
         <p><strong>Action:</strong> A mediocre idea with a stunning UI will almost always beat a genius idea with a terrible UI. Dedicate your final 6 hours purely to CSS and Framer Motion.</p>
+
+
+
+
 
 
 
@@ -3000,11 +5998,23 @@ git push -u origin main</div>
 
 
 
+
+
+
+
     </div>
 
 
 
+
+
+
+
   `
+
+
+
+
 
 
 
@@ -3016,7 +6026,19 @@ git push -u origin main</div>
 
 
 
+
+
+
+
+
+
+
+
 function populateReport(ideaContext, analysis) {
+
+
+
+
 
 
 
@@ -3024,16 +6046,33 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
   const tabs = document.getElementById('outputTabs');
 
 
 
+
+
+
+
   if (!tabs || !outputContent) return;
+
   const tabsContainer = tabs.querySelectorAll('.tab-btn');
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -3041,7 +6080,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
   outputContent.innerHTML = '';
+
+
+
+
 
 
 
@@ -3049,7 +6096,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
   // Create sections
+
+
+
+
 
 
 
@@ -3057,7 +6112,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     const section = document.createElement('div');
+
+
+
+
 
 
 
@@ -3065,11 +6128,23 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     section.id = `section-${key}`;
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -3077,7 +6152,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     let html = reportData[key];
+
+
+
+
 
 
 
@@ -3085,7 +6168,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     // Global Replacements based on Deep Intelligence
+
+
+
+
 
 
 
@@ -3093,7 +6184,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       html = html.replace(/Next\.js \+ Tailwind \+ Framer Motion/g, analysis.stack);
+
+
+
+
 
 
 
@@ -3101,11 +6200,27 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       html = html.replace(/A mediocre idea with a stunning UI/g, analysis.secret);
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -3117,7 +6232,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       const industryBadge = analysis ? `<div class="section-badge" style="margin-bottom:1rem;">Detected: ${analysis.industry}</div>` : '';
+
+
+
+
 
 
 
@@ -3125,11 +6248,23 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -3137,7 +6272,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       const safeIdea = ideaContext.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+
+
+
 
 
 
@@ -3145,7 +6288,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -3153,7 +6304,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     section.innerHTML = html;
+
+
+
+
 
 
 
@@ -3161,7 +6320,19 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
   });
+
+
+
+
+
+
+
+
 
 
 
@@ -3173,7 +6344,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
   tabsContainer.forEach(tab => {
+
+
+
+
 
 
 
@@ -3181,7 +6360,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     tab.parentNode.replaceChild(newTab, tab);
+
+
+
+
 
 
 
@@ -3189,7 +6376,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     newTab.addEventListener('click', (e) => {
+
+
+
+
 
 
 
@@ -3197,7 +6392,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       newTab.classList.add('active');
+
+
+
+
 
 
 
@@ -3205,7 +6408,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       document.querySelectorAll('.output-section').forEach(sec => sec.classList.remove('active'));
+
+
+
+
 
 
 
@@ -3213,11 +6424,27 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   });
+
+
+
+
+
+
+
+
 
 
 
@@ -3229,7 +6456,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
   document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
+
+
+
+
 
 
 
@@ -3237,7 +6472,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
       const promptText = e.target.previousElementSibling.textContent;
+
+
+
+
 
 
 
@@ -3245,7 +6488,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
         const originalText = e.target.textContent;
+
+
+
+
 
 
 
@@ -3253,7 +6504,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
         setTimeout(() => e.target.textContent = originalText, 2000);
+
+
+
+
 
 
 
@@ -3261,7 +6520,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -3269,7 +6536,23 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3285,7 +6568,15 @@ function populateReport(ideaContext, analysis) {
 
 
 
+
+
+
+
 const copyBtn = document.getElementById("copyBtn");
+
+
+
+
 
 
 
@@ -3293,7 +6584,15 @@ if(copyBtn) copyBtn.addEventListener('click', () => showToast('Report copied to 
 
 
 
+
+
+
+
 const downBtn = document.getElementById("downloadBtn");
+
+
+
+
 
 
 
@@ -3301,11 +6600,23 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   showToast('Generating PDF Blueprint...');
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -3313,7 +6624,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   const printContent = document.createElement('div');
+
+
+
+
 
 
 
@@ -3321,7 +6640,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   printContent.style.fontFamily = 'Arial, sans-serif';
+
+
+
+
 
 
 
@@ -3329,11 +6656,23 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   printContent.style.background = '#fff';
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -3341,7 +6680,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   printContent.innerHTML = '<h1 style="color:#0f111a; border-bottom:2px solid #a78bfa; padding-bottom:10px; margin-bottom: 20px;">RAR Hackathon Helper - Project Blueprint</h1>';
+
+
+
+
 
 
 
@@ -3349,7 +6696,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   const ideaContext = projectInput.value;
+
+
+
+
 
 
 
@@ -3361,7 +6716,19 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
   // Dump all sections
+
+
+
+
 
 
 
@@ -3369,7 +6736,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     let html = reportData[key];
+
+
+
+
 
 
 
@@ -3377,11 +6752,23 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       html = html.replace('This is a high-potential project', `The concept of "${safeIdea.substring(0, 50)}..." is highly viable`);
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -3389,7 +6776,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
       html = html.replace(/\[IDEA\]/g, safeIdea);
+
+
+
+
 
 
 
@@ -3397,7 +6792,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     printContent.innerHTML += `<div style="margin-bottom: 30px;">${html}</div>`;
+
+
+
+
 
 
 
@@ -3405,7 +6808,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -3413,7 +6824,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   const style = document.createElement('style');
+
+
+
+
 
 
 
@@ -3421,7 +6840,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     .code-block { background: #f1f5f9 !important; color: #1e293b !important; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-family: monospace; white-space: pre-wrap; }
+
+
+
+
 
 
 
@@ -3429,7 +6856,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     h3 { color: #6366f1; margin-bottom: 15px; font-size: 1.5rem; }
+
+
+
+
 
 
 
@@ -3437,7 +6872,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     p, li { color: #334155; line-height: 1.6; }
+
+
+
+
 
 
 
@@ -3445,7 +6888,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     .btn-outline, .btn-primary, button { display: none !important; }
+
+
+
+
 
 
 
@@ -3453,7 +6904,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   `;
+
+
+
+
 
 
 
@@ -3465,7 +6924,19 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
   // Generate PDF
+
+
+
+
 
 
 
@@ -3473,7 +6944,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     margin:       0.5,
+
+
+
+
 
 
 
@@ -3481,7 +6960,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     image:        { type: 'jpeg', quality: 0.98 },
+
+
+
+
 
 
 
@@ -3489,7 +6976,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+
+
+
+
 
 
 
@@ -3497,7 +6992,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   
+
+
+
+
 
 
 
@@ -3505,7 +7008,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     html2pdf().set(opt).from(printContent).save().then(() => {
+
+
+
+
 
 
 
@@ -3513,7 +7024,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -3521,7 +7040,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
     showToast('Error: PDF library not loaded yet.');
+
+
+
+
 
 
 
@@ -3529,7 +7056,15 @@ if(downBtn) downBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
 });
+
+
+
+
 
 
 
@@ -3537,7 +7072,15 @@ const regenBtn = document.getElementById("regenerateBtn");
 
 
 
+
+
+
+
 if(regenBtn) regenBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -3545,11 +7088,27 @@ if(regenBtn) regenBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   generateBtn.click();
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -3561,7 +7120,15 @@ if(regenBtn) regenBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
 const toast = document.getElementById('toast');
+
+
+
+
 
 
 
@@ -3569,7 +7136,15 @@ function showToast(message) {
 
 
 
+
+
+
+
   toast.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> ${message}`;
+
+
+
+
 
 
 
@@ -3577,11 +7152,27 @@ function showToast(message) {
 
 
 
+
+
+
+
   setTimeout(() => toast.classList.remove('show'), 3000);
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3593,7 +7184,15 @@ function showToast(message) {
 
 
 
+
+
+
+
 const features = [
+
+
+
+
 
 
 
@@ -3601,7 +7200,15 @@ const features = [
 
 
 
+
+
+
+
   { icon: '🎨', title: 'UI/UX Generation', desc: 'Suggests color palettes, fonts, and component libraries.' },
+
+
+
+
 
 
 
@@ -3609,7 +7216,15 @@ const features = [
 
 
 
+
+
+
+
   { icon: '🗄️', title: 'Database Design', desc: 'Creates optimized schemas for Postgres, MongoDB, or Supabase.' },
+
+
+
+
 
 
 
@@ -3617,11 +7232,27 @@ const features = [
 
 
 
+
+
+
+
   { icon: '🎤', title: 'Pitch Deck Creator', desc: 'Generates elevator pitches and judge-impressing presentations.' }
 
 
 
+
+
+
+
 ];
+
+
+
+
+
+
+
+
 
 
 
@@ -3633,7 +7264,15 @@ const featuresGrid = document.getElementById('featuresGrid');
 
 
 
+
+
+
+
 if(featuresGrid) features.forEach((f, i) => {
+
+
+
+
 
 
 
@@ -3641,7 +7280,15 @@ if(featuresGrid) features.forEach((f, i) => {
 
 
 
+
+
+
+
     <div class="feature-card animate-in" style="--delay:${i * 0.1}s">
+
+
+
+
 
 
 
@@ -3649,7 +7296,15 @@ if(featuresGrid) features.forEach((f, i) => {
 
 
 
+
+
+
+
       <h3 class="feature-title">${f.title}</h3>
+
+
+
+
 
 
 
@@ -3657,7 +7312,15 @@ if(featuresGrid) features.forEach((f, i) => {
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -3665,7 +7328,19 @@ if(featuresGrid) features.forEach((f, i) => {
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -3677,7 +7352,15 @@ if(featuresGrid) features.forEach((f, i) => {
 
 
 
+
+
+
+
 const tools = [
+
+
+
+
 
 
 
@@ -3685,7 +7368,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Lovable', url: 'https://lovable.dev', logo: '❤️', fe: 5, be: 3, ui: 4, dbg: 3, lg: 2, hack: 5 },
+
+
+
+
 
 
 
@@ -3693,7 +7384,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Replit Agent', url: 'https://replit.com', logo: '🌀', fe: 4, be: 5, ui: 3, dbg: 4, lg: 3, hack: 5 },
+
+
+
+
 
 
 
@@ -3701,7 +7400,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Gemini 2.0 Flash', url: 'https://gemini.google.com', logo: '🌟', fe: 4, be: 4, ui: 3, dbg: 4, lg: 4, hack: 5 },
+
+
+
+
 
 
 
@@ -3709,7 +7416,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'GroqChat', url: 'https://groq.com', logo: '🏎️', fe: 3, be: 4, ui: 2, dbg: 4, lg: 2, hack: 5 },
+
+
+
+
 
 
 
@@ -3717,7 +7432,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Perplexity', url: 'https://perplexity.ai', logo: '🔍', fe: 1, be: 3, ui: 1, dbg: 4, lg: 1, hack: 5 },
+
+
+
+
 
 
 
@@ -3725,7 +7448,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Blackbox AI', url: 'https://www.blackbox.ai', logo: '⬛', fe: 4, be: 4, ui: 2, dbg: 4, lg: 3, hack: 4 },
+
+
+
+
 
 
 
@@ -3733,7 +7464,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Phind', url: 'https://www.phind.com', logo: '🔎', fe: 3, be: 5, ui: 2, dbg: 5, lg: 3, hack: 4 },
+
+
+
+
 
 
 
@@ -3741,7 +7480,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'WebSim.ai', url: 'https://websim.ai', logo: '🌐', fe: 5, be: 2, ui: 4, dbg: 1, lg: 1, hack: 5 },
+
+
+
+
 
 
 
@@ -3749,7 +7496,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Relume', url: 'https://relume.io', logo: '📐', fe: 5, be: 1, ui: 5, dbg: 1, lg: 2, hack: 4 },
+
+
+
+
 
 
 
@@ -3757,7 +7512,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Framer AI', url: 'https://framer.com/ai', logo: '🎨', fe: 5, be: 1, ui: 5, dbg: 1, lg: 2, hack: 4 },
+
+
+
+
 
 
 
@@ -3765,7 +7528,15 @@ const tools = [
 
 
 
+
+
+
+
   { name: 'Poe', url: 'https://poe.com', logo: '💬', fe: 3, be: 4, ui: 2, dbg: 4, lg: 3, hack: 4 },
+
+
+
+
 
 
 
@@ -3773,7 +7544,19 @@ const tools = [
 
 
 
+
+
+
+
 ];
+
+
+
+
+
+
+
+
 
 
 
@@ -3785,7 +7568,15 @@ function getStars(count) {
 
 
 
+
+
+
+
   let html = '<div class="rating">';
+
+
+
+
 
 
 
@@ -3793,7 +7584,15 @@ function getStars(count) {
 
 
 
+
+
+
+
     html += `<span class="star ${i < count ? 'filled' : ''}">★</span>`;
+
+
+
+
 
 
 
@@ -3801,7 +7600,15 @@ function getStars(count) {
 
 
 
+
+
+
+
   html += '</div>';
+
+
+
+
 
 
 
@@ -3809,7 +7616,19 @@ function getStars(count) {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3821,7 +7640,15 @@ const toolsTableBody = document.getElementById('toolsTableBody');
 
 
 
+
+
+
+
 if(toolsTableBody) tools.forEach(t => {
+
+
+
+
 
 
 
@@ -3829,7 +7656,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
     <tr>
+
+
+
+
 
 
 
@@ -3837,7 +7672,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
         <a href="${t.url}" target="_blank" class="tool-name" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.5rem;">
+
+
+
+
 
 
 
@@ -3845,7 +7688,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
           ${t.name}
+
+
+
+
 
 
 
@@ -3853,7 +7704,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
         </a>
+
+
+
+
 
 
 
@@ -3861,7 +7720,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
       <td>${getStars(t.fe)}</td>
+
+
+
+
 
 
 
@@ -3869,7 +7736,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
       <td>${getStars(t.ui)}</td>
+
+
+
+
 
 
 
@@ -3877,7 +7752,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
       <td>${getStars(t.lg)}</td>
+
+
+
+
 
 
 
@@ -3885,7 +7768,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
     </tr>
+
+
+
+
 
 
 
@@ -3893,7 +7784,19 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -3905,7 +7808,15 @@ if(toolsTableBody) tools.forEach(t => {
 
 
 
+
+
+
+
 const showcaseProjects = [
+
+
+
+
 
 
 
@@ -3913,7 +7824,15 @@ const showcaseProjects = [
 
 
 
+
+
+
+
   { title: 'OmniAgent RAG', tags: ['AI Agents', 'LangChain', 'FastAPI'], desc: 'Top AI Hack: Multi-agent system that ingests entire company knowledge bases and resolves customer support tickets autonomously.' },
+
+
+
+
 
 
 
@@ -3921,7 +7840,15 @@ const showcaseProjects = [
 
 
 
+
+
+
+
   { title: 'BrainWave Auth', tags: ['Hardware', 'ML Vision', 'Next.js'], desc: 'Hardware Hack: Biometric authentication system using EEG headsets and edge AI models to unlock physical spaces.' },
+
+
+
+
 
 
 
@@ -3929,7 +7856,15 @@ const showcaseProjects = [
 
 
 
+
+
+
+
   { title: 'FlashSwap Finance', tags: ['DeFi', 'Solana', 'Arbitrage'], desc: 'Crypto Winner: Lightning-fast DEX aggregator running on Solana that executes cross-chain arbitrage via atomic swaps.' }
+
+
+
+
 
 
 
@@ -3941,7 +7876,19 @@ const showcaseProjects = [
 
 
 
+
+
+
+
+
+
+
+
 const showcaseGrid = document.getElementById('showcaseGrid');
+
+
+
+
 
 
 
@@ -3949,7 +7896,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
   showcaseGrid.innerHTML += `
+
+
+
+
 
 
 
@@ -3957,7 +7912,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
       <div class="showcase-image"></div>
+
+
+
+
 
 
 
@@ -3965,7 +7928,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
         <div class="showcase-tags">
+
+
+
+
 
 
 
@@ -3973,7 +7944,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -3981,7 +7960,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
         <p class="showcase-desc">${p.desc}</p>
+
+
+
+
 
 
 
@@ -3989,7 +7976,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
           <span class="view-btn" data-title="${p.title}" style="cursor:pointer;">View Blueprint <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+
+
+
+
 
 
 
@@ -3997,7 +7992,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -4005,7 +8008,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
   `;
+
+
+
+
 
 
 
@@ -4013,7 +8024,15 @@ if(showcaseGrid) showcaseProjects.forEach((p, i) => {
 
 
 
+
+
+
+
 if(showcaseGrid) {
+
+
+
+
 
 
 
@@ -4021,7 +8040,15 @@ if(showcaseGrid) {
 
 
 
+
+
+
+
     btn.addEventListener('click', (e) => {
+
+
+
+
 
 
 
@@ -4029,7 +8056,15 @@ if(showcaseGrid) {
 
 
 
+
+
+
+
       window.location.href = 'strategist.html';
+
+
+
+
 
 
 
@@ -4037,11 +8072,27 @@ if(showcaseGrid) {
 
 
 
+
+
+
+
   });
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4053,7 +8104,15 @@ if(showcaseGrid) {
 
 
 
+
+
+
+
 const preset = localStorage.getItem('presetProject');
+
+
+
+
 
 
 
@@ -4061,7 +8120,15 @@ const pInput = document.getElementById('projectInput');
 
 
 
+
+
+
+
 const gBtn = document.getElementById('generateBtn');
+
+
+
+
 
 
 
@@ -4069,7 +8136,15 @@ if(preset && pInput && gBtn) {
 
 
 
+
+
+
+
   pInput.value = "Create a complete, detailed blueprint for: " + preset;
+
+
+
+
 
 
 
@@ -4077,7 +8152,15 @@ if(preset && pInput && gBtn) {
 
 
 
+
+
+
+
   localStorage.removeItem('presetProject');
+
+
+
+
 
 
 
@@ -4085,11 +8168,23 @@ if(preset && pInput && gBtn) {
 
 
 
+
+
+
+
     gBtn.click();
 
 
 
+
+
+
+
   }, 500);
+
+
+
+
 
 
 
@@ -4101,7 +8196,19 @@ if(preset && pInput && gBtn) {
 
 
 
+
+
+
+
+
+
+
+
 // Button interactions
+
+
+
+
 
 
 
@@ -4109,7 +8216,15 @@ const lBtn = document.getElementById("launchBtn");
 
 
 
+
+
+
+
 if(lBtn) lBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -4117,11 +8232,23 @@ if(lBtn) lBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
 });
 
 
 
-const hgBtn = document.getElementById("heroGenerateBtn");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4129,7 +8256,15 @@ if(hgBtn) hgBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   window.location.href = 'strategist.html';
+
+
+
+
 
 
 
@@ -4137,7 +8272,15 @@ if(hgBtn) hgBtn.addEventListener('click', () => {
 
 
 
-const hsBtn = document.getElementById("heroShowcaseBtn");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4145,11 +8288,23 @@ if(hsBtn) hsBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
   window.location.href = 'showcase.html';
 
 
 
+
+
+
+
 });
+
+
+
+
 
 
 
@@ -4157,7 +8312,15 @@ const cBtn = document.getElementById("ctaBtn");
 
 
 
+
+
+
+
 if(cBtn) cBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -4165,7 +8328,19 @@ if(cBtn) cBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -4174,6 +8349,10 @@ if(cBtn) cBtn.addEventListener('click', () => {
 
 
 // Trigger scroll check on load
+
+
+
+
 
 
 
@@ -4189,7 +8368,23 @@ window.dispatchEvent(new Event('scroll'));
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // ====================
+
+
+
+
 
 
 
@@ -4197,7 +8392,15 @@ window.dispatchEvent(new Event('scroll'));
 
 
 
+
+
+
+
 // ====================
+
+
+
+
 
 
 
@@ -4205,7 +8408,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
   const btnExport = document.getElementById('btnExportPDF');
+
+
+
+
 
 
 
@@ -4213,7 +8424,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
   const outputContent = document.getElementById('outputContent');
+
+
+
+
 
 
 
@@ -4221,11 +8440,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
   if (btnExport) {
 
 
 
+
+
+
+
     btnExport.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -4237,7 +8468,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
       const sectionStyle = `
+
+
+
+
 
 
 
@@ -4245,7 +8488,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         padding: 24px;
+
+
+
+
 
 
 
@@ -4253,7 +8504,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         border-radius: 12px;
+
+
+
+
 
 
 
@@ -4261,11 +8520,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
         page-break-inside: avoid;
 
 
 
+
+
+
+
       `;
+
+
+
+
 
 
 
@@ -4273,7 +8544,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         font-size: 20px;
+
+
+
+
 
 
 
@@ -4281,7 +8560,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         color: #1e1b4b;
+
+
+
+
 
 
 
@@ -4289,7 +8576,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         padding-bottom: 8px;
+
+
+
+
 
 
 
@@ -4297,7 +8592,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         display: flex;
+
+
+
+
 
 
 
@@ -4305,7 +8608,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         gap: 8px;
+
+
+
+
 
 
 
@@ -4313,7 +8624,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       const labelColors = {
+
+
+
+
 
 
 
@@ -4321,7 +8640,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         techstack:  { border: '#0891b2', bg: '#f0f9ff' },
+
+
+
+
 
 
 
@@ -4329,7 +8656,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         workflow:   { border: '#059669', bg: '#f0fdf4' },
+
+
+
+
 
 
 
@@ -4337,7 +8672,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         database:   { border: '#b45309', bg: '#fffbeb' },
+
+
+
+
 
 
 
@@ -4345,7 +8688,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         github:     { border: '#374151', bg: '#f9fafb' },
+
+
+
+
 
 
 
@@ -4353,7 +8704,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         winsecrets: { border: '#d97706', bg: '#fffbeb' },
+
+
+
+
 
 
 
@@ -4361,11 +8720,27 @@ setTimeout(() => {
 
 
 
+
+
+
+
         prompts:    { border: '#0891b2', bg: '#f0f9ff' },
 
 
 
+
+
+
+
       };
+
+
+
+
+
+
+
+
 
 
 
@@ -4377,7 +8752,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         const colors = labelColors[key] || { border: '#6d28d9', bg: '#f8f9ff' };
+
+
+
+
 
 
 
@@ -4385,7 +8768,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
           <div style="margin-bottom:28px; padding:22px 24px; background:${colors.bg}; border-radius:12px; border-left:5px solid ${colors.border}; page-break-inside:avoid;">
+
+
+
+
 
 
 
@@ -4393,7 +8784,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
               ${emoji} ${title}
+
+
+
+
 
 
 
@@ -4401,7 +8800,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
             <div style="font-size:13px; line-height:1.7; color:#1f2937;">
+
+
+
+
 
 
 
@@ -4409,7 +8816,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -4417,7 +8832,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
       };
+
+
+
+
+
+
+
+
 
 
 
@@ -4429,7 +8856,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       fullContent.style.cssText = 'font-family: Arial, sans-serif; color: #1f2937; background: #fff; padding: 0;';
+
+
+
+
 
 
 
@@ -4437,7 +8872,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       fullContent.innerHTML = `
+
+
+
+
 
 
 
@@ -4445,7 +8888,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%); padding: 60px 40px; text-align:center; border-radius: 0 0 24px 24px; margin-bottom: 32px;">
+
+
+
+
 
 
 
@@ -4453,7 +8904,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
           <h1 style="font-size:32px; font-weight:800; color:#fff; margin:0 0 16px 0; line-height:1.3;">${projectTitle}...</h1>
+
+
+
+
 
 
 
@@ -4461,11 +8920,27 @@ setTimeout(() => {
 
 
 
+
+
+
+
           <div style="margin-top:24px; display:inline-block; background:rgba(255,255,255,0.1); padding:8px 20px; border-radius:20px; font-size:12px; color:#e0e7ff;">Generated by RAR Hackathon Helper — ${new Date().toLocaleDateString('en-IN', {year:'numeric', month:'long', day:'numeric'})}</div>
 
 
 
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4477,7 +8952,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         <div style="margin-bottom:32px; padding:24px; background:#f0f4ff; border-radius:12px; border:1px solid #c7d2fe;">
+
+
+
+
 
 
 
@@ -4485,7 +8968,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:13px; color:#4338ca;">
+
+
+
+
 
 
 
@@ -4493,7 +8984,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
             <div>3. AI Integration Strategy</div><div>4. System Workflow</div>
+
+
+
+
 
 
 
@@ -4501,7 +9000,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
             <div>7. API Architecture</div><div>8. GitHub Push Guide</div>
+
+
+
+
 
 
 
@@ -4509,7 +9016,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
             <div>11. Pitch Deck</div><div>12. Master Prompts</div>
+
+
+
+
 
 
 
@@ -4517,7 +9032,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -4529,7 +9056,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         ${buildSection('⚡', 'Recommended Tech Stack', reportData.techstack, 'techstack')}
+
+
+
+
 
 
 
@@ -4537,7 +9072,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         ${buildSection('🔄', 'System Workflow', reportData.workflow, 'workflow')}
+
+
+
+
 
 
 
@@ -4545,7 +9088,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         ${buildSection('🗄️', 'Database Schema', reportData.database, 'database')}
+
+
+
+
 
 
 
@@ -4553,7 +9104,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         ${buildSection('🐙', 'GitHub Push Guide', reportData.github, 'github')}
+
+
+
+
 
 
 
@@ -4561,11 +9120,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
         ${buildSection('🏆', 'Win Secrets & Strategy', reportData.winsecrets, 'winsecrets')}
 
 
 
+
+
+
+
         ${buildSection('🎤', 'Pitch Deck', reportData.pitch, 'pitch')}
+
+
+
+
 
 
 
@@ -4577,7 +9148,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
         <!-- Footer -->
+
+
+
+
 
 
 
@@ -4585,11 +9168,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
           Generated by RAR Hackathon Helper — AI Hackathon Intelligence Platform • Win Every Hackathon
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -4601,7 +9196,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
       const opt = {
+
+
+
+
 
 
 
@@ -4609,7 +9216,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         filename: 'RARHackathonHelper_Blueprint.pdf',
+
+
+
+
 
 
 
@@ -4617,11 +9232,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
         html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' },
 
 
 
+
+
+
+
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+
+
+
+
 
 
 
@@ -4633,11 +9260,27 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
       // Show loading state
 
 
 
+
+
+
+
       btnExport.innerText = '⏳ Generating PDF...';
+
+
+
+
 
 
 
@@ -4649,7 +9292,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
       html2pdf().set(opt).from(fullContent).save().then(() => {
+
+
+
+
 
 
 
@@ -4657,7 +9312,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         btnExport.disabled = false;
+
+
+
+
 
 
 
@@ -4665,11 +9328,27 @@ setTimeout(() => {
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4681,7 +9360,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
   const pitchModal = document.getElementById('pitchModal');
+
+
+
+
 
 
 
@@ -4689,7 +9376,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
   const prevSlide = document.getElementById('prevSlide');
+
+
+
+
 
 
 
@@ -4697,7 +9392,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
   const slideContent = document.getElementById('slideContent');
+
+
+
+
 
 
 
@@ -4705,7 +9408,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
   let currentSlide = 0;
+
+
+
+
 
 
 
@@ -4717,7 +9428,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
   if (btnPresent && pitchModal) {
+
+
+
+
 
 
 
@@ -4725,7 +9448,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       // Create slides from reportData
+
+
+
+
 
 
 
@@ -4733,7 +9464,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         { title: "The Problem & Solution", html: reportData.overview.replace(/<[^>]+>/g, ' ').substring(0, 300) + "..." },
+
+
+
+
 
 
 
@@ -4741,7 +9480,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
         { title: "AI Magic", html: "<h1 style='color:#a78bfa;'>Intelligence</h1>" + reportData.ai.substring(0, 250) + "..." },
+
+
+
+
 
 
 
@@ -4749,7 +9496,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       ];
+
+
+
+
 
 
 
@@ -4757,7 +9512,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       currentSlide = 0;
+
+
+
+
 
 
 
@@ -4765,7 +9528,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       pitchModal.style.display = 'flex';
+
+
+
+
 
 
 
@@ -4773,11 +9544,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4785,7 +9568,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       pitchModal.style.display = 'none';
+
+
+
+
 
 
 
@@ -4793,11 +9584,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4805,7 +9608,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       if(currentSlide < slides.length - 1) { currentSlide++; updateSlide(); }
+
+
+
+
 
 
 
@@ -4813,7 +9624,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4821,7 +9640,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       if(currentSlide > 0) { currentSlide--; updateSlide(); }
+
+
+
+
 
 
 
@@ -4829,7 +9656,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -4837,7 +9672,15 @@ setTimeout(() => {
 
 
 
+
+
+
+
       slideContent.innerHTML = slides[currentSlide].html;
+
+
+
+
 
 
 
@@ -4845,11 +9688,23 @@ setTimeout(() => {
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -4861,7 +9716,19 @@ setTimeout(() => {
 
 
 
+
+
+
+
+
+
+
+
 });
+
+
+
+
 
 
 
