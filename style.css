@@ -1270,7 +1270,8 @@ html[data-theme="light"] .output-actions {
 }
 
 /* Tools Section */
-.tools-table-wrapper {
+.tools-table-wrapper,
+.tools-table-container {
   overflow-x: auto;
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);

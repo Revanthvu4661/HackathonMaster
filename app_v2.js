@@ -74,13 +74,8 @@ const generateBtn = document.getElementById('generateBtn');
 
 
 
-  // Guard clause: Exit if we are not on the generator page
-
-  if (!projectInput || !generateBtn) {
-
-    return;
-
-  }
+  // Only run generator-specific logic on the generator page.
+  if (projectInput && generateBtn) {
 
 
 
@@ -7180,7 +7175,9 @@ function showToast(message) {
 
 
 
-// Populate Features
+  }
+
+// Populate Features
 
 
 
