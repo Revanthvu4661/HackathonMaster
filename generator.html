@@ -1,46 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAR Hackathon Helper — AI Hackathon Intelligence Platform</title>
-  <meta name="description" content="RAR Hackathon Helper is your AI-powered Project Intelligence Assistant. Plan, design, and accelerate any hackathon project with expert AI guidance on tech stack, architecture, UI/UX, APIs, and deployment." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="theme.js"></script>
-</head>
-<body>
-  <!-- Animated Background -->
-  <div class="bg-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-  </div>
-  <div class="grid-overlay"></div>
-
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
-        <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link">Home</a>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RAR Hackathon Helper — AI Hackathon Intelligence Platform</title>
+
+  <meta name="description" content="RAR Hackathon Helper is your AI-powered Project Intelligence Assistant. Plan, design, and accelerate any hackathon project with expert AI guidance on tech stack, architecture, UI/UX, APIs, and deployment." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="theme.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Animated Background -->
+
+  <div class="bg-orbs">
+
+    <div class="orb orb-1"></div>
+
+    <div class="orb orb-2"></div>
+
+    <div class="orb orb-3"></div>
+
+    <div class="orb orb-4"></div>
+
+  </div>
+
+  <div class="grid-overlay"></div>
+
+
+
+  <!-- Navigation -->
+
+  <nav class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
+
+        <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
+
+      </a>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="index.html" class="nav-link">Home</a>
+
         <a href="strategist.html" class="nav-link">Strategist</a>
         <a href="checklist.html" class="nav-link">Checklist</a>
         <a href="features.html" class="nav-link">AI Tools</a>
         <a href="countdown.html" class="nav-link">Sprint Timer</a>
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
+        <a href="team_builder.html" class="nav-link">Team Builder</a>
+
+        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
+
+        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
         <a href="repos.html" class="nav-link">Hackathon Repos</a>
       </div>
-      <div class="nav-actions">
+      <div class="nav-actions">
+
         <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+
+          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+
         </button>
 
         <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
@@ -50,328 +87,646 @@
           <span style="font-size: 0.85rem; font-weight: 600;">History</span>
 
         </button>
-        <button class="btn-ghost" id="aiSettingsBtn" title="AI Search Settings">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
-        </button>
-        <button class="btn-primary" id="launchBtn">Launch App</button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- AI Settings Modal -->
-  <div id="aiModal" class="research-overlay" style="display:none;">
-    <div class="research-modal" style="text-align: left; max-width: 450px;">
-      <h3 style="margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
-        Enable Live Google Search
-      </h3>
-      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1.5rem;">To perform real-time research, please enter your Gemini API Key. It's free and stays in your browser.</p>
-      
-      <div style="margin-bottom: 1.5rem;">
-        <label style="display:block; font-size:0.8rem; margin-bottom:0.5rem; color:var(--text-muted);">Gemini API Key</label>
-        <input type="password" id="geminiKey" placeholder="Enter your key here..." style="width:100%; padding:0.8rem; border-radius:8px; background:rgba(0,0,0,0.2); border:1px solid var(--border-color); color:white; outline:none;">
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block; font-size:0.75rem; margin-top:0.5rem; text-decoration:underline;">Get a free API Key here →</a>
-      </div>
-
-      <div style="display:flex; gap:1rem;">
-        <button class="btn-primary" id="saveAiKey" style="flex:1;">Save & Enable</button>
-        <button class="btn-outline" id="closeAiModal" style="flex:1;">Close</button>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="mobile-link">Home</a>
+        <button class="btn-ghost" id="aiSettingsBtn" title="AI Search Settings">
+
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+
+        </button>
+
+        <button class="btn-primary" id="launchBtn">Launch App</button>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+
+          <span></span><span></span><span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- AI Settings Modal -->
+
+  <div id="aiModal" class="research-overlay" style="display:none;">
+
+    <div class="research-modal" style="text-align: left; max-width: 450px;">
+
+      <h3 style="margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+
+        Enable Live Google Search
+
+      </h3>
+
+      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1.5rem;">To perform real-time research, please enter your Gemini API Key. It's free and stays in your browser.</p>
+
+      
+
+      <div style="margin-bottom: 1.5rem;">
+
+        <label style="display:block; font-size:0.8rem; margin-bottom:0.5rem; color:var(--text-muted);">Gemini API Key</label>
+
+        <input type="password" id="geminiKey" placeholder="Enter your key here..." style="width:100%; padding:0.8rem; border-radius:8px; background:rgba(0,0,0,0.2); border:1px solid var(--border-color); color:white; outline:none;">
+
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block; font-size:0.75rem; margin-top:0.5rem; text-decoration:underline;">Get a free API Key here →</a>
+
+      </div>
+
+
+
+      <div style="display:flex; gap:1rem;">
+
+        <button class="btn-primary" id="saveAiKey" style="flex:1;">Save & Enable</button>
+
+        <button class="btn-outline" id="closeAiModal" style="flex:1;">Close</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <!-- Mobile Menu -->
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html" class="mobile-link">Home</a>
+
     <a href="strategist.html" class="mobile-link">Strategist</a>
     <a href="checklist.html" class="mobile-link">Checklist</a>
     <a href="features.html" class="mobile-link">AI Tools</a>
     <a href="countdown.html" class="mobile-link">Sprint Timer</a>
-    <a href="team_builder.html" class="mobile-link">Team Builder</a>
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
+    <a href="team_builder.html" class="mobile-link">Team Builder</a>
+
+    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
+
     <a href="repos.html" class="mobile-link">Hackathon Repos</a>
     <a href="#" class="mobile-link history-nav-trigger">History</a>
-  </div>
-
-  <!-- ===== GENERATOR SECTION ===== -->
-  <section class="section generator-section" id="generator">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="hero-logo-container" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"><img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 80px; height: 80px;"></div>
-        <div class="section-badge">🚀 Project Generator</div>
-        <h2 class="section-title">What Are You Building?</h2>
-        <p class="section-subtitle">Describe your hackathon idea, startup concept, or innovation challenge. RAR Hackathon Helper will architect your entire project.</p>
-      </div>
-
-      <!-- Input Panel -->
-      <div class="generator-panel">
-        <div class="input-area">
-          <div class="input-wrapper">
-            <textarea
-              id="projectInput"
-              class="project-textarea"
-              placeholder="Describe your project idea here...
-
-Example: 'A real-time mental health support app that uses AI to detect emotional distress from text messages and connects users with counselors...'
-
-Or try: 'Smart waste management system using IoT sensors and ML to optimize garbage collection routes in smart cities'"
-              rows="6"
-            ></textarea>
-            <div class="input-footer">
-              <div class="char-count"><span id="charCount">0</span> / 2000</div>
-              <div class="quick-examples">
-                <span class="examples-label">Try:</span>
-                <button class="example-chip" data-text="A multi-agent AI system where specialized LLMs collaborate to automate complex research workflows, built with LangChain and FastAPI.">Autonomous AI Agents</button>
-                <button class="example-chip" data-text="A privacy-preserving healthcare data marketplace using Zero-Knowledge Proofs (zk-SNARKs) and smart contracts on Ethereum.">Web3 zk-Healthcare</button>
-                <button class="example-chip" data-text="Real-time RAG (Retrieval-Augmented Generation) application that instantly analyzes live video feeds and embedded documents to answer user queries.">Live Video RAG App</button>
-                <button class="example-chip" data-text="A gamified carbon footprint tracker that uses IoT data and edge computing to calculate emissions instantly, rewarding users with tokens.">IoT Edge Sustainability</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mode Selector -->
-          <div class="mode-selector">
-            <div class="mode-label">Generation Mode:</div>
-            <div class="mode-options">
-              <button class="mode-btn active" id="modeComplete" data-mode="complete">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                Complete Blueprint
-              </button>
-              <button class="mode-btn" id="modeFast" data-mode="fast">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                Quick Overview
-              </button>
-              <button class="mode-btn" id="modePitch" data-mode="pitch">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Pitch Only
-              </button>
-            </div>
-          </div>
-
-          <button class="btn-generate" id="generateBtn" disabled>
-            <span class="btn-generate-text">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              Generate Intelligence Report
-            </span>
-            <span class="btn-generate-loading" style="display:none">
-              <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
-              Generating...
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Output Area -->
-      <div class="output-area" id="outputArea" style="display:none">
-        <!-- Tab Navigation -->
-        
-        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: flex-end;">
-          <button id="btnExportPDF" class="btn-outline btn-sm" style="display:flex; align-items:center; gap:0.5rem; border-color:#a78bfa; color:#a78bfa;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Export as PDF
-          </button>
-        </div>
-
-        <div class="output-tabs" id="outputTabs">
-          <button class="tab-btn active" data-tab="overview">📋 Overview</button>
-          <button class="tab-btn" data-tab="prompts">🔥 Prompts & Add-ons</button>
-          <button class="tab-btn" data-tab="workflow">🔄 Workflow</button>
-          <button class="tab-btn" data-tab="techstack">⚡ Tech Stack</button>
-          <button class="tab-btn" data-tab="ai">🧠 AI Integration</button>
-          <button class="tab-btn" data-tab="uiux">🎨 UI/UX</button>
-          <button class="tab-btn" data-tab="database">🗄️ Database</button>
-          <button class="tab-btn" data-tab="apis">🔌 APIs</button>
-          <button class="tab-btn" data-tab="github">🐙 GitHub Push</button>
-          <button class="tab-btn" data-tab="launch">🚀 Launch & Deploy</button>
-          <button class="tab-btn" data-tab="winsecrets">🏆 Win Secrets</button>
-          <button class="tab-btn" data-tab="pitch">🎤 Pitch</button>
-        </div>
-
-        <!-- Output Content -->
-        <div class="output-content" id="outputContent">
-          <!-- Populated by JS -->
-        </div>
-
-        <!-- Output Actions -->
-        <div class="output-actions">
-          <button class="btn-ghost" id="copyBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-            Copy Report
-          </button>
-          <button class="btn-ghost" id="downloadBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Export PDF
-          </button>
-          <button class="btn-primary" id="regenerateBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-            Regenerate
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FEATURES SECTION ===== -->
-  
-
-  <!-- ===== AI TOOLS COMPARISON ===== -->
-  
-
-  <!-- ===== SHOWCASE SECTION ===== -->
-  
-
-  <!-- ===== CTA SECTION ===== -->
-  
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="nav-brand">
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-          <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
-          <span class="brand-name">RAR <span class="brand-accent">Hackathon Helper</span></span>
-        </a>
-      </div>
-          <span class="brand-name">RAR <span class="brand-accent">Hackathon Helper</span></span>
-        </div>
-        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <a href="#generator">Generator</a>
-          <a href="#features">Features</a>
-          <a href="#tools">AI Tools</a>
-        </div>
-        <div class="footer-col">
-          <h4>Modes</h4>
-          <a href="#generator">Complete Blueprint</a>
-          <a href="#generator">Quick Overview</a>
-          <a href="#generator">Pitch Deck</a>
-          <a href="#generator">UI Generator</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
+  </div>
+
+
+
+  <!-- ===== GENERATOR SECTION ===== -->
+
+  <section class="section generator-section" id="generator">
+
+    <div class="section-inner">
+
+      <div class="section-header">
+
+        <div class="hero-logo-container" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"><img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 80px; height: 80px;"></div>
+
+        <div class="section-badge">🚀 Project Generator</div>
+
+        <h2 class="section-title">What Are You Building?</h2>
+
+        <p class="section-subtitle">Describe your hackathon idea, startup concept, or innovation challenge. RAR Hackathon Helper will architect your entire project.</p>
+
+      </div>
+
+
+
+      <!-- Input Panel -->
+
+      <div class="generator-panel">
+
+        <div class="input-area">
+
+          <div class="input-wrapper">
+
+            <textarea
+
+              id="projectInput"
+
+              class="project-textarea"
+
+              placeholder="Describe your project idea here...
+
+
+
+Example: 'A real-time mental health support app that uses AI to detect emotional distress from text messages and connects users with counselors...'
+
+
+
+Or try: 'Smart waste management system using IoT sensors and ML to optimize garbage collection routes in smart cities'"
+
+              rows="6"
+
+            ></textarea>
+
+            <div class="input-footer">
+
+              <div class="char-count"><span id="charCount">0</span> / 2000</div>
+
+              <div class="quick-examples">
+
+                <span class="examples-label">Try:</span>
+
+                <button class="example-chip" data-text="A multi-agent AI system where specialized LLMs collaborate to automate complex research workflows, built with LangChain and FastAPI.">Autonomous AI Agents</button>
+
+                <button class="example-chip" data-text="A privacy-preserving healthcare data marketplace using Zero-Knowledge Proofs (zk-SNARKs) and smart contracts on Ethereum.">Web3 zk-Healthcare</button>
+
+                <button class="example-chip" data-text="Real-time RAG (Retrieval-Augmented Generation) application that instantly analyzes live video feeds and embedded documents to answer user queries.">Live Video RAG App</button>
+
+                <button class="example-chip" data-text="A gamified carbon footprint tracker that uses IoT data and edge computing to calculate emissions instantly, rewarding users with tokens.">IoT Edge Sustainability</button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Mode Selector -->
+
+          <div class="mode-selector">
+
+            <div class="mode-label">Generation Mode:</div>
+
+            <div class="mode-options">
+
+              <button class="mode-btn active" id="modeComplete" data-mode="complete">
+
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+
+                Complete Blueprint
+
+              </button>
+
+              <button class="mode-btn" id="modeFast" data-mode="fast">
+
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+
+                Quick Overview
+
+              </button>
+
+              <button class="mode-btn" id="modePitch" data-mode="pitch">
+
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+                Pitch Only
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <button class="btn-generate" id="generateBtn" disabled>
+
+            <span class="btn-generate-text">
+
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+
+              Generate Intelligence Report
+
+            </span>
+
+            <span class="btn-generate-loading" style="display:none">
+
+              <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+
+              Generating...
+
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Output Area -->
+
+      <div class="output-area" id="outputArea" style="display:none">
+
+        <!-- Tab Navigation -->
+
+        
+
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: flex-end;">
+
+          <button id="btnExportPDF" class="btn-outline btn-sm" style="display:flex; align-items:center; gap:0.5rem; border-color:#a78bfa; color:#a78bfa;">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+
+            Export as PDF
+
+          </button>
+
+        </div>
+
+
+
+        <div class="output-tabs" id="outputTabs">
+
+          <button class="tab-btn active" data-tab="overview">📋 Overview</button>
+
+          <button class="tab-btn" data-tab="prompts">🔥 Prompts & Add-ons</button>
+
+          <button class="tab-btn" data-tab="workflow">🔄 Workflow</button>
+
+          <button class="tab-btn" data-tab="techstack">⚡ Tech Stack</button>
+
+          <button class="tab-btn" data-tab="ai">🧠 AI Integration</button>
+
+          <button class="tab-btn" data-tab="uiux">🎨 UI/UX</button>
+
+          <button class="tab-btn" data-tab="database">🗄️ Database</button>
+
+          <button class="tab-btn" data-tab="apis">🔌 APIs</button>
+
+          <button class="tab-btn" data-tab="github">🐙 GitHub Push</button>
+
+          <button class="tab-btn" data-tab="launch">🚀 Launch & Deploy</button>
+
+          <button class="tab-btn" data-tab="winsecrets">🏆 Win Secrets</button>
+
+          <button class="tab-btn" data-tab="pitch">🎤 Pitch</button>
+
+        </div>
+
+
+
+        <!-- Output Content -->
+
+        <div class="output-content" id="outputContent">
+
+          <!-- Populated by JS -->
+
+        </div>
+
+
+
+        <!-- Output Actions -->
+
+        <div class="output-actions">
+
+          <button class="btn-ghost" id="copyBtn">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+
+            Copy Report
+
+          </button>
+
+          <button class="btn-ghost" id="downloadBtn">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+
+            Export PDF
+
+          </button>
+
+          <button class="btn-primary" id="regenerateBtn">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+
+            Regenerate
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===== FEATURES SECTION ===== -->
+
+  
+
+
+
+  <!-- ===== AI TOOLS COMPARISON ===== -->
+
+  
+
+
+
+  <!-- ===== SHOWCASE SECTION ===== -->
+
+  
+
+
+
+  <!-- ===== CTA SECTION ===== -->
+
+  
+
+
+
+  <!-- ===== FOOTER ===== -->
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <div class="nav-brand">
+
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+
+          <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
+
+          <span class="brand-name">RAR <span class="brand-accent">Hackathon Helper</span></span>
+
+        </a>
+
+      </div>
+
+          <span class="brand-name">RAR <span class="brand-accent">Hackathon Helper</span></span>
+
+        </div>
+
+        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <div class="footer-col">
+
+          <h4>Platform</h4>
+
+          <a href="#generator">Generator</a>
+
+          <a href="#features">Features</a>
+
+          <a href="#tools">AI Tools</a>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Modes</h4>
+
+          <a href="#generator">Complete Blueprint</a>
+
+          <a href="#generator">Quick Overview</a>
+
+          <a href="#generator">Pitch Deck</a>
+
+          <a href="#generator">UI Generator</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
       <span>© 2026 Revanth Sai Sankar Alapati. All rights reserved.</span>
-    </div>
-  </footer>
-
-  <!-- Toast Notification -->
-  <div class="toast" id="toast"></div>
-
-  <!-- PDF Generation Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-  <script src="app_v2.js"></script>
-
-
-
-
-  <!-- History Sidebar -->
-  <div class="history-sidebar" id="historySidebar">
-    <div class="history-header">
-      <h3>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-        Recent Solutions
-      </h3>
-      <button class="close-history" id="closeHistory">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="history-list" id="historyList">
-      <div class="history-empty">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-        <p>No recent solutions found.</p>
-      </div>
-    </div>
-  </div>
-
-  <button id="historyToggle" class="history-toggle"
-    onclick="document.getElementById('historySidebar').classList.add('open')"
-    title="View Recent Solutions">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-    History
-    <span id="historyBadge" class="history-badge" style="display:none;">0</span>
-  </button>
-
-  <script>
-    // History Sidebar Logic
-    (function() {
-      const sidebar = document.getElementById('historySidebar');
-      const closeBtn = document.getElementById('closeHistory');
-      const toggleBtn = document.getElementById('historyToggle');
-      const badge = document.getElementById('historyBadge');
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
-      }
-
-      // Close on backdrop click
-      document.addEventListener('click', (e) => {
-        if (sidebar && sidebar.classList.contains('open') &&
-            !sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
-          sidebar.classList.remove('open');
-        }
-      });
-
-      // Also wire nav triggers
-      document.querySelectorAll('.history-nav-trigger').forEach(el => {
-        el.addEventListener('click', (e) => {
-          e.preventDefault();
-          sidebar.classList.add('open');
-        });
-      });
-
-      // Render history from localStorage
-      function renderHistory() {
-        const list = document.getElementById('historyList');
-        if (!list) return;
-        const raw = localStorage.getItem('strat_history');
-        const history = raw ? JSON.parse(raw) : [];
-        if (history.length === 0) {
-          list.innerHTML = `<div class="history-empty">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3;margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-            <p>No recent solutions found.</p>
-          </div>`;
-          if (badge) badge.style.display = 'none';
-          return;
-        }
-        if (badge) {
-          badge.textContent = history.length;
-          badge.style.display = 'flex';
-        }
-        list.innerHTML = history.map((item, i) => `
-          <div class="history-item" onclick="loadHistory(${i})">
-            <div class="history-item-title">${(item.problem || 'Untitled Project').substring(0, 60)}${(item.problem || '').length > 60 ? '...' : ''}</div>
-            <div class="history-item-meta">
-              <span class="history-item-tag">${item.industry || 'General'}</span>
-              <span>${item.timestamp ? new Date(item.timestamp).toLocaleDateString() : ''}</span>
-            </div>
-          </div>
-        `).join('');
-      }
-
-      renderHistory();
-
-      window.loadHistory = function(index) {
-        const raw = localStorage.getItem('strat_history');
-        const history = raw ? JSON.parse(raw) : [];
-        const item = history[index];
-        if (!item) return;
-        // Store the full item so strategist can restore it
-        localStorage.setItem('latest_strat_result', JSON.stringify(item));
-        localStorage.setItem('presetProject', (item.problem || '').substring(0, 100));
-        window.location.href = 'strategist.html';
-      };
-    })();
-  </script>
-
-  <script src="history_manager.js"></script>
-</body>
-</html>
+    </div>
+
+  </footer>
+
+
+
+  <!-- Toast Notification -->
+
+  <div class="toast" id="toast"></div>
+
+
+
+  <!-- PDF Generation Library -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+
+  <script src="app_v2.js"></script>
+
+
+
+
+
+
+
+
+
+  <!-- History Sidebar -->
+
+  <div class="history-sidebar" id="historySidebar">
+
+    <div class="history-header">
+
+      <h3>
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+        Recent Solutions
+
+      </h3>
+
+      <button class="close-history" id="closeHistory">
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+
+      </button>
+
+    </div>
+
+    <div class="history-list" id="historyList">
+
+      <div class="history-empty">
+
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+        <p>No recent solutions found.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <button id="historyToggle" class="history-toggle"
+
+    onclick="document.getElementById('historySidebar').classList.add('open')"
+
+    title="View Recent Solutions">
+
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+    History
+
+    <span id="historyBadge" class="history-badge" style="display:none;">0</span>
+
+  </button>
+
+
+
+  <script>
+
+    // History Sidebar Logic
+
+    (function() {
+
+      const sidebar = document.getElementById('historySidebar');
+
+      const closeBtn = document.getElementById('closeHistory');
+
+      const toggleBtn = document.getElementById('historyToggle');
+
+      const badge = document.getElementById('historyBadge');
+
+
+
+      if (closeBtn) {
+
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('open'));
+
+      }
+
+
+
+      // Close on backdrop click
+
+      document.addEventListener('click', (e) => {
+
+        if (sidebar && sidebar.classList.contains('open') &&
+
+            !sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+
+          sidebar.classList.remove('open');
+
+        }
+
+      });
+
+
+
+      // Also wire nav triggers
+
+      document.querySelectorAll('.history-nav-trigger').forEach(el => {
+
+        el.addEventListener('click', (e) => {
+
+          e.preventDefault();
+
+          sidebar.classList.add('open');
+
+        });
+
+      });
+
+
+
+      // Render history from localStorage
+
+      function renderHistory() {
+
+        const list = document.getElementById('historyList');
+
+        if (!list) return;
+
+        const raw = localStorage.getItem('strat_history');
+
+        const history = raw ? JSON.parse(raw) : [];
+
+        if (history.length === 0) {
+
+          list.innerHTML = `<div class="history-empty">
+
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3;margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+            <p>No recent solutions found.</p>
+
+          </div>`;
+
+          if (badge) badge.style.display = 'none';
+
+          return;
+
+        }
+
+        if (badge) {
+
+          badge.textContent = history.length;
+
+          badge.style.display = 'flex';
+
+        }
+
+        list.innerHTML = history.map((item, i) => `
+
+          <div class="history-item" onclick="loadHistory(${i})">
+
+            <div class="history-item-title">${(item.problem || 'Untitled Project').substring(0, 60)}${(item.problem || '').length > 60 ? '...' : ''}</div>
+
+            <div class="history-item-meta">
+
+              <span class="history-item-tag">${item.industry || 'General'}</span>
+
+              <span>${item.timestamp ? new Date(item.timestamp).toLocaleDateString() : ''}</span>
+
+            </div>
+
+          </div>
+
+        `).join('');
+
+      }
+
+
+
+      renderHistory();
+
+
+
+      window.loadHistory = function(index) {
+
+        const raw = localStorage.getItem('strat_history');
+
+        const history = raw ? JSON.parse(raw) : [];
+
+        const item = history[index];
+
+        if (!item) return;
+
+        // Store the full item so strategist can restore it
+
+        localStorage.setItem('latest_strat_result', JSON.stringify(item));
+
+        localStorage.setItem('presetProject', (item.problem || '').substring(0, 100));
+
+        window.location.href = 'strategist.html';
+
+      };
+
+    })();
+
+  </script>
+
+
+
+  <script src="history_manager.js"></script>
+
+</body>
+
+</html>
+

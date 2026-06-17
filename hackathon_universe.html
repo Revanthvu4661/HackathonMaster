@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hackathon Universe — RAR Hackathon Helper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="hackathon_universe.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <script src="theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;">
+        <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="strategist.html" class="nav-link">Strategist</a>
+        <a href="checklist.html" class="nav-link">Checklist</a>
+        <a href="features.html" class="nav-link">AI Tools</a>
+        <a href="countdown.html" class="nav-link">Sprint Timer</a>
+        <a href="team_builder.html" class="nav-link">Team Builder</a>
+        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
+        <a href="hackathon_universe.html" class="nav-link active">🌐 Hackathon Universe</a>
+        <a href="repos.html" class="nav-link">Hackathon Repos</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" width="18" height="18" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="section" style="padding-top: 140px; min-height: 100vh;">
+    <div class="section-inner">
+      <div class="universe-hero">
+        <h1 class="universe-title">🌐 Hackathon <span class="gradient-text">Universe</span></h1>
+        <p class="universe-subtitle">Explore 100+ top hackathons globally. Discover problem statements, analyze winning patterns, and strategize your next victory 100% offline.</p>
+        
+        <div class="stats-bar" id="statsBar">
+          <div class="stat-item">🏆 <span id="statHacks">100</span> Hackathons</div>
+          <div class="stat-item">📝 <span id="statProbs">500+</span> Problems</div>
+          <div class="stat-item">🥇 <span id="statWinners">300</span> Winners</div>
+          <div class="stat-item">💰 $50M+ Prizes</div>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search hackathons, organizations, problem domains..." />
+      </div>
+
+      <div class="filters-bar" id="filterContainer">
+        <button class="filter-pill active" data-filter="all">All (100)</button>
+        <button class="filter-pill" data-filter="india">🇮🇳 India</button>
+        <button class="filter-pill" data-filter="global">🌍 Global</button>
+        <button class="filter-pill" data-filter="saved">❤️ Saved</button>
+        <span style="border-left: 1px solid var(--border-color); margin: 0 0.5rem;"></span>
+        <button class="filter-pill" data-filter="cat-Government">Government</button>
+        <button class="filter-pill" data-filter="cat-Corporate">Corporate</button>
+        <button class="filter-pill" data-filter="cat-University">University</button>
+      </div>
+
+      <div class="sort-bar">
+        <label style="color:var(--text-secondary);font-size:0.9rem;">Sort by:</label>
+        <select class="sort-select" id="sortSelect">
+          <option value="prestige">Prestige (High to Low)</option>
+          <option value="name">Name (A-Z)</option>
+          <option value="recent">Recently Viewed</option>
+        </select>
+      </div>
+
+      <div class="hackathon-grid" id="hackathonGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Screen Modal -->
+  <div class="univ-modal-overlay" id="hackathonModal">
+    <div class="univ-modal">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2 id="modalTitle"><span id="modalEmoji">🇮🇳</span> <span id="modalName">Smart India Hackathon</span></h2>
+          <div style="color:var(--text-secondary);font-size:1rem;" id="modalOrg">AICTE / Govt of India</div>
+        </div>
+        <button class="modal-close" onclick="closeModal()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-tab="overview">📋 Overview</div>
+        <div class="modal-tab" data-tab="problems">📝 Problems</div>
+        <div class="modal-tab" data-tab="winners">🏆 Winners</div>
+        <div class="modal-tab" data-tab="analytics">📊 Analytics</div>
+        <div class="modal-tab" data-tab="strategy">💡 Strategy</div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Tab: Overview -->
+        <div class="tab-content active" id="tab-overview">
+          <div class="overview-grid">
+            <div>
+              <p class="overview-desc" id="overviewDesc"></p>
+              <div class="univ-card-tags" id="overviewTags" style="margin-bottom: 2rem;"></div>
+              
+              <div class="judging-criteria">
+                <h3 style="margin-bottom: 1rem;">Judging Criteria</h3>
+                <div id="judgingList"></div>
+              </div>
+            </div>
+            <div>
+              <div class="key-stats-grid">
+                <div class="stat-box"><label>Prize Pool</label><div id="statPrize"></div></div>
+                <div class="stat-box"><label>Participants</label><div id="statTeams"></div></div>
+                <div class="stat-box"><label>Team Size</label><div id="statTeamSize"></div></div>
+                <div class="stat-box"><label>Frequency</label><div id="statFreq"></div></div>
+              </div>
+              <div class="stat-box" style="margin-top:1rem;">
+                <label>Website</label>
+                <div style="font-size:1rem;margin-top:0.5rem;">
+                  <a href="#" target="_blank" id="statWeb" style="display:flex;align-items:center;gap:0.5rem;">Visit Official Site ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Problems -->
+        <div class="tab-content" id="tab-problems">
+          <div class="problems-filter">
+            <input type="text" id="probSearch" placeholder="Search problems..." style="flex:1;" />
+            <select id="probYear"><option value="all">All Years</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
+          </div>
+          <div id="problemsList"></div>
+        </div>
+
+        <!-- Tab: Winners -->
+        <div class="tab-content" id="tab-winners">
+          <div class="winners-year-tabs" id="winnersYearTabs">
+            <div class="year-tab active" data-year="2024">2024</div>
+            <div class="year-tab" data-year="2023">2023</div>
+            <div class="year-tab" data-year="2022">2022</div>
+          </div>
+          <div class="winners-grid" id="winnersGrid"></div>
+          
+          <div style="margin-top: 3rem; background: rgba(167, 139, 250, 0.05); padding: 2rem; border-radius: var(--border-radius-lg); border: 1px solid rgba(167, 139, 250, 0.2);">
+            <h3 style="color:var(--accent-primary);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">🤖 Winner Pattern Analysis</h3>
+            <p style="color:var(--text-secondary);margin-bottom:1rem;">What ALL winners across years had in common:</p>
+            <ul style="color:var(--text-primary);padding-left:1.5rem;line-height:1.8;" id="winnerPatterns">
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tab: Analytics -->
+        <div class="tab-content" id="tab-analytics">
+          <div class="analytics-grid">
+            <div class="chart-container">
+              <h3>Participation Growth</h3>
+              <canvas id="chartParticipation"></canvas>
+            </div>
+            <div class="chart-container">
+              <h3>Problems per Year</h3>
+              <canvas id="chartProblems"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Strategy -->
+        <div class="tab-content" id="tab-strategy">
+          <div class="strategy-grid">
+            <div class="strategy-card">
+              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> What Judges Value Most</h3>
+              <p id="stratJudges" style="color:var(--text-secondary);line-height:1.6;"></p>
+            </div>
+            <div class="strategy-card" style="border-color: rgba(239, 68, 68, 0.3);">
+              <h3 style="color:#ef4444;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Common Mistakes</h3>
+              <ul id="stratMistakes" style="color:var(--text-secondary);line-height:1.6;padding-left:1.5rem;"></ul>
+            </div>
+            <div class="strategy-card" style="border-color: rgba(16, 185, 129, 0.3);">
+              <h3 style="color:#10b981;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Winning Pattern</h3>
+              <p id="stratPattern" style="color:var(--text-secondary);line-height:1.6;"></p>
+            </div>
+            <div class="strategy-card">
+              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg> Recommended Stack & Team</h3>
+              <p id="stratStack" style="color:var(--text-secondary);line-height:1.6;margin-bottom:1rem;"></p>
+              <p id="stratTeam" style="color:var(--text-secondary);line-height:1.6;"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare Bar -->
+  <div class="compare-bar" id="compareBar">
+    <div class="compare-selected" id="compareSelected"></div>
+    <div style="display:flex;gap:1rem;">
+      <button class="btn-ghost" onclick="clearCompare()">Clear</button>
+      <button class="btn-primary" onclick="openCompareModal()">Compare Selected</button>
+    </div>
+  </div>
+
+  <div class="univ-modal-overlay" id="compareModal">
+    <div class="univ-modal" style="height:auto;max-height:90vh;">
+      <div class="modal-header">
+        <h2 style="font-size:1.5rem;">Compare Hackathons</h2>
+        <button class="modal-close" onclick="document.getElementById('compareModal').classList.remove('active')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-body compare-modal-content">
+        <table class="compare-table">
+          <tbody id="compareTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="hackathon_universe.js"></script>
+  <script>
+    // State
+    let allHackathons = [];
+    let currentHackathon = null;
+    let compareList = [];
+    let charts = {};
+
+    function init() {
+      if(!window.HACKATHON_UNIVERSE) {
+        console.error("Data not loaded");
+        return;
+      }
+      
+      allHackathons = [...window.HACKATHON_UNIVERSE.india, ...window.HACKATHON_UNIVERSE.global];
+      
+      // Init stats
+      document.getElementById('statHacks').innerText = allHackathons.length;
+      let probCount = 0;
+      let winCount = 0;
+      allHackathons.forEach(h => {
+        probCount += h.problem_statements.length;
+        winCount += h.winners.length;
+      });
+      document.getElementById('statProbs').innerText = probCount + "+";
+      document.getElementById('statWinners').innerText = winCount;
+
+      renderGrid(allHackathons);
+      setupListeners();
+      
+      // Check URL for direct open
+      const urlParams = new URLSearchParams(window.location.search);
+      const openId = urlParams.get('id');
+      if (openId) {
+        const h = allHackathons.find(x => x.id === openId);
+        if (h) openModal(h);
+      }
+    }
+
+    function renderGrid(list) {
+      const grid = document.getElementById('hackathonGrid');
+      grid.innerHTML = '';
+      
+      const saved = JSON.parse(localStorage.getItem('saved_hackathons') || '[]');
+      
+      list.forEach(h => {
+        const isSaved = saved.includes(h.id);
+        const isCompared = compareList.some(c => c.id === h.id);
+        
+        const el = document.createElement('div');
+        el.className = 'univ-card';
+        el.onclick = (e) => {
+          if(!e.target.closest('button') && !e.target.closest('input')) {
+            openModal(h);
+          }
+        };
+        
+        el.innerHTML = `
+          <div class="univ-card-header">
+            <div class="univ-card-emoji">${h.emoji}</div>
+            <div class="univ-card-badge">${h.category}</div>
+          </div>
+          <div class="univ-card-title">${h.name}</div>
+          <div class="univ-card-org">🏢 ${h.organizer}</div>
+          <div class="univ-card-stats">
+            <div><span>Prize Pool</span><span>${h.prize_pool}</span></div>
+            <div style="text-align:right;"><span>Prestige</span><span>⭐ ${h.prestige_score}</span></div>
+          </div>
+          <div class="univ-card-tags">
+            ${h.domains.slice(0,3).map(d => `<span class="univ-card-tag">${d}</span>`).join('')}
+            ${h.domains.length > 3 ? `<span class="univ-card-tag">+${h.domains.length-3}</span>` : ''}
+          </div>
+          <div class="univ-card-footer">
+            <div class="univ-card-meta">
+              <span>📝 ${h.problem_statements.length} probs</span>
+              <span>🏆 ${h.winners.length} winners</span>
+            </div>
+            <div class="univ-card-actions">
+              <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.8rem;color:var(--text-secondary);cursor:pointer;" onclick="event.stopPropagation()">
+                <input type="checkbox" onchange="toggleCompare('${h.id}', this.checked)" ${isCompared ? 'checked' : ''}> Compare
+              </label>
+              <button class="btn-icon ${isSaved ? 'active' : ''}" onclick="toggleSave('${h.id}', this); event.stopPropagation();">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="${isSaved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <button class="btn-icon" onclick="shareHackathon('${h.id}'); event.stopPropagation();" title="Share">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(el);
+      });
+    }
+
+    function setupListeners() {
+      // Search
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        applyFilters();
+      });
+      
+      // Filters
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          applyFilters();
+        });
+      });
+      
+      // Sort
+      document.getElementById('sortSelect').addEventListener('change', () => {
+        applyFilters();
+      });
+
+      // Modal Tabs
+      document.querySelectorAll('.modal-tab').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          e.target.classList.add('active');
+          const tabId = e.target.getAttribute('data-tab');
+          document.getElementById('tab-' + tabId).classList.add('active');
+
+          if(tabId === 'analytics') renderCharts();
+        });
+      });
+
+      // Problem Filters
+      document.getElementById('probSearch').addEventListener('input', renderProblems);
+      document.getElementById('probYear').addEventListener('change', renderProblems);
+    }
+
+    function applyFilters() {
+      const term = document.getElementById('searchInput').value.toLowerCase();
+      const activeFilter = document.querySelector('.filter-pill.active').getAttribute('data-filter');
+      const sort = document.getElementById('sortSelect').value;
+      const saved = JSON.parse(localStorage.getItem('saved_hackathons') || '[]');
+      
+      let filtered = allHackathons.filter(h => {
+        // Search
+        const matchesSearch = h.name.toLowerCase().includes(term) || 
+                              h.organizer.toLowerCase().includes(term) ||
+                              h.domains.some(d => d.toLowerCase().includes(term));
+        if(!matchesSearch) return false;
+        
+        // Filter
+        if(activeFilter === 'india' && h.emoji !== '🇮🇳') return false;
+        if(activeFilter === 'global' && h.emoji === '🇮🇳') return false;
+        if(activeFilter === 'saved' && !saved.includes(h.id)) return false;
+        if(activeFilter.startsWith('cat-') && h.category !== activeFilter.substring(4)) return false;
+        
+        return true;
+      });
+      
+      // Sort
+      if(sort === 'prestige') filtered.sort((a,b) => b.prestige_score - a.prestige_score);
+      if(sort === 'name') filtered.sort((a,b) => a.name.localeCompare(b.name));
+      if(sort === 'recent') {
+        const recent = JSON.parse(localStorage.getItem('recent_hackathons') || '[]');
+        filtered.sort((a,b) => {
+          const aIdx = recent.indexOf(a.id);
+          const bIdx = recent.indexOf(b.id);
+          if(aIdx===-1 && bIdx===-1) return 0;
+          if(aIdx===-1) return 1;
+          if(bIdx===-1) return -1;
+          return aIdx - bIdx;
+        });
+      }
+      
+      renderGrid(filtered);
+    }
+
+    function toggleSave(id, btnEl) {
+      let saved = JSON.parse(localStorage.getItem('saved_hackathons') || '[]');
+      if(saved.includes(id)) {
+        saved = saved.filter(x => x !== id);
+        btnEl.classList.remove('active');
+        btnEl.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+      } else {
+        saved.push(id);
+        btnEl.classList.add('active');
+        btnEl.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+      }
+      localStorage.setItem('saved_hackathons', JSON.stringify(saved));
+      if(document.querySelector('.filter-pill.active').getAttribute('data-filter') === 'saved') {
+        applyFilters();
+      }
+    }
+
+    function shareHackathon(id) {
+      const url = window.location.origin + window.location.pathname + '?id=' + id;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Link copied to clipboard!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function openModal(h) {
+      currentHackathon = h;
+      
+      // Track recent
+      let recent = JSON.parse(localStorage.getItem('recent_hackathons') || '[]');
+      recent = [h.id, ...recent.filter(x => x !== h.id)].slice(0, 10);
+      localStorage.setItem('recent_hackathons', JSON.stringify(recent));
+
+      // Populate Header
+      document.getElementById('modalEmoji').innerText = h.emoji;
+      document.getElementById('modalName').innerText = h.name;
+      document.getElementById('modalOrg').innerText = h.organizer;
+
+      // Populate Overview
+      document.getElementById('overviewDesc').innerText = h.description;
+      document.getElementById('overviewTags').innerHTML = h.domains.map(d => `<span class="univ-card-tag">${d}</span>`).join('');
+      
+      const jList = document.getElementById('judgingList');
+      jList.innerHTML = h.judging_criteria.map(j => `
+        <div class="judging-item">
+          <div class="judging-header"><span>${j.name}</span><span>${j.weight}%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:${j.weight}%;"></div></div>
+        </div>
+      `).join('');
+
+      document.getElementById('statPrize').innerText = h.prize_pool;
+      document.getElementById('statTeams').innerText = h.participants;
+      document.getElementById('statTeamSize').innerText = `${h.team_size.min}-${h.team_size.max} Members`;
+      document.getElementById('statFreq').innerText = `${h.frequency} (${h.month})`;
+      document.getElementById('statWeb').href = h.website;
+
+      // Reset Tabs
+      document.querySelectorAll('.modal-tab')[0].click();
+
+      // Populate Problems
+      renderProblems();
+
+      // Populate Winners
+      setupWinnersTabs();
+
+      // Populate Strategy
+      document.getElementById('stratJudges').innerText = h.strategy_guide.what_judges_value;
+      document.getElementById('stratMistakes').innerHTML = h.strategy_guide.common_mistakes.map(m => `<li>${m}</li>`).join('');
+      document.getElementById('stratPattern').innerText = h.strategy_guide.winning_pattern;
+      document.getElementById('stratStack').innerText = `Stack: ${h.strategy_guide.recommended_stack}`;
+      document.getElementById('stratTeam').innerText = `Team: ${h.strategy_guide.ideal_team}`;
+
+      document.getElementById('hackathonModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('hackathonModal').classList.remove('active');
+    }
+
+    function renderProblems() {
+      if(!currentHackathon) return;
+      const term = document.getElementById('probSearch').value.toLowerCase();
+      const year = document.getElementById('probYear').value;
+      
+      let filtered = currentHackathon.problem_statements.filter(p => {
+        if(year !== 'all' && p.year.toString() !== year) return false;
+        if(term && !p.title.toLowerCase().includes(term) && !p.description.toLowerCase().includes(term)) return false;
+        return true;
+      });
+
+      const list = document.getElementById('problemsList');
+      if(filtered.length === 0) {
+        list.innerHTML = `<p style="color:var(--text-secondary);text-align:center;padding:2rem;">No problem statements found.</p>`;
+        return;
+      }
+
+      list.innerHTML = filtered.map((p, i) => {
+        const diffColor = p.difficulty==='Hard' ? 'badge-hard' : p.difficulty==='Medium' ? 'badge-medium' : 'badge-easy';
+        return `
+          <div class="problem-card" id="prob-${i}">
+            <div class="problem-header" onclick="document.getElementById('prob-${i}').classList.toggle('open')">
+              <div class="problem-title-area">
+                <div class="problem-badges">
+                  <span style="color:var(--text-secondary);">#${p.id}</span>
+                  <span class="${diffColor}">[${p.difficulty}]</span>
+                  <span style="color:var(--accent-primary);">[${p.domain}]</span>
+                </div>
+                <h3 style="font-size:1.1rem;margin-top:0.3rem;">${p.title}</h3>
+                <span style="font-size:0.85rem;color:var(--text-muted);margin-top:0.3rem;">📅 ${p.year} · ${p.ministry}</span>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-secondary);"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div class="problem-expanded">
+              <p style="color:var(--text-secondary);line-height:1.6;margin-bottom:1.5rem;">${p.problem_full_text}</p>
+              
+              <div class="problem-detail-section">
+                <h4>Constraints</h4>
+                <ul>${p.constraints.map(c => `<li>${c}</li>`).join('')}</ul>
+              </div>
+              <div class="problem-detail-section">
+                <h4>Expected Deliverables</h4>
+                <ul>${p.expected_deliverables.map(c => `<li>${c}</li>`).join('')}</ul>
+              </div>
+              
+              <div class="problem-actions">
+                <button class="btn-outline btn-sm" onclick="copyProblem('${p.problem_full_text.replace(/'/g, "\\'")}')">📋 Copy Text</button>
+                <button class="btn-primary btn-sm" onclick="analyzeProblem('${p.problem_full_text.replace(/'/g, "\\'")}', '${currentHackathon.name}')">🚀 Analyze in Strategist</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function copyProblem(text) {
+      navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard'));
+    }
+
+    function analyzeProblem(text, hackathonName) {
+      localStorage.setItem('presetProject', `[For ${hackathonName}] ${text}`);
+      window.location.href = 'strategist.html';
+    }
+
+    function setupWinnersTabs() {
+      if(!currentHackathon) return;
+      const years = [...new Set(currentHackathon.winners.map(w => w.year))].sort((a,b)=>b-a);
+      const tabs = document.getElementById('winnersYearTabs');
+      tabs.innerHTML = years.map((y, i) => `
+        <div class="year-tab ${i===0?'active':''}" onclick="selectWinnerYear(${y}, this)">${y}</div>
+      `).join('');
+      
+      // Patterns
+      const patterns = document.getElementById('winnerPatterns');
+      patterns.innerHTML = `
+        <li>Most used languages: ${currentHackathon.analytics.top_winning_stacks.join(', ')}</li>
+        <li>Most successful domains: ${currentHackathon.analytics.top_winning_domains.join(', ')}</li>
+        <li>Average team size: ${currentHackathon.analytics.avg_winner_team_size} members</li>
+      `;
+
+      if(years.length > 0) selectWinnerYear(years[0], tabs.firstElementChild);
+    }
+
+    function selectWinnerYear(year, el) {
+      if(el) {
+        document.querySelectorAll('#winnersYearTabs .year-tab').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+      }
+      const grid = document.getElementById('winnersGrid');
+      const winners = currentHackathon.winners.filter(w => w.year === year).sort((a,b)=>a.rank-b.rank);
+      
+      grid.innerHTML = winners.map(w => `
+        <div class="winner-card rank-${w.rank}">
+          <div class="winner-rank">${w.emoji}</div>
+          <div class="winner-project">${w.project_name}</div>
+          <div class="winner-team">${w.team_name} · ${w.college}</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem;">Problem: ${w.problem_title}</div>
+          <div class="winner-stack">
+            ${w.tech_stack.map(s => `<span class="univ-card-tag">${s}</span>`).join('')}
+          </div>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${w.what_they_built}</p>
+          <div class="winner-quote">"${w.judge_quote}"</div>
+          <div style="color:var(--accent-primary);font-weight:600;margin-top:1rem;">Prize: ${w.prize_won}</div>
+          <div class="winner-links">
+            <a href="${w.github_url}" target="_blank" class="btn-outline btn-sm" style="flex:1;padding:0.4rem;">GitHub ↗</a>
+            <a href="${w.demo_url}" target="_blank" class="btn-outline btn-sm" style="flex:1;padding:0.4rem;">Demo ↗</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderCharts() {
+      if(!currentHackathon) return;
+      
+      const themeColor = document.documentElement.getAttribute('data-theme') === 'light' ? '#0f172a' : '#f8fafc';
+      const gridColor = document.documentElement.getAttribute('data-theme') === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)';
+
+      Chart.defaults.color = themeColor;
+      Chart.defaults.font.family = "'Outfit', sans-serif";
+
+      // Participation Chart
+      const partCtx = document.getElementById('chartParticipation');
+      if(charts.part) charts.part.destroy();
+      const pYears = Object.keys(currentHackathon.analytics.participation_trend).sort();
+      const pData = pYears.map(y => currentHackathon.analytics.participation_trend[y]);
+      
+      charts.part = new Chart(partCtx, {
+        type: 'line',
+        data: {
+          labels: pYears,
+          datasets: [{
+            label: 'Participants',
+            data: pData,
+            borderColor: '#a78bfa',
+            backgroundColor: 'rgba(167, 139, 250, 0.2)',
+            borderWidth: 2,
+            tension: 0.4,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { grid: { color: gridColor }, beginAtZero: true },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+
+      // Problems Chart
+      const probCtx = document.getElementById('chartProblems');
+      if(charts.prob) charts.prob.destroy();
+      const prYears = Object.keys(currentHackathon.analytics.problems_per_year).sort();
+      const prData = prYears.map(y => currentHackathon.analytics.problems_per_year[y]);
+      
+      charts.prob = new Chart(probCtx, {
+        type: 'bar',
+        data: {
+          labels: prYears,
+          datasets: [{
+            label: 'Problems',
+            data: prData,
+            backgroundColor: '#06b6d4',
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { grid: { color: gridColor }, beginAtZero: true },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    // Compare functionality
+    function toggleCompare(id, isChecked) {
+      const h = allHackathons.find(x => x.id === id);
+      if(isChecked) {
+        if(compareList.length >= 3) {
+          showToast('You can compare up to 3 hackathons at once');
+          // Uncheck the checkbox
+          document.querySelector(`input[onchange*="${id}"]`).checked = false;
+          return;
+        }
+        compareList.push(h);
+      } else {
+        compareList = compareList.filter(x => x.id !== id);
+      }
+      updateCompareBar();
+    }
+
+    function updateCompareBar() {
+      const bar = document.getElementById('compareBar');
+      const sel = document.getElementById('compareSelected');
+      
+      if(compareList.length === 0) {
+        bar.classList.remove('visible');
+        return;
+      }
+      
+      bar.classList.add('visible');
+      sel.innerHTML = compareList.map(c => `
+        <div class="compare-chip">
+          ${c.emoji} ${c.short_name}
+          <span style="cursor:pointer;opacity:0.7;" onclick="toggleCompare('${c.id}', false)">✕</span>
+        </div>
+      `).join('');
+    }
+
+    function clearCompare() {
+      compareList = [];
+      updateCompareBar();
+      applyFilters(); // re-render grid to uncheck boxes
+    }
+
+    function openCompareModal() {
+      if(compareList.length === 0) return;
+      const tbody = document.getElementById('compareTableBody');
+      
+      const rows = [
+        { label: 'Name', prop: h => `${h.emoji} <strong>${h.name}</strong>` },
+        { label: 'Organizer', prop: h => h.organizer },
+        { label: 'Prize Pool', prop: h => `<span style="color:var(--accent-secondary);font-weight:600;">${h.prize_pool}</span>` },
+        { label: 'Prestige', prop: h => `⭐ ${h.prestige_score}/10` },
+        { label: 'Team Size', prop: h => `${h.team_size.min}-${h.team_size.max} members` },
+        { label: 'Domains', prop: h => h.domains.join(', ') },
+        { label: 'Problems', prop: h => `${h.problem_statements.length} recorded` },
+        { label: 'Winner Data', prop: h => h.winners.length > 0 ? '✅ Available' : '❌ N/A' },
+      ];
+
+      tbody.innerHTML = rows.map(r => `
+        <tr>
+          <th>${r.label}</th>
+          ${compareList.map(c => `<td>${r.prop(c)}</td>`).join('')}
+        </tr>
+      `).join('');
+
+      document.getElementById('compareModal').classList.add('active');
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
