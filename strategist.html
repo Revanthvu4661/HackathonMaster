@@ -1,142 +1,281 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>RAR Hackathon Helper — AI Solution Strategist</title>
-
-  <meta name="description" content="Deep AI analysis of your hackathon problem statement. Get add-ons, prompt packs, judge strategy, and winning direction — all in one click." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <link rel="apple-touch-icon" href="favicon.png">
-
-  <link rel="stylesheet" href="strategist.css" />
-
-  <!-- Mermaid.js for Architecture Diagrams -->
-
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-
-  <script>
-
-    mermaid.initialize({ 
-
-      startOnLoad: false, 
-
-      theme: 'dark',
-
-      securityLevel: 'loose',
-
-      fontFamily: 'Outfit',
-
-      flowchart: { 
-
-        useMaxWidth: false, 
-
-        htmlLabels: true, 
-
-        curve: 'basis' 
-
-      }
-
-    });
-
-  </script>
-
-<script src="theme.js"></script>
-
-  <style>
-
-    .history-toggle {
-
-      display: flex !important;
-
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <!-- Animated Background -->
-
-  <div class="bg-orbs">
-
-    <div class="orb orb-1"></div>
-
-    <div class="orb orb-2"></div>
-
-    <div class="orb orb-3"></div>
-
-    <div class="orb orb-4"></div>
-
-  </div>
-
-  <div class="grid-overlay"></div>
-
-
-
-  <!-- Navigation -->
-
-  <nav class="navbar" id="navbar">
-
-    <div class="nav-inner">
-
-      <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;">
-
-        <div class="brand-icon">
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-        </div>
-
-        
-
-      </a>
-
-      <div class="nav-links" id="navLinks">
-
-        <a href="index.html" class="nav-link">Home</a>
-
-        <a href="strategist.html" class="nav-link active">Strategist</a>
-
-        <a href="checklist.html" class="nav-link">Checklist</a>
-
-        <a href="features.html" class="nav-link">AI Tools</a>
-
-        <a href="countdown.html" class="nav-link">Sprint Timer</a>
-
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-
-
-      </div>
-
-      <div class="nav-actions">
-
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+  <meta charset="UTF-8" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+  <title>RAR Hackathon Helper — AI Solution Strategist</title>
+
+
+
+  <meta name="description" content="Deep AI analysis of your hackathon problem statement. Get add-ons, prompt packs, judge strategy, and winning direction — all in one click." />
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+
+
+  <link rel="stylesheet" href="style.css" />
+
+
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+
+  <link rel="apple-touch-icon" href="favicon.png">
+
+
+
+  <link rel="stylesheet" href="strategist.css" />
+
+
+
+  <!-- Mermaid.js for Architecture Diagrams -->
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+
+
+  <script>
+
+
+
+    mermaid.initialize({ 
+
+
+
+      startOnLoad: false, 
+
+
+
+      theme: 'dark',
+
+
+
+      securityLevel: 'loose',
+
+
+
+      fontFamily: 'Outfit',
+
+
+
+      flowchart: { 
+
+
+
+        useMaxWidth: false, 
+
+
+
+        htmlLabels: true, 
+
+
+
+        curve: 'basis' 
+
+
+
+      }
+
+
+
+    });
+
+
+
+  </script>
+
+
+
+<script src="theme.js"></script>
+
+
+
+  <style>
+
+
+
+    .history-toggle {
+
+
+
+      display: flex !important;
+
+
+
+    }
+
+
+
+  </style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+  <!-- Animated Background -->
+
+
+
+  <div class="bg-orbs">
+
+
+
+    <div class="orb orb-1"></div>
+
+
+
+    <div class="orb orb-2"></div>
+
+
+
+    <div class="orb orb-3"></div>
+
+
+
+    <div class="orb orb-4"></div>
+
+
+
+  </div>
+
+
+
+  <div class="grid-overlay"></div>
+
+
+
+
+
+
+
+  <!-- Navigation -->
+
+
+
+  <nav class="navbar" id="navbar">
+
+
+
+    <div class="nav-inner">
+
+
+
+      <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;">
+
+
+
+        <div class="brand-icon">
+
+
+
+          <img src="logo.png" alt="RAR Logo" class="brand-logo">
+
+
+
+        </div>
+
+
+
+        
+
+
+
+      </a>
+
+
+
+      <div class="nav-links" id="navLinks">
+
+
+
+        <a href="index.html" class="nav-link">Home</a>
+
+
+
+        <a href="strategist.html" class="nav-link active">Strategist</a>
+
+
+
+        <a href="checklist.html" class="nav-link">Checklist</a>
+
+
+
+        <a href="features.html" class="nav-link">AI Tools</a>
+
+
+
+        <a href="countdown.html" class="nav-link">Sprint Timer</a>
+
+
+
+        <a href="team_builder.html" class="nav-link">Team Builder</a>
+
+
+
+        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
+
+
+
+        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
+        <a href="repos.html" class="nav-link">Hackathon Repos</a>
+
+
+
+
+
+      </div>
+
+
+
+      <div class="nav-actions">
+
+
+
         <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-
+
+
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+
+
+
+          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+
+
+
         </button>
 
         <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
@@ -146,702 +285,1402 @@
           <span style="font-size: 0.85rem; font-weight: 600;">History</span>
 
         </button>
-
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-
-          <span></span><span></span><span></span>
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </nav>
-
-
-
-  <!-- Mobile Menu -->
-
-  <div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html" class="mobile-link">Home</a>
-
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-
-    <a href="features.html" class="mobile-link">AI Tools</a>
-
-    <a href="countdown.html" class="mobile-link">Sprint Timer</a>
-
-    <a href="team_builder.html" class="mobile-link">Team Builder</a>
-
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
-
-    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
-
-    <a href="#" class="mobile-link history-nav-trigger">History</a>
-
-  </div>
-
-
-
-  <!-- ===== HERO ===== -->
-
-  <section class="strat-hero">
-
-    <div class="strat-hero-content">
-
-      <div class="hero-badge">
-
-        <span class="badge-dot"></span>
-
-        World-Class Hackathon Strategist · Judge Psychology · Prompt Engineer
-
-      </div>
-
-      <h1 class="strat-hero-title">
-
-        AI Solution <span class="gradient-text">Strategist</span>
-
-      </h1>
-
-      <div class="hero-logo-container" style="margin-top: 1rem; display: flex; justify-content: center;">
-
-        <img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 100px; height: 100px;">
-
-      </div>
-
-      <p class="strat-hero-sub">
-
-        Paste your problem statement. Get a full strategic breakdown — refined problem, market gaps, 10 high-impact add-ons, ready-to-paste prompt packs, and a judge-winning pitch strategy.
-
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ===== INPUT SECTION ===== -->
-
-  <section class="section strat-input-section" id="strategist">
-
-    <div class="section-inner">
-
-
-
-      <!-- API Key Banner -->
-
-      <div class="api-key-banner" id="apiKeyBanner">
-
-        <div class="api-key-banner-left">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-
-          <span>Add your <strong>Gemini API Key</strong> for live AI-powered analysis. Without it, the intelligent offline engine runs.</span>
-
-        </div>
-
-        <button class="btn-outline btn-sm" id="openApiKeyModal">Set API Key</button>
-
-      </div>
-
-
-
-      <!-- Main Input Panel -->
-
-      <div class="strat-panel">
-
-        <!-- Left: Problem Statement -->
-
-        <div class="strat-input-col">
-
-          <label class="strat-label">
-
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-
-            Problem Statement <span class="required">*</span>
-
-          </label>
-
-          <textarea
-
-            id="stratProblem"
-
-            class="strat-textarea"
-
-            placeholder="Describe the hackathon problem in detail...
-
-
-
-Example: 'Build a platform that helps rural farmers access real-time crop disease diagnosis using a smartphone camera and AI, without requiring internet connectivity.'
-
-
-
-The more detail you provide, the better the strategic output."
-
-            rows="8"
-
-          ></textarea>
-
-          <div class="strat-char-count"><span id="stratCharCount">0</span> / 3000 characters</div>
-
-
-
-          <!-- Example Chips -->
-
-          <div class="strat-examples">
-
-            <span class="examples-label">Quick Load:</span>
-
-            <button class="example-chip" data-strat="Build an AI-powered mental health support platform that detects emotional distress from user journal entries and chat messages, matches users with verified therapists, and provides CBT-based self-help modules.">Mental Health AI</button>
-
-            <button class="example-chip" data-strat="Create a decentralized supply chain traceability system using blockchain that allows consumers to verify the authenticity and ethical sourcing of products from farm to shelf using a QR code scan.">Supply Chain Web3</button>
-
-            <button class="example-chip" data-strat="Design an AI co-pilot for legal professionals that can analyze contracts, identify risky clauses, suggest amendments, and generate plain-English summaries for non-lawyer clients.">Legal AI Co-pilot</button>
-
-            <button class="example-chip" data-strat="Build a smart city traffic management system that uses computer vision and edge AI to dynamically control traffic signals, reduce congestion, and prioritize emergency vehicles in real-time.">Smart City Traffic</button>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Right: Context Fields -->
-
-        <div class="strat-context-col">
-
-          <div class="strat-context-card">
-
-            <h3 class="strat-context-title">
-
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-
-              Optional Context
-
-            </h3>
-
-            <p class="strat-context-hint">These fields improve output precision. All are optional.</p>
-
-
-
-            <div class="strat-field">
-
-              <label class="strat-field-label">Hackathon Theme</label>
-
-              <input type="text" id="ctxTheme" class="strat-input" placeholder="e.g. AI for Good, FinTech, Climate Tech..." />
-
-            </div>
-
-
-
-            <div class="strat-field">
-
-              <label class="strat-field-label">Preferred Tech Stack</label>
-
-              <input type="text" id="ctxStack" class="strat-input" placeholder="e.g. Next.js + Python + MongoDB..." />
-
-            </div>
-
-
-
-            <div class="strat-field strat-field-row">
-
-              <div>
-
-                <label class="strat-field-label">Time Limit</label>
-
-                <select id="ctxTime" class="strat-input strat-select">
-
-                  <option value="">Select...</option>
-
-                  <option value="8 hours">8 Hours</option>
-
-                  <option value="24 hours">24 Hours</option>
-
-                  <option value="36 hours">36 Hours</option>
-
-                  <option value="48 hours">48 Hours</option>
-
-                  <option value="72 hours">72 Hours</option>
-
-                  <option value="1 week">1 Week</option>
-
-                </select>
-
-              </div>
-
-              <div>
-
-                <label class="strat-field-label">Team Size</label>
-
-                <select id="ctxTeam" class="strat-input strat-select">
-
-                  <option value="">Select...</option>
-
-                  <option value="Solo">Solo</option>
-
-                  <option value="2 members">2 Members</option>
-
-                  <option value="3 members">3 Members</option>
-
-                  <option value="4 members">4 Members</option>
-
-                  <option value="5+ members">5+ Members</option>
-
-                </select>
-
-              </div>
-
-            </div>
-
-
-
-            <div class="strat-field">
-
-              <label class="strat-field-label">Generation Mode</label>
-
-              <div class="strat-mode-pills">
-
-                <button class="mode-pill active" data-stratmode="complete" id="stratModeComplete">
-
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-
-                  Full Strategy
-
-                </button>
-
-                <button class="mode-pill" data-stratmode="fast" id="stratModeFast">
-
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-
-                  Quick Wins
-
-                </button>
-
-                <button class="mode-pill" data-stratmode="judge" id="stratModeJudge">
-
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-
-                  Judge Lens
-
-                </button>
-
-              </div>
-
-            </div>
-
-
-
-            <button class="btn-generate strat-generate-btn" id="stratGenerateBtn" disabled>
-
-              <span class="btn-generate-text" id="stratBtnText">
-
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-
-                Analyze & Strategize
-
-              </span>
-
-              <span class="btn-generate-loading" id="stratBtnLoading" style="display:none">
-
-                <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
-
-                Deep Analysis Running...
-
-              </span>
-
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ===== ANALYSIS PROGRESS OVERLAY ===== -->
-
-      <div id="stratOverlay" class="research-overlay" style="display:none;">
-
-        <div class="research-modal strat-progress-modal">
-
-          <div class="strat-progress-header">
-
-            <div class="strat-progress-icon">
-
-              <img src="logo.png" class="brand-logo" style="width: 60px; height: 60px;">
-
-            </div>
-
-            <h3>Strategic Analysis Engine</h3>
-
-            <p>Performing deep hackathon intelligence research...</p>
-
-          </div>
-
-          <div class="strat-progress-steps" id="stratSteps">
-
-            <div class="step" id="sstep1"><span class="step-dot"></span><span class="step-text">Analyzing problem statement & pain points...</span></div>
-
-            <div class="step" id="sstep2"><span class="step-dot"></span><span class="step-text">Researching existing market solutions...</span></div>
-
-            <div class="step" id="sstep3"><span class="step-dot"></span><span class="step-text">Identifying innovation gaps & opportunities...</span></div>
-
-            <div class="step" id="sstep4"><span class="step-dot"></span><span class="step-text">Generating 10 high-impact add-ons...</span></div>
-
-            <div class="step" id="sstep5"><span class="step-dot"></span><span class="step-text">Building prompt packs & judge strategy...</span></div>
-
-          </div>
-
-          <div class="progress-bar-container" style="margin-top:1.5rem;">
-
-            <div class="progress-bar-fill" id="stratProgressBar" style="width:0%"></div>
-
-          </div>
-
-          <div class="strat-progress-label" id="stratProgressLabel">Initializing...</div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ===== OUTPUT AREA ===== -->
-
-      <div id="stratOutput" class="strat-output-area" style="display:none;">
-
-
-
-        <!-- Output Header -->
-
-        <div class="strat-output-header">
-
-          <div class="strat-output-title">
-
-            <img src="logo.png" class="brand-logo" style="width: 32px; height: 32px;">
-
-            <h2>Strategic Intelligence Report</h2>
-
-          </div>
-
-          <div class="strat-output-actions">
-
-            <button class="btn-ghost btn-sm" id="stratCopyJson">
-
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-
-              Copy JSON
-
-            </button>
-
-            <button class="btn-primary btn-sm" id="stratReanalyze">
-
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-
-              Re-analyze
-
-            </button>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- One-Line Pitch Banner -->
-
-        <div class="strat-pitch-banner" id="stratPitchBanner"></div>
-
-
-
-        <!-- Output Tabs -->
-
-        <div class="output-tabs" id="stratTabs">
-
-          <button class="tab-btn active" data-stab="analysis">🎯 Analysis</button>
-
-          <button class="tab-btn" data-stab="research">🔬 Research</button>
-
-          <button class="tab-btn" data-stab="addons">🧩 Add-ons</button>
-
-          <button class="tab-btn" data-stab="priority">⚡ Top 5</button>
-
-          <button class="tab-btn" data-stab="features">✅ Features</button>
-
-          <button class="tab-btn" data-stab="prompts">🔥 Prompts</button>
-
-          <button class="tab-btn" data-stab="judge">🏆 Judge Strategy</button>
-
-          <button class="tab-btn" data-stab="prd">📄 PRD</button>
-
-          <button class="tab-btn" data-stab="architecture">🏗️ Architecture</button>
-
-        </div>
-
-
-
-        <!-- Tab Content -->
-
-        <div class="output-content" id="stratContent">
-
-          <!-- Populated by strategist.js -->
-
-        </div>
-
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ===== API KEY MODAL ===== -->
-
-  <div id="stratApiModal" class="research-overlay" style="display:none;">
-
-    <div class="research-modal" style="text-align:left;max-width:480px;">
-
-      <h3 style="margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
-
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-
-        AI Configuration
-
-      </h3>
-
-      <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-
-        Enable live AI analysis and deep research. Your keys are stored locally in your browser and never sent to any server.
-
-      </p>
-
-      
-
-      <div style="margin-bottom:1.5rem;">
-
-        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Gemini API Key (Required for AI)</label>
-
-        <input type="password" id="stratApiKeyInput" placeholder="AIza..." style="width:100%;padding:0.8rem;border-radius:8px;background:var(--glass-bg);border:1px solid var(--border-color);color:var(--text-primary);outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
-
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Google AI Studio →</a>
-
-      </div>
-
-
-
-      <div style="margin-bottom:1.5rem;">
-
-        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Serper.dev API Key (Required for Deep Search)</label>
-
-        <input type="password" id="serperApiKeyInput" placeholder="Your Serper Key..." style="width:100%;padding:0.8rem;border-radius:8px;background:var(--glass-bg);border:1px solid var(--border-color);color:var(--text-primary);outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
-
-        <a href="https://serper.dev" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Serper.dev →</a>
-
-      </div>
-
-
-
-      <div style="display:flex;gap:1rem;">
-
-        <button class="btn-primary" id="stratSaveKey" style="flex:1;">Save Settings</button>
-
-        <button class="btn-outline" id="stratCloseModal" style="flex:1;">Close</button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- Footer -->
-
-  <footer class="footer">
-
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-
-        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem;">
-
-          
-
-        </a>
-
-        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
-
-      </div>
-
-      <div class="footer-links">
-
-        <div class="footer-col">
-
-          <h4>Platform</h4>
-
-          <a href="strategist.html">Strategist</a>
-
-          <a href="features.html">AI Tools</a>
-
-          <a href="team_builder.html">Team Builder</a>
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-        </div>
-
-        <div class="footer-col">
-
-          <h4>Resources</h4>
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-          <a href="repos.html">Hackathon Repos</a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
+
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+
+
+
+          <span></span><span></span><span></span>
+
+
+
+        </button>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </nav>
+
+
+
+
+
+
+
+  <!-- Mobile Menu -->
+
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+
+
+    <a href="index.html" class="mobile-link">Home</a>
+
+
+
+    <a href="strategist.html" class="mobile-link">Strategist</a>
+
+
+
+    <a href="checklist.html" class="mobile-link">Checklist</a>
+
+
+
+    <a href="features.html" class="mobile-link">AI Tools</a>
+
+
+
+    <a href="countdown.html" class="mobile-link">Sprint Timer</a>
+
+
+
+    <a href="team_builder.html" class="mobile-link">Team Builder</a>
+
+
+
+    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
+
+
+
+    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
+
+
+
+    <a href="#" class="mobile-link history-nav-trigger">History</a>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <!-- ===== HERO ===== -->
+
+
+
+  <section class="strat-hero">
+
+
+
+    <div class="strat-hero-content">
+
+
+
+      <div class="hero-badge">
+
+
+
+        <span class="badge-dot"></span>
+
+
+
+        World-Class Hackathon Strategist · Judge Psychology · Prompt Engineer
+
+
+
+      </div>
+
+
+
+      <h1 class="strat-hero-title">
+
+
+
+        AI Solution <span class="gradient-text">Strategist</span>
+
+
+
+      </h1>
+
+
+
+      <div class="hero-logo-container" style="margin-top: 1rem; display: flex; justify-content: center;">
+
+
+
+        <img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 100px; height: 100px;">
+
+
+
+      </div>
+
+
+
+      <p class="strat-hero-sub">
+
+
+
+        Paste your problem statement. Get a full strategic breakdown — refined problem, market gaps, 10 high-impact add-ons, ready-to-paste prompt packs, and a judge-winning pitch strategy.
+
+
+
+      </p>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ===== INPUT SECTION ===== -->
+
+
+
+  <section class="section strat-input-section" id="strategist">
+
+
+
+    <div class="section-inner">
+
+
+
+
+
+
+
+      <!-- API Key Banner -->
+
+
+
+      <div class="api-key-banner" id="apiKeyBanner">
+
+
+
+        <div class="api-key-banner-left">
+
+
+
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+
+
+
+          <span>Add your <strong>Gemini API Key</strong> for live AI-powered analysis. Without it, the intelligent offline engine runs.</span>
+
+
+
+        </div>
+
+
+
+        <button class="btn-outline btn-sm" id="openApiKeyModal">Set API Key</button>
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- Main Input Panel -->
+
+
+
+      <div class="strat-panel">
+
+
+
+        <!-- Left: Problem Statement -->
+
+
+
+        <div class="strat-input-col">
+
+
+
+          <label class="strat-label">
+
+
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+
+
+
+            Problem Statement <span class="required">*</span>
+
+
+
+          </label>
+
+
+
+          <textarea
+
+
+
+            id="stratProblem"
+
+
+
+            class="strat-textarea"
+
+
+
+            placeholder="Describe the hackathon problem in detail...
+
+
+
+
+
+
+
+Example: 'Build a platform that helps rural farmers access real-time crop disease diagnosis using a smartphone camera and AI, without requiring internet connectivity.'
+
+
+
+
+
+
+
+The more detail you provide, the better the strategic output."
+
+
+
+            rows="8"
+
+
+
+          ></textarea>
+
+
+
+          <div class="strat-char-count"><span id="stratCharCount">0</span> / 3000 characters</div>
+
+
+
+
+
+
+
+          <!-- Example Chips -->
+
+
+
+          <div class="strat-examples">
+
+
+
+            <span class="examples-label">Quick Load:</span>
+
+
+
+            <button class="example-chip" data-strat="Build an AI-powered mental health support platform that detects emotional distress from user journal entries and chat messages, matches users with verified therapists, and provides CBT-based self-help modules.">Mental Health AI</button>
+
+
+
+            <button class="example-chip" data-strat="Create a decentralized supply chain traceability system using blockchain that allows consumers to verify the authenticity and ethical sourcing of products from farm to shelf using a QR code scan.">Supply Chain Web3</button>
+
+
+
+            <button class="example-chip" data-strat="Design an AI co-pilot for legal professionals that can analyze contracts, identify risky clauses, suggest amendments, and generate plain-English summaries for non-lawyer clients.">Legal AI Co-pilot</button>
+
+
+
+            <button class="example-chip" data-strat="Build a smart city traffic management system that uses computer vision and edge AI to dynamically control traffic signals, reduce congestion, and prioritize emergency vehicles in real-time.">Smart City Traffic</button>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Right: Context Fields -->
+
+
+
+        <div class="strat-context-col">
+
+
+
+          <div class="strat-context-card">
+
+
+
+            <h3 class="strat-context-title">
+
+
+
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+
+
+
+              Optional Context
+
+
+
+            </h3>
+
+
+
+            <p class="strat-context-hint">These fields improve output precision. All are optional.</p>
+
+
+
+
+
+
+
+            <div class="strat-field">
+
+
+
+              <label class="strat-field-label">Hackathon Theme</label>
+
+
+
+              <input type="text" id="ctxTheme" class="strat-input" placeholder="e.g. AI for Good, FinTech, Climate Tech..." />
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="strat-field">
+
+
+
+              <label class="strat-field-label">Preferred Tech Stack</label>
+
+
+
+              <input type="text" id="ctxStack" class="strat-input" placeholder="e.g. Next.js + Python + MongoDB..." />
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="strat-field strat-field-row">
+
+
+
+              <div>
+
+
+
+                <label class="strat-field-label">Time Limit</label>
+
+
+
+                <select id="ctxTime" class="strat-input strat-select">
+
+
+
+                  <option value="">Select...</option>
+
+
+
+                  <option value="8 hours">8 Hours</option>
+
+
+
+                  <option value="24 hours">24 Hours</option>
+
+
+
+                  <option value="36 hours">36 Hours</option>
+
+
+
+                  <option value="48 hours">48 Hours</option>
+
+
+
+                  <option value="72 hours">72 Hours</option>
+
+
+
+                  <option value="1 week">1 Week</option>
+
+
+
+                </select>
+
+
+
+              </div>
+
+
+
+              <div>
+
+
+
+                <label class="strat-field-label">Team Size</label>
+
+
+
+                <select id="ctxTeam" class="strat-input strat-select">
+
+
+
+                  <option value="">Select...</option>
+
+
+
+                  <option value="Solo">Solo</option>
+
+
+
+                  <option value="2 members">2 Members</option>
+
+
+
+                  <option value="3 members">3 Members</option>
+
+
+
+                  <option value="4 members">4 Members</option>
+
+
+
+                  <option value="5+ members">5+ Members</option>
+
+
+
+                </select>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="strat-field">
+
+
+
+              <label class="strat-field-label">Generation Mode</label>
+
+
+
+              <div class="strat-mode-pills">
+
+
+
+                <button class="mode-pill active" data-stratmode="complete" id="stratModeComplete">
+
+
+
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+
+
+
+                  Full Strategy
+
+
+
+                </button>
+
+
+
+                <button class="mode-pill" data-stratmode="fast" id="stratModeFast">
+
+
+
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+
+
+
+                  Quick Wins
+
+
+
+                </button>
+
+
+
+                <button class="mode-pill" data-stratmode="judge" id="stratModeJudge">
+
+
+
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+
+
+                  Judge Lens
+
+
+
+                </button>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <button class="btn-generate strat-generate-btn" id="stratGenerateBtn" disabled>
+
+
+
+              <span class="btn-generate-text" id="stratBtnText">
+
+
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+
+
+
+                Analyze & Strategize
+
+
+
+              </span>
+
+
+
+              <span class="btn-generate-loading" id="stratBtnLoading" style="display:none">
+
+
+
+                <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+
+
+
+                Deep Analysis Running...
+
+
+
+              </span>
+
+
+
+            </button>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- ===== ANALYSIS PROGRESS OVERLAY ===== -->
+
+
+
+      <div id="stratOverlay" class="research-overlay" style="display:none;">
+
+
+
+        <div class="research-modal strat-progress-modal">
+
+
+
+          <div class="strat-progress-header">
+
+
+
+            <div class="strat-progress-icon">
+
+
+
+              <img src="logo.png" class="brand-logo" style="width: 60px; height: 60px;">
+
+
+
+            </div>
+
+
+
+            <h3>Strategic Analysis Engine</h3>
+
+
+
+            <p>Performing deep hackathon intelligence research...</p>
+
+
+
+          </div>
+
+
+
+          <div class="strat-progress-steps" id="stratSteps">
+
+
+
+            <div class="step" id="sstep1"><span class="step-dot"></span><span class="step-text">Analyzing problem statement & pain points...</span></div>
+
+
+
+            <div class="step" id="sstep2"><span class="step-dot"></span><span class="step-text">Researching existing market solutions...</span></div>
+
+
+
+            <div class="step" id="sstep3"><span class="step-dot"></span><span class="step-text">Identifying innovation gaps & opportunities...</span></div>
+
+
+
+            <div class="step" id="sstep4"><span class="step-dot"></span><span class="step-text">Generating 10 high-impact add-ons...</span></div>
+
+
+
+            <div class="step" id="sstep5"><span class="step-dot"></span><span class="step-text">Building prompt packs & judge strategy...</span></div>
+
+
+
+          </div>
+
+
+
+          <div class="progress-bar-container" style="margin-top:1.5rem;">
+
+
+
+            <div class="progress-bar-fill" id="stratProgressBar" style="width:0%"></div>
+
+
+
+          </div>
+
+
+
+          <div class="strat-progress-label" id="stratProgressLabel">Initializing...</div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- ===== OUTPUT AREA ===== -->
+
+
+
+      <div id="stratOutput" class="strat-output-area" style="display:none;">
+
+
+
+
+
+
+
+        <!-- Output Header -->
+
+
+
+        <div class="strat-output-header">
+
+
+
+          <div class="strat-output-title">
+
+
+
+            <img src="logo.png" class="brand-logo" style="width: 32px; height: 32px;">
+
+
+
+            <h2>Strategic Intelligence Report</h2>
+
+
+
+          </div>
+
+
+
+          <div class="strat-output-actions">
+
+
+
+            <button class="btn-ghost btn-sm" id="stratCopyJson">
+
+
+
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+
+
+
+              Copy JSON
+
+
+
+            </button>
+
+
+
+            <button class="btn-primary btn-sm" id="stratReanalyze">
+
+
+
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+
+
+
+              Re-analyze
+
+
+
+            </button>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- One-Line Pitch Banner -->
+
+
+
+        <div class="strat-pitch-banner" id="stratPitchBanner"></div>
+
+
+
+
+
+
+
+        <!-- Output Tabs -->
+
+
+
+        <div class="output-tabs" id="stratTabs">
+
+
+
+          <button class="tab-btn active" data-stab="analysis">🎯 Analysis</button>
+
+
+
+          <button class="tab-btn" data-stab="research">🔬 Research</button>
+
+
+
+          <button class="tab-btn" data-stab="addons">🧩 Add-ons</button>
+
+
+
+          <button class="tab-btn" data-stab="priority">⚡ Top 5</button>
+
+
+
+          <button class="tab-btn" data-stab="features">✅ Features</button>
+
+
+
+          <button class="tab-btn" data-stab="prompts">🔥 Prompts</button>
+
+
+
+          <button class="tab-btn" data-stab="judge">🏆 Judge Strategy</button>
+
+
+
+          <button class="tab-btn" data-stab="prd">📄 PRD</button>
+
+
+
+          <button class="tab-btn" data-stab="architecture">🏗️ Architecture</button>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Tab Content -->
+
+
+
+        <div class="output-content" id="stratContent">
+
+
+
+          <!-- Populated by strategist.js -->
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ===== API KEY MODAL ===== -->
+
+
+
+  <div id="stratApiModal" class="research-overlay" style="display:none;">
+
+
+
+    <div class="research-modal" style="text-align:left;max-width:480px;">
+
+
+
+      <h3 style="margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
+
+
+
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+
+
+
+        AI Configuration
+
+
+
+      </h3>
+
+
+
+      <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+
+
+
+        Enable live AI analysis and deep research. Your keys are stored locally in your browser and never sent to any server.
+
+
+
+      </p>
+
+
+
+      
+
+
+
+      <div style="margin-bottom:1.5rem;">
+
+
+
+        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Gemini API Key (Required for AI)</label>
+
+
+
+        <input type="password" id="stratApiKeyInput" placeholder="AIza..." style="width:100%;padding:0.8rem;border-radius:8px;background:var(--glass-bg);border:1px solid var(--border-color);color:var(--text-primary);outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
+
+
+
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Google AI Studio →</a>
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div style="margin-bottom:1.5rem;">
+
+
+
+        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Serper.dev API Key (Required for Deep Search)</label>
+
+
+
+        <input type="password" id="serperApiKeyInput" placeholder="Your Serper Key..." style="width:100%;padding:0.8rem;border-radius:8px;background:var(--glass-bg);border:1px solid var(--border-color);color:var(--text-primary);outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
+
+
+
+        <a href="https://serper.dev" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Serper.dev →</a>
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div style="display:flex;gap:1rem;">
+
+
+
+        <button class="btn-primary" id="stratSaveKey" style="flex:1;">Save Settings</button>
+
+
+
+        <button class="btn-outline" id="stratCloseModal" style="flex:1;">Close</button>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <!-- Footer -->
+
+
+
+  <footer class="footer">
+
+
+
+    <div class="footer-inner">
+
+
+
+      <div class="footer-brand">
+
+
+
+        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem;">
+
+
+
+          
+
+
+
+        </a>
+
+
+
+        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
+
+
+
+      </div>
+
+
+
+      <div class="footer-links">
+
+
+
+        <div class="footer-col">
+
+
+
+          <h4>Platform</h4>
+
+
+
+          <a href="strategist.html">Strategist</a>
+
+
+
+          <a href="features.html">AI Tools</a>
+
+
+
+          <a href="team_builder.html">Team Builder</a>
+
+
+
+          <a href="hackathons.html">Live Hackathons</a>
+
+
+
+        </div>
+
+
+
+        <div class="footer-col">
+
+
+
+          <h4>Resources</h4>
+
+
+
+          <a href="hackathons.html">Live Hackathons</a>
+
+
+
+          <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
+        <a href="repos.html">Hackathon Repos</a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+
+
       <span>© 2026 Revanth Sai Sankar Alapati. All rights reserved.</span>
-
-      <span style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-secondary);">
-
-        Created by
-
-        <span style="background:linear-gradient(135deg,#a78bfa,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
-
-      </span>
-
-    </div>
-
-  </footer>
-
-
-
-  <div class="toast" id="toast"></div>
-
-
-
-  <!-- History Sidebar -->
-
-  <div class="history-sidebar" id="historySidebar">
-
-    <div class="history-header">
-
-      <h3>
-
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-        Recent Solutions
-
-      </h3>
-
-      <button class="close-history" id="closeHistory">
-
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-
-      </button>
-
-    </div>
-
-    <div class="history-list" id="historyList">
-
-      <!-- History Items Injected Here -->
-
-      <div class="history-empty">
-
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-        <p>No recent solutions found.</p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <button id="historyToggle" class="history-toggle"
-
-    onclick="document.getElementById('historySidebar').classList.add('open')"
-
-    style="
-
-      position: fixed;
-
-      bottom: 2.5rem;
-
-      right: 2.5rem;
-
-      z-index: 99999;
-
-      height: 52px;
-
-      padding: 0 1.4rem;
-
-      border-radius: 26px;
-
-      background: linear-gradient(135deg, #a78bfa, #06b6d4);
-
-      color: white;
-
-      border: 2px solid rgba(255,255,255,0.25);
-
-      cursor: pointer;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 0.6rem;
-
-      font-weight: 700;
-
-      font-size: 0.88rem;
-
-      font-family: Outfit, sans-serif;
-
-      box-shadow: 0 6px 24px rgba(167,139,250,0.55);
-
-      animation: pulse-history 2.5s infinite;
-
-    "
-
-    title="View Recent Solutions">
-
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-    History
-
-    <span id="historyBadge" style="display:none; background:#ef4444; color:white; border-radius:50%; width:18px; height:18px; font-size:0.65rem; font-weight:800; align-items:center; justify-content:center;">0</span>
-
-  </button>
-
-
-
-  <script src="serper_provider.js"></script>
-
-  <script src="offline_data_1000.js"></script>
-
-  <script src="strategist.js"></script>
-
-  <script src="history_manager.js"></script>
-
-</body>
-
-</html>
-
+
+
+      <span style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-secondary);">
+
+
+
+        Created by
+
+
+
+        <span style="background:linear-gradient(135deg,#a78bfa,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
+
+
+
+      </span>
+
+
+
+    </div>
+
+
+
+  </footer>
+
+
+
+
+
+
+
+  <div class="toast" id="toast"></div>
+
+
+
+
+
+
+
+  <!-- History Sidebar -->
+
+
+
+  <div class="history-sidebar" id="historySidebar">
+
+
+
+    <div class="history-header">
+
+
+
+      <h3>
+
+
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+
+
+        Recent Solutions
+
+
+
+      </h3>
+
+
+
+      <button class="close-history" id="closeHistory">
+
+
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+
+
+
+      </button>
+
+
+
+    </div>
+
+
+
+    <div class="history-list" id="historyList">
+
+
+
+      <!-- History Items Injected Here -->
+
+
+
+      <div class="history-empty">
+
+
+
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.3; margin-bottom:1rem;"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+
+
+        <p>No recent solutions found.</p>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <button id="historyToggle" class="history-toggle"
+
+
+
+    onclick="document.getElementById('historySidebar').classList.add('open')"
+
+
+
+    style="
+
+
+
+      position: fixed;
+
+
+
+      bottom: 2.5rem;
+
+
+
+      right: 2.5rem;
+
+
+
+      z-index: 99999;
+
+
+
+      height: 52px;
+
+
+
+      padding: 0 1.4rem;
+
+
+
+      border-radius: 26px;
+
+
+
+      background: linear-gradient(135deg, #a78bfa, #06b6d4);
+
+
+
+      color: white;
+
+
+
+      border: 2px solid rgba(255,255,255,0.25);
+
+
+
+      cursor: pointer;
+
+
+
+      display: flex;
+
+
+
+      align-items: center;
+
+
+
+      gap: 0.6rem;
+
+
+
+      font-weight: 700;
+
+
+
+      font-size: 0.88rem;
+
+
+
+      font-family: Outfit, sans-serif;
+
+
+
+      box-shadow: 0 6px 24px rgba(167,139,250,0.55);
+
+
+
+      animation: pulse-history 2.5s infinite;
+
+
+
+    "
+
+
+
+    title="View Recent Solutions">
+
+
+
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+
+
+
+    History
+
+
+
+    <span id="historyBadge" style="display:none; background:#ef4444; color:white; border-radius:50%; width:18px; height:18px; font-size:0.65rem; font-weight:800; align-items:center; justify-content:center;">0</span>
+
+
+
+  </button>
+
+
+
+
+
+
+
+  <script src="serper_provider.js"></script>
+
+
+
+  <script src="offline_data_v3.js"></script>
+  <script src="offline_data_realworld.js"></script>
+
+
+
+  <script src="strategist.js"></script>
+
+
+
+  <script src="history_manager.js"></script>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
