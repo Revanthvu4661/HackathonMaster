@@ -35,6 +35,7 @@ const PRECACHE_ASSETS = [
   '/offline_data_v3.js',
   '/offline_data_1000.js',
   '/offline_data_realworld.js',
+  '/offline_data_modules.js',
 
   '/logo.png',
   '/favicon.png',
