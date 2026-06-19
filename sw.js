@@ -1,6 +1,6 @@
-const CACHE_NAME = 'hackathon-master-v2';
-const FONT_CACHE = 'hackathon-fonts-v2';
-const CDN_CACHE = 'hackathon-cdn-v2';
+const CACHE_NAME = 'hackathon-master-v3';
+const FONT_CACHE = 'hackathon-fonts-v3';
+const CDN_CACHE = 'hackathon-cdn-v3';
 
 const PRECACHE_ASSETS = [
   '/',
