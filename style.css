@@ -1706,7 +1706,7 @@ html[data-theme="light"] .footer {
 
 /* Animations for Mobile Menu */
 .mobile-menu {
-  display: flex !important; /* Overriding potential hidden state */
+  display: flex;
   padding: 2rem;
 }
 

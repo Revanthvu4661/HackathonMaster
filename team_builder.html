@@ -19,6 +19,7 @@
 
 
   <title>RAR Hackathon Helper — Team Builder & Role Matcher</title>
+  <meta name="theme-color" content="#a78bfa" />
 
 
 
@@ -43,6 +44,7 @@
 
 
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
 
 
 
@@ -55,11 +57,6 @@
 
 
   <link rel="stylesheet" href="team_builder.css" />
-
-
-
-<script src="offline_data_v3.js"></script>
-  <script src="offline_data_realworld.js"></script>
 
 
 
@@ -87,6 +84,15 @@
 
 
 
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="RAR Hackathon Helper — Team Builder &amp; Role Matcher" />
+  <meta property="og:description" content="AI-powered Team Builder for hackathons. Input your idea and get the ideal team composition, roles, skill requirements, and onboarding guides for every member." />
+  <meta property="og:url" content="https://hackathonmaster.onrender.com/team_builder.html" />
+  <meta property="og:image" content="https://hackathonmaster.onrender.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAR Hackathon Helper — Team Builder &amp; Role Matcher" />
+  <meta name="twitter:description" content="AI-powered Team Builder for hackathons. Input your idea and get the ideal team composition, roles, skill requirements, and onboarding guides for every member." />
+  <link rel="canonical" href="https://hackathonmaster.onrender.com/team_builder.html" />
 </head>
 
 
@@ -1541,7 +1547,9 @@ Be specific about the domain and technical complexity."
 
 
   <script src="offline_data_v3.js"></script>
+  <script src="offline_data_1000.js"></script>
   <script src="offline_data_realworld.js"></script>
+  <script src="offline_data_modules.js"></script>
 
 
 
@@ -1553,6 +1561,11 @@ Be specific about the domain and technical complexity."
 
 
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </body>
 
 

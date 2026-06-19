@@ -9,6 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Hackathon Countdown | RAR Hackathon Helper</title>
+  <meta name="description" content="Track your hackathon deadline with a sprint timer. Stay focused and manage your time across ideation, building, and pitching phases." />
+  <meta name="theme-color" content="#a78bfa" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -19,6 +21,7 @@
   <link rel="stylesheet" href="style.css">
 
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
 
   <link rel="apple-touch-icon" href="favicon.png">
 
@@ -376,6 +379,15 @@
 
   </style>
 
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Hackathon Countdown | RAR Hackathon Helper" />
+  <meta property="og:description" content="Set your hackathon deadline and stay on track with a live countdown timer. Visualize time remaining and plan your sprints." />
+  <meta property="og:url" content="https://hackathonmaster.onrender.com/countdown.html" />
+  <meta property="og:image" content="https://hackathonmaster.onrender.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hackathon Countdown | RAR Hackathon Helper" />
+  <meta name="twitter:description" content="Set your hackathon deadline and stay on track with a live countdown timer. Visualize time remaining and plan your sprints." />
+  <link rel="canonical" href="https://hackathonmaster.onrender.com/countdown.html" />
 </head>
 
 <body class="dark-theme">
@@ -1137,6 +1149,11 @@
 
   <script src="history_manager.js"></script>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </body>
 
 </html>

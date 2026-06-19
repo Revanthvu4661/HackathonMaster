@@ -1,0 +1,30 @@
+{
+  "name": "RAR Hackathon Helper",
+  "short_name": "HackathonMaster",
+  "description": "AI-powered hackathon intelligence platform — strategy, team building, checklists, and live hackathon discovery.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#a78bfa",
+  "background_color": "#0f111a",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["productivity", "developer", "education"]
+}

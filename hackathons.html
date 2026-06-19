@@ -19,6 +19,8 @@
 
 
   <title>Live Hackathons — RAR Hackathon Helper</title>
+  <meta name="description" content="Discover live and upcoming hackathons worldwide. Filter by theme, prize pool, and deadline to find the perfect competition for your team." />
+  <meta name="theme-color" content="#a78bfa" />
 
 
 
@@ -31,6 +33,7 @@
 
 
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
 
 
 
@@ -104,8 +107,15 @@
 
 <script src="theme.js"></script>
 
-
-
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Live Hackathons — RAR Hackathon Helper" />
+  <meta property="og:description" content="Browse live and upcoming hackathons from top platforms. Find your next competition and start building with RAR Hackathon Helper." />
+  <meta property="og:url" content="https://hackathonmaster.onrender.com/hackathons.html" />
+  <meta property="og:image" content="https://hackathonmaster.onrender.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live Hackathons — RAR Hackathon Helper" />
+  <meta name="twitter:description" content="Browse live and upcoming hackathons from top platforms. Find your next competition and start building with RAR Hackathon Helper." />
+  <link rel="canonical" href="https://hackathonmaster.onrender.com/hackathons.html" />
 </head>
 
 
@@ -1173,6 +1183,11 @@
 
 
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </body>
 
 

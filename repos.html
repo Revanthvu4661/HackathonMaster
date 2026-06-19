@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>RAR Hackathon Helper — AI Hackathon Intelligence Platform</title>
+  <meta name="theme-color" content="#a78bfa" />
 
   <meta name="description" content="RAR Hackathon Helper is your AI-powered Project Intelligence Assistant. Plan, design, and accelerate any hackathon project with expert AI guidance on tech stack, architecture, UI/UX, APIs, and deployment." />
 
@@ -21,6 +22,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
 
   <link rel="apple-touch-icon" href="favicon.png">
 
@@ -38,6 +40,15 @@
 
 <script src="theme.js"></script>
 
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="RAR Hackathon Helper — Hackathon Repos" />
+  <meta property="og:description" content="Browse top open-source hackathon repositories on GitHub. Get inspired by real winning projects and community-built solutions." />
+  <meta property="og:url" content="https://hackathonmaster.onrender.com/repos.html" />
+  <meta property="og:image" content="https://hackathonmaster.onrender.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAR Hackathon Helper — Hackathon Repos" />
+  <meta name="twitter:description" content="Browse top open-source hackathon repositories on GitHub. Get inspired by real winning projects and community-built solutions." />
+  <link rel="canonical" href="https://hackathonmaster.onrender.com/repos.html" />
 </head>
 
 
@@ -522,6 +533,11 @@
 
   <script src="history_manager.js"></script>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-window.OFFLINE_KNOWLEDGE_BASE = [
+window.OFFLINE_KNOWLEDGE_BASE_EXTENDED = [
   {
     "keywords": [
       "crypto",

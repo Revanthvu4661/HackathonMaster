@@ -23,6 +23,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
 
   <script src="theme.js"></script>
 
@@ -471,6 +472,11 @@
 
 
   <script src="history_manager.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 
 </body>
 

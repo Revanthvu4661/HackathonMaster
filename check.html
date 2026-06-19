@@ -2,7 +2,10 @@
 
 <html>
 
-<head><title>Update Check</title></head>
+<head>
+  <title>Update Check</title>
+  <link rel="manifest" href="manifest.json" />
+</head>
 
 <body>
 
@@ -13,6 +16,11 @@
   <a href="index.html">Go to Home</a>
 
   <script src="history_manager.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 
 </body>
 

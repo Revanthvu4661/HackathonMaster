@@ -8,9 +8,21 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="hackathon_universe.css" />
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="favicon.png">
   <script src="theme.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Hackathon Universe — RAR Hackathon Helper" />
+  <meta property="og:description" content="Explore the full universe of hackathons — past, present, and future. Discover opportunities, themes, and prize pools worldwide." />
+  <meta property="og:url" content="https://hackathonmaster.onrender.com/hackathon_universe.html" />
+  <meta property="og:image" content="https://hackathonmaster.onrender.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hackathon Universe — RAR Hackathon Helper" />
+  <meta name="twitter:description" content="Explore the full universe of hackathons — past, present, and future. Discover opportunities, themes, and prize pools worldwide." />
+  <link rel="canonical" href="https://hackathonmaster.onrender.com/hackathon_universe.html" />
+  <meta name="description" content="Explore the full universe of hackathons — past, present, and future. Discover opportunities, themes, and prize pools worldwide." />
+  <meta name="theme-color" content="#a78bfa" />
 </head>
 <body>
   <!-- Animated Background -->
@@ -739,6 +751,11 @@
 
     // Initialize
     document.addEventListener('DOMContentLoaded', init);
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
   </script>
 </body>
 </html>
