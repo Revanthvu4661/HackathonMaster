@@ -607,7 +607,7 @@
           <div class="winner-quote">"${w.judge_quote}"</div>
           <div style="color:var(--accent-primary);font-weight:600;margin-top:1rem;">Prize: ${w.prize_won}</div>
           <div class="winner-links">
-            ${w.github_url && w.github_url !== 'https://github.com/example' ? `<a href="${w.github_url}" target="_blank" rel="noopener" class="btn-outline btn-sm" style="flex:1;padding:0.4rem;">GitHub ↗</a>` : ''}
+            ${w.github_url && w.github_url !== 'https://github.com/example' ? `<a href="${w.github_url}" target="_blank" rel="noopener" class="btn-outline btn-sm" style="flex:1;padding:0.4rem;">GitHub ↗</a>` : `<span style="flex:1;padding:0.4rem;text-align:center;font-size:0.8rem;opacity:0.45;align-self:center;">No repo available</span>`}
             ${w.demo_url && w.demo_url !== 'https://youtube.com/example' ? `<a href="${w.demo_url}" target="_blank" rel="noopener" class="btn-outline btn-sm" style="flex:1;padding:0.4rem;">Demo ↗</a>` : ''}
           </div>
         </div>

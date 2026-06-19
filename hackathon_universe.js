@@ -421,7 +421,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kirillzhosul/shop",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -444,7 +444,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SheemaMasood381/Execute_Ai_Genesis_Hackathon_Lablabai_april2025",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -467,7 +467,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -490,7 +490,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -873,7 +873,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WISEPLAT/Hackathon-Finam-NN-Trade-Robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -896,7 +896,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -919,7 +919,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mauriciomani/brewing_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1358,7 +1358,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/raouf-zobir/Tatweer-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1381,7 +1381,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/KartikChugh/Otto",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1404,7 +1404,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ABDULMUNAFZ/KJU-Hackathon---Logistics-Transportation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1427,7 +1427,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/remaro-network/tudelft_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1450,7 +1450,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kalviumcommunity/Supply-Chain-Cargo-Management-Maersk-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1473,7 +1473,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ronantakizawa/circuitrobot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1496,7 +1496,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aasu14/Data-Science-Hackathon-And-Competition",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1519,7 +1519,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/xsa/infosec-events",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -1986,7 +1986,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/code-master-harsh/SpaceCode-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2009,7 +2009,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nasa/NASA-3D-Resources",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2032,7 +2032,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2055,7 +2055,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shepsci/kaggle-skill",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2438,7 +2438,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2461,7 +2461,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shyamal-anadkat/eco-faqs",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2484,7 +2484,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RaisinTen/sokoban-action",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2507,7 +2507,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mohammed-Maghri/OCP_HACKATHON_SUPPLY-CHAIN",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2530,7 +2530,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mr-C4T/LeCyborg",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2553,7 +2553,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/rshdhere/figure-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2576,7 +2576,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/GabyB73/boost-backend",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2903,7 +2903,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nasa/spaceapps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2926,7 +2926,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pdwytr/Optimizing-Windmill-layout-Competition-by-Shell-Ltd",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2949,7 +2949,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/skyfielders/python-skyfield",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2972,7 +2972,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/poliastro/poliastro",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -2995,7 +2995,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Stellarium/stellarium",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3018,7 +3018,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Astrotomic/php-astronomica",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3041,7 +3041,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/spacetelescope/jwst",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3396,7 +3396,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ESA-PhiLab/OpenSarToolkit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3419,7 +3419,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dennohpeter/MultiDexArbBot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3442,7 +3442,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3465,7 +3465,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hydrol0x/earnings.ly",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3488,7 +3488,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/onflow/flip-fest",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3899,7 +3899,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AyushBinjola1/Swar-Setu",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3922,7 +3922,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RazvanMihaiPopa/Accept-Cookies",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3945,7 +3945,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hartienyu/EduVerse",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3968,7 +3968,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Hemang-patel-9/hackathon-fashion-ecommerce",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -3991,7 +3991,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aryashah2k/project-garbAIge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4318,7 +4318,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/google/earthengine-api",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4341,7 +4341,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BhaveshV23/RouteMindAI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4364,7 +4364,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4387,7 +4387,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/worldbank/OpenNightLights",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4410,7 +4410,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/JonathanYeongJiaWen/FinTech_Innovators_Hackathon_2026",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4877,7 +4877,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/budavariam/hackathon-robotics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4900,7 +4900,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ROCm/AMD_Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4923,7 +4923,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nirholas/bnb-chain-toolkit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4946,7 +4946,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/status-im/hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4969,7 +4969,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SpaceK33z/web-to-plex",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -4992,7 +4992,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/FinlayDWebb/VISA-Climate-Tech-Hackathon-2024",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5015,7 +5015,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5038,7 +5038,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MaximePremont/Licenka",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5061,7 +5061,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/astropy/astropy",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5388,7 +5388,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Khan/khan-exercises",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5411,7 +5411,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5434,7 +5434,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pdwytr/Optimizing-Windmill-layout-Competition-by-Shell-Ltd",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5457,7 +5457,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Lovlesh007/BuyNow",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5480,7 +5480,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5891,7 +5891,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/scikit-image/scikit-image",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5914,7 +5914,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-power-apps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5937,7 +5937,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nsidc/earthdata-search",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5960,7 +5960,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/P4-Games/ChatterPay",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -5983,7 +5983,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kaiwalyakoparkar/sense-hacker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6006,7 +6006,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BuildClubSSN/CLASH",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6473,7 +6473,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dscpesu/PES-Wayfinder",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6496,7 +6496,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bryercowan/hermes-embodied",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6519,7 +6519,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ESRI/satellite-imagery-analyst",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6542,7 +6542,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Kcheung42/BlockChain-REC",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6565,7 +6565,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MrHacker26/smart-farm-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6588,7 +6588,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adarshxs/Carbon-Credit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6611,7 +6611,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Shreeyashj/GridInc-Renewable-energy-platform-website",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6634,7 +6634,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/parinzee/superai-ss3-robotics-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6933,7 +6933,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/robertnowell/breadcrumbs",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6956,7 +6956,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -6979,7 +6979,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Rizzy1857/Z-Cred",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7002,7 +7002,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/marikalam/Tolen",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7385,7 +7385,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/yusufcanb/reactive-robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7408,7 +7408,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Vlad1343/SAVR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7431,7 +7431,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vishnupriyanpr/OXOCARE",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7454,7 +7454,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/riyajha2305/Healthcare-Diagnosis-Chatbot-MS-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7477,7 +7477,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shrivenkateshwara/Best-Private-University-in-Uttar-Pradesh-UP-Top-University-in-India-SVU",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7804,7 +7804,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7827,7 +7827,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/paulveillard/cybersecurity-ethical-hacking",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7850,7 +7850,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -7873,7 +7873,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adrian803/LingXi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8284,7 +8284,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shelleywu/OverView",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8307,7 +8307,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ThomyLorenzatti/WeLearn",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8330,7 +8330,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/lshegay/hackathon-2021",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8353,7 +8353,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/code-master-harsh/SpaceCode-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8736,7 +8736,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adityamangal1/Robbie-bot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8759,7 +8759,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8782,7 +8782,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SaifullahSayyed/nexus-crisis-intelligence",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8805,7 +8805,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8828,7 +8828,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8851,7 +8851,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8874,7 +8874,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ankidroid/Anki-Android",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -8897,7 +8897,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9224,7 +9224,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/TanayGhanshyam/crispy-octo-guide",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9247,7 +9247,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Akshay-Arjun/Video-Steganography",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9270,7 +9270,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/darius-it/doors95",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9293,7 +9293,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/boostcamp-AI-Tech-alumni/Events",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9316,7 +9316,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SagarBiswas-MultiHAT/PythonicHackathon-CLI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9339,7 +9339,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naver/ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9638,7 +9638,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/FHB369/Project_Ongkur",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9661,7 +9661,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/google-research-datasets/Objectron",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9684,7 +9684,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ButzYung/SystemAnimatorOnline",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -9707,7 +9707,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sceneview/sceneview",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10034,7 +10034,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Rigos0/E2B_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10057,7 +10057,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/noahlevenson/stealing-ur-feelings",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10080,7 +10080,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10103,7 +10103,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mytechnotalent/dc540-0x00005b",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10126,7 +10126,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/zc-alexfan/hold",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10537,7 +10537,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vocdex/lerobot-draws",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10560,7 +10560,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Stephen-Echessa/WeatherPredictor-EarthAIHackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10583,7 +10583,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10606,7 +10606,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shivam6862/Gen-AI-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10629,7 +10629,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/heliacer/aigate",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10652,7 +10652,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AgrMayank/AidXR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10675,7 +10675,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/moodle/moodle",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -10698,7 +10698,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11165,7 +11165,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ankit-kumarz/eCommerce_Price_Comparison_Traker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11188,7 +11188,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/edx/edx-platform",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11211,7 +11211,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11234,7 +11234,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adyapathak22/shopmind-agent",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11673,7 +11673,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/XeonAJ/awesome_ai_ideas",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11696,7 +11696,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nasa/NASA-3D-Resources",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11719,7 +11719,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/medusajs/medusa",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -11742,7 +11742,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/LaVieEstDure/ScrewRobotics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12069,7 +12069,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mauriciomani/brewing_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12092,7 +12092,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/anoff/ric",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12115,7 +12115,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12138,7 +12138,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/raouf-zobir/Tatweer-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12161,7 +12161,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/anubhavbagri/nft-marketplace",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12628,7 +12628,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/openremote/openremote",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12651,7 +12651,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WhiiteRose/FoodSaver-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12674,7 +12674,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/livekit-examples/embodied-ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12697,7 +12697,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/woocommerce/woocommerce",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -12720,7 +12720,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/IvanCampos/visionOS-examples",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13187,7 +13187,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13210,7 +13210,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Tbelleng/Olea",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13233,7 +13233,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sha3rawi33/rescue-code",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13256,7 +13256,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/M4RKUS28/OpenLoan",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13279,7 +13279,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aforti1/clarity-cash",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13302,7 +13302,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/the-racoon-devs/jobs-by-racoon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13573,7 +13573,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jolibrain/joliGEN",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13596,7 +13596,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pdwytr/Optimizing-Windmill-layout-Competition-by-Shell-Ltd",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13619,7 +13619,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ctkqiang/PayNetHackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -13642,7 +13642,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sanyuered/WeChat-MiniProgram-AR-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14053,7 +14053,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vercel/commerce",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14076,7 +14076,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/wassim249/TIG_MI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14099,7 +14099,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/MapsSDK-Unity",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14122,7 +14122,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/seehiong/smartflat-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14145,7 +14145,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/oculus-samples/Unity-Discover",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14168,7 +14168,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/linkedin/school-of-sre",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14191,7 +14191,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/saad2134/UPISensei",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14214,7 +14214,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ds-wook/ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14237,7 +14237,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sparkorbit/sparkorbit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14648,7 +14648,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ArnabKumarRoy02/Phishing-attack-detection",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14671,7 +14671,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14694,7 +14694,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/recommenders",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14717,7 +14717,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/recommenders",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14740,7 +14740,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bentoml/BentoML",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14763,7 +14763,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ABDULMUNAFZ/KJU-Hackathon---Logistics-Transportation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14786,7 +14786,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/explosion/spaCy",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14809,7 +14809,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/explosion/spaCy",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -14832,7 +14832,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kalviumcommunity/Supply-Chain-Cargo-Management-Maersk-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15243,7 +15243,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nasa/spaceapps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15266,7 +15266,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/devorun/caduceus-robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15289,7 +15289,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Maxonezhou/Pollutnt-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15560,7 +15560,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/tradingstrategy-ai/ethdubai-2023-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15583,7 +15583,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/NirooshKa/IoT-Smart-City-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15606,7 +15606,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/QuizUp/quizup",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15629,7 +15629,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/stanford-oval/genie-toolkit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15928,7 +15928,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15951,7 +15951,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aryashah2k/project-garbAIge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15974,7 +15974,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -15997,7 +15997,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16020,7 +16020,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16043,7 +16043,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16066,7 +16066,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16089,7 +16089,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/FinlayDWebb/VISA-Climate-Tech-Hackathon-2024",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16112,7 +16112,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Gyanvir/DrParser",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16523,7 +16523,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Matrixow/E-finance",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16546,7 +16546,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/PrestaShop/PrestaShop",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16569,7 +16569,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mohammed-Maghri/OCP_HACKATHON_SUPPLY-CHAIN",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16592,7 +16592,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/GabyB73/boost-backend",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16615,7 +16615,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/andrewmogbolu2/blockchain-technology",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -16638,7 +16638,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BhaveshV23/RouteMindAI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17077,7 +17077,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MrHacker26/smart-farm-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17100,7 +17100,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/arnavlul/OrbitalMechanics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17123,7 +17123,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SaifullahSayyed/nexus-crisis-intelligence",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17146,7 +17146,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Stephen-Echessa/WeatherPredictor-EarthAIHackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17169,7 +17169,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/skyfielders/python-skyfield",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17192,7 +17192,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/JamiCode/CareCompanion",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17659,7 +17659,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17682,7 +17682,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/herrfeder/AI_Cybersecurity_IDS_PoC",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17705,7 +17705,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/CIRCL/AIL-project",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17728,7 +17728,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17751,7 +17751,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WISEPLAT/Hackathon-Finam-NN-Trade-Robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17774,7 +17774,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/remaro-network/tudelft_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -17797,7 +17797,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/HackStyx/Byte-N-Crypt",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18068,7 +18068,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aharon-kumar-kosetti/medivault",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18091,7 +18091,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kaamilmirza/Medical-Centres-and-schemes",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18114,7 +18114,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AmanPriyanshu/MedTranslate-360",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18137,7 +18137,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/papagala/mcp-clinical-platform",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18160,7 +18160,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bregman-arie/devops-exercises",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18183,7 +18183,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/practical-tutorials/project-based-learning",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18206,7 +18206,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MainakVerse/Wind-Energy-Predictor",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18229,7 +18229,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RenderbitTechnologies/Hackathon-Problem-Statements",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18252,7 +18252,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ntauth/iot-city-mon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18719,7 +18719,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-lobe",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18742,7 +18742,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Alon-Regev/VeganVirus",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18765,7 +18765,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/poliastro/poliastro",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18788,7 +18788,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Stellarium/stellarium",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -18811,7 +18811,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jiaxiang-cheng/Hedging-Impermanent-Loss-in-Uniswap-V3",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19278,7 +19278,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-iot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19301,7 +19301,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mauriciomani/brewing_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19324,7 +19324,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/OpenAssistant/oasst1",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19735,7 +19735,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/guidance-ai/guidance",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19758,7 +19758,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Smart-India-Hackathon-Team/VeriScan",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19781,7 +19781,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mustafadalga/dictionary-attack",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19804,7 +19804,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayesha-asad07/edge-runners-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -19827,7 +19827,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/matthew-mcateer/MIT_Policy_Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20126,7 +20126,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ronantakizawa/circuitrobot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20149,7 +20149,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Astrotomic/php-astronomica",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20172,7 +20172,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RaisinTen/sokoban-action",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20195,7 +20195,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/YasPHP/Turtle",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20218,7 +20218,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/facebookresearch/llama",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20241,7 +20241,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AI-I224/wif-mobile-app",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20264,7 +20264,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/oculus-samples/Unity-Phanto",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20287,7 +20287,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mr-C4T/LeCyborg",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20310,7 +20310,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nazish-16/wise-app",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20665,7 +20665,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/c4t91rl/MEOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20688,7 +20688,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hydrol0x/earnings.ly",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20711,7 +20711,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RazvanMihaiPopa/Accept-Cookies",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20734,7 +20734,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/JonathanYeongJiaWen/FinTech_Innovators_Hackathon_2026",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20757,7 +20757,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/rshdhere/figure-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20780,7 +20780,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/raouf-zobir/Tatweer-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -20803,7 +20803,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pikachu233666/Healix",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21102,7 +21102,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WhiiteRose/FoodSaver-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21125,7 +21125,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shyamal-anadkat/eco-faqs",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21148,7 +21148,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mirumee/saleor",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21171,7 +21171,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/cartridge-gg/cartridge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21194,7 +21194,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pdwytr/Optimizing-Windmill-layout-Competition-by-Shell-Ltd",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21217,7 +21217,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/solidusio/solidus",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21544,7 +21544,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bhavyakeerthi3/-purplle_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21567,7 +21567,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/phungorquan/SmartGo",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21590,7 +21590,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/VigyaAi/Profile-picker-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21613,7 +21613,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21636,7 +21636,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/CityOfNewYork/nyc-geo-metadata",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21659,7 +21659,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jamilsonjr/AI-to-forecast-constraints-in-the-energy-systems",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21682,7 +21682,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/usc-isi-i2/linked-maps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -21705,7 +21705,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AyushBinjola1/Swar-Setu",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22172,7 +22172,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AyushBinjola1/Swar-Setu",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22195,7 +22195,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22218,7 +22218,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hartienyu/EduVerse",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22657,7 +22657,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22680,7 +22680,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22703,7 +22703,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aryashah2k/project-garbAIge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22726,7 +22726,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sauhard2701/AI-Based-Health-Tracker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22749,7 +22749,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/UDST/urbanaccess",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22772,7 +22772,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/budavariam/hackathon-robotics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -22795,7 +22795,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ROCm/AMD_Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23234,7 +23234,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BuildClubSSN/CLASH",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23257,7 +23257,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/spacetelescope/jwst",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23280,7 +23280,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aliivaezii/MALTO",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23691,7 +23691,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/arthik444/procheck",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23714,7 +23714,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ameru/caregiVR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23737,7 +23737,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23760,7 +23760,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/KartikChugh/Otto",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23783,7 +23783,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BANKEX/ethsanfrancisco",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23806,7 +23806,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23829,7 +23829,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ESA-PhiLab/OpenSarToolkit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23852,7 +23852,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/srteerra/bitcoffee",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -23875,7 +23875,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aasu14/Data-Science-Hackathon-And-Competition",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24230,7 +24230,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Dakshgupta25/CarbonWise",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24253,7 +24253,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Khan/khan-exercises",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24276,7 +24276,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/LavalAlexandre/NeuraLens",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24299,7 +24299,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/user-synax/MedBridge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24570,7 +24570,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bryercowan/hermes-embodied",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24593,7 +24593,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ABDULMUNAFZ/KJU-Hackathon---Logistics-Transportation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24616,7 +24616,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ananyachavan/AI-driven-Intelligent-Energy-Management-System-for-Electric-Vehicles",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24639,7 +24639,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/stewdio/THREE.VRController",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24662,7 +24662,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kwea123/nerf_Unity",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -24991,7 +24991,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25014,7 +25014,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25037,7 +25037,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/xsa/infosec-events",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25476,7 +25476,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/harshalsoman/Wind-Power-Prediction-using-Explainable-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25499,7 +25499,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ankidroid/Anki-Android",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25522,7 +25522,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/moodle/moodle",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25877,7 +25877,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Unity-Technologies/mr-example-meta-openxr",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25900,7 +25900,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/gboeing/osmnx",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25923,7 +25923,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/FinlayDWebb/VISA-Climate-Tech-Hackathon-2024",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25946,7 +25946,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MrHacker26/smart-farm-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -25969,7 +25969,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shepsci/kaggle-skill",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26240,7 +26240,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Alireza-Motazedian/GIC__Geomagnetic_Induced_Current",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26263,7 +26263,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/parinzee/superai-ss3-robotics-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26286,7 +26286,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Shubhamgupta12345/SOLAR-AND-WIND-POWER-PREDICTION-USING-ML",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26309,7 +26309,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-power-apps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26332,7 +26332,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26355,7 +26355,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/boostcamp-AI-Tech-alumni/Events",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26682,7 +26682,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/eclipse/sumo",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26705,7 +26705,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/maxxfrazer/MultipeerHelper",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26728,7 +26728,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Project-OSRM/osrm-backend",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26751,7 +26751,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -26774,7 +26774,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/StellarDevHub/Web3-Student-Lab",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27213,7 +27213,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jebitok-dev/web3-Hackthon-and-training",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27236,7 +27236,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/giddyphysicist/ParallelSwapForRefFinance",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27259,7 +27259,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/edx/edx-platform",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27282,7 +27282,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naver/ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27305,7 +27305,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/juv1nsk1/evm-oracle-treasury-bonds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27328,7 +27328,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/linkedin/school-of-sre",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27655,7 +27655,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shivam6862/Gen-AI-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27678,7 +27678,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RECTOR-LABS/mevrebels-protocol",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27701,7 +27701,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Rizzy1857/Z-Cred",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27724,7 +27724,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BrianHHough/cryptocredly",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27747,7 +27747,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/XeonAJ/awesome_ai_ideas",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27770,7 +27770,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/tech-creed/Green-Chain-PLI-Hackathon-2.0",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27793,7 +27793,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/wassim249/TIG_MI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -27816,7 +27816,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/seehiong/smartflat-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28171,7 +28171,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dscpesu/PES-Wayfinder",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28194,7 +28194,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/recommenders",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28217,7 +28217,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/explosion/spaCy",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28240,7 +28240,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Vlad1343/SAVR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28263,7 +28263,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/DEEPTI-BUSENNAGARI/SustainAI-EnhancingRenewableEnergyForecasting",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28702,7 +28702,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hamzadevc/ZoyaAppAndroid_Public",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28725,7 +28725,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/robertnowell/breadcrumbs",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28748,7 +28748,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/marikalam/Tolen",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28771,7 +28771,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kalviumcommunity/Supply-Chain-Cargo-Management-Maersk-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28794,7 +28794,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kaiwalyakoparkar/sense-hacker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28817,7 +28817,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/paulveillard/cybersecurity-ethical-hacking",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28840,7 +28840,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mohammed-Maghri/OCP_HACKATHON_SUPPLY-CHAIN",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28863,7 +28863,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adrian803/LingXi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -28886,7 +28886,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shelleywu/OverView",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29185,7 +29185,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/google/earthengine-api",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29208,7 +29208,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/yusufcanb/reactive-robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29231,7 +29231,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/srteerra/zoren",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29254,7 +29254,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adityamangal1/Robbie-bot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29277,7 +29277,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Akshay-Arjun/Video-Steganography",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29300,7 +29300,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/worldbank/OpenNightLights",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29323,7 +29323,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dennohpeter/MultiDexArbBot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29346,7 +29346,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/opentripplanner/OpenTripPlanner",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29369,7 +29369,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SpaceK33z/web-to-plex",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29808,7 +29808,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/onflow/flip-fest",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29831,7 +29831,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/darius-it/doors95",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -29854,7 +29854,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shopware/shopware",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30321,7 +30321,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/AIforEarth-API-Framework",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30344,7 +30344,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/climatechange-ai-tutorials/open-catalyst-project",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30367,7 +30367,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/DarlynGomez/Dialekt",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30834,7 +30834,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SagarBiswas-MultiHAT/PythonicHackathon-CLI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30857,7 +30857,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SaifullahSayyed/nexus-crisis-intelligence",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30880,7 +30880,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Stephen-Echessa/WeatherPredictor-EarthAIHackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30903,7 +30903,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nirholas/bnb-chain-toolkit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30926,7 +30926,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mytechnotalent/dc540-0x00005b",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -30949,7 +30949,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ArnabKumarRoy02/Phishing-attack-detection",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31248,7 +31248,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/lshegay/hackathon-2021",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31271,7 +31271,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bagisto/bagisto",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31294,7 +31294,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/evershopcommerce/evershop",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31317,7 +31317,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Tbelleng/Olea",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31340,7 +31340,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/M4RKUS28/OpenLoan",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31363,7 +31363,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/FHB369/Project_Ongkur",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31386,7 +31386,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aforti1/clarity-cash",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31409,7 +31409,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/supabase/supabase",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31708,7 +31708,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/herrfeder/AI_Cybersecurity_IDS_PoC",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31731,7 +31731,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/HackStyx/Byte-N-Crypt",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -31754,7 +31754,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Rigos0/E2B_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32221,7 +32221,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bairaelyn/ambsowi-ml",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32244,7 +32244,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vishnupriyanpr/OXOCARE",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32267,7 +32267,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/riyajha2305/Healthcare-Diagnosis-Chatbot-MS-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32290,7 +32290,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/GabyB73/boost-backend",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32313,7 +32313,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Alon-Regev/VeganVirus",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32336,7 +32336,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shrivenkateshwara/Best-Private-University-in-Uttar-Pradesh-UP-Top-University-in-India-SVU",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32775,7 +32775,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Smart-India-Hackathon-Team/VeriScan",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32798,7 +32798,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/astropy/astropy",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32821,7 +32821,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mustafadalga/dictionary-attack",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -32844,7 +32844,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Priyanshu7439/AI-Hybrid-Energy-Source-Predictor",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33255,7 +33255,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vocdex/lerobot-draws",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33278,7 +33278,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayesha-asad07/edge-runners-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33301,7 +33301,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/heliacer/aigate",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33324,7 +33324,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/scikit-image/scikit-image",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33347,7 +33347,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/LaVieEstDure/ScrewRobotics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33758,7 +33758,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sanketmore1234/Sustainability-Machine-Learning-Challenge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33781,7 +33781,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/matthew-mcateer/MIT_Policy_Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -33804,7 +33804,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/CityOfLosAngeles/covid19-indicators",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34271,7 +34271,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/CityOfNewYork/intelligent-transportation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34294,7 +34294,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WhiiteRose/FoodSaver-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34317,7 +34317,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/QuizUp/quizup",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34340,7 +34340,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pdwytr/Optimizing-Windmill-layout-Competition-by-Shell-Ltd",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34695,7 +34695,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ds-wook/ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34718,7 +34718,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/status-im/hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34741,7 +34741,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kumar-ankit-100/Control-and-Operation-of-Renewable-Energy",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34764,7 +34764,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BhaveshV23/RouteMindAI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34787,7 +34787,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -34810,7 +34810,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35193,7 +35193,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/anoff/ric",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35216,7 +35216,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ctkqiang/PayNetHackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35239,7 +35239,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/livekit-examples/embodied-ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35650,7 +35650,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AgrMayank/AidXR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35673,7 +35673,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/saad2134/UPISensei",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35696,7 +35696,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sha3rawi33/rescue-code",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35719,7 +35719,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35742,7 +35742,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/YasPHP/Turtle",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35765,7 +35765,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35788,7 +35788,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35811,7 +35811,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Gyanvir/DrParser",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -35834,7 +35834,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MaximePremont/Licenka",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36189,7 +36189,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kirillzhosul/shop",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36212,7 +36212,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36235,7 +36235,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pdwytr/Optimizing-Windmill-layout-Competition-by-Shell-Ltd",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36534,7 +36534,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SheemaMasood381/Execute_Ai_Genesis_Hackathon_Lablabai_april2025",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36557,7 +36557,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/gregoiredavid/france-geojson",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36580,7 +36580,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/maplibre/maplibre-gl-js",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36603,7 +36603,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/JamiCode/CareCompanion",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36958,7 +36958,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aryashah2k/project-garbAIge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -36981,7 +36981,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/c4t91rl/MEOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37004,7 +37004,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/pikachu233666/Healix",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37027,7 +37027,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/xsa/infosec-events",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37050,7 +37050,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37073,7 +37073,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Hemang-patel-9/hackathon-fashion-ecommerce",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37096,7 +37096,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sparkorbit/sparkorbit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37119,7 +37119,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37142,7 +37142,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Kcheung42/BlockChain-REC",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37413,7 +37413,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adarshxs/Carbon-Credit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37436,7 +37436,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Shreeyashj/GridInc-Renewable-energy-platform-website",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37459,7 +37459,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kaiwalyakoparkar/sense-hacker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37842,7 +37842,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Matrixow/E-finance",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37865,7 +37865,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/google-research-datasets/Objectron",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37888,7 +37888,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37911,7 +37911,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mauriciomani/brewing_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -37934,7 +37934,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/raouf-zobir/Tatweer-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38401,7 +38401,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38424,7 +38424,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38447,7 +38447,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/P4-Games/ChatterPay",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38470,7 +38470,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38741,7 +38741,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ABDULMUNAFZ/KJU-Hackathon---Logistics-Transportation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38764,7 +38764,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/paulveillard/cybersecurity-ethical-hacking",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38787,7 +38787,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/devorun/caduceus-robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38810,7 +38810,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ThomyLorenzatti/WeLearn",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38833,7 +38833,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WISEPLAT/Hackathon-Finam-NN-Trade-Robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38856,7 +38856,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adrian803/LingXi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38879,7 +38879,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/anubhavbagri/nft-marketplace",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -38902,7 +38902,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/the-racoon-devs/jobs-by-racoon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39285,7 +39285,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/tradingstrategy-ai/ethdubai-2023-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39308,7 +39308,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jiaxiang-cheng/Hedging-Impermanent-Loss-in-Uniswap-V3",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39331,7 +39331,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/graphhopper/graphhopper",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39354,7 +39354,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-lobe",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39377,7 +39377,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-iot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39400,7 +39400,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bhavyakeerthi3/-purplle_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39671,7 +39671,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/FinlayDWebb/VISA-Climate-Tech-Hackathon-2024",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39694,7 +39694,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Akshay-Arjun/Video-Steganography",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39717,7 +39717,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ButzYung/SystemAnimatorOnline",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39740,7 +39740,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sceneview/sceneview",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39763,7 +39763,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/MrHacker26/smart-farm-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39786,7 +39786,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kalviumcommunity/Supply-Chain-Cargo-Management-Maersk-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39809,7 +39809,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/darius-it/doors95",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39832,7 +39832,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/noahlevenson/stealing-ur-feelings",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -39855,7 +39855,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/zc-alexfan/hold",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40210,7 +40210,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SagarBiswas-MultiHAT/PythonicHackathon-CLI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40233,7 +40233,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/TanayGhanshyam/crispy-octo-guide",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40256,7 +40256,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mytechnotalent/dc540-0x00005b",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40667,7 +40667,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mohammed-Maghri/OCP_HACKATHON_SUPPLY-CHAIN",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40690,7 +40690,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/andrewmogbolu2/blockchain-technology",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40713,7 +40713,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/VigyaAi/Profile-picker-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40736,7 +40736,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AI-I224/wif-mobile-app",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -40759,7 +40759,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41142,7 +41142,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/IvanCampos/visionOS-examples",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41165,7 +41165,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aharon-kumar-kosetti/medivault",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41188,7 +41188,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/conveyal/r5",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41211,7 +41211,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nazish-16/wise-app",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41234,7 +41234,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Esri/city-engine",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41257,7 +41257,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/kaamilmirza/Medical-Centres-and-schemes",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41696,7 +41696,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hydrol0x/earnings.ly",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41719,7 +41719,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/nsidc/earthdata-search",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41742,7 +41742,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/remaro-network/tudelft_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41765,7 +41765,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -41788,7 +41788,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ronantakizawa/circuitrobot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42059,7 +42059,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RaisinTen/sokoban-action",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42082,7 +42082,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Mr-C4T/LeCyborg",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42105,7 +42105,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ArnabKumarRoy02/Phishing-attack-detection",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42128,7 +42128,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/rshdhere/figure-ai",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42151,7 +42151,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/herrfeder/AI_Cybersecurity_IDS_PoC",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42174,7 +42174,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/HackStyx/Byte-N-Crypt",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42473,7 +42473,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42496,7 +42496,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/budavariam/hackathon-robotics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42519,7 +42519,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AyushBinjola1/Swar-Setu",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42542,7 +42542,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sauhard2701/AI-Based-Health-Tracker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42565,7 +42565,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ROCm/AMD_Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42588,7 +42588,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42611,7 +42611,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AmanPriyanshu/MedTranslate-360",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42634,7 +42634,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BuildClubSSN/CLASH",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42961,7 +42961,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Blacksujit/ArogyaKrishi",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -42984,7 +42984,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jolibrain/joliGEN",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43007,7 +43007,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sanyuered/WeChat-MiniProgram-AR-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43030,7 +43030,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/arnavlul/OrbitalMechanics",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43053,7 +43053,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/b1tdestr0yer/SmartAgriculture",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43076,7 +43076,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayush-raj13/SOH-2022-Team-Angry-Nerds",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43099,7 +43099,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/papagala/mcp-clinical-platform",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43426,7 +43426,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/arthik444/procheck",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43449,7 +43449,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/stanford-oval/genie-toolkit",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43472,7 +43472,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ameru/caregiVR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43495,7 +43495,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/LavalAlexandre/NeuraLens",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43518,7 +43518,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/CIRCL/AIL-project",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43541,7 +43541,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bregman-arie/devops-exercises",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43564,7 +43564,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/user-synax/MedBridge",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43975,7 +43975,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BANKEX/ethsanfrancisco",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -43998,7 +43998,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Lovlesh007/BuyNow",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44021,7 +44021,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ankit-kumarz/eCommerce_Price_Comparison_Traker",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44044,7 +44044,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/hamzadevc/ZoyaAppAndroid_Public",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44067,7 +44067,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/MapsSDK-Unity",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44090,7 +44090,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ESRI/satellite-imagery-analyst",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44445,7 +44445,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/DarlynGomez/Dialekt",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44468,7 +44468,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/jettbrains/-L-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44491,7 +44491,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aliivaezii/MALTO",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44514,7 +44514,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/practical-tutorials/project-based-learning",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44537,7 +44537,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/KartikChugh/Otto",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44560,7 +44560,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Maxonezhou/Pollutnt-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44859,7 +44859,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/oculus-samples/Unity-Discover",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44882,7 +44882,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adyapathak22/shopmind-agent",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44905,7 +44905,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/NirooshKa/IoT-Smart-City-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44928,7 +44928,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/medusajs/medusa",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44951,7 +44951,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/oculus-samples/Unity-Phanto",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44974,7 +44974,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/openremote/openremote",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -44997,7 +44997,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RenderbitTechnologies/Hackathon-Problem-Statements",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45020,7 +45020,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/woocommerce/woocommerce",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45375,7 +45375,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vishnupriyanpr/OXOCARE",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45398,7 +45398,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bryercowan/hermes-embodied",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45421,7 +45421,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Alon-Regev/VeganVirus",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45444,7 +45444,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/RazvanMihaiPopa/Accept-Cookies",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45911,7 +45911,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/parinzee/superai-ss3-robotics-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45934,7 +45934,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Smart-India-Hackathon-Team/VeriScan",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45957,7 +45957,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -45980,7 +45980,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mustafadalga/dictionary-attack",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46003,7 +46003,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ntauth/iot-city-mon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46026,7 +46026,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/ayesha-asad07/edge-runners-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46049,7 +46049,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/matthew-mcateer/MIT_Policy_Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46072,7 +46072,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/GabyB73/boost-backend",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46455,7 +46455,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/riyajha2305/Healthcare-Diagnosis-Chatbot-MS-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46478,7 +46478,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/yusufcanb/reactive-robot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46501,7 +46501,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shrivenkateshwara/Best-Private-University-in-Uttar-Pradesh-UP-Top-University-in-India-SVU",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46524,7 +46524,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/phungorquan/SmartGo",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -46991,7 +46991,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/stewdio/THREE.VRController",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47014,7 +47014,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/JonathanYeongJiaWen/FinTech_Innovators_Hackathon_2026",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47037,7 +47037,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/AgrMayank/AidXR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47060,7 +47060,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/code-master-harsh/SpaceCode-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47083,7 +47083,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/dprasuna/Green-X-Hackathon-project--Code-Cubicals-",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47106,7 +47106,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Crop-Intel-Ai/A2SV-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47489,7 +47489,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Rizzy1857/Z-Cred",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47512,7 +47512,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/adityamangal1/Robbie-bot",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47535,7 +47535,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naveennithish257/AI-for-rural-innovation",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47558,7 +47558,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/BhaveshV23/RouteMindAI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -47581,7 +47581,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/vercel/commerce",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48020,7 +48020,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48043,7 +48043,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/recommenders",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48066,7 +48066,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/bentoml/BentoML",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48089,7 +48089,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/aasu14/Data-Science-Hackathon-And-Competition",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48112,7 +48112,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/shepsci/kaggle-skill",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48135,7 +48135,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/mauriciomani/brewing_hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48158,7 +48158,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/raouf-zobir/Tatweer-Hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48541,7 +48541,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/microsoft/hack-workshop-power-apps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48564,7 +48564,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/SaifullahSayyed/nexus-crisis-intelligence",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48587,7 +48587,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/CityOfNewYork/nyc-geo-metadata",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48610,7 +48610,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Stephen-Echessa/WeatherPredictor-EarthAIHackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48633,7 +48633,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/boostcamp-AI-Tech-alumni/Events",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48656,7 +48656,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/WhiiteRose/FoodSaver-AI",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48679,7 +48679,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/usc-isi-i2/linked-maps",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48702,7 +48702,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/Vlad1343/SAVR",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
@@ -48725,7 +48725,7 @@ window.HACKATHON_UNIVERSE = {
           "what_they_built": "A highly scalable microservices based application.",
           "innovation": "Used edge computing for faster processing.",
           "judge_quote": "Very practical and deployable solution.",
-          "github_url": "https://github.com/example",
+          "github_url": "https://github.com/naver/ai-hackathon",
           "demo_url": "https://youtube.com/example",
           "prize_won": "\u20b91,00,000",
           "mentor": "Prof. Smith"
