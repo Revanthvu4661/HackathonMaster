@@ -37,6 +37,7 @@
   <meta name="twitter:title" content="RAR Hackathon Helper — AI Hackathon Intelligence Platform" />
   <meta name="twitter:description" content="RAR Hackathon Helper is your AI-powered Project Intelligence Assistant. Plan, design, and accelerate any hackathon project with expert AI guidance on tech stack, architecture, UI/UX, APIs, and deployment." />
   <link rel="canonical" href="https://hackathonmaster.onrender.com/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"RAR Hackathon Helper","url":"https://hackathonmaster.onrender.com/","description":"AI-powered hackathon intelligence platform. Get winning strategies, tech stack recommendations, pitch scripts, and judge simulations for any hackathon.","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Alapati Revanth Sai Sankar"},"image":"https://hackathonmaster.onrender.com/logo.png","featureList":["AI Hackathon Strategy Generator","Tech Stack Comparator","Pitch Deck Generator","Judge Score Simulator","Team Builder","Problem Statement Analyzer","1000+ Offline Blueprints"],"keywords":"hackathon, AI, strategy, tech stack, pitch, SIH, MLH, ETHIndia, HackWithInfy"}</script>
 </head>
 
 <body>
@@ -95,6 +96,8 @@
 
         <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
         <a href="repos.html" class="nav-link">Hackathon Repos</a>
+        <a href="compare.html" class="nav-link">Stack Comparator</a>
+        <a href="showcase.html" class="nav-link">Showcase</a>
 
       </div>
 
@@ -144,6 +147,8 @@
 
     <a href="repos.html" class="mobile-link">Hackathon Repos</a>
     <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
+    <a href="compare.html" class="mobile-link">Stack Comparator</a>
+    <a href="showcase.html" class="mobile-link">Showcase</a>
 
     <a href="#" class="mobile-link history-nav-trigger">History</a>
 
@@ -356,6 +361,26 @@
   </section>
 
 
+
+  <!-- [RAR-FIX-10] Problem Statement Analyzer -->
+  <section style="padding:4rem 1rem;max-width:780px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);border-radius:20px;padding:6px 16px;font-size:0.8rem;color:#a78bfa;margin-bottom:1rem;">&#x1F9E0; AI-Powered</div>
+      <h2 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;margin:0 0 0.5rem;">Problem Statement Analyzer</h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:0 auto;">Paste your hackathon problem statement. RAR extracts domain, keywords, hidden requirements, judging priorities, and recommends the winning approach.</p>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:1.75rem;">
+      <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+        <button class="psa-format active" data-fmt="general" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(167,139,250,0.4);background:rgba(167,139,250,0.15);color:#a78bfa;cursor:pointer;font-size:0.78rem;font-weight:600;">General</button>
+        <button class="psa-format" data-fmt="sih" style="padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);cursor:pointer;font-size:0.78rem;">SIH Format</button>
+        <button class="psa-format" data-fmt="hackwithinfy" style="padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);cursor:pointer;font-size:0.78rem;">HackWithInfy</button>
+        <button class="psa-format" data-fmt="ethindia" style="padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);cursor:pointer;font-size:0.78rem;">ETHIndia</button>
+      </div>
+      <textarea id="psaInput" placeholder="Paste your problem statement here... e.g. Design a smart system to reduce food waste in college canteens using IoT sensors and AI predictions..." style="width:100%;min-height:120px;padding:0.85rem;background:var(--glass-bg);border:1px solid var(--border-color);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:0.9rem;outline:none;resize:vertical;box-sizing:border-box;margin-bottom:0.75rem;"></textarea>
+      <button id="psaAnalyze" class="btn-primary" style="width:100%;padding:0.85rem;">&#x1F9E0; Analyze Problem Statement</button>
+    </div>
+    <div id="psaOutput" style="display:none;margin-top:1.5rem;"></div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
 
@@ -590,14 +615,124 @@
 
 
 
-  <script src="offline_data_v3.js"></script>
-  <script src="offline_data_1000.js"></script>
-  <script src="offline_data_realworld.js"></script>
-  <script src="offline_data_modules.js"></script>
+  <!-- [RAR-FIX-15] Hero button redirects to strategist.html which loads offline data statically -->
+  </script>
 
   <script src="app_v2.js"></script>
 
   <script src="history_manager.js"></script>
+
+  <!-- [RAR-FIX-10] Problem Statement Analyzer logic -->
+  <script>
+  (function() {
+    let psaFormat = 'general';
+    document.querySelectorAll('.psa-format').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.psa-format').forEach(b => {
+          b.style.background = 'transparent'; b.style.color = 'var(--text-muted)'; b.style.borderColor = 'var(--border-color)';
+        });
+        btn.style.background = 'rgba(167,139,250,0.15)'; btn.style.color = '#a78bfa'; btn.style.borderColor = 'rgba(167,139,250,0.4)';
+        psaFormat = btn.dataset.fmt;
+      });
+    });
+
+    document.getElementById('psaAnalyze').addEventListener('click', async () => {
+      const text = document.getElementById('psaInput').value.trim();
+      if (!text) { alert('Please paste a problem statement first.'); return; }
+      const output = document.getElementById('psaOutput');
+      output.style.display = 'block';
+      output.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-muted);animation:pulse 1.5s infinite;">&#x23F3; Analyzing problem statement...</div>';
+
+      const apiKey = localStorage.getItem('gemini_api_key');
+      const fmtInstructions = {
+        sih: 'This is a Smart India Hackathon (SIH) problem. SIH judges value: government/social impact, scalability across India, use of Indian data/APIs, vernacular language support.',
+        hackwithinfy: 'This is a HackWithInfy problem. Infosys judges value: enterprise applicability, Infosys technology stack (Cobalt, Wingspan), business process improvement.',
+        ethindia: 'This is an ETHIndia problem. Judges value: blockchain innovation, DeFi protocols, NFT utility, Web3 user adoption, Ethereum/Polygon smart contracts.',
+        general: 'Analyze this as a general hackathon problem statement.'
+      };
+
+      if (!apiKey) {
+        // Offline analysis
+        const domain = detectDomain(text);
+        output.innerHTML = renderPsaOffline(text, domain, psaFormat);
+        return;
+      }
+
+      const prompt = `You are RAR, a hackathon problem analysis expert. ${fmtInstructions[psaFormat]||''}
+
+Problem Statement: "${text}"
+
+Return JSON:
+{"domain":"...","keywords":["..."],"hidden_requirements":["..."],"judging_priorities":["..."],"recommended_approach":"...","tech_stack":["..."],"quick_wins":["..."],"risk_areas":["..."]}
+
+All arrays should have 3-5 items. Return ONLY valid JSON.`;
+
+      try {
+        const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + apiKey, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ contents:[{parts:[{text:prompt}]}], generationConfig:{temperature:0.4,maxOutputTokens:1024,responseMimeType:'application/json'} })
+        });
+        const json = await res.json();
+        let raw = (json.candidates?.[0]?.content?.parts?.[0]?.text || '{}').replace(/^```json?\s*/i,'').replace(/```\s*$/,'').trim();
+        const d = JSON.parse(raw);
+        output.innerHTML = renderPsaResult(d, psaFormat);
+      } catch(err) {
+        const domain = detectDomain(text);
+        output.innerHTML = renderPsaOffline(text, domain, psaFormat);
+      }
+    });
+
+    function detectDomain(text) {
+      const t = text.toLowerCase();
+      if (t.match(/health|medical|hospital|patient|doctor/)) return 'Healthcare';
+      if (t.match(/blockchain|crypto|web3|defi|nft|ethereum/)) return 'Web3 / Blockchain';
+      if (t.match(/educat|school|student|learn|course/)) return 'EdTech';
+      if (t.match(/food|agri|farm|crop|harvest/)) return 'Agriculture / FoodTech';
+      if (t.match(/finance|fintech|bank|payment|loan/)) return 'FinTech';
+      if (t.match(/transport|traffic|road|vehicle|mobility/)) return 'Smart Mobility';
+      if (t.match(/environment|climate|carbon|waste|pollution/)) return 'Sustainability';
+      if (t.match(/iot|sensor|hardware|embedded|device/)) return 'IoT / Hardware';
+      return 'General Tech';
+    }
+
+    function renderPsaResult(d, fmt) {
+      const fmtBadges = { sih:'🇮🇳 SIH', hackwithinfy:'🏢 HackWithInfy', ethindia:'⛓️ ETHIndia', general:'🌐 General' };
+      return `<div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:14px;overflow:hidden;">
+        <div style="padding:1rem 1.5rem;background:rgba(167,139,250,0.08);border-bottom:1px solid rgba(167,139,250,0.2);display:flex;justify-content:space-between;align-items:center;">
+          <h3 style="margin:0;font-size:1rem;">&#x1F9E0; Analysis Results</h3>
+          <span style="font-size:0.75rem;background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);padding:3px 10px;border-radius:20px;">${fmtBadges[fmt]||'General'}</span>
+        </div>
+        <div style="padding:1.25rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+          <div><div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Domain</div><div style="font-size:0.95rem;font-weight:600;color:#a78bfa;">${d.domain||'—'}</div></div>
+          <div><div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x1F511; Key Keywords</div>${(d.keywords||[]).map(k=>`<span style="display:inline-block;background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.25);border-radius:20px;padding:2px 9px;font-size:0.75rem;margin:2px;">${k}</span>`).join('')}</div>
+          <div><div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x1F6AB; Hidden Requirements</div><ul style="margin:0;padding-left:1.1rem;">${(d.hidden_requirements||[]).map(r=>`<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:3px;">${r}</li>`).join('')}</ul></div>
+          <div><div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x2696;&#xFE0F; Judging Priorities</div><ul style="margin:0;padding-left:1.1rem;">${(d.judging_priorities||[]).map(r=>`<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:3px;">${r}</li>`).join('')}</ul></div>
+          <div style="grid-column:1/-1;"><div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x1F680; Recommended Approach</div><p style="margin:0;font-size:0.88rem;color:var(--text-primary);line-height:1.6;">${d.recommended_approach||'—'}</p></div>
+          <div><div style="font-size:0.72rem;font-weight:700;color:#10b981;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x26A1; Quick Wins (First 4h)</div><ul style="margin:0;padding-left:1.1rem;">${(d.quick_wins||[]).map(r=>`<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:3px;">${r}</li>`).join('')}</ul></div>
+          <div><div style="font-size:0.72rem;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x26A0;&#xFE0F; Risk Areas</div><ul style="margin:0;padding-left:1.1rem;">${(d.risk_areas||[]).map(r=>`<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:3px;">${r}</li>`).join('')}</ul></div>
+          <div style="grid-column:1/-1;"><div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">&#x1F4BB; Recommended Tech Stack</div>${(d.tech_stack||[]).map(t=>`<span style="display:inline-block;background:rgba(16,185,129,0.08);color:#10b981;border:1px solid rgba(16,185,129,0.25);border-radius:6px;padding:3px 10px;font-size:0.8rem;margin:2px;font-family:var(--font-mono);">${t}</span>`).join('')}</div>
+        </div>
+        <div style="padding:0.75rem 1.25rem;border-top:1px solid var(--border-color);display:flex;gap:0.75rem;">
+          <a href="strategist.html" class="btn-primary btn-sm" style="text-decoration:none;">&#x26A1; Open in Strategist</a>
+          <a href="compare.html" class="btn-ghost btn-sm" style="text-decoration:none;">&#x1F4CA; Compare Stacks</a>
+        </div>
+      </div>`;
+    }
+
+    function renderPsaOffline(text, domain, fmt) {
+      return renderPsaResult({
+        domain,
+        keywords: text.split(/\s+/).filter(w => w.length > 5).slice(0, 5),
+        hidden_requirements: ['Must be deployable within hackathon time limit','Should work offline or with minimal network dependency','Needs a working demo — not just a prototype concept'],
+        judging_priorities: ['Innovation and novelty of solution','Technical implementation quality','Real-world impact and scalability'],
+        recommended_approach: 'Build an MVP focused on the core problem. Use a proven stack (Next.js + Supabase or Flask + React), integrate one AI feature for wow-factor, and prepare a compelling 3-minute demo flow.',
+        tech_stack: ['React / Next.js','Gemini API','Supabase','Vercel','Tailwind CSS'],
+        quick_wins: ['Set up auth and database in first 2h','Build the core AI feature first (highest demo value)','Create a clean landing/demo page early'],
+        risk_areas: ['Scope creep — stick to MVP features only','Integration failures with third-party APIs','Insufficient time for a polished demo']
+      }, fmt);
+    }
+  })();
+  </script>
 
   <script>
     if ('serviceWorker' in navigator) {

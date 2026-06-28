@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAR Hackathon Helper — Tech Stack Comparator</title>
+  <meta name="theme-color" content="#a78bfa" />
+  <meta name="description" content="Compare tech stacks side-by-side for your hackathon project. AI picks the winner based on your constraints." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json" />
+  <script src="theme.js"></script>
+  <style>
+    .compare-hero { text-align:center; padding:6rem 1rem 2rem; }
+    .compare-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:800; margin-bottom:0.75rem; }
+    .compare-hero p { color:var(--text-secondary); max-width:560px; margin:0 auto 2rem; }
+    .compare-form { max-width:680px; margin:0 auto; background:var(--card-bg); border:1px solid var(--border-color); border-radius:16px; padding:2rem; }
+    .compare-form label { display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; }
+    .compare-form input, .compare-form select, .compare-form textarea { width:100%; padding:0.75rem 1rem; background:var(--glass-bg); border:1px solid var(--border-color); border-radius:10px; color:var(--text-primary); font-family:var(--font-body); font-size:0.9rem; outline:none; box-sizing:border-box; margin-bottom:1rem; }
+    .compare-form textarea { min-height:80px; resize:vertical; }
+    .compare-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; max-width:1000px; margin:2rem auto; }
+    .compare-card { background:var(--card-bg); border:1px solid var(--border-color); border-radius:14px; padding:1.5rem; transition:border-color 0.3s; }
+    .compare-card.winner-card { border-color:#10b981; box-shadow:0 0 20px rgba(16,185,129,0.15); }
+    .compare-card h3 { font-size:1.1rem; margin:0 0 0.5rem; }
+    .compare-badge { display:inline-block; font-size:0.7rem; padding:2px 8px; border-radius:20px; font-weight:700; margin-bottom:0.75rem; }
+    .badge-winner { background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4); }
+    .badge-alt { background:rgba(167,139,250,0.15); color:#a78bfa; border:1px solid rgba(167,139,250,0.3); }
+    .compare-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:0.85rem; }
+    .compare-row:last-child { border-bottom:none; }
+    .compare-row .label { color:var(--text-muted); }
+    .compare-row .val { font-weight:600; }
+    .score-bar { background:rgba(255,255,255,0.06); border-radius:4px; height:6px; margin-top:4px; overflow:hidden; }
+    .score-fill { height:100%; border-radius:4px; }
+    .why-win { margin-top:1rem; padding:0.75rem; background:rgba(255,255,255,0.03); border-radius:8px; font-size:0.82rem; color:var(--text-secondary); font-style:italic; }
+    #compareOutput { display:none; }
+    .loading-pulse { animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  </style>
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;">
+      <img src="favicon.png" alt="RAR" style="width:28px;height:28px;border-radius:6px;" />
+      <span class="nav-brand-text">RAR Hackathon Helper</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="strategist.html" class="nav-link">Strategist</a>
+      <a href="checklist.html" class="nav-link">Checklist</a>
+      <a href="features.html" class="nav-link">AI Tools</a>
+      <a href="countdown.html" class="nav-link">Sprint Timer</a>
+      <a href="team_builder.html" class="nav-link">Team Builder</a>
+      <a href="hackathons.html" class="nav-link">Live Hackathons</a>
+      <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
+      <a href="repos.html" class="nav-link">Hackathon Repos</a>
+      <a href="compare.html" class="nav-link active">Stack Comparator</a>
+      <a href="showcase.html" class="nav-link">Showcase</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="compare-hero">
+      <h1>⚡ Tech Stack Comparator</h1>
+      <p>Tell us your project and constraints — RAR compares 3 tech stacks and picks the hackathon winner.</p>
+    </div>
+
+    <div class="compare-form">
+      <label>Project Type / Description</label>
+      <textarea id="cmpProject" placeholder="e.g. A real-time food delivery app with AI route optimization and a mobile-friendly dashboard..."></textarea>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;">
+        <div>
+          <label>Team Size</label>
+          <select id="cmpTeam">
+            <option value="solo">Solo</option>
+            <option value="2">2 people</option>
+            <option value="3-4" selected>3–4 people</option>
+            <option value="5+">5+ people</option>
+          </select>
+        </div>
+        <div>
+          <label>Hackathon Duration</label>
+          <select id="cmpTime">
+            <option value="12h">12 hours</option>
+            <option value="24h" selected>24 hours</option>
+            <option value="36h">36 hours</option>
+            <option value="48h">48 hours</option>
+            <option value="72h">72+ hours</option>
+          </select>
+        </div>
+        <div>
+          <label>Primary Skill</label>
+          <select id="cmpSkill">
+            <option value="frontend">Frontend</option>
+            <option value="fullstack" selected>Full-Stack</option>
+            <option value="backend">Backend</option>
+            <option value="ml">ML / AI</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Any constraints? (optional)</label>
+      <input id="cmpConstraints" type="text" placeholder="e.g. no paid APIs, must work offline, judges prefer mobile apps..." />
+
+      <button class="btn-primary" id="cmpGenerate" style="width:100%;padding:0.9rem;">
+        <span id="cmpBtnText">⚡ Compare Tech Stacks with AI</span>
+        <span id="cmpBtnLoading" style="display:none;" class="loading-pulse">Analyzing stacks...</span>
+      </button>
+    </div>
+
+    <div id="compareOutput">
+      <div style="text-align:center;margin:2rem 0 1rem;">
+        <h2 style="font-size:1.5rem;font-weight:700;" id="cmpSummaryTitle">Stack Comparison</h2>
+        <p id="cmpSummaryDesc" style="color:var(--text-secondary);max-width:500px;margin:0 auto;font-size:0.9rem;"></p>
+      </div>
+      <div class="compare-grid" id="cmpGrid"></div>
+
+      <div style="max-width:1000px;margin:0 auto 4rem;background:var(--card-bg);border:1px solid var(--border-color);border-radius:14px;overflow:hidden;">
+        <div style="padding:1rem 1.5rem;background:rgba(16,185,129,0.08);border-bottom:1px solid rgba(16,185,129,0.2);">
+          <h3 style="margin:0;font-size:1rem;color:#10b981;">📊 Side-by-Side Feature Matrix</h3>
+        </div>
+        <div style="overflow-x:auto;">
+          <table id="cmpTable" style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+            <thead></thead><tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  document.getElementById('cmpGenerate').addEventListener('click', async () => {
+    const project = document.getElementById('cmpProject').value.trim();
+    if (!project) { alert('Please describe your project first.'); return; }
+
+    const apiKey = localStorage.getItem('gemini_api_key');
+    const btnText = document.getElementById('cmpBtnText');
+    const btnLoad = document.getElementById('cmpBtnLoading');
+    btnText.style.display = 'none'; btnLoad.style.display = 'inline';
+
+    const constraints = {
+      project,
+      team: document.getElementById('cmpTeam').value,
+      time: document.getElementById('cmpTime').value,
+      skill: document.getElementById('cmpSkill').value,
+      extra: document.getElementById('cmpConstraints').value
+    };
+
+    let stacks;
+
+    if (apiKey) {
+      const prompt = `You are RAR, a hackathon tech stack expert. Compare 3 optimal tech stacks for this project.
+Project: ${constraints.project}
+Team: ${constraints.team}, Time: ${constraints.time}, Skill focus: ${constraints.skill}, Constraints: ${constraints.extra||'none'}
+
+Return JSON with this structure:
+{"summary":"one sentence about the comparison","stacks":[{"name":"Stack Name","tagline":"...","setup_time":"30 min","learning_curve":"Low/Medium/High","scalability":"Low/Medium/High","hackathon_suitability":90,"scores":{"speed":85,"ui":80,"backend":75,"ai_friendly":70,"deployment":90},"pros":["...","...","..."],"cons":["...","..."],"why_wins_hackathons":"...","winner":false}]}
+Make exactly 3 stacks. Set winner:true for the best one only. Return ONLY valid JSON.`;
+
+      try {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ contents:[{parts:[{text:prompt}]}], generationConfig:{temperature:0.5,maxOutputTokens:2048,responseMimeType:'application/json'} })
+        });
+        const json = await res.json();
+        let raw = json.candidates?.[0]?.content?.parts?.[0]?.text || '{}';
+        raw = raw.replace(/^```json?\s*/i,'').replace(/```\s*$/,'').trim();
+        const parsed = JSON.parse(raw);
+        stacks = parsed;
+      } catch(err) {
+        stacks = getOfflineStacks(constraints);
+      }
+    } else {
+      stacks = getOfflineStacks(constraints);
+    }
+
+    renderComparison(stacks, constraints);
+    btnText.style.display = 'inline'; btnLoad.style.display = 'none';
+  });
+
+  function getOfflineStacks(c) {
+    const isML = c.skill === 'ml';
+    const isMobile = c.skill === 'mobile';
+    return {
+      summary: `Best stacks for a ${c.team} team with ${c.time} and ${c.skill} background.`,
+      stacks: [
+        { name: isML ? 'Python + FastAPI + Streamlit' : isMobile ? 'React Native + Expo + Firebase' : 'Next.js + Supabase + Vercel',
+          tagline: 'The proven hackathon winner', setup_time:'15 min', learning_curve:'Low', scalability:'High', hackathon_suitability:92,
+          scores:{speed:90,ui:85,backend:88,ai_friendly:isML?95:75,deployment:95},
+          pros:['Fastest setup','Huge community & templates','One-click deploy'],
+          cons:['Can feel generic','Less unique to judges'],
+          why_wins_hackathons:'Used by 60% of winning hackathon teams — the ecosystem is optimized for speed.', winner:true },
+        { name: isML ? 'Node.js + Express + React' : isMobile ? 'Flutter + Firebase' : 'React + Node.js + MongoDB',
+          tagline: 'The flexible full-stack', setup_time:'30 min', learning_curve:'Medium', scalability:'High', hackathon_suitability:80,
+          scores:{speed:78,ui:82,backend:80,ai_friendly:65,deployment:75},
+          pros:['Highly flexible','Full control','Scalable architecture'],
+          cons:['More boilerplate','Slower initial setup'],
+          why_wins_hackathons:'Judges appreciate clean REST APIs and real data persistence.', winner:false },
+        { name: isML ? 'Hugging Face + Gradio + Modal' : isMobile ? 'Swift + Xcode + CloudKit' : 'Flask + React + PostgreSQL',
+          tagline: 'The technical power move', setup_time:'45 min', learning_curve:'High', scalability:'Medium', hackathon_suitability:72,
+          scores:{speed:65,ui:70,backend:85,ai_friendly:isML?98:60,deployment:65},
+          pros:['Technically impressive','Shows depth','Great for ML demos'],
+          cons:['Steep setup','Risk of not finishing in time'],
+          why_wins_hackathons:'High wow factor with judges who value technical depth over polish.', winner:false },
+      ]
+    };
+  }
+
+  function renderComparison(data, c) {
+    document.getElementById('compareOutput').style.display = 'block';
+    document.getElementById('cmpSummaryTitle').textContent = '⚡ Stack Comparison Results';
+    document.getElementById('cmpSummaryDesc').textContent = data.summary || '';
+
+    const grid = document.getElementById('cmpGrid');
+    grid.innerHTML = '';
+
+    const colors = ['#a78bfa','#06b6d4','#f59e0b'];
+    const scoreLabels = { speed:'Build Speed', ui:'UI Quality', backend:'Backend Power', ai_friendly:'AI-Friendly', deployment:'Deploy Ease' };
+
+    (data.stacks||[]).forEach((s,i) => {
+      const card = document.createElement('div');
+      card.className = 'compare-card' + (s.winner?' winner-card':'');
+      card.innerHTML = `
+        <h3>${s.name}</h3>
+        <span class="compare-badge ${s.winner?'badge-winner':'badge-alt'}">${s.winner?'🏆 RECOMMENDED':'Alternative'}</span>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin:0 0 0.75rem;">${s.tagline}</p>
+        <div class="compare-row"><span class="label">Setup Time</span><span class="val">${s.setup_time}</span></div>
+        <div class="compare-row"><span class="label">Learning Curve</span><span class="val">${s.learning_curve}</span></div>
+        <div class="compare-row"><span class="label">Scalability</span><span class="val">${s.scalability}</span></div>
+        <div class="compare-row"><span class="label">Hackathon Fit</span><span class="val" style="color:${colors[i]};">${s.hackathon_suitability}/100</span></div>
+        ${Object.entries(s.scores||{}).map(([k,v])=>`
+          <div style="margin-top:8px;"><div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--text-muted);margin-bottom:3px;"><span>${scoreLabels[k]||k}</span><span>${v}</span></div>
+          <div class="score-bar"><div class="score-fill" style="width:${v}%;background:${colors[i]};"></div></div></div>`).join('')}
+        <div class="why-win">💡 ${s.why_wins_hackathons}</div>
+        ${s.pros?.length?`<div style="margin-top:0.75rem;"><div style="font-size:0.75rem;font-weight:700;color:#10b981;margin-bottom:4px;">PROS</div>${s.pros.map(p=>`<div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:2px;">✓ ${p}</div>`).join('')}</div>`:''}
+        ${s.cons?.length?`<div style="margin-top:0.5rem;"><div style="font-size:0.75rem;font-weight:700;color:#ef4444;margin-bottom:4px;">CONS</div>${s.cons.map(p=>`<div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:2px;">✗ ${p}</div>`).join('')}</div>`:''}
+      `;
+      grid.appendChild(card);
+    });
+
+    // Build comparison table
+    const table = document.getElementById('cmpTable');
+    const stacks = data.stacks || [];
+    const rows = ['setup_time','learning_curve','scalability','hackathon_suitability'];
+    const rowLabels = { setup_time:'Setup Time', learning_curve:'Learning Curve', scalability:'Scalability', hackathon_suitability:'Hackathon Score' };
+    table.querySelector('thead').innerHTML = `<tr><th style="padding:10px 16px;text-align:left;color:var(--text-muted);font-size:0.8rem;border-bottom:1px solid var(--border-color);">Criteria</th>${stacks.map(s=>`<th style="padding:10px 16px;text-align:center;font-size:0.82rem;border-bottom:1px solid var(--border-color);">${s.name}${s.winner?' 🏆':''}</th>`).join('')}</tr>`;
+    table.querySelector('tbody').innerHTML = rows.map(r=>`<tr>${[`<td style="padding:8px 16px;color:var(--text-muted);font-size:0.82rem;">${rowLabels[r]||r}</td>`, ...stacks.map(s=>`<td style="padding:8px 16px;text-align:center;font-size:0.82rem;font-weight:${s.winner?'700':'400'};">${s[r]||'-'}</td>`)].join('')}</tr>`).join('');
+    document.getElementById('compareOutput').scrollIntoView({behavior:'smooth'});
+  }
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+  </script>
+</body>
+</html>

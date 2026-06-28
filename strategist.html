@@ -263,6 +263,8 @@
 
         <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
         <a href="repos.html" class="nav-link">Hackathon Repos</a>
+        <a href="compare.html" class="nav-link">Stack Comparator</a>
+        <a href="showcase.html" class="nav-link">Showcase</a>
 
 
 
@@ -287,6 +289,12 @@
 
 
 
+        </button>
+
+        <!-- [RAR-FIX-20] Export Session button -->
+        <button class="btn-ghost" id="exportSessionBtn" title="Export full session as PDF" style="display:none;gap:0.4rem;align-items:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span style="font-size:0.82rem;font-weight:600;">Export PDF</span>
         </button>
 
         <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
@@ -364,6 +372,8 @@
 
     <a href="repos.html" class="mobile-link">Hackathon Repos</a>
     <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
+    <a href="compare.html" class="mobile-link">Stack Comparator</a>
+    <a href="showcase.html" class="mobile-link">Showcase</a>
 
 
 
@@ -1088,20 +1098,19 @@ The more detail you provide, the better the strategic output."
 
 
             <button class="btn-primary btn-sm" id="stratReanalyze">
-
-
-
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-
-
-
               Re-analyze
-
-
-
             </button>
 
+            <!-- [RAR-FIX-7] Pitch Deck Generator button -->
+            <button class="btn-ghost btn-sm" id="stratPitchBtn" style="background:linear-gradient(135deg,rgba(167,139,250,0.15),rgba(6,182,212,0.15));border-color:rgba(167,139,250,0.4);">
+              &#x1F3A4; Generate Pitch Script
+            </button>
 
+            <!-- [RAR-FIX-8] Judge Scoring Simulator button -->
+            <button class="btn-ghost btn-sm" id="stratJudgeBtn" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(59,130,246,0.15));border-color:rgba(16,185,129,0.4);">
+              &#x2696;&#xFE0F; Simulate Judge Scoring
+            </button>
 
           </div>
 
@@ -1185,16 +1194,23 @@ The more detail you provide, the better the strategic output."
 
         <div class="output-content" id="stratContent">
 
-
-
           <!-- Populated by strategist.js -->
-
-
 
         </div>
 
-
-
+        <!-- [RAR-FIX-5] Multi-turn follow-up chat -->
+        <div id="stratChat" style="display:none; margin-top:2rem; border-top:1px solid var(--border-color); padding-top:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem;">
+            <span style="font-size:1.1rem;">&#x1F4AC;</span>
+            <h4 style="margin:0; font-size:1rem; color:var(--text-primary);">Ask RAR a follow-up question</h4>
+            <span id="chatContextBadge" style="display:none; font-size:0.72rem; background:rgba(167,139,250,0.15); color:#a78bfa; border:1px solid rgba(167,139,250,0.3); padding:2px 8px; border-radius:20px;">Chatting with AI &#x2726;</span>
+          </div>
+          <div id="chatMessages" style="max-height:360px; overflow-y:auto; display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1rem;"></div>
+          <div style="display:flex; gap:0.6rem;">
+            <input id="chatInput" type="text" placeholder="e.g. How do I demo this in 3 minutes? What tech stack for 24h hackathon?" style="flex:1; padding:0.75rem 1rem; border-radius:10px; background:var(--glass-bg); border:1px solid var(--border-color); color:var(--text-primary); font-family:var(--font-body); font-size:0.9rem; outline:none;" />
+            <button id="chatSend" class="btn-primary btn-sm" style="padding:0.75rem 1.2rem; border-radius:10px; white-space:nowrap;">Send &#x21B5;</button>
+          </div>
+        </div>
 
 
 
@@ -1214,6 +1230,32 @@ The more detail you provide, the better the strategic output."
 
 
 
+
+  <!-- [RAR-FIX-7] Pitch Deck Generator Panel -->
+  <div id="pitchPanel" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:10000; overflow-y:auto; padding:2rem 1rem;">
+    <div style="max-width:780px; margin:0 auto; background:var(--card-bg); border:1px solid var(--border-color); border-radius:16px; padding:2rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h2 style="margin:0; font-size:1.4rem;">&#x1F3A4; 5-Slide Pitch Script</h2>
+        <button id="pitchPanelClose" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.5rem;">&times;</button>
+      </div>
+      <div id="pitchOutput"><div style="text-align:center;padding:3rem 0;color:var(--text-muted);">&#x23F3; Generating your pitch script...</div></div>
+      <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+        <button id="pitchCopy" class="btn-ghost btn-sm">&#x1F4CB; Copy Pitch</button>
+        <button id="pitchDownloadPdf" class="btn-primary btn-sm">&#x1F4E5; Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- [RAR-FIX-8] Judge Scoring Simulator Panel -->
+  <div id="judgePanel" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:10000; overflow-y:auto; padding:2rem 1rem;">
+    <div style="max-width:680px; margin:0 auto; background:var(--card-bg); border:1px solid var(--border-color); border-radius:16px; padding:2rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h2 style="margin:0; font-size:1.4rem;">&#x2696;&#xFE0F; Judge Scoring Simulation</h2>
+        <button id="judgePanelClose" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.5rem;">&times;</button>
+      </div>
+      <div id="judgeOutput"><div style="text-align:center;padding:3rem 0;color:var(--text-muted);">&#x23F3; Simulating judge scores...</div></div>
+    </div>
+  </div>
 
   <!-- ===== API KEY MODAL ===== -->
 

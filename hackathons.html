@@ -196,6 +196,8 @@
 
         <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
         <a href="repos.html" class="nav-link">Hackathon Repos</a>
+        <a href="compare.html" class="nav-link">Stack Comparator</a>
+        <a href="showcase.html" class="nav-link">Showcase</a>
 
 
 
@@ -519,15 +521,11 @@
 
               <button class="btn-gen-idea" onclick="generateFor('${h.idea.replace(/'/g, "\\'")}')">Generate Idea</button>
 
-
+              <button class="btn-notify" data-title="${h.title}" data-end="${h.endDate}" onclick="toggleNotify(this)" style="flex:1;padding:0.75rem;border-radius:8px;border:1px solid rgba(167,139,250,0.4);background:transparent;color:#a78bfa;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.85rem;transition:all 0.2s;">🔔 Notify Me</button>
 
             </div>
 
-
-
           </div>
-
-
 
         `;
 
@@ -545,11 +543,62 @@
 
 
 
+    // [RAR-FIX-18] Notify Me — save hackathon deadline to localStorage
+    function toggleNotify(btn) {
+      const title = btn.dataset.title;
+      const end = btn.dataset.end;
+      const saved = JSON.parse(localStorage.getItem('rar_notify_hackathons') || '[]');
+      const exists = saved.findIndex(h => h.title === title);
+      if (exists >= 0) {
+        saved.splice(exists, 1);
+        btn.textContent = '🔔 Notify Me';
+        btn.style.background = 'transparent';
+        btn.style.color = '#a78bfa';
+      } else {
+        saved.push({ title, end });
+        btn.textContent = '✓ Notifying';
+        btn.style.background = 'rgba(167,139,250,0.2)';
+        btn.style.color = '#c4b5fd';
+      }
+      localStorage.setItem('rar_notify_hackathons', JSON.stringify(saved));
+    }
+
+    // Check deadlines on load and show banners
+    function checkDeadlineAlerts() {
+      const saved = JSON.parse(localStorage.getItem('rar_notify_hackathons') || '[]');
+      const now = new Date();
+      const alerts = saved.filter(h => {
+        const deadline = new Date(h.end);
+        const daysLeft = Math.ceil((deadline - now) / 86400000);
+        return daysLeft >= 0 && daysLeft <= 7;
+      });
+      if (!alerts.length) return;
+      const banner = document.createElement('div');
+      banner.style.cssText = 'position:sticky;top:70px;z-index:500;margin:0.5rem 1rem;padding:0.75rem 1.25rem;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);border-radius:10px;color:#fbbf24;font-size:0.88rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;';
+      banner.innerHTML = alerts.map(h => {
+        const daysLeft = Math.ceil((new Date(h.end) - now) / 86400000);
+        return `<span>⚠️ <strong>${h.title}</strong> registration closes in <strong>${daysLeft} day${daysLeft===1?'':'s'}</strong>!</span>`;
+      }).join('<span style="color:rgba(245,158,11,0.4)">|</span>');
+      const grid = document.getElementById('hackathonGrid');
+      if (grid) grid.parentNode.insertBefore(banner, grid);
+
+      // Also sync button states
+      const saved2 = JSON.parse(localStorage.getItem('rar_notify_hackathons') || '[]');
+      document.querySelectorAll('.btn-notify').forEach(btn => {
+        if (saved2.some(h => h.title === btn.dataset.title)) {
+          btn.textContent = '✓ Notifying';
+          btn.style.background = 'rgba(167,139,250,0.2)';
+          btn.style.color = '#c4b5fd';
+        }
+      });
+    }
+
     // Run on load
 
-
-
-    document.addEventListener('DOMContentLoaded', renderHackathons);
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHackathons();
+      checkDeadlineAlerts();
+    });
 
 
 
@@ -598,6 +647,8 @@
 
     <a href="repos.html" class="mobile-link">Hackathon Repos</a>
     <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
+    <a href="compare.html" class="mobile-link">Stack Comparator</a>
+    <a href="showcase.html" class="mobile-link">Showcase</a>
 
 
 
