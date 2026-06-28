@@ -342,12 +342,12 @@ html[data-theme="light"] .btn-ghost:hover {
 }
 
 .navbar.scrolled .brand-logo {
-  height: 55px;
-  width: 55px;
+  height: 30px;
+  width: 30px;
 }
 
 .navbar.scrolled .brand-icon {
-  height: var(--nav-height-shrink);
+  height: 30px;
 }
 
 html[data-theme="light"] .navbar {
@@ -375,14 +375,14 @@ html[data-theme="light"] .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 36px;
   background: transparent;
   border: none;
 }
 
 .brand-logo {
-  height: 80px;
-  width: 80px;
+  height: 36px;
+  width: 36px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--accent-primary);
@@ -417,13 +417,13 @@ html[data-theme="light"] .brand-icon {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .nav-link {
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   position: relative;
   padding: 0.5rem 0;
 }
