@@ -2283,3 +2283,23 @@ html[data-theme="light"] .history-item:hover {
 .history-toggle {
   display: none !important;
 }
+
+
+/* ── PDF / Print page-break controls ───────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  .navbar, .mobile-menu, #historySidebar, .history-toggle { display: none !important; }
+  body { background: #fff; }
+}
+
+.avoid-break,
+h2, h3,
+li {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+h2, h3 {
+  page-break-after: avoid;
+  break-after: avoid;
+}

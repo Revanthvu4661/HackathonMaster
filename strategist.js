@@ -2727,69 +2727,177 @@ ${mermaidDef}
 
   }
 
-  // [RAR-FIX-20] Export Session — show button after strategy renders, export as PDF
+  // [RAR-FIX-20] Export Session — complete PDF with all sections
   const exportBtn = document.getElementById('exportSessionBtn');
   if (exportBtn) {
-    exportBtn.addEventListener('click', () => {
+    exportBtn.addEventListener('click', async () => {
       if (typeof html2pdf === 'undefined') { showToast('PDF library not loaded.'); return; }
-      showToast('Building your export PDF...');
+
+      exportBtn.textContent = '⏳ Building PDF...';
+      exportBtn.disabled = true;
+
+      const d = latestAnalysisJson || {};
+      const projectName = d.prd?.project_name || 'Hackathon Strategy';
+      const problem = currentProblemContext || '';
+      const pitch = d.judge_strategy?.one_line_winning_pitch || '';
+      const judgeStrat = d.judge_strategy || {};
+      const addons = d.best_addons || [];
+      const features = d.feature_ideas || {};
+      const prd = d.prd || {};
+      const techReq = prd.technical_requirements || {};
+      const winSecret = d.win_secret || '';
+      const apiEndpoints = d.api_endpoints || '';
+      const dbSchema = d.database_schema || '';
+      const aiStrategy = d.ai_strategy || '';
+      const demoFlow = d.best_demo_flow || [];
+      const megaPrompt = d.mega_prompt || '';
+      const targetUsers = d.target_users || [];
+      const painPoints = d.core_pain_points || [];
+      const techstack = d.techstack || '';
+
+      // Helper: render a section only when it has content
+      const sec = (emoji, title, html) => html ? `
+        <div style="margin-top:1.6rem;page-break-inside:avoid;">
+          <h2 style="color:#6d28d9;font-size:1rem;font-weight:700;margin:0 0 0.5rem;padding-bottom:0.3rem;border-bottom:2px solid #ede9fe;display:flex;align-items:center;gap:0.4rem;">
+            <span>${emoji}</span> ${title}
+          </h2>
+          ${html}
+        </div>` : '';
+
+      const li = (label, val) => val ? `<li style="margin-bottom:5px;"><strong style="color:#374151;">${label}:</strong> ${val}</li>` : '';
+      const pill = (text, color) => `<span style="display:inline-block;background:${color}22;color:${color};border:1px solid ${color}55;border-radius:20px;padding:2px 10px;font-size:0.72rem;font-weight:600;margin:2px;">${text}</span>`;
 
       const wrapper = document.createElement('div');
-      wrapper.style.cssText = 'font-family:Arial,sans-serif;color:#1a1a2e;padding:40px;max-width:800px;';
-
-      const projectName = latestAnalysisJson?.prd?.project_name || 'Hackathon Strategy';
-      const problem = currentProblemContext || '';
-      const pitch = latestAnalysisJson?.judge_strategy?.one_line_winning_pitch || '';
-      const addons = latestAnalysisJson?.best_addons || [];
-      const features = latestAnalysisJson?.feature_ideas || {};
-      const judgeStrat = latestAnalysisJson?.judge_strategy || {};
-      const prd = latestAnalysisJson?.prd || {};
+      wrapper.style.cssText = `
+        position:absolute; left:-9999px; top:0;
+        width:760px; padding:32px 40px;
+        background:#ffffff; color:#1f2937;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:13px; line-height:1.65;
+      `;
 
       wrapper.innerHTML = `
-        <div style="border-bottom:3px solid #a78bfa;padding-bottom:1rem;margin-bottom:2rem;">
-          <h1 style="margin:0;font-size:2rem;color:#a78bfa;">${projectName}</h1>
-          <p style="margin:0.5rem 0 0;color:#666;font-size:0.9rem;">RAR Hackathon Strategy Export — ${new Date().toLocaleDateString()}</p>
+        <!-- HEADER -->
+        <div style="text-align:center;padding-bottom:1.2rem;margin-bottom:1.5rem;border-bottom:3px solid #7c3aed;">
+          <div style="font-size:0.7rem;color:#7c3aed;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;">RAR Hackathon Helper</div>
+          <h1 style="margin:0;font-size:1.8rem;font-weight:800;color:#1f2937;">${projectName}</h1>
+          <p style="margin:0.4rem 0 0;color:#6b7280;font-size:0.78rem;">Strategy Export &nbsp;·&nbsp; ${new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</p>
         </div>
 
-        ${problem ? `<div style="background:#f8f4ff;border-left:4px solid #a78bfa;padding:1rem;border-radius:0 8px 8px 0;margin-bottom:2rem;">
-          <strong>Problem Statement:</strong><br/>${problem}
+        ${problem ? `
+        <div style="background:#f5f3ff;border-left:4px solid #7c3aed;padding:0.75rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;page-break-inside:avoid;">
+          <div style="font-size:0.7rem;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">Problem Statement</div>
+          <div style="color:#374151;">${problem}</div>
         </div>` : ''}
 
-        ${pitch ? `<div style="background:#f0fdf4;border-left:4px solid #10b981;padding:1rem;border-radius:0 8px 8px 0;margin-bottom:2rem;">
-          <strong>One-Line Winning Pitch:</strong><br/><em>"${pitch}"</em>
+        ${pitch ? `
+        <div style="background:#f0fdf4;border-left:4px solid #059669;padding:0.75rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;page-break-inside:avoid;">
+          <div style="font-size:0.7rem;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">One-Line Winning Pitch</div>
+          <div style="color:#065f46;font-style:italic;font-size:0.95rem;">"${pitch}"</div>
         </div>` : ''}
 
-        ${judgeStrat.wow_factor ? `<h2 style="color:#a78bfa;font-size:1.2rem;margin-top:2rem;">🎯 Judge Strategy</h2>
-        <p><strong>Wow Factor:</strong> ${judgeStrat.wow_factor}</p>
-        <p><strong>Business Angle:</strong> ${judgeStrat.business_angle || ''}</p>
-        <p><strong>Impact:</strong> ${judgeStrat.social_or_market_impact || ''}</p>` : ''}
+        ${sec('🎯','Judge Strategy', judgeStrat.wow_factor ? `
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+            ${judgeStrat.wow_factor ? `<div style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:8px;padding:0.6rem 0.8rem;"><div style="font-size:0.68rem;font-weight:700;color:#7c3aed;margin-bottom:0.2rem;">WOW FACTOR</div><div>${judgeStrat.wow_factor}</div></div>` : ''}
+            ${judgeStrat.business_angle ? `<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:0.6rem 0.8rem;"><div style="font-size:0.68rem;font-weight:700;color:#1d4ed8;margin-bottom:0.2rem;">BUSINESS ANGLE</div><div>${judgeStrat.business_angle}</div></div>` : ''}
+            ${judgeStrat.social_or_market_impact ? `<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:0.6rem 0.8rem;grid-column:1/-1;"><div style="font-size:0.68rem;font-weight:700;color:#059669;margin-bottom:0.2rem;">MARKET IMPACT</div><div>${judgeStrat.social_or_market_impact}</div></div>` : ''}
+          </div>` : '')}
 
-        ${addons.length ? `<h2 style="color:#a78bfa;font-size:1.2rem;margin-top:2rem;">⚡ Top Add-ons</h2>
-        <ol>${addons.slice(0,5).map(a => `<li style="margin-bottom:8px;"><strong>${a.addon_name}</strong> — ${a.what_it_does} <em>(${a.implementation_difficulty}, ${a.estimated_build_time})</em></li>`).join('')}</ol>` : ''}
+        ${sec('⚡','Top Add-ons to Win', addons.length ? `
+          <ol style="margin:0;padding-left:1.2rem;">
+            ${addons.slice(0,6).map(a => `<li style="margin-bottom:0.5rem;"><strong>${a.addon_name||''}</strong> — ${a.what_it_does||''} <span style="color:#6b7280;font-size:0.8rem;">(${a.implementation_difficulty||''}, ${a.estimated_build_time||''})</span></li>`).join('')}
+          </ol>` : '')}
 
-        ${features.must_have_features?.length ? `<h2 style="color:#a78bfa;font-size:1.2rem;margin-top:2rem;">✅ Must-Have Features</h2>
-        <ul>${features.must_have_features.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
+        ${sec('✅','Must-Have Features', (features.must_have_features||[]).length ? `
+          <ul style="margin:0;padding-left:1.2rem;">
+            ${(features.must_have_features||[]).map(f=>`<li style="margin-bottom:4px;">${f}</li>`).join('')}
+          </ul>` : '')}
 
-        ${prd.technical_requirements ? `<h2 style="color:#a78bfa;font-size:1.2rem;margin-top:2rem;">🛠️ Tech Stack</h2>
-        <ul>
-          <li><strong>Frontend:</strong> ${prd.technical_requirements.frontend || '—'}</li>
-          <li><strong>Backend:</strong> ${prd.technical_requirements.backend || '—'}</li>
-          <li><strong>Database:</strong> ${prd.technical_requirements.database || '—'}</li>
-          ${(prd.technical_requirements.integrations||[]).length ? `<li><strong>Integrations:</strong> ${prd.technical_requirements.integrations.join(', ')}</li>` : ''}
-        </ul>` : ''}
+        ${sec('💡','Nice-to-Have Features', (features.nice_to_have_features||[]).length ? `
+          <ul style="margin:0;padding-left:1.2rem;color:#374151;">
+            ${(features.nice_to_have_features||[]).map(f=>`<li style="margin-bottom:4px;">${f}</li>`).join('')}
+          </ul>` : '')}
 
-        <div style="margin-top:3rem;padding-top:1rem;border-top:1px solid #ddd;color:#999;font-size:0.75rem;text-align:center;">
-          Generated by RAR Hackathon Helper — hackathonmaster.onrender.com | Created by Alapati Revanth Sai Sankar
-        </div>`;
+        ${sec('🛠️','Recommended Tech Stack', (techstack || techReq.frontend) ? `
+          <ul style="margin:0;padding-left:1.2rem;">
+            ${techstack ? `<li style="margin-bottom:4px;"><strong>Stack:</strong> ${techstack}</li>` : ''}
+            ${li('Frontend', techReq.frontend)}
+            ${li('Backend', techReq.backend)}
+            ${li('Database', techReq.database)}
+            ${(techReq.integrations||[]).length ? `<li style="margin-bottom:4px;"><strong>Integrations:</strong> ${techReq.integrations.join(', ')}</li>` : ''}
+            ${li('AI/ML', techReq.ai_ml)}
+            ${li('Auth', techReq.auth)}
+            ${li('Deployment', techReq.deployment)}
+          </ul>` : '')}
+
+        ${sec('🎯','Target Users', targetUsers.length ? `
+          <ul style="margin:0;padding-left:1.2rem;">
+            ${targetUsers.map(u=>`<li style="margin-bottom:4px;">${typeof u==='object'?(u.persona||u.user||JSON.stringify(u)):u}</li>`).join('')}
+          </ul>` : '')}
+
+        ${sec('😤','Core Pain Points', painPoints.length ? `
+          <ul style="margin:0;padding-left:1.2rem;">
+            ${painPoints.map(p=>`<li style="margin-bottom:4px;">${typeof p==='object'?(p.pain||p.problem||JSON.stringify(p)):p}</li>`).join('')}
+          </ul>` : '')}
+
+        ${sec('🔌','API Strategy', apiEndpoints ? `
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem 1rem;font-size:0.8rem;white-space:pre-wrap;word-break:break-word;">${apiEndpoints}</div>` : '')}
+
+        ${sec('🗄️','Database Schema', dbSchema ? `
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem 1rem;font-size:0.8rem;white-space:pre-wrap;word-break:break-word;">${dbSchema}</div>` : '')}
+
+        ${sec('🤖','AI Strategy', aiStrategy ? `
+          <div style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:8px;padding:0.75rem 1rem;">${aiStrategy}</div>` : '')}
+
+        ${sec('🏆','Win Secrets', winSecret ? `
+          <div style="background:#fffbeb;border-left:4px solid #f59e0b;padding:0.75rem 1rem;border-radius:0 8px 8px 0;">${winSecret}</div>` : '')}
+
+        ${sec('🎬','Best Demo Flow', demoFlow.length ? `
+          <ol style="margin:0;padding-left:1.2rem;">
+            ${demoFlow.map(s=>`<li style="margin-bottom:6px;">${typeof s==='object'?(s.step||s.description||JSON.stringify(s)):s}</li>`).join('')}
+          </ol>` : '')}
+
+        ${megaPrompt ? `
+        <div style="margin-top:1.6rem;page-break-before:always;">
+          <h2 style="color:#6d28d9;font-size:1rem;font-weight:700;margin:0 0 0.5rem;padding-bottom:0.3rem;border-bottom:2px solid #ede9fe;">⚡ Mega Prompt for AI Tools</h2>
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.75rem 1rem;font-size:0.75rem;line-height:1.7;white-space:pre-wrap;word-break:break-word;max-height:none;">${megaPrompt}</div>
+        </div>` : ''}
+
+        <!-- FOOTER -->
+        <div style="margin-top:2rem;padding-top:0.75rem;border-top:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;font-size:0.68rem;color:#9ca3af;">
+          <span>Generated by RAR Hackathon Helper</span>
+          <span>hackathonmaster.onrender.com</span>
+          <span>Created by Alapati Revanth Sai Sankar</span>
+        </div>
+      `;
 
       document.body.appendChild(wrapper);
-      html2pdf().set({
-        margin: 0, filename: `${projectName.replace(/\s+/g,'_')}_Strategy.pdf`,
-        html2canvas: { scale: 2 }, jsPDF: { unit: 'px', format: [800, 1120], orientation: 'portrait' }
-      }).from(wrapper).save().then(() => {
+
+      try {
+        await html2pdf().set({
+          margin: [8, 10, 8, 10],
+          filename: `${projectName.replace(/[^a-z0-9]/gi,'_')}_Strategy.pdf`,
+          image: { type: 'jpeg', quality: 0.97 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: '#ffffff',
+            logging: false,
+            width: 760,
+            windowWidth: 840
+          },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
+          pagebreak: { mode: ['css', 'legacy'], avoid: ['h2', 'li', '.avoid-break'] }
+        }).from(wrapper).save();
+        showToast('PDF exported!');
+      } catch(err) {
+        console.error('PDF export error:', err);
+        showToast('PDF export failed — try again.');
+      } finally {
         document.body.removeChild(wrapper);
-        showToast('Session exported!');
-      });
+        exportBtn.innerHTML = '&#x2B07; Export PDF';
+        exportBtn.disabled = false;
+      }
     });
   }
 
