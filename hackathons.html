@@ -66,7 +66,8 @@
     /* grid: 1 / 2 / 3 columns */
     #hackathonGrid { grid-template-columns: 1fr; grid-auto-rows: 1fr; }
     @media (min-width: 640px)  { #hackathonGrid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { #hackathonGrid { grid-template-columns: repeat(3, 1fr); } }
+    /* 3 columns from 1180px: below that a card is too narrow for Generate + Register + bell on one row */
+    @media (min-width: 1180px) { #hackathonGrid { grid-template-columns: repeat(3, 1fr); } }
 
     /* card: uniform, left border coloured by platform (.card--devpost etc. from design-system.css) */
     .hackathon-card { display: flex; flex-direction: column; min-height: 220px; padding: var(--sp-lg); overflow: visible; }
@@ -78,8 +79,15 @@
     .hk-facts { display: flex; flex-wrap: wrap; gap: 0 var(--sp-md); margin: 0 0 var(--sp-sm); color: var(--ds-text-2); font-size: 0.8125rem; }
     .hk-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-sm); margin-bottom: var(--sp-md); }
     .hack-prize { font-family: var(--ds-font-mono); font-variant-numeric: tabular-nums; font-size: 0.8125rem; color: var(--ds-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .hack-actions { display: flex; gap: var(--sp-sm); margin-top: auto; }
-    .btn-gen-idea { flex: 1; }
+    .hack-actions { display: flex; flex-wrap: wrap; gap: var(--sp-sm); margin-top: auto; }
+    .btn-gen-idea { flex: 1 1 130px; }
+    .hack-actions .btn-register { flex: 0 0 auto; }
+    /* phones: Generate Strategy / Register / bell stacked, full width */
+    @media (max-width: 479px) {
+      .hack-actions { flex-direction: column; flex-wrap: nowrap; }
+      .hack-actions > * { width: 100%; flex: 0 0 auto; }
+      .btn-gen-idea { flex: 0 0 auto; }
+    }
     .btn-notify { min-width: 44px; min-height: 36px; padding: 0 12px; border-radius: var(--r-btn); border: 1px solid var(--ds-border); background: transparent; color: var(--ds-text); font: inherit; font-size: 1rem; cursor: pointer; transition: border-color var(--t-color), background-color var(--t-color); }
     .btn-notify:hover { border-color: var(--ds-primary); background: rgba(124, 58, 237, 0.08); }
     .btn-notify[aria-pressed="true"] { background: var(--ds-primary); border-color: var(--ds-primary); }
@@ -284,6 +292,7 @@
 
     function cardHtml({ h, st }) {
       const on = readStore().notifications.includes(h.id);
+      const reg = safeUrl(h.registrationUrl) !== '#' ? h.registrationUrl : '';   // no URL => no button (never a broken link)
       const src = ['devpost', 'devfolio', 'mlh', 'unstop'].includes(h.source) ? h.source : 'primary';
       const facts = [h.mode, h.duration && h.duration !== 'Varies' ? h.duration : '', h.teamSize && h.teamSize !== 'Varies' ? 'Team ' + h.teamSize : ''].filter(Boolean);
       let left = '<span class="days-left">Rolling</span>';
@@ -301,6 +310,7 @@
           <div class="hk-row"><span class="hack-prize">${esc(h.prize || 'See details')}</span>${left}</div>
           <div class="hack-actions">
             <button type="button" class="btn-secondary btn-sm btn-gen-idea" data-idea="${esc(`${h.name}: a ${h.theme || 'open theme'} project`)}">Generate Strategy →</button>
+            ${reg ? `<a class="btn-register" href="${esc(reg)}" target="_blank" rel="noopener noreferrer" aria-label="Register for ${esc(h.name)} (opens in a new tab)">Register ↗</a>` : ''}
             <button type="button" class="btn-notify" data-id="${esc(h.id)}" data-name="${esc(h.name)}" aria-pressed="${on}" aria-label="${on ? 'Remove reminder for' : 'Remind me about'} ${esc(h.name)}">${on ? '🔔' : '🔕'}</button>
           </div>
         </article>`;

@@ -596,7 +596,7 @@
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${w.what_they_built}</p>
           <div class="winner-quote">"${w.judge_quote}"</div>
           <div class="winner-links">
-            ${w.github_url && w.github_url !== 'https://github.com/example' ? `<a href="${w.github_url}" target="_blank" rel="noopener" class="btn-outline btn-sm" style="flex:1;padding:0.4rem;">GitHub ↗</a>` : `<span style="flex:1;padding:0.4rem;text-align:center;font-size:0.8rem;opacity:0.45;align-self:center;">No repo available</span>`}
+            ${/^https?:\/\//i.test(w.github_url || '') && w.github_url !== 'https://github.com/example' ? `<a href="${w.github_url}" target="_blank" rel="noopener noreferrer" class="btn-register" style="flex:1;" aria-label="View project: ${String(w.project_name || '').replace(/"/g, '&quot;')} (opens in a new tab)">View Project ↗</a>` : `<span style="flex:1;padding:0.4rem;text-align:center;font-size:0.8rem;opacity:0.45;align-self:center;">No repo available</span>`}
           </div>
         </div>
       `).join('');

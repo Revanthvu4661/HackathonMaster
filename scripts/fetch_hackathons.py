@@ -220,8 +220,13 @@ def compute_status(start: datetime | None, deadline: datetime | None, now: datet
     return "Live"
 
 
+def clean_url(u):
+    """Only http(s) URLs are allowed; anything else becomes None so the UI hides the Register button."""
+    return u.strip() if isinstance(u, str) and re.match(r"^https?://\S+$", u.strip()) else None
+
+
 def build(now, *, source, sid, name, link, start, deadline, theme="Open Theme", prize="See details",
-          prize_numeric=0, mode="Online", team="Varies", duration=None, tags=None):
+          prize_numeric=0, mode="Online", team="Varies", duration=None, tags=None, registration_url=None):
     status = compute_status(start, deadline, now)
     if status is None:
         return None
@@ -238,6 +243,7 @@ def build(now, *, source, sid, name, link, start, deadline, theme="Open Theme", 
         "mode": mode,
         "teamSize": team,
         "link": link,
+        "registrationUrl": clean_url(registration_url),
         "status": status,
         "tags": list(dict.fromkeys(t for t in (tags or []) if t))[:5],
         "source": source,
@@ -269,6 +275,9 @@ def fetch_devfolio(session, now):
         loc = s.get("city") or s.get("location")
         rec = build(now, source="devfolio", sid=s["slug"], name=s["name"],
                     link=f"https://{s['slug']}.devfolio.co/",  # Devfolio hosts each event on a subdomain
+                    # NB: devfolio.co/hackathons/{slug}/apply returns 404 (verified 2026-10); the event page
+                    # on the subdomain is where applying happens.
+                    registration_url=f"https://{s['slug']}.devfolio.co/",
                     start=start, deadline=deadline,
                     theme=(themes[0] if themes else "Open Theme"), prize=prize, prize_numeric=num,
                     mode=mode_of(s.get("is_online")), team=team,
@@ -298,7 +307,7 @@ def fetch_devpost(session, now):
             themes = [t["name"] for t in h.get("themes", []) if t.get("name")]
             loc = (h.get("displayed_location") or {})
             rec = build(now, source="devpost", sid=h["url"].split("//")[-1].split(".")[0], name=h["title"],
-                        link=h["url"], start=start, deadline=end,
+                        link=h["url"], registration_url=h["url"], start=start, deadline=end,
                         theme=(themes[0] if themes else "Open Theme"), prize=prize if num else "See details",
                         prize_numeric=num, mode=mode_of(text=loc.get("icon") or loc.get("location", "")),
                         team="Varies", tags=themes[:3] + ["Open" if h.get("open_state") == "open" else "Upcoming"])
@@ -319,7 +328,7 @@ def fetch_devpost_rss(session, now):  # fallback only, RSS is often blocked (406
         # RSS carries no deadline; keep it only if the description reveals one.
         m = re.search(r"(\d{4}-\d{2}-\d{2})", e.get("summary", ""))
         deadline = parse_iso(m.group(1) + "T23:59:59+00:00") if m else None
-        rec = build(now, source="devpost", sid=e.link, name=e.title, link=e.link, start=pub, deadline=deadline,
+        rec = build(now, source="devpost", sid=e.link, name=e.title, link=e.link, registration_url=e.link, start=pub, deadline=deadline,
                     tags=[t.term for t in e.get("tags", [])][:3])
         if rec:
             out.append(rec)
@@ -346,6 +355,7 @@ def fetch_mlh(session, now):
             fmt = ev.get("formatType") or ""
             rec = build(now, source="mlh", sid=ev.get("slug") or ev["name"], name=ev["name"],
                         link=ev.get("websiteUrl") or f"https://mlh.io{ev.get('url', '')}",
+                        registration_url=ev.get("websiteUrl"),
                         start=start, deadline=end, theme="Student Hackathon",
                         prize="See details", mode=mode_of(text=fmt), team="Varies",
                         tags=["MLH", "Students", ev.get("location")])
@@ -357,7 +367,8 @@ def fetch_mlh(session, now):
 def static_unstop(now):
     out = []
     for e in UNSTOP_STATIC:
-        rec = build(now, source="unstop", sid=e["name"], name=e["name"], link=e["link"], start=None, deadline=None,
+        rec = build(now, source="unstop", sid=e["name"], name=e["name"], link=e["link"],
+                    registration_url=e.get("registrationUrl", e["link"]), start=None, deadline=None,
                     theme=e["theme"], prize=e["prize"], prize_numeric=e.get("prize_numeric", 0), mode=e["mode"],
                     team=e["teamSize"], duration="Varies", tags=e["tags"])
         if rec:

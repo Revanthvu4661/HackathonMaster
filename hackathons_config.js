@@ -22,7 +22,8 @@ const FALLBACK_HACKATHONS = [
       "Annual"
     ],
     "source": "unstop",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://unstop.com/hackathons"
   },
   {
     "id": "unstop-google-solution-challenge",
@@ -44,7 +45,8 @@ const FALLBACK_HACKATHONS = [
       "Annual"
     ],
     "source": "unstop",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://developers.google.com/community/gdsc-solution-challenge"
   },
   {
     "id": "unstop-microsoft-imagine-cup",
@@ -66,7 +68,8 @@ const FALLBACK_HACKATHONS = [
       "Annual"
     ],
     "source": "unstop",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "unstop-nasa-international-space-apps-challenge",
@@ -88,7 +91,8 @@ const FALLBACK_HACKATHONS = [
       "Annual"
     ],
     "source": "unstop",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://www.spaceappschallenge.org/"
   },
   {
     "id": "unstop-smart-india-hackathon-sih",
@@ -110,7 +114,8 @@ const FALLBACK_HACKATHONS = [
       "Annual"
     ],
     "source": "unstop",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://www.sih.gov.in/"
   },
   {
     "id": "unstop-unstop-hackathons-hub",
@@ -132,7 +137,8 @@ const FALLBACK_HACKATHONS = [
       "Rolling"
     ],
     "source": "unstop",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://unstop.com/hackathons"
   },
   {
     "id": "devfolio-hack-with-gdg-s4",
@@ -153,7 +159,8 @@ const FALLBACK_HACKATHONS = [
       "Open"
     ],
     "source": "devfolio",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://hack-with-gdg-s4.devfolio.co/"
   },
   {
     "id": "devfolio-devnexus2",
@@ -174,7 +181,8 @@ const FALLBACK_HACKATHONS = [
       "Open"
     ],
     "source": "devfolio",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://devnexus2.devfolio.co/"
   },
   {
     "id": "devfolio-haxfinity",
@@ -195,7 +203,8 @@ const FALLBACK_HACKATHONS = [
       "Open"
     ],
     "source": "devfolio",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://haxfinity.devfolio.co/"
   },
   {
     "id": "devpost-hack47-offgrid",
@@ -218,7 +227,8 @@ const FALLBACK_HACKATHONS = [
       "Open"
     ],
     "source": "devpost",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://hack47-offgrid.devpost.com/"
   },
   {
     "id": "devpost-multimodal-ai-hackathon-2026-7",
@@ -239,7 +249,8 @@ const FALLBACK_HACKATHONS = [
       "Open"
     ],
     "source": "devpost",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://multimodal-ai-hackathon-2026-7.devpost.com/"
   },
   {
     "id": "devpost-warriorhacks-2-0",
@@ -262,7 +273,8 @@ const FALLBACK_HACKATHONS = [
       "Open"
     ],
     "source": "devpost",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://warriorhacks-2-0.devpost.com/"
   },
   {
     "id": "mlh-la-hacks-27",
@@ -284,7 +296,8 @@ const FALLBACK_HACKATHONS = [
       "Los Angeles, California"
     ],
     "source": "mlh",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://lahacks.com"
   },
   {
     "id": "mlh-hackku27",
@@ -306,7 +319,8 @@ const FALLBACK_HACKATHONS = [
       "Lawrence, Kansas"
     ],
     "source": "mlh",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://www.hackku.org/"
   },
   {
     "id": "mlh-wehack-36",
@@ -328,6 +342,7 @@ const FALLBACK_HACKATHONS = [
       "Richardson, TX"
     ],
     "source": "mlh",
-    "last_updated": "2026-09-30T03:28:11Z"
+    "last_updated": "2026-09-30T03:28:11Z",
+    "registrationUrl": "https://www.wehackutd.com/"
   }
 ];

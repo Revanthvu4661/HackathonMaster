@@ -204,6 +204,14 @@ code, pre, kbd, samp, .mono, .num { font-family: var(--ds-font-mono); }
   transition: color var(--t-color), background-color var(--t-color), border-color var(--t-color);
 }
 .btn-ghost:hover { color: var(--ds-text); background: rgba(124, 58, 237, 0.08); }
+.btn-register {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-xs);
+  min-height: 36px; padding: 6px 12px; font-family: var(--ds-font-body); font-size: 0.8125rem; font-weight: 500; line-height: 1.2;
+  background: transparent; color: var(--ds-primary-text);             /* #A78BFA: #7C3AED text on dark is only ~3:1 */
+  border: 1px solid var(--ds-primary); border-radius: var(--r-btn); text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: background-color var(--t-color), color var(--t-color), transform var(--t-move);
+}
+.btn-register:hover { background: var(--ds-primary); color: var(--ds-on-primary); }
 .btn-sm { min-height: 36px; padding: 6px 12px; font-size: 0.8125rem; }
 .btn:disabled, .btn-primary:disabled, .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .btn-block { width: 100%; }
