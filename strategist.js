@@ -310,6 +310,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('latest_strat_result', JSON.stringify(newItem));
 
+    // [Firebase] additive: analytics + cloud save. Both no-op when signed out or Firebase is unavailable.
+    try {
+      if (window.trackEvent) trackEvent('strategy_generated', { problem_length: problem.length });
+      if (window.DB) DB.saveStrategy(DB.uid(), newItem).then(function (id) { if (id && window.trackEvent) trackEvent('strategy_saved'); });
+    } catch (e) { /* never block the UI */ }
+
     updateHistoryUI();
 
   }

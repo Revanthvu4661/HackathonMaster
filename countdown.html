@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/design-system.css">
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json" />
@@ -26,357 +27,37 @@
   <link rel="apple-touch-icon" href="favicon.png">
 
   <style>
-
-    :root {
-
-      --timer-font: 'Outfit', sans-serif;
-
-    }
-
-
-
-    .countdown-container {
-
-      max-width: 900px;
-
-      margin: 120px auto 60px;
-
-      padding: 0 2rem;
-
-    }
-
-
-
-    .setup-card, .timer-card {
-
-      background: var(--glass-bg);
-
-      backdrop-filter: blur(var(--glass-blur));
-
-      border: 1px solid var(--glass-border);
-
-      border-radius: 24px;
-
-      padding: 3rem;
-
-      text-align: center;
-
-      transition: all 0.3s ease;
-
-    }
-
-
-
-    .setup-card h1 {
-
-      font-size: 2.5rem;
-
-      margin-bottom: 1rem;
-
-      background: var(--accent-gradient);
-
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-
-    }
-
-
-
-    .form-group {
-
-      margin-bottom: 1.5rem;
-
-      text-align: left;
-
-    }
-
-
-
-    .form-group label {
-
-      display: block;
-
-      margin-bottom: 0.5rem;
-
-      color: var(--text-secondary);
-
-      font-weight: 500;
-
-    }
-
-
-
-    .form-group input {
-
-      width: 100%;
-
-      padding: 1rem;
-
-      background: rgba(255, 255, 255, 0.05);
-
-      border: 1px solid var(--glass-border);
-
-      border-radius: 12px;
-
-      color: var(--text-primary);
-
-      font-size: 1rem;
-
-      outline: none;
-
-      transition: border-color 0.3s;
-
-    }
-
-
-
-    .form-group input:focus {
-
-      border-color: var(--accent-primary);
-
-    }
-
-
-
+    /* countdown.html: timer is the hero. Tokens/components from design-system.css */
+    .countdown-container { max-width: 900px; margin: 0 auto; padding: var(--sp-2xl) var(--sp-md) var(--sp-3xl); }
+    .setup-card, .timer-card { background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--r-card); padding: var(--sp-lg); text-align: center; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    @media (min-width: 768px) { .setup-card, .timer-card { padding: var(--sp-2xl); } }
+    .setup-card h1 { font-size: var(--ds-fs-h2); margin-bottom: var(--sp-sm); background: none; -webkit-text-fill-color: currentColor; color: var(--ds-text); }
+    .form-group { margin-bottom: var(--sp-lg); text-align: left; }
+    .form-group label { display: block; margin-bottom: var(--sp-sm); }
+    .form-group input { width: 100%; min-width: 0; }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: var(--sp-md); }
+    @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
     .timer-display {
-
-      font-family: var(--timer-font);
-
-      font-size: clamp(4rem, 15vw, 8rem);
-
-      font-weight: 700;
-
-      letter-spacing: -2px;
-
-      margin: 2rem 0;
-
-      color: var(--text-primary);
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 1rem;
-
+      font-family: var(--ds-font-display); font-weight: 600; letter-spacing: -0.03em; line-height: 1;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1;   /* fixed-width digits: no jumping */
+      color: var(--ds-primary-text);
+      display: flex; justify-content: center; align-items: flex-start; gap: clamp(8px, 2vw, 24px); margin: var(--sp-xl) 0;
     }
-
-
-
-    .timer-unit {
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-    }
-
-
-
-    .unit-label {
-
-      font-size: 1rem;
-
-      font-weight: 500;
-
-      color: var(--text-secondary);
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-top: -1rem;
-
-    }
-
-
-
-    .milestones {
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 1.5rem;
-
-      margin-top: 3rem;
-
-    }
-
-
-
-    .milestone {
-
-      background: rgba(255, 255, 255, 0.03);
-
-      padding: 1.5rem;
-
-      border-radius: 16px;
-
-      border: 1px solid var(--glass-border);
-
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-      position: relative;
-
-      overflow: hidden;
-
-    }
-
-
-
-    .milestone.active {
-
-      border-color: var(--success);
-
-      background: rgba(16, 185, 129, 0.1);
-
-      transform: translateY(-5px);
-
-    }
-
-
-
-    .milestone.active::after {
-
-      content: '✓';
-
-      position: absolute;
-
-      top: 10px;
-
-      right: 10px;
-
-      color: var(--success);
-
-      font-weight: bold;
-
-    }
-
-
-
-    .milestone-percentage {
-
-      font-size: 0.8rem;
-
-      color: var(--text-secondary);
-
-      margin-bottom: 0.5rem;
-
-      display: block;
-
-    }
-
-
-
-    .milestone-title {
-
-      font-weight: 600;
-
-      color: var(--text-primary);
-
-    }
-
-
-
-    .timer-controls {
-
-      margin-top: 3rem;
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 1rem;
-
-    }
-
-
-
-    .hackathon-title-display {
-
-      font-size: 1.5rem;
-
-      font-weight: 600;
-
-      margin-bottom: 0.5rem;
-
-      color: var(--accent-primary);
-
-    }
-
-
-
-    .sound-toggle {
-
-      position: absolute;
-
-      top: 2rem;
-
-      right: 2rem;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 0.5rem;
-
-      cursor: pointer;
-
-      color: var(--text-secondary);
-
-      font-size: 0.9rem;
-
-    }
-
-
-
-    /* Progress Bar */
-
-    .progress-container {
-
-      width: 100%;
-
-      height: 8px;
-
-      background: rgba(255, 255, 255, 0.05);
-
-      border-radius: 4px;
-
-      margin: 2rem 0;
-
-      overflow: hidden;
-
-    }
-
-
-
-    .progress-fill {
-
-      height: 100%;
-
-      background: var(--accent-gradient);
-
-      width: 0%;
-
-      transition: width 1s linear;
-
-    }
-
-
-
-    @media (max-width: 600px) {
-
-      .milestones {
-
-        grid-template-columns: 1fr;
-
-      }
-
-    }
-
+    .timer-unit { display: flex; flex-direction: column; align-items: center; min-width: 2ch; }
+    .unit-label { font-family: var(--ds-font-body); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--ds-text-2); margin-top: var(--sp-sm); }
+    .milestones { display: grid; grid-template-columns: 1fr; gap: var(--sp-md); margin-top: var(--sp-2xl); }
+    @media (min-width: 640px) { .milestones { grid-template-columns: repeat(3, 1fr); } }
+    .milestone { background: var(--ds-bg); padding: var(--sp-lg); border-radius: var(--r-card); border: 1px solid var(--ds-border); position: relative; overflow: hidden; transition: border-color var(--t-color), background-color var(--t-color); }
+    .milestone.active { border-color: var(--ds-success); background: rgba(16, 185, 129, 0.08); transform: none; }
+    .milestone.active::after { content: '✓'; position: absolute; top: 10px; right: 12px; color: var(--ds-success); font-weight: 700; }
+    .milestone-percentage { font-family: var(--ds-font-mono); font-size: 0.75rem; color: var(--ds-text-2); margin-bottom: var(--sp-sm); display: block; }
+    .milestone-title { font-weight: 500; color: var(--ds-text); }
+    .timer-controls { margin-top: var(--sp-2xl); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-md); }
+    .hackathon-title-display { font-family: var(--ds-font-display); font-size: 1.25rem; font-weight: 500; margin-bottom: var(--sp-sm); color: var(--ds-text-2); }
+    .sound-toggle { position: absolute; top: var(--sp-lg); right: var(--sp-lg); display: flex; align-items: center; gap: var(--sp-sm); min-height: 44px; cursor: pointer; color: var(--ds-text-2); font-size: 0.875rem; }
+    .progress-container { width: 100%; height: 4px; background: var(--ds-surface-2); border-radius: 2px; margin: var(--sp-lg) 0; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--ds-primary); width: 0%; transition: width 1s linear; }
   </style>
 
   <!-- Open Graph / Social -->
@@ -388,9 +69,20 @@
   <meta name="twitter:title" content="Hackathon Countdown | RAR Hackathon Helper" />
   <meta name="twitter:description" content="Set your hackathon deadline and stay on track with a live countdown timer. Visualize time remaining and plan your sprints." />
   <link rel="canonical" href="https://hackathonmaster.onrender.com/countdown.html" />
+  <!-- Firebase (compat SDK v10, CDN) — must load before any app script -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth-ui.js"></script>
 </head>
 
 <body class="dark-theme">
+  <div id="navbar-placeholder"></div>
+  <script src="js/navbar.js"></script>
+
 
   <!-- Animated Background -->
 
@@ -410,95 +102,15 @@
 
   <!-- Navigation -->
 
-  <nav class="navbar" id="navbar">
+  
 
-    <div class="nav-inner">
 
-      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
-
-        <div class="brand-icon">
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-        </div>
-
-      </a>
-
-      <div class="nav-links">
-
-        <a href="index.html" class="nav-link">Home</a>
-
-        <a href="strategist.html" class="nav-link">Strategist</a>
-
-        <a href="checklist.html" class="nav-link">Checklist</a>
-
-        <a href="features.html" class="nav-link">AI Tools</a>
-
-        <a href="countdown.html" class="nav-link active">Sprint Timer</a>
-
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-
-        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-        <a href="compare.html" class="nav-link">Stack Comparator</a>
-        <a href="showcase.html" class="nav-link">Showcase</a>
-      </div>
-      <div class="nav-actions">
-
-        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-
-        </button>
-
-        <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-          <span style="font-size: 0.85rem; font-weight: 600;">History</span>
-
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-
-          <span></span><span></span><span></span>
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </nav>
 
 
 
   <!-- Mobile Menu -->
 
-  <div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html" class="mobile-link">Home</a>
-
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-
-    <a href="features.html" class="mobile-link">AI Tools</a>
-
-    <a href="countdown.html" class="mobile-link active">Sprint Timer</a>
-
-    <a href="team_builder.html" class="mobile-link">Team Builder</a>
-
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
-
-    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
-    <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
-    <a href="compare.html" class="mobile-link">Stack Comparator</a>
-    <a href="showcase.html" class="mobile-link">Showcase</a>
-    <a href="#" class="mobile-link history-nav-trigger">History</a>
-  </div>
+  
 
 
 
@@ -524,7 +136,7 @@
 
       
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+      <div class="form-row">
 
         <div class="form-group">
 
@@ -1159,6 +771,16 @@
       navigator.serviceWorker.register('/sw.js');
     }
   </script>
+<footer class="ds-footer site-footer">
+  <div class="ds-footer-inner site-footer-inner">
+    <span class="footer-copy">© 2026 Revanth Sai Sankar Alapati</span>
+    <div class="footer-links">
+      <a href="https://github.com/Revanthvu4661/HackathonMaster" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <span class="footer-badge">Built with Gemini 2.0</span>
+    </div>
+  </div>
+</footer>
 </body>
 
 </html>

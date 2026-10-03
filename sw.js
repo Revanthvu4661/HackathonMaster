@@ -1,5 +1,5 @@
 // [RAR-FIX-16] Upgraded Service Worker with offline fallback + background sync
-const CACHE_NAME = 'hackathon-master-v4';
+const CACHE_NAME = 'hackathon-master-v6';
 const FONT_CACHE = 'hackathon-fonts-v4';
 const CDN_CACHE = 'hackathon-cdn-v4';
 const OFFLINE_QUEUE = 'gemini-offline-queue';
@@ -22,11 +22,16 @@ const PRECACHE_ASSETS = [
   '/offline.html',
 
   '/style.css',
+  '/styles/design-system.css',
   '/strategist.css',
   '/team_builder.css',
   '/hackathon_universe.css',
 
   '/theme.js',
+  '/js/navbar.js',
+  '/js/firebase.js',
+  '/js/db.js',
+  '/js/auth-ui.js',
   '/app_v2.js',
   '/strategist.js',
   '/team_builder.js',
@@ -123,11 +128,10 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Local assets — cache-first, fall back to offline.html for navigations
-  event.respondWith(
-    caches.match(request).then(cached => {
-      if (cached) return cached;
-      return fetch(request)
+  // Live data (updated daily by GitHub Actions) — network-first so it never goes stale
+  if (url.pathname.startsWith('/data/')) {
+    event.respondWith(
+      fetch(request)
         .then(response => {
           if (response.ok) {
             const clone = response.clone();
@@ -135,12 +139,28 @@ self.addEventListener('fetch', event => {
           }
           return response;
         })
-        .catch(() => {
-          if (request.mode === 'navigate') {
-            return caches.match('/offline.html') || caches.match('/index.html');
-          }
-        });
-    })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Local pages/styles/scripts — network-first so a redesign or bug fix is never hidden by an old
+  // cached copy; the cache is only the offline fallback.
+  event.respondWith(
+    fetch(request)
+      .then(response => {
+        if (response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+        }
+        return response;
+      })
+      .catch(() =>
+        caches.match(request).then(cached => {
+          if (cached) return cached;
+          if (request.mode === 'navigate') return caches.match('/offline.html') || caches.match('/index.html');
+        })
+      )
   );
 });
 

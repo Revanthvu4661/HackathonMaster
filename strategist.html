@@ -40,6 +40,7 @@
 
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/design-system.css">
 
 
 
@@ -60,6 +61,14 @@
 
 
 
+  <!-- Firebase (compat SDK v10, CDN) — must load before any app script -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth-ui.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
 
@@ -136,6 +145,31 @@
 
 
 
+  
+    /* ---- strategist layout: input 40% | output 60% on desktop ---- */
+    .strat-hero { padding: var(--sp-2xl) var(--sp-md) var(--sp-lg); text-align: left; }
+    .strat-hero-content { max-width: var(--max-width); margin: 0 auto; }
+    .strat-hero-title { font-family: var(--ds-font-display); font-weight: 600; letter-spacing: -0.03em; margin-bottom: var(--sp-md); }
+    .strat-hero-sub { margin: 0; max-width: 62ch; }
+    .strat-input-section.section { padding-top: var(--sp-md); }
+    .strat-workspace { display: grid; grid-template-columns: 1fr; gap: var(--sp-lg); align-items: start; }
+    .strat-panel { background: var(--ds-surface); border-radius: var(--r-card); padding: var(--sp-lg); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; margin-bottom: 0; gap: var(--sp-lg); }
+    .api-key-banner { border-radius: var(--r-card); }
+    .strat-output-area { background: var(--ds-well); border: 1px solid var(--ds-border); border-radius: var(--r-card); padding: var(--sp-lg); animation: none; min-width: 0; }
+    .strat-output-header { margin-bottom: var(--sp-md); }
+    .strat-output-title h2 { font-family: var(--ds-font-display); font-weight: 500; font-size: 1.25rem; }
+    .strat-output-actions { margin-left: auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--sp-sm); }
+    #exportSessionBtn { order: 99; }
+    .strat-input, .strat-textarea { background: var(--ds-surface); border-radius: var(--r-btn); }
+    #stratTabs { margin-bottom: var(--sp-lg); }
+    #stratTabs .tab-btn { padding: 0 2px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; }
+    #stratTabs .tab-btn.active { background: transparent; border-bottom-color: var(--ds-primary); color: var(--ds-text); }
+    @media (min-width: 1024px) {
+      /* Output visible (JS flips its inline display): two columns, panel stacks its own two columns */
+      .strat-workspace:has(#stratOutput:not([style*="none"])) { grid-template-columns: 2fr 3fr; }
+      .strat-workspace:has(#stratOutput:not([style*="none"])) .strat-panel { grid-template-columns: 1fr; position: sticky; top: calc(var(--nav-height) + var(--sp-md)); max-height: calc(100vh - var(--nav-height) - var(--sp-xl)); overflow-y: auto; }
+      #stratOutput { max-height: none; }
+    }
   </style>
 
 
@@ -154,6 +188,9 @@
 
 
 <body>
+  <div id="navbar-placeholder"></div>
+  <script src="js/navbar.js"></script>
+
 
 
 
@@ -197,136 +234,9 @@
 
 
 
-  <nav class="navbar" id="navbar">
+  
 
 
-
-    <div class="nav-inner">
-
-
-
-      <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;">
-
-
-
-        <div class="brand-icon">
-
-
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-
-
-        </div>
-
-
-
-        
-
-
-
-      </a>
-
-
-
-      <div class="nav-links" id="navLinks">
-
-
-
-        <a href="index.html" class="nav-link">Home</a>
-
-
-
-        <a href="strategist.html" class="nav-link active">Strategist</a>
-
-
-
-        <a href="checklist.html" class="nav-link">Checklist</a>
-
-
-
-        <a href="features.html" class="nav-link">AI Tools</a>
-
-
-
-        <a href="countdown.html" class="nav-link">Sprint Timer</a>
-
-
-
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-
-
-
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-
-
-
-        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-        <a href="compare.html" class="nav-link">Stack Comparator</a>
-        <a href="showcase.html" class="nav-link">Showcase</a>
-
-
-
-
-
-      </div>
-
-
-
-      <div class="nav-actions">
-
-
-
-        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-
-
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-
-
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-
-
-
-        </button>
-
-        <!-- [RAR-FIX-20] Export Session button -->
-        <button class="btn-ghost" id="exportSessionBtn" title="Export full session as PDF" style="display:none;gap:0.4rem;align-items:center;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span style="font-size:0.82rem;font-weight:600;">Export PDF</span>
-        </button>
-
-        <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-          <span style="font-size: 0.85rem; font-weight: 600;">History</span>
-
-        </button>
-
-
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-
-
-
-          <span></span><span></span><span></span>
-
-
-
-        </button>
-
-
-
-      </div>
-
-
-
-    </div>
-
-
-
-  </nav>
 
 
 
@@ -338,50 +248,7 @@
 
 
 
-  <div class="mobile-menu" id="mobileMenu">
-
-
-
-    <a href="index.html" class="mobile-link">Home</a>
-
-
-
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-
-
-
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-
-
-
-    <a href="features.html" class="mobile-link">AI Tools</a>
-
-
-
-    <a href="countdown.html" class="mobile-link">Sprint Timer</a>
-
-
-
-    <a href="team_builder.html" class="mobile-link">Team Builder</a>
-
-
-
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
-
-
-
-    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
-    <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
-    <a href="compare.html" class="mobile-link">Stack Comparator</a>
-    <a href="showcase.html" class="mobile-link">Showcase</a>
-
-
-
-    <a href="#" class="mobile-link history-nav-trigger">History</a>
-
-
-
-  </div>
+  
 
 
 
@@ -394,69 +261,12 @@
 
 
   <section class="strat-hero">
-
-
-
-    <div class="strat-hero-content">
-
-
-
-      <div class="hero-badge">
-
-
-
-        <span class="badge-dot"></span>
-
-
-
-        World-Class Hackathon Strategist · Judge Psychology · Prompt Engineer
-
-
-
-      </div>
-
-
-
-      <h1 class="strat-hero-title">
-
-
-
-        AI Solution <span class="gradient-text">Strategist</span>
-
-
-
-      </h1>
-
-
-
-      <div class="hero-logo-container" style="margin-top: 1rem; display: flex; justify-content: center;">
-
-
-
-        <img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 100px; height: 100px;">
-
-
-
-      </div>
-
-
-
+    <div class="strat-hero-content fade-in">
+      <h1 class="strat-hero-title">AI Solution Strategist</h1>
       <p class="strat-hero-sub">
-
-
-
         Paste your problem statement. Get a full strategic breakdown — refined problem, market gaps, 10 high-impact add-ons, ready-to-paste prompt packs, and a judge-winning pitch strategy.
-
-
-
       </p>
-
-
-
     </div>
-
-
-
   </section>
 
 
@@ -521,6 +331,7 @@
 
 
 
+      <div class="strat-workspace">
       <div class="strat-panel">
 
 
@@ -1065,10 +876,6 @@ The more detail you provide, the better the strategic output."
 
 
 
-            <img src="logo.png" class="brand-logo" style="width: 32px; height: 32px;">
-
-
-
             <h2>Strategic Intelligence Report</h2>
 
 
@@ -1078,6 +885,11 @@ The more detail you provide, the better the strategic output."
 
 
           <div class="strat-output-actions">
+            <button type="button" class="btn-secondary btn-sm" id="exportSessionBtn" title="Export full session as PDF" style="display:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export PDF
+            </button>
+            
 
 
 
@@ -1144,39 +956,39 @@ The more detail you provide, the better the strategic output."
 
 
 
-          <button class="tab-btn active" data-stab="analysis">🎯 Analysis</button>
+          <button class="tab-btn active" data-stab="analysis">Analysis</button>
 
 
 
-          <button class="tab-btn" data-stab="research">🔬 Research</button>
+          <button class="tab-btn" data-stab="research">Research</button>
 
 
 
-          <button class="tab-btn" data-stab="addons">🧩 Add-ons</button>
+          <button class="tab-btn" data-stab="addons">Add-ons</button>
 
 
 
-          <button class="tab-btn" data-stab="priority">⚡ Top 5</button>
+          <button class="tab-btn" data-stab="priority">Top 5</button>
 
 
 
-          <button class="tab-btn" data-stab="features">✅ Features</button>
+          <button class="tab-btn" data-stab="features">Features</button>
 
 
 
-          <button class="tab-btn" data-stab="prompts">🔥 Prompts</button>
+          <button class="tab-btn" data-stab="prompts">Prompts</button>
 
 
 
-          <button class="tab-btn" data-stab="judge">🏆 Judge Strategy</button>
+          <button class="tab-btn" data-stab="judge">Judge</button>
 
 
 
-          <button class="tab-btn" data-stab="prd">📄 PRD</button>
+          <button class="tab-btn" data-stab="prd">PRD</button>
 
 
 
-          <button class="tab-btn" data-stab="architecture">🏗️ Architecture</button>
+          <button class="tab-btn" data-stab="architecture">Architecture</button>
 
 
 
@@ -1216,6 +1028,7 @@ The more detail you provide, the better the strategic output."
 
 
       </div>
+      </div><!-- /strat-workspace -->
 
 
 
@@ -1381,127 +1194,16 @@ The more detail you provide, the better the strategic output."
 
 
 
-  <footer class="footer">
-
-
-
-    <div class="footer-inner">
-
-
-
-      <div class="footer-brand">
-
-
-
-        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem;">
-
-
-
-          
-
-
-
-        </a>
-
-
-
-        <p class="footer-tagline">Your ultimate AI co-founder for winning hackathons.</p>
-
-
-
-      </div>
-
-
-
-      <div class="footer-links">
-
-
-
-        <div class="footer-col">
-
-
-
-          <h4>Platform</h4>
-
-
-
-          <a href="strategist.html">Strategist</a>
-
-
-
-          <a href="features.html">AI Tools</a>
-
-
-
-          <a href="team_builder.html">Team Builder</a>
-
-
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-
-
-        </div>
-
-
-
-        <div class="footer-col">
-
-
-
-          <h4>Resources</h4>
-
-
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-
-
-          <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
-        <a href="repos.html">Hackathon Repos</a>
-
-
-
-        </div>
-
-
-
-      </div>
-
-
-
+  <footer class="ds-footer site-footer">
+  <div class="ds-footer-inner site-footer-inner">
+    <span class="footer-copy">© 2026 Revanth Sai Sankar Alapati</span>
+    <div class="footer-links">
+      <a href="https://github.com/Revanthvu4661/HackathonMaster" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <span class="footer-badge">Built with Gemini 2.0</span>
     </div>
-
-
-
-    <div class="footer-bottom">
-
-
-
-      <span>© 2026 Revanth Sai Sankar Alapati. All rights reserved.</span>
-
-
-      <span style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-secondary);">
-
-
-
-        Created by
-
-
-
-        <span style="background:linear-gradient(135deg,#a78bfa,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
-
-
-
-      </span>
-
-
-
-    </div>
-
-
-
-  </footer>
+  </div>
+</footer>
 
 
 

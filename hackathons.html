@@ -29,6 +29,7 @@
 
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/design-system.css">
 
 
 
@@ -42,69 +43,78 @@
 
 
   <style>
+    /* hackathons.html: layout for the live-data page. Tokens/components come from design-system.css */
+    .hk-head { margin-bottom: var(--sp-lg); }
+    .hk-head h1 { font-size: var(--ds-fs-h2); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
+    .hk-head .section-subtitle { margin-top: var(--sp-sm); }
+    .hk-meta { display: flex; align-items: center; gap: var(--sp-sm); margin-top: var(--sp-md); font-size: 12px; color: var(--ds-text-2); }
+    .hk-refresh { width: 28px; height: 28px; min-width: 28px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r-btn); border: 1px solid var(--ds-border); background: transparent; color: var(--ds-text); cursor: pointer; transition: border-color var(--t-color), background-color var(--t-color); }
+    .hk-refresh:hover { border-color: var(--ds-primary); background: rgba(124, 58, 237, 0.08); }
+    .hk-refresh[disabled] { opacity: 0.6; cursor: progress; }
+    .hk-refresh[disabled] svg { animation: hk-spin 1s linear infinite; }
+    .hk-refresh::before { content: ''; position: absolute; width: 44px; height: 44px; } /* 44px touch target around the 28px icon button */
+    .hk-refresh { position: relative; }
 
+    /* sticky single-row filter bar */
+    .hk-toolbar { position: sticky; top: var(--nav-height); z-index: 50; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-sm); padding: var(--sp-sm) 0; margin: 0 0 var(--sp-md); background: rgba(10, 10, 15, 0.92); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--ds-border); }
+    html[data-theme="light"] .hk-toolbar { background: rgba(248, 250, 252, 0.92); }
+    .hk-toolbar .hk-field { min-height: 40px; padding: 0 12px; font-size: 0.8125rem; width: 100%; min-width: 0; }
+    .hk-toolbar #hkSearch { grid-column: 1 / -1; }
+    @media (min-width: 768px) { .hk-toolbar { grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); } .hk-toolbar #hkSearch { grid-column: auto; } }
+    .hk-count { font-size: 12px; color: var(--ds-text-2); margin: 0 0 var(--sp-md); }
 
+    /* grid: 1 / 2 / 3 columns */
+    #hackathonGrid { grid-template-columns: 1fr; grid-auto-rows: 1fr; }
+    @media (min-width: 640px)  { #hackathonGrid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { #hackathonGrid { grid-template-columns: repeat(3, 1fr); } }
 
-    .hackathon-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    /* card: uniform, left border coloured by platform (.card--devpost etc. from design-system.css) */
+    .hackathon-card { display: flex; flex-direction: column; min-height: 220px; padding: var(--sp-lg); overflow: visible; }
+    .hackathon-card .status-badge { align-self: flex-start; margin-bottom: var(--sp-sm); }
+    .hack-title { font-size: var(--ds-fs-card); font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; margin: 0 0 var(--sp-xs); padding-right: 72px; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .hack-title a { color: var(--ds-text); text-decoration: none; }
+    .hack-title a:hover { color: var(--ds-primary-text); }
+    .hack-org { color: var(--ds-text-2); font-size: 0.8125rem; margin-bottom: var(--sp-sm); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hk-facts { display: flex; flex-wrap: wrap; gap: 0 var(--sp-md); margin: 0 0 var(--sp-sm); color: var(--ds-text-2); font-size: 0.8125rem; }
+    .hk-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-sm); margin-bottom: var(--sp-md); }
+    .hack-prize { font-family: var(--ds-font-mono); font-variant-numeric: tabular-nums; font-size: 0.8125rem; color: var(--ds-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .hack-actions { display: flex; gap: var(--sp-sm); margin-top: auto; }
+    .btn-gen-idea { flex: 1; }
+    .btn-notify { min-width: 44px; min-height: 36px; padding: 0 12px; border-radius: var(--r-btn); border: 1px solid var(--ds-border); background: transparent; color: var(--ds-text); font: inherit; font-size: 1rem; cursor: pointer; transition: border-color var(--t-color), background-color var(--t-color); }
+    .btn-notify:hover { border-color: var(--ds-primary); background: rgba(124, 58, 237, 0.08); }
+    .btn-notify[aria-pressed="true"] { background: var(--ds-primary); border-color: var(--ds-primary); }
+    .hackathon-card .badge-platform { top: var(--sp-lg); right: var(--sp-lg); }
 
-
-
-    .hackathon-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); box-shadow: 0 10px 30px rgba(167, 139, 250, 0.1); }
-
-
-
-    .status-badge { position: absolute; top: 1.5rem; right: 1.5rem; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-
-
-
-    .status-live { background: rgba(16, 185, 129, 0.2); color: #10b981; }
-
-
-
-    .status-upcoming { background: rgba(167, 139, 250, 0.2); color: #a78bfa; }
-
-
-
-    .status-ended { background: rgba(100, 116, 139, 0.2); color: #94a3b8; }
-
-
-
-    .hack-date { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; display: block; }
-
-
-
-    .hack-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
-
-
-
-    .hack-org { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
-
-
-
-    .hack-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-
-
-
-    .hack-prize { font-weight: 600; color: #06b6d4; margin-bottom: 1.5rem; display: block;}
-
-
-
-    .hack-actions { display: flex; gap: 1rem; }
-
-
-
-    .btn-gen-idea { flex: 1; padding: 0.8rem; text-align: center; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; cursor: pointer; border: none;}
-
-
-
-    .btn-gen-idea:hover { opacity: 0.9; }
-
-
-
+    /* states */
+    .hk-banner { margin: 0 0 var(--sp-md); padding: var(--sp-sm) var(--sp-md); border-radius: var(--r-card); border: 1px solid var(--ds-warning); background: transparent; color: var(--ds-text); font-size: 0.875rem; }
+    .hk-banner.hk-error { border-color: var(--ds-danger); }
+    .hk-skel { min-height: 220px; }
+    .hk-skel span { display: block; height: 16px; margin-bottom: var(--sp-md); border-radius: var(--r-chip); background: linear-gradient(90deg, var(--ds-surface) 25%, var(--ds-surface-2) 50%, var(--ds-surface) 75%); background-size: 200% 100%; animation: hk-shimmer 1.4s linear infinite; }
+    .hk-empty { grid-column: 1 / -1; text-align: center; padding: var(--sp-2xl) var(--sp-md); color: var(--ds-text-2); }
+    .hk-more { display: flex; justify-content: center; margin-top: var(--sp-lg); }
+    .hk-btn { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--sp-lg); border-radius: var(--r-btn); border: 1px solid var(--ds-border); background: transparent; color: var(--ds-text); font: inherit; font-weight: 500; cursor: pointer; transition: border-color var(--t-color), background-color var(--t-color); }
+    .hk-btn:hover { border-color: var(--ds-primary); background: rgba(124, 58, 237, 0.08); }
+    .hk-toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 12px 24px; border-radius: var(--r-card); background: var(--ds-surface-2); border: 1px solid var(--ds-primary); color: var(--ds-text); z-index: 1000; }
+    dialog.hk-dialog { padding: var(--sp-lg); width: min(420px, calc(100vw - 32px)); }
+    dialog.hk-dialog form { display: grid; gap: var(--sp-md); }
+    dialog.hk-dialog menu { display: flex; gap: var(--sp-sm); justify-content: flex-end; margin: 0; padding: 0; }
+    .hk-primary { background: var(--ds-primary); border-color: var(--ds-primary); color: var(--ds-on-primary); }
+    .hk-primary:hover { background: var(--ds-primary-hover); border-color: var(--ds-primary-hover); }
+    @keyframes hk-shimmer { to { background-position: -200% 0; } }
+    @keyframes hk-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .hk-skel span, .hk-refresh[disabled] svg { animation: none; } }
   </style>
 
 
 
+  <!-- Firebase (compat SDK v10, CDN) — must load before any app script -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth-ui.js"></script>
 <script src="theme.js"></script>
 
   <!-- Open Graph / Social -->
@@ -121,6 +131,9 @@
 
 
 <body>
+  <div id="navbar-placeholder"></div>
+  <script src="js/navbar.js"></script>
+
 
 
 
@@ -140,130 +153,17 @@
 
 
 
-  <nav class="navbar" id="navbar">
+  
 
 
 
-    <div class="nav-inner">
 
 
 
-      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
 
 
 
-        <div class="brand-icon">
-
-
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-
-
-        </div>
-
-
-
-      </a>
-
-
-
-      <div class="nav-links" id="navLinks">
-
-
-
-        <a href="index.html" class="nav-link">Home</a>
-
-
-
-        <a href="strategist.html" class="nav-link">Strategist</a>
-
-
-
-        <a href="checklist.html" class="nav-link">Checklist</a>
-
-
-
-        <a href="features.html" class="nav-link">AI Tools</a>
-
-
-
-        <a href="countdown.html" class="nav-link">Sprint Timer</a>
-
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-
-        <a href="hackathons.html" class="nav-link active">Live Hackathons</a>
-
-        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-        <a href="compare.html" class="nav-link">Stack Comparator</a>
-        <a href="showcase.html" class="nav-link">Showcase</a>
-
-
-
-      </div>
-
-
-
-      <div class="nav-actions">
-
-
-
-        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-
-
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-
-
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-
-
-
-        </button>
-
-        <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-          <span style="font-size: 0.85rem; font-weight: 600;">History</span>
-
-        </button>
-
-
-
-
-
-
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-
-
-
-          <span></span><span></span><span></span>
-
-
-
-        </button>
-
-
-
-      </div>
-
-
-
-    </div>
-
-
-
-  </nav>
-
-
-
-
-
-
-
-  <section class="section" style="padding-top: 160px;">
+  <section class="section">
 
 
 
@@ -271,57 +171,46 @@
 
 
 
-      <div class="section-header">
-
-
-
-        <div class="hero-logo-container" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-
-
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 80px; height: 80px;">
-
-
-
+      <div class="section-header hk-head">
+        <h1>Upcoming Hackathons</h1>
+        <p class="section-subtitle">Find your next competition and let RAR Hackathon Helper generate a winning concept tailored to its themes.</p>
+        <div class="hk-meta">
+          <span id="lastUpdated" aria-live="polite">Loading live hackathons…</span>
+          <button type="button" class="hk-refresh" id="refreshBtn" aria-label="Refresh hackathons" title="Refresh">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          </button>
         </div>
-
-
-
-        <div class="section-badge">🗓️ Global Calendar</div>
-
-
-
-        <h2 class="section-title">Upcoming Hackathons</h2>
-
-
-
-        <p class="section-subtitle">Find your next competition and let RAR Hackathon Helper instantly generate a winning concept tailored to its themes.</p>
-
-
-
       </div>
+      <div id="hkBanner" role="status"></div>
 
-
-
-
-
-
-
-      <div class="features-grid" id="hackathonGrid">
-
-
-
-        <!-- Dynamically populated by hackathons_config.js and render logic -->
-
-
-
+      <div class="hk-toolbar" role="search">
+        <input class="hk-field" id="hkSearch" type="search" placeholder="Search name, theme or tag" aria-label="Search hackathons">
+        <select class="hk-field" id="hkPlatform" aria-label="Filter by platform">
+          <option value="">All platforms</option><option>Devfolio</option><option>DevPost</option><option>MLH</option><option>Unstop</option>
+        </select>
+        <select class="hk-field" id="hkTheme" aria-label="Filter by theme"><option value="">All themes</option></select>
+        <select class="hk-field" id="hkSort" aria-label="Sort hackathons">
+          <option value="deadline">Soonest deadline</option><option value="prize">Biggest prize</option><option value="name">Name A–Z</option>
+        </select>
       </div>
+      <p class="hk-count" id="hkCount" aria-live="polite"></p>
 
+      <div class="features-grid" id="hackathonGrid" aria-busy="true"></div>
+      <div class="hk-more"><button type="button" class="hk-btn" id="hkMore" hidden>Show more</button></div>
 
+      <dialog class="hk-dialog" id="notifyDialog" aria-labelledby="notifyTitle">
+        <form method="dialog" id="notifyForm">
+          <h3 id="notifyTitle" style="margin:0;">Get a deadline reminder</h3>
+          <label for="notifyEmail" style="color:var(--text-secondary)">Email address for <strong id="notifyName"></strong></label>
+          <input class="hk-field" id="notifyEmail" type="email" required autocomplete="email" placeholder="you@example.com">
+          <menu>
+            <button type="button" class="hk-btn" id="notifyCancel">Cancel</button>
+            <button type="submit" class="hk-btn hk-primary">Remind me</button>
+          </menu>
+        </form>
+      </dialog>
 
     </div>
-
-
 
   </section>
 
@@ -333,276 +222,191 @@
 
   <script src="hackathons_config.js"></script>
 
-
-
   <script>
+    // ===== Live hackathon data =====
+    const DATA_URL = 'https://raw.githubusercontent.com/Revanthvu4661/HackathonMaster/main/data/hackathons.json';
+    const LOCAL_URL = '/data/hackathons.json';
+    const PAGE_SIZE = 24;
+    const NOTIFY_KEY = 'rar_notifications'; // { notifications: [ids], email: "" }
+    const $ = id => document.getElementById(id);
+    let allHackathons = [], shown = PAGE_SIZE, pendingNotifyId = null;
 
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    // Third-party data: only allow http(s) links.
+    const safeUrl = u => /^https?:\/\//i.test(u || '') ? u : '#';
 
+    function readStore() {
+      try { const v = JSON.parse(localStorage.getItem(NOTIFY_KEY)); return { notifications: v?.notifications || [], email: v?.email || '' }; }
+      catch { return { notifications: [], email: '' }; }
+    }
+    function writeStore(v) { try { localStorage.setItem(NOTIFY_KEY, JSON.stringify(v)); } catch {} }
 
-    function getStatus(start, end) {
+    function liveStatus(h) {
+      if (!h.deadline_ts) return h.status || 'Live';
+      const ms = h.deadline_ts * 1000 - Date.now();
+      if (ms <= 0) return null; // expired: hide
+      if (ms < 3 * 86400000) return 'Closing Soon';
+      return h.status === 'Upcoming' ? 'Upcoming' : 'Live';
+    }
+    const STATUS_CLASS = { 'Live': 'status-live', 'Upcoming': 'status-upcoming', 'Closing Soon': 'status-closing' };
 
-
-
-      const now = new Date();
-
-
-
-      const startDate = new Date(start);
-
-
-
-      const endDate = new Date(end);
-
-
-
-      
-
-
-
-      // Set hours to zero for clean comparison
-
-
-
-      now.setHours(0,0,0,0);
-
-
-
-      startDate.setHours(0,0,0,0);
-
-
-
-      endDate.setHours(23,59,59,999);
-
-
-
-
-
-
-
-      if (now < startDate) return { label: 'Upcoming', class: 'status-upcoming' };
-
-
-
-      if (now > endDate) return { label: 'Ended', class: 'status-ended' }; // We'll need a status-ended class in CSS
-
-
-
-      return { label: 'Live Now', class: 'status-live' };
-
-
-
+    function deadlineText(h) {
+      if (!h.deadline_ts) return 'Rolling / annual';
+      const d = new Date(h.deadline_ts * 1000);
+      const days = Math.ceil((d - Date.now()) / 86400000);
+      const date = d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+      return `Closes ${date} (${days <= 0 ? 'today' : days === 1 ? '1 day' : days + ' days'} left)`;
     }
 
+    function timeAgo(iso) {
+      const mins = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+      if (mins < 60) return mins <= 1 ? 'just now' : `${mins} minutes ago`;
+      const h = Math.round(mins / 60);
+      if (h < 48) return `${h} hour${h === 1 ? '' : 's'} ago`;
+      return `${Math.round(h / 24)} days ago`;
+    }
+    function showLastUpdated(iso, note) {
+      $('lastUpdated').textContent = iso ? `Last updated: ${timeAgo(iso)}${note ? ' · ' + note : ''}` : (note || '');
+    }
 
+    function getView() {
+      const q = $('hkSearch').value.trim().toLowerCase(), plat = $('hkPlatform').value, theme = $('hkTheme').value, sort = $('hkSort').value;
+      let list = allHackathons.map(h => ({ h, st: liveStatus(h) })).filter(x => x.st);
+      if (plat) list = list.filter(x => x.h.platform === plat);
+      if (theme) list = list.filter(x => x.h.theme === theme);
+      if (q) list = list.filter(x => [x.h.name, x.h.theme, x.h.platform, ...(x.h.tags || [])].join(' ').toLowerCase().includes(q));
+      const far = Number.MAX_SAFE_INTEGER;
+      if (sort === 'prize') list.sort((a, b) => (b.h.prize_numeric || 0) - (a.h.prize_numeric || 0));
+      else if (sort === 'name') list.sort((a, b) => a.h.name.localeCompare(b.h.name));
+      else list.sort((a, b) => (a.h.deadline_ts || far) - (b.h.deadline_ts || far));
+      return list;
+    }
 
-
-
-
-
-    function formatDateRange(start, end) {
-
-
-
-      const s = new Date(start);
-
-
-
-      const e = new Date(end);
-
-
-
-      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-
-
-      
-
-
-
-      if (s.getMonth() === e.getMonth()) {
-
-
-
-        return `${months[s.getMonth()]} ${s.getDate()} - ${e.getDate()}, ${s.getFullYear()}`;
-
-
-
+    function cardHtml({ h, st }) {
+      const on = readStore().notifications.includes(h.id);
+      const src = ['devpost', 'devfolio', 'mlh', 'unstop'].includes(h.source) ? h.source : 'primary';
+      const facts = [h.mode, h.duration && h.duration !== 'Varies' ? h.duration : '', h.teamSize && h.teamSize !== 'Varies' ? 'Team ' + h.teamSize : ''].filter(Boolean);
+      let left = '<span class="days-left">Rolling</span>';
+      if (h.deadline_ts) {
+        const d = Math.max(0, Math.ceil((h.deadline_ts * 1000 - Date.now()) / 86400000));
+        left = `<span class="days-left ${d < 3 ? 'days-left--urgent' : d < 7 ? 'days-left--soon' : ''}">${d === 0 ? 'Closes today' : d + 'd left'}</span>`;
       }
-
-
-
-      return `${months[s.getMonth()]} ${s.getDate()} - ${months[e.getMonth()]} ${e.getDate()}, ${s.getFullYear()}`;
-
-
-
+      return `
+        <article class="hackathon-card card card--${src}">
+          <span class="badge badge-platform badge-${src}">${esc(h.platform)}</span>
+          <div class="status-badge ${STATUS_CLASS[st] || 'status-live'}">${esc(st)}</div>
+          <h3 class="hack-title"><a href="${esc(safeUrl(h.link))}" target="_blank" rel="noopener noreferrer">${esc(h.name)}</a></h3>
+          <div class="hack-org">${esc(h.theme || 'Open Theme')}</div>
+          <div class="hk-facts">${facts.map(f => `<span>${esc(f)}</span>`).join('')}</div>
+          <div class="hk-row"><span class="hack-prize">${esc(h.prize || 'See details')}</span>${left}</div>
+          <div class="hack-actions">
+            <button type="button" class="btn-secondary btn-sm btn-gen-idea" data-idea="${esc(`${h.name}: a ${h.theme || 'open theme'} project`)}">Generate Strategy →</button>
+            <button type="button" class="btn-notify" data-id="${esc(h.id)}" data-name="${esc(h.name)}" aria-pressed="${on}" aria-label="${on ? 'Remove reminder for' : 'Remind me about'} ${esc(h.name)}">${on ? '🔔' : '🔕'}</button>
+          </div>
+        </article>`;
     }
-
-
-
-
-
-
 
     function renderHackathons() {
-
-
-
-      const grid = document.getElementById('hackathonGrid');
-
-
-
-      if (!grid) return;
-
-
-
-      
-
-
-
-      grid.innerHTML = hackathons.map(h => {
-
-
-
-        const status = getStatus(h.startDate, h.endDate);
-
-
-
-        const dateStr = formatDateRange(h.startDate, h.endDate);
-
-
-
-        
-
-
-
-        return `
-
-
-
-          <div class="hackathon-card">
-
-
-
-            <div class="status-badge ${status.class}">${status.label}</div>
-
-
-
-            <span class="hack-date">${dateStr}</span>
-
-
-
-            <h3 class="hack-title">${h.title}</h3>
-
-
-
-            <div class="hack-org">by ${h.org}</div>
-
-
-
-            <span class="hack-prize">Prize Pool: ${h.prize}</span>
-
-
-
-            <div class="hack-tags">
-
-
-
-              ${h.tags.map(tag => `<span class="showcase-tag">${tag}</span>`).join('')}
-
-
-
-            </div>
-
-
-
-            <div class="hack-actions">
-
-
-
-              <button class="btn-gen-idea" onclick="generateFor('${h.idea.replace(/'/g, "\\'")}')">Generate Idea</button>
-
-              <button class="btn-notify" data-title="${h.title}" data-end="${h.endDate}" onclick="toggleNotify(this)" style="flex:1;padding:0.75rem;border-radius:8px;border:1px solid rgba(167,139,250,0.4);background:transparent;color:#a78bfa;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.85rem;transition:all 0.2s;">🔔 Notify Me</button>
-
-            </div>
-
-          </div>
-
-        `;
-
-
-
-      }).join('');
-
-
-
+      const grid = $('hackathonGrid'), list = getView();
+      grid.setAttribute('aria-busy', 'false');
+      $('hkCount').textContent = list.length ? `${list.length} open hackathon${list.length === 1 ? '' : 's'}` : '';
+      grid.innerHTML = list.length
+        ? list.slice(0, shown).map(cardHtml).join('')
+        : '<div class="hk-empty"><h3>No hackathons match</h3><p>Clear the search or pick “All platforms”.</p></div>';
+      $('hkMore').hidden = list.length <= shown;
+      $('hkMore').textContent = `Show more (${list.length - shown} left)`;
     }
 
+    // Theme filter options come from the data itself (most common first)
+    function fillThemes() {
+      const sel = $('hkTheme'), keep = sel.value, count = {};
+      allHackathons.forEach(h => { if (h.theme) count[h.theme] = (count[h.theme] || 0) + 1; });
+      const themes = Object.keys(count).sort((a, b) => count[b] - count[a]).slice(0, 15);
+      sel.innerHTML = '<option value="">All themes</option>' + themes.map(t => `<option>${esc(t)}</option>`).join('');
+      sel.value = themes.includes(keep) ? keep : '';
+    }
 
+    function showSkeleton() {
+      $('hackathonGrid').setAttribute('aria-busy', 'true');
+      $('hackathonGrid').innerHTML = '<div class="hackathon-card card hk-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div>'.repeat(3);
+    }
 
+    async function fetchJson(url, ms = 8000) {
+      const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), ms);
+      try {
+        const res = await fetch(url, { signal: ctl.signal, cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (!Array.isArray(data.hackathons)) throw new Error('bad shape');
+        return data;
+      } finally { clearTimeout(t); }
+    }
 
-
-
-
-    // [RAR-FIX-18] Notify Me — save hackathon deadline to localStorage
-    function toggleNotify(btn) {
-      const title = btn.dataset.title;
-      const end = btn.dataset.end;
-      const saved = JSON.parse(localStorage.getItem('rar_notify_hackathons') || '[]');
-      const exists = saved.findIndex(h => h.title === title);
-      if (exists >= 0) {
-        saved.splice(exists, 1);
-        btn.textContent = '🔔 Notify Me';
-        btn.style.background = 'transparent';
-        btn.style.color = '#a78bfa';
-      } else {
-        saved.push({ title, end });
-        btn.textContent = '✓ Notifying';
-        btn.style.background = 'rgba(167,139,250,0.2)';
-        btn.style.color = '#c4b5fd';
+    async function loadHackathons() {
+      const btn = $('refreshBtn');
+      btn.disabled = true; $('hkBanner').innerHTML = '';
+      showSkeleton();
+      let data = null, note = '';
+      try { data = await fetchJson(`${DATA_URL}?t=${Date.now()}`); }              // GitHub raw: always fresh
+      catch (e1) {
+        try { data = await fetchJson(LOCAL_URL); note = 'from site copy'; }       // same-origin fallback
+        catch (e2) { data = null; }
       }
-      localStorage.setItem('rar_notify_hackathons', JSON.stringify(saved));
+      if (data) {
+        allHackathons = data.hackathons; showLastUpdated(data.last_updated, note);
+      } else {
+        allHackathons = FALLBACK_HACKATHONS; showLastUpdated(null, 'Offline data');
+        $('hkBanner').innerHTML = '<div class="hk-banner hk-error">⚠️ Unable to load live hackathons. Showing cached data. Use the refresh button to try again.</div>';
+      }
+      fillThemes(); shown = PAGE_SIZE; renderHackathons(); checkDeadlineAlerts();
+      btn.disabled = false;
     }
 
-    // Check deadlines on load and show banners
+    // ===== Notify Me (stores intent only; no email is sent yet) =====
+    function toast(msg) {
+      const t = document.createElement('div');
+      t.className = 'hk-toast'; t.setAttribute('role', 'status'); t.textContent = msg;
+      document.body.appendChild(t); setTimeout(() => t.remove(), 3500);
+    }
+    function setNotify(id, on) {
+      const s = readStore(), has = s.notifications.includes(id);
+      if (on && !has) s.notifications.push(id);
+      if (!on) s.notifications = s.notifications.filter(x => x !== id);
+      writeStore(s);
+    }
+    function onNotifyClick(btn) {
+      const id = btn.dataset.id;
+      if (readStore().notifications.includes(id)) { setNotify(id, false); toast('Reminder removed.'); renderHackathons(); return; }
+      pendingNotifyId = id;
+      $('notifyName').textContent = btn.dataset.name;
+      $('notifyEmail').value = readStore().email;
+      $('notifyDialog').showModal(); $('notifyEmail').focus();
+    }
     function checkDeadlineAlerts() {
-      const saved = JSON.parse(localStorage.getItem('rar_notify_hackathons') || '[]');
-      const now = new Date();
-      const alerts = saved.filter(h => {
-        const deadline = new Date(h.end);
-        const daysLeft = Math.ceil((deadline - now) / 86400000);
-        return daysLeft >= 0 && daysLeft <= 7;
-      });
-      if (!alerts.length) return;
-      const banner = document.createElement('div');
-      banner.style.cssText = 'position:sticky;top:70px;z-index:500;margin:0.5rem 1rem;padding:0.75rem 1.25rem;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);border-radius:10px;color:#fbbf24;font-size:0.88rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;';
-      banner.innerHTML = alerts.map(h => {
-        const daysLeft = Math.ceil((new Date(h.end) - now) / 86400000);
-        return `<span>⚠️ <strong>${h.title}</strong> registration closes in <strong>${daysLeft} day${daysLeft===1?'':'s'}</strong>!</span>`;
-      }).join('<span style="color:rgba(245,158,11,0.4)">|</span>');
-      const grid = document.getElementById('hackathonGrid');
-      if (grid) grid.parentNode.insertBefore(banner, grid);
-
-      // Also sync button states
-      const saved2 = JSON.parse(localStorage.getItem('rar_notify_hackathons') || '[]');
-      document.querySelectorAll('.btn-notify').forEach(btn => {
-        if (saved2.some(h => h.title === btn.dataset.title)) {
-          btn.textContent = '✓ Notifying';
-          btn.style.background = 'rgba(167,139,250,0.2)';
-          btn.style.color = '#c4b5fd';
-        }
-      });
+      const ids = readStore().notifications;
+      const soon = allHackathons.filter(h => ids.includes(h.id) && h.deadline_ts && h.deadline_ts * 1000 - Date.now() < 86400000 && h.deadline_ts * 1000 > Date.now());
+      if (soon.length) $('hkBanner').insertAdjacentHTML('beforeend', `<div class="hk-banner">⏰ Closing within 24h: ${soon.map(h => `<strong>${esc(h.name)}</strong>`).join(', ')}</div>`);
     }
-
-    // Run on load
 
     document.addEventListener('DOMContentLoaded', () => {
-      renderHackathons();
-      checkDeadlineAlerts();
+      loadHackathons();
+      $('refreshBtn').addEventListener('click', loadHackathons);
+      $('hkMore').addEventListener('click', () => { shown += PAGE_SIZE; renderHackathons(); });
+      ['hkSearch', 'hkPlatform', 'hkTheme', 'hkSort'].forEach(id => $(id).addEventListener('input', () => { shown = PAGE_SIZE; renderHackathons(); }));
+      $('hackathonGrid').addEventListener('click', e => {
+        const n = e.target.closest('.btn-notify'), g = e.target.closest('.btn-gen-idea');
+        if (n) onNotifyClick(n);
+        else if (g) generateFor(g.dataset.idea);
+      });
+      $('notifyCancel').addEventListener('click', () => $('notifyDialog').close());
+      $('notifyForm').addEventListener('submit', () => {
+        const s = readStore(); s.email = $('notifyEmail').value.trim(); writeStore(s);
+        setNotify(pendingNotifyId, true);
+        toast("We'll remind you 24h before deadline!"); renderHackathons();
+      });
     });
-
-
-
   </script>
+
 
 
 
@@ -618,41 +422,7 @@
 
 
 
-  <div class="mobile-menu" id="mobileMenu">
-
-
-
-    <a href="index.html" class="mobile-link">Home</a>
-
-
-
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-
-
-
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-
-
-
-    <a href="features.html" class="mobile-link">AI Tools</a>
-
-
-
-    <a href="countdown.html" class="mobile-link">Sprint Timer</a>
-
-    <a href="#" class="mobile-link history-nav-trigger">History</a>
-
-    <a href="hackathons.html" class="mobile-link active">Live Hackathons</a>
-
-
-    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
-    <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
-    <a href="compare.html" class="mobile-link">Stack Comparator</a>
-    <a href="showcase.html" class="mobile-link">Showcase</a>
-
-
-
-  </div>
+  
 
 
 
@@ -664,134 +434,16 @@
 
 
 
-  <footer class="footer">
-
-
-
-    <div class="footer-inner" style="flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
-
-
-
-      <div class="footer-brand" style="display:flex; flex-direction:column; align-items:center;">
-
-
-
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-
-
-
-          <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
-
-
-
-          
-
-
-
-        </a>
-
-
-
-        <p class="footer-tagline" style="margin-top:0.75rem;">Your ultimate AI co-founder for winning hackathons.</p>
-
-
-
-      </div>
-
-
-
-      <div class="footer-links" style="justify-content: center;">
-
-
-
-        <div class="footer-col" style="text-align:center;">
-
-
-
-          <h4>Platform</h4>
-
-
-
-          <a href="strategist.html">Strategist</a>
-
-
-
-          <a href="features.html">AI Tools</a>
-
-
-
-          <a href="team_builder.html">Team Builder</a>
-
-
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-
-
-        </div>
-
-
-
-        <div class="footer-col" style="text-align:center;">
-
-
-
-          <h4>Modes</h4>
-
-
-
-          <a href="strategist.html">Full Strategy</a>
-
-
-
-          <a href="strategist.html">Quick Wins</a>
-
-
-
-          <a href="strategist.html">Judge Lens</a>
-
-
-
-        </div>
-
-
-
-      </div>
-
-
-
+  <footer class="ds-footer site-footer">
+  <div class="ds-footer-inner site-footer-inner">
+    <span class="footer-copy">© 2026 Revanth Sai Sankar Alapati</span>
+    <div class="footer-links">
+      <a href="https://github.com/Revanthvu4661/HackathonMaster" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <span class="footer-badge">Built with Gemini 2.0</span>
     </div>
-
-
-
-    <div class="footer-bottom">
-
-
-
-      <span>© 2026 Revanth Sai Sankar Alapati. All rights reserved.</span>
-
-
-      <span style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-secondary);">
-
-
-
-        Created by
-
-
-
-        <span style="background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
-
-
-
-      </span>
-
-
-
-    </div>
-
-
-
-  </footer>
+  </div>
+</footer>
 
 
 

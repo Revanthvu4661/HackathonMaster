@@ -40,6 +40,7 @@
 
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/design-system.css">
 
 
 
@@ -60,6 +61,14 @@
 
 
 
+  <!-- Firebase (compat SDK v10, CDN) — must load before any app script -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth-ui.js"></script>
 <script src="theme.js"></script>
 
 
@@ -98,6 +107,9 @@
 
 
 <body>
+  <div id="navbar-placeholder"></div>
+  <script src="js/navbar.js"></script>
+
 
 
 
@@ -141,120 +153,9 @@
 
 
 
-  <nav class="navbar" id="navbar">
+  
 
 
-
-    <div class="nav-inner">
-
-
-
-      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
-
-
-
-        <div class="brand-icon">
-
-
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-
-
-        </div>
-
-
-
-      </a>
-
-
-
-      <div class="nav-links" id="navLinks">
-
-
-
-        <a href="index.html" class="nav-link">Home</a>
-
-
-
-        <a href="strategist.html" class="nav-link">Strategist</a>
-
-
-
-        <a href="checklist.html" class="nav-link">Checklist</a>
-
-
-
-        <a href="features.html" class="nav-link">AI Tools</a>
-
-
-
-        <a href="countdown.html" class="nav-link">Sprint Timer</a>
-
-
-
-        <a href="team_builder.html" class="nav-link active">Team Builder</a>
-
-
-
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-
-
-
-        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-        <a href="compare.html" class="nav-link">Stack Comparator</a>
-        <a href="showcase.html" class="nav-link">Showcase</a>
-
-
-
-
-
-      </div>
-
-
-
-      <div class="nav-actions">
-
-
-
-        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-
-        </button>
-        <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-
-          <span style="font-size: 0.85rem; font-weight: 600;">History</span>
-
-        </button>
-
-
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-
-
-
-          <span></span><span></span><span></span>
-
-
-
-        </button>
-
-
-
-      </div>
-
-
-
-    </div>
-
-
-
-  </nav>
 
 
 
@@ -266,50 +167,7 @@
 
 
 
-  <div class="mobile-menu" id="mobileMenu">
-
-
-
-    <a href="index.html" class="mobile-link">Home</a>
-
-
-
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-
-
-
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-
-
-
-    <a href="features.html" class="mobile-link">AI Tools</a>
-
-
-
-    <a href="countdown.html" class="mobile-link">Sprint Timer</a>
-
-
-
-    <a href="team_builder.html" class="mobile-link active">Team Builder</a>
-
-
-
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
-
-
-
-    <a href="repos.html" class="mobile-link">Repos</a>
-    <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
-    <a href="compare.html" class="mobile-link">Stack Comparator</a>
-    <a href="showcase.html" class="mobile-link">Showcase</a>
-
-
-
-    <a href="#" class="mobile-link history-nav-trigger">History</a>
-
-
-
-  </div>
+  
 
 
 
@@ -354,18 +212,6 @@
 
 
       </h1>
-
-
-
-      <div class="hero-logo-container" style="margin-top: 1rem; display: flex; justify-content: center;">
-
-
-
-        <img src="logo.png" alt="RAR Logo" class="brand-logo" style="width: 100px; height: 100px;">
-
-
-
-      </div>
 
 
 
@@ -893,10 +739,6 @@ Be specific about the domain and technical complexity."
 
 
 
-              <img src="logo.png" class="brand-logo" style="width: 60px; height: 60px;">
-
-
-
             </div>
 
 
@@ -990,10 +832,6 @@ Be specific about the domain and technical complexity."
 
 
           <div class="strat-output-title">
-
-
-
-            <img src="logo.png" class="brand-logo" style="width: 32px; height: 32px;">
 
 
 
@@ -1245,106 +1083,16 @@ Be specific about the domain and technical complexity."
 
 
 
-  <footer class="footer">
-
-
-
-    <div class="footer-inner" style="flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
-
-
-
-      <div class="footer-brand" style="display:flex; flex-direction:column; align-items:center;">
-
-
-
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-
-
-
-          <div class="brand-icon"><img src="logo.png" alt="RAR Logo" class="brand-logo"></div>
-
-
-
-        </a>
-
-
-
-        <p class="footer-tagline" style="margin-top:0.75rem;">Your ultimate AI co-founder for winning hackathons.</p>
-
-
-
-      </div>
-
-
-
-      <div class="footer-links" style="justify-content: center;">
-
-
-
-        <div class="footer-col" style="text-align:center;">
-
-
-
-          <h4>Platform</h4>
-
-
-
-          <a href="strategist.html">Strategist</a>
-
-
-
-          <a href="team_builder.html">Team Builder</a>
-
-
-
-          <a href="features.html">AI Tools</a>
-
-
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-
-
-        </div>
-
-
-
-      </div>
-
-
-
+  <footer class="ds-footer site-footer">
+  <div class="ds-footer-inner site-footer-inner">
+    <span class="footer-copy">© 2026 Revanth Sai Sankar Alapati</span>
+    <div class="footer-links">
+      <a href="https://github.com/Revanthvu4661/HackathonMaster" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <span class="footer-badge">Built with Gemini 2.0</span>
     </div>
-
-
-
-    <div class="footer-bottom">
-
-
-
-      <span>© 2026 Revanth Sai Sankar Alapati. All rights reserved.</span>
-
-
-      <span style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-secondary);">
-
-
-
-        Created by
-
-
-
-        <span style="background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
-
-
-
-      </span>
-
-
-
-    </div>
-
-
-
-  </footer>
+  </div>
+</footer>
 
 
 

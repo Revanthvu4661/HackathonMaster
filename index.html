@@ -20,12 +20,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/design-system.css">
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json" />
 
   <link rel="apple-touch-icon" href="favicon.png">
 
+  <style>
+    /* index.html page styles (layout only; tokens/components live in design-system.css) */
+    .hero-ds { position: relative; overflow: hidden; padding: var(--sp-3xl) var(--sp-md) var(--sp-2xl); }
+    @media (min-width: 768px) { .hero-ds { padding: 112px var(--sp-lg) 96px; } }
+    .hero-ds-inner { position: relative; }
+    .hero-ds h1 { max-width: 14ch; }
+    .hero-ds-sub { margin-top: var(--sp-lg); max-width: 52ch; font-size: 1.125rem; color: var(--ds-text-2); }
+    .hero-ds-cta { margin-top: var(--sp-xl); }
+    .hero-ds-cta .btn-lg { width: 100%; }
+    @media (min-width: 480px) { .hero-ds-cta .btn-lg { width: auto; } }
+    .hero-ds-stats { display: flex; flex-wrap: wrap; gap: var(--sp-sm) var(--sp-lg); margin-top: var(--sp-2xl); padding: 0; list-style: none; font-size: 0.8125rem; color: var(--ds-text-2); }
+    .hero-ds-stats li { display: flex; align-items: center; gap: var(--sp-lg); }
+    .hero-ds-stats li + li::before { content: ''; width: 4px; height: 4px; margin-left: calc(var(--sp-lg) * -1); border-radius: 50%; background: var(--ds-text-muted); }
+    .steps { display: grid; gap: var(--sp-xl); grid-template-columns: 1fr; padding: 0; list-style: none; }
+    @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); gap: var(--sp-2xl); } }
+    .step { border-top: 1px solid var(--ds-border); padding-top: var(--sp-lg); }
+    .step-num { display: block; margin-bottom: var(--sp-md); font-size: 2rem; font-weight: 500; color: var(--ds-primary-text); }
+    .step p { margin-top: var(--sp-sm); color: var(--ds-text-2); }
+    .container.narrow { max-width: 780px; }
+    .section--tight { padding-top: var(--sp-lg); }
+    .analyzer { display: grid; gap: var(--sp-md); }
+    .analyzer .project-textarea { min-height: 160px; }
+    @media (min-width: 640px) { .analyzer .btn-block { width: auto; justify-self: start; } }
+  </style>
+  <!-- Firebase (compat SDK v10, CDN) — must load before any app script -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/auth-ui.js"></script>
 <script src="theme.js"></script>
 
   <!-- Open Graph / Social -->
@@ -41,6 +74,9 @@
 </head>
 
 <body>
+  <div id="navbar-placeholder"></div>
+  <script src="js/navbar.js"></script>
+
 
   <!-- Animated Background -->
 
@@ -62,396 +98,93 @@
 
   <!-- Navigation -->
 
-  <nav class="navbar" id="navbar">
-
-    <div class="nav-inner">
-
-      <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
-
-        <div class="brand-icon">
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-        </div>
-
-        
-
-      </a>
-
-      <div class="nav-links">
-
-        <a href="index.html" class="nav-link active">Home</a>
-
-        <a href="strategist.html" class="nav-link">Strategist</a>
-
-        <a href="checklist.html" class="nav-link">Checklist</a>
-
-        <a href="features.html" class="nav-link">AI Tools</a>
-
-        <a href="countdown.html" class="nav-link">Sprint Timer</a>
-
-        <a href="team_builder.html" class="nav-link">Team Builder</a>
-
-        <a href="hackathons.html" class="nav-link">Live Hackathons</a>
-
-        <a href="hackathon_universe.html" class="nav-link">🌐 Hackathon Universe</a>
-        <a href="repos.html" class="nav-link">Hackathon Repos</a>
-        <a href="compare.html" class="nav-link">Stack Comparator</a>
-        <a href="showcase.html" class="nav-link">Showcase</a>
-
-      </div>
-
-      <div class="nav-actions">
-
-        <button class="btn-ghost" id="themeToggle" aria-label="Toggle theme">
-          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
-        <button class="btn-ghost history-nav-trigger" title="View Recent Solutions">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-          <span style="font-size: 0.85rem; font-weight: 600;">History</span>
-        </button>
+  
 
 
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-
-          <span></span><span></span><span></span>
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </nav>
 
 
 
   <!-- Mobile Menu -->
 
-  <div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html" class="mobile-link">Home</a>
-
-    <a href="strategist.html" class="mobile-link">Strategist</a>
-
-    <a href="checklist.html" class="mobile-link">Checklist</a>
-
-    <a href="features.html" class="mobile-link">AI Tools</a>
-
-    <a href="countdown.html" class="mobile-link">Sprint Timer</a>
-
-    <a href="team_builder.html" class="mobile-link">Team Builder</a>
-
-    <a href="hackathons.html" class="mobile-link">Live Hackathons</a>
-
-    <a href="repos.html" class="mobile-link">Hackathon Repos</a>
-    <a href="hackathon_universe.html" class="mobile-link">🌐 Hackathon Universe</a>
-    <a href="compare.html" class="mobile-link">Stack Comparator</a>
-    <a href="showcase.html" class="mobile-link">Showcase</a>
-
-    <a href="#" class="mobile-link history-nav-trigger">History</a>
-
-  </div>
+  
 
 
 
-  <!-- ===== HERO SECTION ===== -->
-
-  <section class="hero" id="hero">
-
-    <div class="section-inner">
-
-      <div class="hero-content">
-
-        <div class="hero-badge">
-
-          <span class="badge-dot"></span>
-
-          AI-Powered Hackathon Co-Founder
-
-        </div>
-
-        <h1 class="hero-title">
-
-          RAR <span class="gradient-text">Hackathon Helper</span>
-
-        </h1>
-
-        <div class="hero-logo-container" style="margin-bottom: 2rem; display: flex; justify-content: center;">
-
-          <img src="logo.png" alt="RAR Logo" class="hero-logo-circle">
-
-        </div>
-
-        <p class="hero-subtitle">
-
-          RAR Hackathon Helper is your AI Project Intelligence Assistant. Enter any hackathon idea and get a complete blueprint — architecture, tech stack, UI/UX design, AI integrations, APIs, deployment, and a winning pitch strategy.
-
-        </p>
-
-        <div class="hero-actions">
-
-          <button class="btn-primary btn-lg" id="heroGenerateBtn">
-
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-
-            Generate My Project Now
-
-          </button>
-
-        </div>
-
-        <div class="hero-stats">
-
-          <div class="stat-item">
-
-            <span class="stat-number">18</span>
-
-            <span class="stat-label">Analysis Modules</span>
-
-          </div>
-
-          <div class="stat-divider"></div>
-
-          <div class="stat-item">
-
-            <span class="stat-number">1000+</span>
-
-            <span class="stat-label">Offline Blueprints</span>
-
-          </div>
-
-          <div class="stat-divider"></div>
-
-          <div class="stat-item">
-
-            <span class="stat-number">1000+</span>
-
-            <span class="stat-label">Hackathon Repos</span>
-
-          </div>
-
-          <div class="stat-divider"></div>
-
-          <div class="stat-item">
-
-            <span class="stat-number">∞</span>
-
-            <span class="stat-label">AI Concepts</span>
-
-          </div>
-
-        </div>
-
+  <!-- ===== HERO ===== -->
+  <section class="hero-ds" id="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-ds-inner fade-in">
+      <h1>Win your next hackathon.</h1>
+      <p class="hero-ds-sub">Paste your problem statement. Get architecture, stack, pitch strategy, and a winning blueprint — in seconds.</p>
+      <div class="row hero-ds-cta">
+        <button class="btn-primary btn-lg" id="heroGenerateBtn">Analyze my idea</button>
+        <button class="btn-secondary btn-lg" id="heroShowcaseBtn">See a demo</button>
       </div>
-
-      <div class="hero-visual">
-
-        <div class="floating-card card-1">
-
-          <div class="fc-icon">⚡</div>
-
-          <div class="fc-text">
-
-            <strong>Tech Stack</strong>
-
-            <span>Next.js + FastAPI</span>
-
-          </div>
-
-        </div>
-
-        <div class="floating-card card-2">
-
-          <div class="fc-icon">🧠</div>
-
-          <div class="fc-text">
-
-            <strong>AI Model</strong>
-
-            <span>Gemini 2.0 Flash</span>
-
-          </div>
-
-        </div>
-
-        <div class="floating-card card-3">
-
-          <div class="fc-icon">🏆</div>
-
-          <div class="fc-text">
-
-            <strong>Win Rate</strong>
-
-            <span>Hackathon Ready</span>
-
-          </div>
-
-        </div>
-
-        <div class="hero-orb-main">
-
-          <div class="orb-ring ring-1"></div>
-
-          <div class="orb-ring ring-2"></div>
-
-          <div class="orb-ring ring-3"></div>
-
-          <div class="orb-center">
-
-            <svg width="60" height="60" viewBox="0 0 28 28" fill="none">
-
-              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#heroGrad)" stroke-width="1.5" fill="none"/>
-
-              <path d="M14 7L20 10.5V17.5L14 21L8 17.5V10.5L14 7Z" fill="url(#heroGrad)" opacity="0.5"/>
-
-              <circle cx="14" cy="14" r="4" fill="url(#heroGrad)"/>
-
-              <defs>
-
-                <linearGradient id="heroGrad" x1="2" y1="2" x2="26" y2="26">
-
-                  <stop offset="0%" stop-color="#a78bfa"/>
-
-                  <stop offset="100%" stop-color="#06b6d4"/>
-
-                </linearGradient>
-
-              </defs>
-
-            </svg>
-
-          </div>
-
-        </div>
-
-      </div>
-
+      <ul class="hero-ds-stats num" aria-label="Platform stats">
+        <li>128 hackathons tracked</li>
+        <li>18 analysis modules</li>
+        <li>1,000+ blueprints generated</li>
+      </ul>
     </div>
-
   </section>
 
-
-
-
-
-  <!-- ===== CTA SECTION ===== -->
-
-  <section class="cta-section">
-
-    <div class="cta-inner">
-
-      <div class="cta-badge">🏆 Ready to Win?</div>
-
-      <h2 class="cta-title">Your Next Hackathon Starts Here</h2>
-
-      <p class="cta-subtitle">Stop guessing. Start building with a complete intelligence blueprint tailored to your idea.</p>
-
-      <button class="btn-primary btn-xl" id="ctaBtn">
-
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-
-        Generate My Project Now
-
-      </button>
-
+  <!-- ===== HOW IT WORKS (a real sequence, so numbered) ===== -->
+  <section class="section">
+    <div class="container">
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num num">01</span>
+          <h3>Analyze</h3>
+          <p>Paste your problem statement and get an 18-module analysis: domain, hidden requirements, judging priorities, risks.</p>
+        </li>
+        <li class="step">
+          <span class="step-num num">02</span>
+          <h3>Strategy</h3>
+          <p>Judge psychology, pitch scripts, and a PRD in one click. Built from what winning teams actually ship.</p>
+        </li>
+        <li class="step">
+          <span class="step-num num">03</span>
+          <h3>Win</h3>
+          <p>Compare stacks, assemble your team, and find the next live hackathon to enter.</p>
+        </li>
+      </ol>
     </div>
-
   </section>
 
-
-
-  <!-- [RAR-FIX-10] Problem Statement Analyzer -->
-  <section style="padding:4rem 1rem;max-width:780px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:2rem;">
-      <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);border-radius:20px;padding:6px 16px;font-size:0.8rem;color:#a78bfa;margin-bottom:1rem;">&#x1F9E0; AI-Powered</div>
-      <h2 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;margin:0 0 0.5rem;">Problem Statement Analyzer</h2>
-      <p style="color:var(--text-secondary);max-width:500px;margin:0 auto;">Paste your hackathon problem statement. RAR extracts domain, keywords, hidden requirements, judging priorities, and recommends the winning approach.</p>
-    </div>
-    <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:1.75rem;">
-      <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;">
-        <button class="psa-format active" data-fmt="general" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(167,139,250,0.4);background:rgba(167,139,250,0.15);color:#a78bfa;cursor:pointer;font-size:0.78rem;font-weight:600;">General</button>
-        <button class="psa-format" data-fmt="sih" style="padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);cursor:pointer;font-size:0.78rem;">SIH Format</button>
-        <button class="psa-format" data-fmt="hackwithinfy" style="padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);cursor:pointer;font-size:0.78rem;">HackWithInfy</button>
-        <button class="psa-format" data-fmt="ethindia" style="padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);cursor:pointer;font-size:0.78rem;">ETHIndia</button>
+  <!-- ===== PROBLEM STATEMENT ANALYZER ===== -->
+  <section class="section section--tight" id="analyzer">
+    <div class="container narrow">
+      <div class="section-header">
+        <h2 class="section-title">Problem statement analyzer</h2>
+        <p class="section-subtitle">Pick the hackathon format, paste the statement, and RAR extracts domain, keywords, hidden requirements and judging priorities, then recommends an approach.</p>
       </div>
-      <textarea id="psaInput" placeholder="Paste your problem statement here... e.g. Design a smart system to reduce food waste in college canteens using IoT sensors and AI predictions..." style="width:100%;min-height:120px;padding:0.85rem;background:var(--glass-bg);border:1px solid var(--border-color);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:0.9rem;outline:none;resize:vertical;box-sizing:border-box;margin-bottom:0.75rem;"></textarea>
-      <button id="psaAnalyze" class="btn-primary" style="width:100%;padding:0.85rem;">&#x1F9E0; Analyze Problem Statement</button>
+      <div class="card card--primary analyzer">
+        <div class="pill-tabs" role="group" aria-label="Hackathon format">
+          <button type="button" class="pill-tab psa-format" data-fmt="general" style="background:rgba(167,139,250,0.15);color:#a78bfa;border-color:rgba(167,139,250,0.4);">General</button>
+          <button type="button" class="pill-tab psa-format" data-fmt="sih">SIH</button>
+          <button type="button" class="pill-tab psa-format" data-fmt="hackwithinfy">HackWithInfy</button>
+          <button type="button" class="pill-tab psa-format" data-fmt="ethindia">ETHIndia</button>
+        </div>
+        <label for="psaInput" class="sr-only">Problem statement</label>
+        <textarea id="psaInput" class="project-textarea" placeholder="Paste your problem statement here... e.g. Design a smart system to reduce food waste in college canteens using IoT sensors and AI predictions..."></textarea>
+        <button id="psaAnalyze" class="btn-primary btn-block">Analyze problem statement</button>
+      </div>
+      <div id="psaOutput" style="display:none;margin-top:1.5rem;"></div>
     </div>
-    <div id="psaOutput" style="display:none;margin-top:1.5rem;"></div>
   </section>
 
   <!-- ===== FOOTER ===== -->
 
-  <footer class="footer">
-
-    <div class="footer-inner" style="flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
-
-      <div class="footer-brand" style="display:flex; flex-direction:column; align-items:center;">
-
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-
-          <div class="brand-icon">
-
-          <img src="logo.png" alt="RAR Logo" class="brand-logo">
-
-        </div>
-
-          
-
-        </a>
-
-        <p class="footer-tagline" style="margin-top:0.75rem;">Your ultimate AI co-founder for winning hackathons.</p>
-
-      </div>
-
-      <div class="footer-links" style="justify-content: center;">
-
-        <div class="footer-col" style="text-align:center;">
-
-          <h4>Platform</h4>
-
-          <a href="strategist.html">Strategist</a>
-
-          <a href="features.html">AI Tools</a>
-
-          <a href="team_builder.html">Team Builder</a>
-
-          <a href="hackathons.html">Live Hackathons</a>
-
-        </div>
-
-        <div class="footer-col" style="text-align:center;">
-
-          <h4>Modes</h4>
-
-          <a href="strategist.html">Full Strategy</a>
-
-          <a href="strategist.html">Quick Wins</a>
-
-          <a href="strategist.html">Judge Lens</a>
-
-        </div>
-
-      </div>
-
+  <footer class="ds-footer site-footer">
+  <div class="ds-footer-inner site-footer-inner">
+    <span class="footer-copy">© 2026 Revanth Sai Sankar Alapati</span>
+    <div class="footer-links">
+      <a href="https://github.com/Revanthvu4661/HackathonMaster" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <span class="footer-badge">Built with Gemini 2.0</span>
     </div>
-
-    <div class="footer-bottom">
-
-      <span>© 2026 Revanth Sai Sankar Alapati. All rights reserved.</span>
-      <span style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-secondary);">
-
-        Created by
-
-        <span style="background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; font-size:0.95rem;">Alapati Revanth Sai Sankar</span>
-
-      </span>
-
-    </div>
-
-  </footer>
+  </div>
+</footer>
 
 
 
