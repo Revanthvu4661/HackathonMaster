@@ -152,10 +152,11 @@
     .strat-hero-title { font-family: var(--ds-font-display); font-weight: 600; letter-spacing: -0.03em; margin-bottom: var(--sp-md); }
     .strat-hero-sub { margin: 0; max-width: 62ch; }
     .strat-input-section.section { padding-top: var(--sp-md); }
-    .strat-workspace { display: grid; grid-template-columns: 1fr; gap: var(--sp-lg); align-items: start; }
-    .strat-panel { background: var(--ds-surface); border-radius: var(--r-card); padding: var(--sp-lg); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; margin-bottom: 0; gap: var(--sp-lg); }
+    /* ---- single-column layout: input on top, report below, one centred 860px column ---- */
+    .strat-workspace { display: flex; flex-direction: column; gap: var(--sp-lg); width: 100%; }
+    .strat-panel { grid-template-columns: 1fr; width: 100%; height: auto; max-height: none; background: var(--ds-surface); border-radius: var(--r-card); padding: var(--sp-lg); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; margin-bottom: 0; gap: var(--sp-lg); }
     .api-key-banner { border-radius: var(--r-card); }
-    .strat-output-area { background: var(--ds-well); border: 1px solid var(--ds-border); border-radius: var(--r-card); padding: var(--sp-lg); animation: none; min-width: 0; }
+    .strat-output-area { width: 100%; scroll-margin-top: calc(var(--nav-height) + var(--sp-md)); background: var(--ds-well); border: 1px solid var(--ds-border); border-radius: var(--r-card); padding: var(--sp-lg); animation: none; min-width: 0; }
     .strat-output-header { margin-bottom: var(--sp-md); }
     .strat-output-title h2 { font-family: var(--ds-font-display); font-weight: 500; font-size: 1.25rem; }
     .strat-output-actions { margin-left: auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--sp-sm); }
@@ -164,11 +165,19 @@
     #stratTabs { margin-bottom: var(--sp-lg); }
     #stratTabs .tab-btn { padding: 0 2px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; }
     #stratTabs .tab-btn.active { background: transparent; border-bottom-color: var(--ds-primary); color: var(--ds-text); }
-    @media (min-width: 1024px) {
-      /* Output visible (JS flips its inline display): two columns, panel stacks its own two columns */
-      .strat-workspace:has(#stratOutput:not([style*="none"])) { grid-template-columns: 2fr 3fr; }
-      .strat-workspace:has(#stratOutput:not([style*="none"])) .strat-panel { grid-template-columns: 1fr; position: sticky; top: calc(var(--nav-height) + var(--sp-md)); max-height: calc(100vh - var(--nav-height) - var(--sp-xl)); overflow-y: auto; }
-      #stratOutput { max-height: none; }
+    /* below 1600px: ONE centred column (hero, API banner, input, report all share the same 860px width) */
+    @media (max-width: 1599px) {
+      .strat-hero-content, .strat-input-section .section-inner { max-width: 860px; margin-left: auto; margin-right: auto; }
+    }
+    /* 1600px and up: the report may sit beside the input once it is visible */
+    @media (min-width: 1600px) {
+      .strat-workspace:has(#stratOutput:not([style*="none"])) { display: grid; grid-template-columns: 2fr 3fr; align-items: start; }
+      .strat-workspace:has(#stratOutput:not([style*="none"])) .strat-panel { grid-template-columns: 1fr; }
+    }
+    /* phones: 16px side padding */
+    @media (max-width: 767px) {
+      .strat-hero, .strat-input-section.section { padding-left: var(--sp-md); padding-right: var(--sp-md); }
+      .strat-panel, .strat-output-area { padding: var(--sp-md); }
     }
   </style>
 
