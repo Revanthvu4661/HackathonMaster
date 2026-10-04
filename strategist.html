@@ -69,6 +69,7 @@
   <script src="js/firebase.js"></script>
   <script src="js/db.js"></script>
   <script src="js/auth-ui.js"></script>
+  <script src="js/api.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
 
@@ -316,7 +317,7 @@
 
 
 
-          <span>Add your <strong>Gemini API Key</strong> for live AI-powered analysis. Without it, the intelligent offline engine runs.</span>
+          <span><strong>Sign in</strong> for live Gemini AI analysis. Without it, the intelligent offline engine runs.</span>
 
 
 
@@ -324,7 +325,7 @@
 
 
 
-        <button class="btn-outline btn-sm" id="openApiKeyModal">Set API Key</button>
+        <button class="btn-outline btn-sm" id="openApiKeyModal">Search settings</button>
 
 
 
@@ -1099,7 +1100,7 @@ The more detail you provide, the better the strategic output."
 
 
 
-        AI Configuration
+        Search settings
 
 
 
@@ -1111,7 +1112,7 @@ The more detail you provide, the better the strategic output."
 
 
 
-        Enable live AI analysis and deep research. Your keys are stored locally in your browser and never sent to any server.
+        Live AI runs through your signed-in account, so no Gemini key is needed. Add a Serper.dev key here only if you want Deep Search. It is stored in this browser only.
 
 
 
@@ -1127,31 +1128,7 @@ The more detail you provide, the better the strategic output."
 
 
 
-        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Gemini API Key (Required for AI)</label>
-
-
-
-        <input type="password" id="stratApiKeyInput" placeholder="AIza..." style="width:100%;padding:0.8rem;border-radius:8px;background:var(--glass-bg);border:1px solid var(--border-color);color:var(--text-primary);outline:none;font-family:var(--font-mono);font-size:0.85rem;" />
-
-
-
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block;font-size:0.75rem;margin-top:0.5rem;text-decoration:underline;color:var(--accent-secondary);">Get a free key at Google AI Studio →</a>
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <div style="margin-bottom:1.5rem;">
-
-
-
-        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Serper.dev API Key (Required for Deep Search)</label>
+        <label style="display:block;font-size:0.8rem;margin-bottom:0.5rem;color:var(--text-muted);">Serper.dev API Key (optional, for Deep Search)</label>
 
 
 

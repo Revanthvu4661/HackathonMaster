@@ -1,18 +1,20 @@
-# Render Blueprint: HackathonMaster as a Web Service (FastAPI serving the site).
-# Docs: https://render.com/docs/blueprint-spec
 services:
   - type: web
-    name: hackathonmaster
-    runtime: python
-    plan: free                  # free web services sleep after ~15 min idle; first request then takes ~30-60 s. Use "starter" to stay awake.
-    region: singapore           # closest Render region to India; change if you prefer
-    branch: main
-    autoDeploy: true            # also redeploys when the daily GitHub Action commits data/hackathons.json
+    name: hackathon-master-api
+    env: python
+    rootDir: server
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn server.app:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /healthz
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.12.7
-      - key: CSP_MODE
-        value: report-only      # switch to "enforce" after checking the browser console for [Report Only] violations
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        value: hackathon-master-9e890
+      - key: FIREBASE_PRIVATE_KEY_ID
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+      - key: FIREBASE_CLIENT_ID
+        sync: false

@@ -32,6 +32,7 @@ const PRECACHE_ASSETS = [
   '/js/firebase.js',
   '/js/db.js',
   '/js/auth-ui.js',
+  '/js/api.js',
   '/app_v2.js',
   '/strategist.js',
   '/team_builder.js',

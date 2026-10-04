@@ -32,130 +32,60 @@ document.addEventListener('DOMContentLoaded', () => {
   let conversationHistory = [];
   let currentProblemContext = '';
 
-  // API Key Management
-
+  // AI access. Gemini now runs through the signed-in user's account (the key lives on the server, see js/api.js).
+  // Only the optional Serper (web search) key is still stored in this browser.
   const apiKeyBanner = document.getElementById('apiKeyBanner');
-
-  const openApiKeyModal = document.getElementById('openApiKeyModal');
-
   const stratApiModal = document.getElementById('stratApiModal');
-
   const stratCloseModal = document.getElementById('stratCloseModal');
-
   const stratSaveKey = document.getElementById('stratSaveKey');
-
-  const stratApiKeyInput = document.getElementById('stratApiKeyInput');
-
   const serperApiKeyInput = document.getElementById('serperApiKeyInput');
 
+  // Live AI = signed in. Otherwise the offline engine runs, exactly like the old "no API key" case.
+  const canUseAI = () => !!(window.callGemini && window.isSignedIn && window.isSignedIn());
+
   function checkApiKey() {
-
-    const key = localStorage.getItem('gemini_api_key');
-
     const serperKey = localStorage.getItem('serper_api_key');
-
-    
-
-    if (key || serperKey) {
-
-      apiKeyBanner.classList.add('success');
-
-      apiKeyBanner.style.border = '1px solid var(--accent-primary)';
-
-      
-
-      let statusHtml = `
-
-        <div class="api-key-banner-left">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-
-          <span>
-
-            <strong>Status:</strong> 
-
-            ${key ? '<span style="color:#10b981;">Gemini AI Active</span>' : '<span style="color:#f59e0b;">Gemini Missing (Using Offline Mode)</span>'} 
-
-            | 
-
-            ${serperKey ? '<span style="color:#10b981;">Deep Search Active</span>' : '<span style="color:#f59e0b;">Deep Search Inactive</span>'}
-
-          </span>
-
-        </div>
-
-        <div style="display:flex; gap:0.5rem;">
-
-          <button class="btn-outline btn-sm" id="openApiKeyModal">Settings</button>
-
-          <button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Clear All</button>
-
-        </div>
-
-      `;
-
-      
-
-      apiKeyBanner.innerHTML = statusHtml;
-
-      
-
-      document.getElementById('clearApiKeyBtn').addEventListener('click', () => {
-
-        localStorage.removeItem('gemini_api_key');
-
-        localStorage.removeItem('serper_api_key');
-
-        location.reload();
-
-      });
-
-      
-
-      document.getElementById('openApiKeyModal').addEventListener('click', () => stratApiModal.style.display = 'flex');
-
-    }
-
+    const live = canUseAI();
+    apiKeyBanner.classList.toggle('success', live);
+    apiKeyBanner.style.border = live ? '1px solid var(--accent-primary)' : '';
+    apiKeyBanner.innerHTML = `
+      <div class="api-key-banner-left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${live ? '#10b981' : '#f59e0b'}" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>
+          <strong>Status:</strong>
+          ${live ? '<span style="color:#10b981;">Gemini AI Active (your account)</span>' : '<span style="color:#f59e0b;">Offline mode: sign in for live Gemini AI</span>'}
+          |
+          ${serperKey ? '<span style="color:#10b981;">Deep Search Active</span>' : '<span style="color:#f59e0b;">Deep Search Inactive</span>'}
+        </span>
+      </div>
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+        ${live ? '' : '<button class="btn-primary btn-sm" id="stratSignInBtn">Sign in</button>'}
+        <button class="btn-outline btn-sm" id="openApiKeyModal">Search settings</button>
+        ${serperKey ? '<button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Remove search key</button>' : ''}
+      </div>
+    `;
+    const signIn = document.getElementById('stratSignInBtn');
+    if (signIn) signIn.addEventListener('click', () => { const b = document.querySelector('.rar-auth-btn'); if (b) b.click(); });
+    document.getElementById('openApiKeyModal').addEventListener('click', () => stratApiModal.style.display = 'flex');
+    const clearBtn = document.getElementById('clearApiKeyBtn');
+    if (clearBtn) clearBtn.addEventListener('click', () => { localStorage.removeItem('serper_api_key'); checkApiKey(); });
   }
 
   checkApiKey();
-
-  if(openApiKeyModal) {
-
-    openApiKeyModal.addEventListener('click', () => stratApiModal.style.display = 'flex');
-
-  }
+  window.addEventListener('rar:auth', checkApiKey);   // js/auth-ui.js fires this when the user signs in or out
 
   if(stratCloseModal) {
-
     stratCloseModal.addEventListener('click', () => stratApiModal.style.display = 'none');
-
   }
 
   if(stratSaveKey) {
-
     stratSaveKey.addEventListener('click', () => {
-
-      const key = stratApiKeyInput.value.trim();
-
       const sKey = serperApiKeyInput.value.trim();
-
-      
-
-      if(key) localStorage.setItem('gemini_api_key', key);
-
       if(sKey) localStorage.setItem('serper_api_key', sKey);
-
-      
-
       stratApiModal.style.display = 'none';
-
       checkApiKey();
-
-      showToast('API Settings saved locally!');
-
+      showToast('Search settings saved locally!');
     });
-
   }
 
   // Input Handling
@@ -502,8 +432,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       
 
-      const apiKey = localStorage.getItem('gemini_api_key');
-
+      if (window.waitForAuth) await window.waitForAuth();   // let Firebase restore the session before deciding live vs offline
+      const useAI = canUseAI();
       const serperKey = localStorage.getItem('serper_api_key');
 
       
@@ -526,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
 
-        if (apiKey) {
+        if (useAI) {
 
           // Live API Call Phase
 
@@ -544,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           }
 
-          const result = await callGeminiStrategist(apiKey, problem, context, searchData);
+          const result = await callGeminiStrategist(problem, context, searchData);
 
           
 
@@ -590,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const warningHtml = `<div style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 0.9rem; color: #fca5a5;">
 
-              <strong>⚠️ OFFLINE SIMULATION MODE:</strong> The output below is a generic simulation because no API Key was provided. To get LIVE Web Search results (like real GitHub repos and dynamic market research), please click "Set API Key" at the top of the page.
+              <strong>⚠️ OFFLINE SIMULATION MODE:</strong> The output below is a generic simulation because you are not signed in. To get LIVE AI results (dynamic market research, tailored strategy), please sign in using the button at the top of the page.
 
             </div>`;
 
@@ -760,7 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- API CALL FUNCTION ---
 
-  async function callGeminiStrategist(apiKey, problem, ctx, searchData = null) {
+  async function callGeminiStrategist(problem, ctx, searchData = null) {
 
     let researchContext = "";
 
@@ -915,7 +845,7 @@ Return this exact JSON structure with all fields filled:
 
     // -- Retry loop with exponential backoff and stable model fallback --------
 
-    let retries = 3, delay = 2000, response, lastError = "";
+    let retries = 3, delay = 2000, data, lastError = "";
 
     let selectedModel = 'gemini-2.5-flash';
 
@@ -923,89 +853,37 @@ Return this exact JSON structure with all fields filled:
 
       try {
 
-        response = await fetch(
+        // NOTE: google_search tool is intentionally REMOVED.
+        // It conflicts with responseMimeType:application/json and causes
+        // Gemini to inject citation text that breaks JSON parsing.
+        data = await callGemini(selectedModel, [{ parts: [{ text: systemPrompt }] }], {
+          temperature: 0.3,
+          maxOutputTokens: 8192,
+          responseMimeType: "application/json"
+        });
 
-          `https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`,
+        break;
 
-          {
+      } catch (err) {
 
-            method: 'POST',
+        // 429 = busy / rate limited, 502 / 504 = upstream error or timeout: wait and retry. Anything else is final.
+        if (err.status === 429 || err.status === 502 || err.status === 504) {
 
-            headers: { 'Content-Type': 'application/json' },
+          lastError = err.message || "Model Overloaded";
 
-            body: JSON.stringify({
+          if (err.status === 429 && selectedModel === 'gemini-2.5-flash') {
 
-              contents: [{ parts: [{ text: systemPrompt }] }],
+            console.warn("Gemini 2.5 Flash is busy. Switching to Gemini 2.0 Flash...");
 
-              // NOTE: google_search tool is intentionally REMOVED.
+            showToast("[API Warning] Gemini 2.5 busy. Switching to Gemini 2.0 Flash...");
 
-              // It conflicts with responseMimeType:application/json and causes
-
-              // Gemini to inject citation text that breaks JSON parsing.
-
-              generationConfig: {
-
-                temperature: 0.3,
-
-                maxOutputTokens: 8192,
-
-                responseMimeType: "application/json"
-
-              }
-
-            })
-
-          }
-
-        );
-
-        if (response.status === 429) {
-
-          const errData = await response.json().catch(() => ({}));
-
-          lastError = errData.error?.message || "Quota Exceeded";
-
-          if (selectedModel === 'gemini-2.0-flash') {
-
-            console.warn("Gemini 2.0 Flash quota exceeded. Switching to stable Gemini 1.5 Flash fallback...");
-
-            showToast("[API Warning] Gemini 2.0 Quota reached. Switching to stable Gemini 1.5 Flash fallback...");
-
-            selectedModel = 'gemini-1.5-flash';
+            selectedModel = 'gemini-2.0-flash';
 
             await new Promise(r => setTimeout(r, 1000));
 
             continue;
 
           }
-
-          throw new Error("High Demand");
-
-        }
-
-        if (response.status === 503) {
-
-          const errData = await response.json().catch(() => ({}));
-
-          lastError = errData.error?.message || "Model Overloaded";
-
-          throw new Error("High Demand");
-
-        }
-
-        if (!response.ok) {
-
-          const errData = await response.json().catch(() => ({}));
-
-          throw new Error(errData.error?.message || "API Network Error");
-
-        }
-
-        break;
-
-      } catch (err) {
-
-        if (err.message === "High Demand") {
 
           retries--;
 
@@ -1027,7 +905,7 @@ Return this exact JSON structure with all fields filled:
 
     }
 
-    const data = await response.json();
+    if (!data) throw new Error(lastError || "API Network Error");
 
     const candidate = data.candidates?.[0];
 
@@ -1372,25 +1250,19 @@ Return this exact JSON structure with all fields filled:
       chatMessages.appendChild(typingBubble);
       chatMessages.scrollTop = chatMessages.scrollHeight;
 
-      const apiKey = localStorage.getItem('gemini_api_key');
       let answer = '';
-
-      if (apiKey) {
+      if (window.waitForAuth) await window.waitForAuth();
+      if (canUseAI()) {
         // Build context: problem + last 6 messages
         const last6 = conversationHistory.slice(-6);
         const ctxBlock = last6.slice(0,-1).map(m => `${m.role === 'user' ? 'User' : 'RAR'}: ${m.text}`).join('\n');
         const prompt = `You are RAR, the world's most advanced hackathon AI assistant created by Revanth Sai Sankar. The user already got a full hackathon strategy for this problem: "${currentProblemContext}"\n\nConversation so far:\n${ctxBlock}\n\nUser now asks: ${q}\n\nGive a specific, actionable answer. Use emojis for sections. Keep it concise and hackathon-focused.`;
         try {
-          const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.7, maxOutputTokens: 1024 } })
-          });
-          const json = await res.json();
+          const json = await callGemini('gemini-2.0-flash', [{ parts: [{ text: prompt }] }], { temperature: 0.7, maxOutputTokens: 1024 });
           answer = json.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, no response.';
-        } catch(e) { answer = 'Failed to reach AI. Please try again.'; }
+        } catch(e) { answer = (e && e.status === 429) ? 'You are sending requests too quickly. Wait a minute and try again.' : 'Failed to reach AI. Please try again.'; }
       } else {
-        answer = '⚠️ No API key set. Please add your Gemini API key to enable live chat. Offline mode does not support follow-up questions.';
+        answer = '⚠️ Sign in to enable live follow-up chat. Offline mode does not support follow-up questions.';
       }
 
       conversationHistory.push({ role: 'assistant', text: answer });
@@ -2915,14 +2787,14 @@ ${mermaidDef}
       pitchPanel.style.display = 'block';
       pitchOutput.innerHTML = '<div style="text-align:center;padding:3rem 0;color:var(--text-muted);">⏳ Generating your pitch script...</div>';
 
-      const apiKey = localStorage.getItem('gemini_api_key');
       const problem = currentProblemContext || stratProblem?.value?.trim() || 'an innovative hackathon project';
       const projectName = latestAnalysisJson?.prd?.project_name || 'Our Project';
       const pitch = latestAnalysisJson?.judge_strategy?.one_line_winning_pitch || '';
       const impact = latestAnalysisJson?.problem_analysis?.market_gap || '';
 
-      if (!apiKey) {
-        pitchOutput.innerHTML = '<p style="color:#ef4444;">⚠️ Gemini API key required for pitch generation. Please add your key.</p>';
+      if (window.waitForAuth) await window.waitForAuth();
+      if (!canUseAI()) {
+        pitchOutput.innerHTML = '<p style="color:#ef4444;">⚠️ Please sign in to generate a pitch script.</p>';
         return;
       }
 
@@ -2940,11 +2812,7 @@ Slides must be: 1-Problem, 2-Solution, 3-Demo, 4-Market Opportunity, 5-The Ask/C
 Return ONLY valid JSON array, no markdown.`;
 
       try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.6, maxOutputTokens: 2048, responseMimeType: 'application/json' } })
-        });
-        const json = await res.json();
+        const json = await callGemini('gemini-2.0-flash', [{ parts: [{ text: prompt }] }], { temperature: 0.6, maxOutputTokens: 2048, responseMimeType: 'application/json' });
         let raw = json.candidates?.[0]?.content?.parts?.[0]?.text || '[]';
         raw = raw.replace(/^```json?\s*/i,'').replace(/```\s*$/,'').trim();
         const slides = JSON.parse(raw);
@@ -2987,13 +2855,13 @@ Return ONLY valid JSON array, no markdown.`;
       judgePanel.style.display = 'block';
       judgeOutput.innerHTML = '<div style="text-align:center;padding:3rem 0;color:var(--text-muted);">⏳ Simulating judge evaluation...</div>';
 
-      const apiKey = localStorage.getItem('gemini_api_key');
       const problem = currentProblemContext || stratProblem?.value?.trim() || 'hackathon project';
       const projectName = latestAnalysisJson?.prd?.project_name || 'Project';
       const vision = latestAnalysisJson?.prd?.vision || '';
 
-      if (!apiKey) {
-        judgeOutput.innerHTML = '<p style="color:#ef4444;">⚠️ Gemini API key required. Please add your key.</p>';
+      if (window.waitForAuth) await window.waitForAuth();
+      if (!canUseAI()) {
+        judgeOutput.innerHTML = '<p style="color:#ef4444;">⚠️ Please sign in to simulate judge scoring.</p>';
         return;
       }
 
@@ -3006,11 +2874,7 @@ Return JSON: {"scores":{"innovation":{"score":85,"feedback":"..."},"technical":{
 Scores out of 100. Total = average. Return ONLY valid JSON.`;
 
       try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.4, maxOutputTokens: 1024, responseMimeType: 'application/json' } })
-        });
-        const json = await res.json();
+        const json = await callGemini('gemini-2.0-flash', [{ parts: [{ text: prompt }] }], { temperature: 0.4, maxOutputTokens: 1024, responseMimeType: 'application/json' });
         let raw = json.candidates?.[0]?.content?.parts?.[0]?.text || '{}';
         raw = raw.replace(/^```json?\s*/i,'').replace(/```\s*$/,'').trim();
         const d = JSON.parse(raw);
