@@ -69,58 +69,7 @@ if(modeBtns) modeBtns.forEach(btn => {
 
 });
 
-// AI Settings Modal
-
-const aiSettingsBtn = document.getElementById('aiSettingsBtn');
-
-const aiModal = document.getElementById('aiModal');
-
-const closeAiModal = document.getElementById('closeAiModal');
-
-const saveAiKey = document.getElementById('saveAiKey');
-
-const geminiKeyInput = document.getElementById('geminiKey');
-
-if (aiSettingsBtn) {
-
-  aiSettingsBtn.addEventListener('click', () => {
-
-    const savedKey = localStorage.getItem('gemini_api_key');
-
-    if (savedKey) geminiKeyInput.value = savedKey;
-
-    aiModal.style.display = 'flex';
-
-  });
-
-}
-
-if (closeAiModal) {
-
-  closeAiModal.addEventListener('click', () => aiModal.style.display = 'none');
-
-}
-
-if (saveAiKey) {
-
-  saveAiKey.addEventListener('click', () => {
-
-    const key = geminiKeyInput.value.trim();
-
-    if (key) {
-
-      localStorage.setItem('gemini_api_key', key);
-
-      showToast('AI Search Enabled!');
-
-      aiModal.style.display = 'none';
-
-    }
-
-  });
-
-}
-
+// (The old "AI Settings" key modal was removed: Gemini now runs through the signed-in user's account, see js/api.js.)
 const fallbackDefaultResult = {
 
   overview: "<h3>🚀 Project Understanding</h3><p>An innovative solution addressing a unique market need with a scalable and intelligent architecture...</p>",
@@ -529,10 +478,8 @@ function setCachedResult(prompt, result) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 async function callGeminiDeepSearch(prompt) {
-
-  const apiKey = localStorage.getItem('gemini_api_key');
-
-  if (!apiKey) return getOfflineFallback(prompt);
+  if (window.waitForAuth) await window.waitForAuth();   // let Firebase restore the session before deciding live vs offline
+  if (!(window.callGeminiWithFallback && window.canUseAI && window.canUseAI())) return getOfflineFallback(prompt);
 
   // Return cached result if available and less than 24 h old
   const cached = getCachedResult(prompt);
@@ -541,113 +488,19 @@ async function callGeminiDeepSearch(prompt) {
     return cached;
   }
 
-  let selectedModel = 'gemini-2.5-flash';
-
-  let response;
-
+  let data;
   try {
-
-    response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
-
-      method: 'POST',
-
-      headers: { 'Content-Type': 'application/json' },
-
-      body: JSON.stringify({
-
-        contents: [{
-
-          role: "user",
-
-          parts: [{ text: prompt }]
-
-        }],
-
-        tools: [{ google_search: {} }],
-
-        generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-
-      })
-
-    });
-
-    
-
-    if (response.status === 429) {
-
-      selectedModel = 'gemini-2.0-flash';
-
-      console.warn("Gemini 2.5 Flash quota exceeded. Switching to stable Gemini 2.0 Flash fallback...");
-
-      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
-
-        method: 'POST',
-
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({
-
-          contents: [{
-
-            role: "user",
-
-            parts: [{ text: prompt }]
-
-          }],
-
-          tools: [{ google_search: {} }],
-
-          generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-
-        })
-
-      });
-
-    }
-
+    // Google Search grounding is the one tool the server allows. Falls back 2.5 -> 2.0 on 429 / network / 5xx.
+    data = await callGeminiWithFallback(
+      [{ role: "user", parts: [{ text: prompt }] }],
+      { temperature: 0.4, maxOutputTokens: 8192 },
+      { extra: { tools: [{ google_search: {} }] },
+        onFallback: () => console.warn("Gemini 2.5 Flash unavailable. Switching to Gemini 2.0 Flash...") });
   } catch (err) {
-
-    selectedModel = 'gemini-2.0-flash';
-
-    response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
-
-      method: 'POST',
-
-      headers: { 'Content-Type': 'application/json' },
-
-      body: JSON.stringify({
-
-        contents: [{
-
-          role: "user",
-
-          parts: [{ text: prompt }]
-
-        }],
-
-        tools: [{ google_search: {} }],
-
-        generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-
-      })
-
-    });
-
+    console.warn('Gemini request failed, using offline fallback:', err && err.message);
+    return getOfflineFallback(prompt);
   }
-
   try {
-
-    if (!response.ok) {
-
-        console.warn("API response not ok, using offline fallback. Status: ", response.status);
-
-        return getOfflineFallback(prompt);
-
-    }
-
-    
-
-    const data = await response.json();
 
     const text = data.candidates[0].content.parts[0].text;
 

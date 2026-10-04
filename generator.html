@@ -38,6 +38,7 @@
   <script src="js/firebase.js"></script>
   <script src="js/db.js"></script>
   <script src="js/auth-ui.js"></script>
+  <script src="js/api.js"></script>
   <script src="theme.js"></script>
   <link rel="manifest" href="manifest.json" />
 
@@ -74,51 +75,7 @@
 
   <!-- AI Settings Modal -->
 
-  <div id="aiModal" class="research-overlay" style="display:none;">
-
-    <div class="research-modal" style="text-align: left; max-width: 450px;">
-
-      <h3 style="margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
-
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
-
-        Enable Live Google Search
-
-      </h3>
-
-      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1.5rem;">To perform real-time research, please enter your Gemini API Key. It's free and stays in your browser.</p>
-
-      
-
-      <div style="margin-bottom: 1.5rem;">
-
-        <label style="display:block; font-size:0.8rem; margin-bottom:0.5rem; color:var(--text-muted);">Gemini API Key</label>
-
-        <input type="password" id="geminiKey" placeholder="Enter your key here..." style="width:100%; padding:0.8rem; border-radius:8px; background:rgba(0,0,0,0.2); border:1px solid var(--border-color); color:white; outline:none;">
-
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="display:block; font-size:0.75rem; margin-top:0.5rem; text-decoration:underline;">Get a free API Key here →</a>
-
-      </div>
-
-
-
-      <div style="display:flex; gap:1rem;">
-
-        <button class="btn-primary" id="saveAiKey" style="flex:1;">Save & Enable</button>
-
-        <button class="btn-outline" id="closeAiModal" style="flex:1;">Close</button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-
-
-  <!-- Mobile Menu -->
+<!-- Mobile Menu -->
 
   
 

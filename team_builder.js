@@ -27,85 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const ctxDuration = document.getElementById('tbDuration');
 
-  // API Key Management
-
+  // AI access: Gemini runs through the signed-in user's account (the key lives on the server, see js/api.js).
   const apiKeyBanner = document.getElementById('tbApiKeyBanner');
-
-  const openApiKeyModal = document.getElementById('tbOpenApiKeyModal');
-
-  const tbApiModal = document.getElementById('tbApiModal');
-
-  const tbCloseModal = document.getElementById('tbCloseModal');
-
-  const tbSaveKey = document.getElementById('tbSaveKey');
-
-  const tbApiKeyInput = document.getElementById('tbApiKeyInput');
+  const canUseAI = () => !!(window.callGemini && window.canUseAI && window.canUseAI());
 
   function checkApiKey() {
-
-    const key = localStorage.getItem('gemini_api_key');
-
-    if (key) {
-
-      apiKeyBanner.classList.add('success');
-
-      apiKeyBanner.innerHTML = `
-
-        <div class="api-key-banner-left">
-
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-
-          <span><strong>Status:</strong> <span style="color:#10b981;">Gemini AI Active</span></span>
-
-        </div>
-
-        <div style="display:flex; gap:0.5rem;">
-
-          <button class="btn-outline btn-sm" id="tbOpenApiKeyModal">Settings</button>
-
-          <button class="btn-ghost btn-sm" id="clearApiKeyBtn" style="color:#ef4444;">Clear</button>
-
-        </div>
-
-      `;
-
-      document.getElementById('clearApiKeyBtn').addEventListener('click', () => {
-
-        localStorage.removeItem('gemini_api_key');
-
-        location.reload();
-
-      });
-
-      document.getElementById('tbOpenApiKeyModal').addEventListener('click', () => tbApiModal.style.display = 'flex');
-
-    }
-
+    const live = canUseAI();
+    apiKeyBanner.classList.toggle('success', live);
+    apiKeyBanner.style.border = live ? '1px solid var(--accent-primary)' : '';
+    apiKeyBanner.innerHTML = `
+      <div class="api-key-banner-left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${live ? '#10b981' : '#f59e0b'}" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Status:</strong> ${live ? '<span style="color:#10b981;">Gemini AI Active (your account)</span>' : '<span style="color:#f59e0b;">Offline mode: sign in for live Gemini AI</span>'}</span>
+      </div>
+      ${live ? '' : '<div style="display:flex; gap:0.5rem;"><button class="btn-primary btn-sm" id="tbSignInBtn">Sign in</button></div>'}
+    `;
+    const signIn = document.getElementById('tbSignInBtn');
+    if (signIn) signIn.addEventListener('click', () => { const b = document.querySelector('.rar-auth-btn'); if (b) b.click(); });
   }
 
   checkApiKey();
-
-  if(openApiKeyModal) openApiKeyModal.addEventListener('click', () => tbApiModal.style.display = 'flex');
-
-  if(tbCloseModal) tbCloseModal.addEventListener('click', () => tbApiModal.style.display = 'none');
-
-  if(tbSaveKey) {
-
-    tbSaveKey.addEventListener('click', () => {
-
-      const key = tbApiKeyInput.value.trim();
-
-      if(key) localStorage.setItem('gemini_api_key', key);
-
-      tbApiModal.style.display = 'none';
-
-      checkApiKey();
-
-      showToast('API Key saved locally!');
-
-    });
-
-  }
+  window.addEventListener('rar:auth', checkApiKey);   // js/auth-ui.js fires this when the user signs in or out
 
   // Input Handling
 
@@ -351,7 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       
 
-      const apiKey = localStorage.getItem('gemini_api_key');
+      if (window.waitForAuth) await window.waitForAuth();   // let Firebase restore the session before deciding live vs offline
+      const useAI = canUseAI();
 
       const context = {
 
@@ -367,11 +310,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
 
-        if (apiKey) {
+        if (useAI) {
 
           simulateProgressUI(true);
 
-          const result = await callGeminiTeamBuilder(apiKey, idea, context);
+          const result = await callGeminiTeamBuilder(idea, context);
 
           latestTeamData = result;
 
@@ -549,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- API CALL FUNCTION ---
 
-  async function callGeminiTeamBuilder(apiKey, idea, ctx) {
+  async function callGeminiTeamBuilder(idea, ctx) {
 
     const systemPrompt = `You are an expert technical recruiter and hackathon strategist.
 
@@ -625,83 +568,16 @@ SCHEMA:
 
 }`;
 
-    let selectedModel = 'gemini-2.5-flash';
-
-    let response;
-
-    
-
+    let data;
     try {
-
-      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
-
-        method: 'POST',
-
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({
-
-          contents: [{ parts: [{ text: systemPrompt }] }],
-
-          generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-
-        })
-
-      });
-
-      
-
-      if (response.status === 429) {
-
-        selectedModel = 'gemini-2.0-flash';
-
-        console.warn("Gemini 2.5 Flash quota exceeded. Switching to stable Gemini 2.0 Flash fallback...");
-
-        showToast("[API Warning] Gemini 2.5 Quota reached. Switching to stable Gemini 2.0 Flash fallback...");
-
-        response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
-
-          method: 'POST',
-
-          headers: { 'Content-Type': 'application/json' },
-
-          body: JSON.stringify({
-
-            contents: [{ parts: [{ text: systemPrompt }] }],
-
-            generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-
-          })
-
-        });
-
-      }
-
+      // Falls back 2.5 -> 2.0 on 429 / network / 5xx (same behaviour as before, now through the server).
+      data = await callGeminiWithFallback(
+        [{ parts: [{ text: systemPrompt }] }],
+        { temperature: 0.4, maxOutputTokens: 8192 },
+        { onFallback: () => showToast("[API Warning] Gemini 2.5 busy. Switching to Gemini 2.0 Flash...") });
     } catch (err) {
-
-      selectedModel = 'gemini-2.0-flash';
-
-      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
-
-        method: 'POST',
-
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({
-
-          contents: [{ parts: [{ text: systemPrompt }] }],
-
-          generationConfig: { temperature: 0.4, maxOutputTokens: 8192 }
-
-        })
-
-      });
-
+      throw new Error((err && err.message) || "API Network Error");
     }
-
-    if (!response.ok) throw new Error("API Network Error");
-
-    const data = await response.json();
 
     const text = data.candidates[0].content.parts[0].text;
 
@@ -795,7 +671,7 @@ SCHEMA:
 
     if(!isLive) {
 
-        summaryBanner.innerHTML += `<div class="tb-offline-badge">⚠️ Offline Simulation (No API Key)</div>`;
+        summaryBanner.innerHTML += `<div class="tb-offline-badge">⚠️ Offline Simulation (sign in for live AI)</div>`;
 
     }
 

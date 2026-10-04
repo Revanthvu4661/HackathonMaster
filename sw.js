@@ -129,6 +129,9 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Only GET responses can be cached; POSTs (e.g. same-origin /api/gemini in local development) pass straight through
+  if (request.method !== 'GET') return;
+
   // Live data (updated daily by GitHub Actions) — network-first so it never goes stale
   if (url.pathname.startsWith('/data/')) {
     event.respondWith(

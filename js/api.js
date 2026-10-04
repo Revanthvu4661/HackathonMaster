@@ -11,9 +11,13 @@
 (function (W) {
   'use strict';
 
-  // Local development serves the API from the same origin (uvicorn server.app:app); production uses the Render API service.
-  var LOCAL = ['localhost', '127.0.0.1'].indexOf(W.location.hostname) !== -1;
-  var API_BASE = LOCAL ? '' : 'https://hackathon-master-api.onrender.com';
+  // The FastAPI web service on Render. The static frontend lives at a different URL, so this is a cross-origin
+  // call (the origin must be listed in ALLOWED_ORIGINS / the CORS list in server/app.py).
+  var PROD_API_BASE = 'https://hackathon-master.onrender.com';
+  // Only when the page itself is served by the local FastAPI process (uvicorn server.app:app, port 8000) is
+  // the API same-origin. Any other dev server (Live Server :5500, :3000) uses the deployed API.
+  var SAME_ORIGIN_DEV = ['localhost', '127.0.0.1'].indexOf(W.location.hostname) !== -1 && W.location.port === '8000';
+  var API_BASE = SAME_ORIGIN_DEV ? '' : PROD_API_BASE;
   var TIMEOUT_MS = 120000;   // generous: a sleeping Render free instance needs 30-60 s to wake up
 
   function apiError(message, status, code) {
@@ -68,12 +72,16 @@
     }
   }
 
-  async function callGemini(model, contents, generationConfig) {
+  // extra (optional): { tools: [{ google_search: {} }], systemInstruction: { parts: [{ text }] } }.
+  // The server only accepts the Google Search tool; anything else is rejected.
+  async function callGemini(model, contents, generationConfig, extra) {
     if (!W.auth) throw apiError('Sign-in is unavailable right now.', 0, 'no-auth');
     var user = W.auth.currentUser || await waitForAuth();
     if (!user) throw apiError('Please sign in to use AI features', 401, 'auth');
 
     var payload = { model: model, contents: contents, generationConfig: generationConfig || {} };
+    if (extra && extra.tools) payload.tools = extra.tools;
+    if (extra && extra.systemInstruction) payload.systemInstruction = extra.systemInstruction;
     var token = await user.getIdToken();                 // cached; the SDK refreshes it when it is about to expire
     var response = await post(token, payload);
 
@@ -88,8 +96,28 @@
     return response.json();
   }
 
+  /** Try gemini-2.5-flash, then gemini-2.0-flash when the first is busy (429), unreachable or erroring (502/504).
+   *  opts: { extra, onFallback(err) }. Throws the last error if both fail. */
+  async function callGeminiWithFallback(contents, generationConfig, opts) {
+    opts = opts || {};
+    var models = ['gemini-2.5-flash', 'gemini-2.0-flash'], lastErr;
+    for (var i = 0; i < models.length; i++) {
+      try {
+        return await callGemini(models[i], contents, generationConfig, opts.extra);
+      } catch (e) {
+        lastErr = e;
+        var retryable = e.status === 429 || e.status === 0 || e.status === 502 || e.status === 504;
+        if (!retryable || i === models.length - 1) throw e;
+        if (opts.onFallback) { try { opts.onFallback(e); } catch (_) { /* never break the fallback */ } }
+      }
+    }
+    throw lastErr;
+  }
+
   W.API_BASE = API_BASE;
   W.callGemini = callGemini;
+  W.callGeminiWithFallback = callGeminiWithFallback;
+  W.canUseAI = function () { return isSignedIn(); };   // live AI needs a signed-in user; otherwise pages use their offline engines
   W.isSignedIn = isSignedIn;
   W.waitForAuth = waitForAuth;
 })(window);

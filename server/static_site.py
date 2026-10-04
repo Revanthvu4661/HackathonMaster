@@ -53,7 +53,7 @@ CSP = "; ".join([
     "connect-src 'self' https://generativelanguage.googleapis.com https://google.serper.dev "
     "https://raw.githubusercontent.com https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com "
     "https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com "
-    "https://hackathon-master-api.onrender.com",
+    "https://hackathon-master.onrender.com",
     "frame-src 'self' https://*.firebaseapp.com https://accounts.google.com https://apis.google.com",
     "object-src 'none'", "base-uri 'self'", "frame-ancestors 'self'",
 ])

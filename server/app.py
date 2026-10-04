@@ -16,7 +16,7 @@ from FastAPI, so the request body would be mistaken for a query parameter (every
 Required env vars:  GEMINI_API_KEY, FIREBASE_PROJECT_ID, FIREBASE_PRIVATE_KEY, FIREBASE_CLIENT_EMAIL
                     (+ FIREBASE_PRIVATE_KEY_ID, FIREBASE_CLIENT_ID)
 Optional env vars (all have defaults):
-    ALLOWED_ORIGINS        comma list for CORS (default: the two likely Render URLs + localhost)
+    ALLOWED_ORIGINS        comma list for CORS (default: DEFAULT_ORIGINS below)
     GEMINI_MODELS          comma list of models clients may request (default: gemini-2.0-flash,gemini-2.5-flash)
     RATE_LIMIT_PER_MINUTE  per signed-in user (default 10)
     RATE_LIMIT_PER_DAY     per signed-in user (default 100)
@@ -37,7 +37,7 @@ from fastapi.responses import JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from firebase_admin import auth as fb_auth
 from firebase_admin import credentials
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
@@ -58,12 +58,18 @@ MAX_PROMPT_CHARS = 60_000      # total characters across all parts
 MAX_OUTPUT_TOKENS = 8_192
 MAX_BODY_BYTES = 300_000
 RATE = f"{os.getenv('RATE_LIMIT_PER_MINUTE', '10')}/minute;{os.getenv('RATE_LIMIT_PER_DAY', '100')}/day"
-# The live site is https://hackathonmaster.onrender.com; the hyphenated URL is allowed too in case the
-# frontend is (re)created under that name. Override with ALLOWED_ORIGINS to be exact.
-ORIGINS = [o.strip() for o in os.getenv(
-    "ALLOWED_ORIGINS",
-    "https://hackathonmaster.onrender.com,https://hackathon-master.onrender.com,"
-    "http://localhost:8000,http://127.0.0.1:8000").split(",") if o.strip()]
+# Browser origins allowed to call this API (CORS). Override on Render with ALLOWED_ORIGINS (comma separated).
+DEFAULT_ORIGINS = [
+    "https://hackathon-master.onrender.com",
+    "https://hackathon-master-frontend.onrender.com",   # the new static frontend
+    "https://hackathonmaster.onrender.com",             # the current live static site: remove once it is retired
+    "http://localhost:3000",
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+    "http://localhost:8000",                            # local FastAPI serving the site itself
+    "http://127.0.0.1:8000",
+]
+ORIGINS = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", ",".join(DEFAULT_ORIGINS)).split(",") if o.strip()]
 
 
 # ---------------------------------------------------------------------------
@@ -93,11 +99,25 @@ class GenerationConfig(_Strict):
     responseMimeType: Literal["application/json", "text/plain"] | None = None
 
 
+class GoogleSearchTool(_Strict):
+    """The ONLY tool clients may use: Google Search grounding (`{"google_search": {}}`), used by Deep Search.
+    No parameters are accepted, and code execution / URL context / function calling stay blocked."""
+    google_search: dict = Field(default_factory=dict)
+
+    @field_validator("google_search")
+    @classmethod
+    def _no_params(cls, v: dict) -> dict:
+        if v:
+            raise ValueError("google_search takes no parameters")
+        return v
+
+
 class GeminiRequest(_Strict):
     model: str = DEFAULT_MODEL
     contents: list[Content] = Field(min_length=1, max_length=40)
     systemInstruction: SystemInstruction | None = None
     generationConfig: GenerationConfig | None = None
+    tools: list[GoogleSearchTool] | None = Field(default=None, max_length=1)
 
     @model_validator(mode="after")
     def _limit_size(self):
