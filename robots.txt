@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hackathonmaster.onrender.com/sitemap.xml
+Sitemap: https://hackathon-master-frontend.onrender.com/sitemap.xml
