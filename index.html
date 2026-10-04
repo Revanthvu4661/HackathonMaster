@@ -28,29 +28,165 @@
   <link rel="apple-touch-icon" href="favicon.png">
 
   <style>
-    /* index.html page styles (layout only; tokens/components live in design-system.css) */
-    .hero-ds { position: relative; overflow: hidden; padding: var(--sp-3xl) var(--sp-md) var(--sp-2xl); }
-    @media (min-width: 768px) { .hero-ds { padding: 112px var(--sp-lg) 96px; } }
-    .hero-ds-inner { position: relative; }
-    .hero-ds h1 { max-width: 14ch; }
-    .hero-ds-sub { margin-top: var(--sp-lg); max-width: 52ch; font-size: 1.125rem; color: var(--ds-text-2); }
-    .hero-ds-cta { margin-top: var(--sp-xl); }
-    .hero-ds-cta .btn-lg { width: 100%; }
-    @media (min-width: 480px) { .hero-ds-cta .btn-lg { width: auto; } }
-    .hero-ds-stats { display: flex; flex-wrap: wrap; gap: var(--sp-sm) var(--sp-lg); margin-top: var(--sp-2xl); padding: 0; list-style: none; font-size: 0.8125rem; color: var(--ds-text-2); }
-    .hero-ds-stats li { display: flex; align-items: center; gap: var(--sp-lg); }
-    .hero-ds-stats li + li::before { content: ''; width: 4px; height: 4px; margin-left: calc(var(--sp-lg) * -1); border-radius: 50%; background: var(--ds-text-muted); }
-    .steps { display: grid; gap: var(--sp-xl); grid-template-columns: 1fr; padding: 0; list-style: none; }
-    @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); gap: var(--sp-2xl); } }
-    .step { border-top: 1px solid var(--ds-border); padding-top: var(--sp-lg); }
-    .step-num { display: block; margin-bottom: var(--sp-md); font-size: 2rem; font-weight: 500; color: var(--ds-primary-text); }
-    .step p { margin-top: var(--sp-sm); color: var(--ds-text-2); }
-    .container.narrow { max-width: 780px; }
-    .section--tight { padding-top: var(--sp-lg); }
-    .analyzer { display: grid; gap: var(--sp-md); }
+    /* ===== index.html page styles (home). Everything is scoped with the hp-/term- prefixes. Colours are tokens:
+       dark values come from the brief, light theme maps onto the design-system tokens. ===== */
+    :root {
+      --hp-card: #12121e; --hp-border: #1f2937; --hp-muted: #9ca3af; --hp-text: #f9fafb;
+      --hp-purple: #7c3aed; --hp-purple-2: #a78bfa; --hp-grad-a: #4c1d95; --hp-grad-b: #7c3aed; --hp-on-grad: #ffffff;
+      --term-bg: #0d0d16; --term-border: #2a2a3a; --term-key: #9ca3af; --term-val: #f9fafb; --term-ok: #34d399; --term-prompt: #a78bfa;
+    }
+    html[data-theme="light"] { --hp-card: var(--ds-surface); --hp-border: var(--ds-border); --hp-muted: var(--ds-text-2); --hp-text: var(--ds-text); --hp-purple-2: var(--ds-primary-text); }
+
+    html { scroll-padding-top: calc(var(--nav-height) + 16px); }
+    .hp-section { padding: 40px 16px; }
+    @media (min-width: 768px) { .hp-section { padding: 80px 24px; } }
+    .hp-head { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+    .hp-head h2 { font-size: clamp(1.5rem, 3.4vw, 2.5rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; text-wrap: balance; }
+    .hp-head p { margin: 16px auto 0; color: var(--hp-muted); font-size: 1.0625rem; max-width: 56ch; }
+
+    /* ---------- hero ---------- */
+    .hp-hero { position: relative; overflow: hidden; display: flex; align-items: center; padding: 48px 16px; }
+    @media (min-width: 900px) { .hp-hero { min-height: calc(100vh - var(--nav-height)); min-height: calc(100svh - var(--nav-height)); padding: 48px 24px; } }
+    .hp-hero-inner { position: relative; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: center; }   /* minmax(0,…): the no-wrap terminal lines must not widen the column */
+    .hp-hero-copy, .hp-hero-visual { min-width: 0; }
+    @media (min-width: 900px) { .hp-hero-inner { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); gap: 56px; } }
+    .hp-badge { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 24px; padding: 6px 14px; border: 1px solid var(--hp-border); border-radius: 999px; background: var(--hp-card); color: var(--hp-muted); font-size: 0.8125rem; }
+    .hp-hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.25rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; text-wrap: balance; color: var(--hp-text); }
+    .hp-lead { margin: 24px 0 0; max-width: 54ch; font-size: clamp(1rem, 1.5vw, 1.1875rem); line-height: 1.6; color: var(--hp-muted); }
+    .hp-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hp-cta .btn-lg { transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; }
+    @media (max-width: 479px) { .hp-cta .btn-lg { width: 100%; } }
+    .hp-trust { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 28px 0 0; padding: 0; list-style: none; color: var(--hp-muted); font-size: 0.875rem; }
+    .hp-trust li { display: inline-flex; align-items: center; gap: 8px; }
+    .hp-trust li > span { color: var(--term-ok); font-weight: 700; }
+
+    /* primary-button pulse (hero + banner) */
+    @keyframes hp-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(var(--pulse, 124, 58, 237), 0.45); } 50% { box-shadow: 0 0 0 12px rgba(var(--pulse, 124, 58, 237), 0); } }
+    .hp-pulse { animation: hp-pulse 2.6s ease-out infinite; }
+    .hp-pulse:hover { animation: none; }
+
+    /* ---------- terminal demo (pure CSS) ---------- */
+    .hp-hero-visual { position: relative; }
+    .hp-hero-visual::before { content: ""; position: absolute; inset: -12% -8%; z-index: 0; background: radial-gradient(closest-side, rgba(124, 58, 237, 0.28), transparent 72%); pointer-events: none; }
+    .term { position: relative; z-index: 1; border: 1px solid var(--term-border); border-radius: 12px; background: var(--term-bg); overflow: hidden; box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45); }
+    .term-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--term-border); }
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--term-border); }
+    .term-title { margin-left: 8px; color: var(--term-key); font: 0.75rem/1 var(--ds-font-mono); }
+    .term-body { padding: 20px 20px 24px; min-height: 236px; font: 0.8125rem/1.9 var(--ds-font-mono); color: var(--term-val); }
+    @media (min-width: 480px) { .term-body { font-size: 0.875rem; padding: 24px 24px 28px; min-height: 252px; } }
+    .tl { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .tl-1, .tl-2, .tl-3, .tl-4 { white-space: normal; overflow: visible; overflow-wrap: anywhere; }   /* result lines wrap on narrow screens instead of being cut off */
+    .t-prompt { color: var(--term-prompt); }
+    .t-key { color: var(--term-key); }
+    .t-ok { color: var(--term-ok); }
+    .t-score { color: var(--term-ok); font-weight: 700; }
+    .t-typed { --n: 37; display: inline-block; overflow: hidden; vertical-align: bottom; white-space: nowrap; animation: tl0 18s linear infinite; }
+    .t-caret { display: inline-block; width: 0.55ch; height: 1.1em; margin-left: 2px; vertical-align: text-bottom; background: var(--term-prompt); animation: t-blink 1s steps(1) infinite; }
+    .tl-1 { animation: tl1 18s linear infinite; }
+    .tl-2 { animation: tl2 18s linear infinite; }
+    .tl-3 { animation: tl3 18s linear infinite; }
+    .tl-4 { animation: tl4 18s linear infinite; }
+    @keyframes t-blink { 50% { opacity: 0; } }
+    @keyframes tl0 {
+      0%, 4.444% { width: 0; opacity: 1; animation-timing-function: steps(37, end); }
+      20.000%, 83.333% { width: calc(var(--n) * 1ch); opacity: 1; }
+      88.889% { width: calc(var(--n) * 1ch); opacity: 0; }
+      100% { width: 0; opacity: 0; }
+    }
+    @keyframes tl1 {
+      0%, 24.444% { opacity: 0; transform: translateY(6px); animation-timing-function: ease-out; }
+      26.944%, 83.333% { opacity: 1; transform: none; }
+      88.889%, 100% { opacity: 0; transform: none; }
+    }
+    @keyframes tl2 {
+      0%, 30.556% { opacity: 0; transform: translateY(6px); animation-timing-function: ease-out; }
+      33.056%, 83.333% { opacity: 1; transform: none; }
+      88.889%, 100% { opacity: 0; transform: none; }
+    }
+    @keyframes tl3 {
+      0%, 37.222% { opacity: 0; transform: translateY(6px); animation-timing-function: ease-out; }
+      39.722%, 83.333% { opacity: 1; transform: none; }
+      88.889%, 100% { opacity: 0; transform: none; }
+    }
+    @keyframes tl4 {
+      0%, 45.000% { opacity: 0; transform: translateY(6px); animation-timing-function: ease-out; }
+      47.500%, 83.333% { opacity: 1; transform: none; }
+      88.889%, 100% { opacity: 0; transform: none; }
+    }
+    .term-note { position: relative; z-index: 1; margin: 12px 0 0; text-align: center; color: var(--hp-muted); font-size: 0.75rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .t-typed { animation: none; width: auto; }
+      .tl-1, .tl-2, .tl-3, .tl-4, .hp-pulse, .t-caret { animation: none; opacity: 1; transform: none; }
+    }
+
+    /* ---------- stats band ---------- */
+    .hp-stats { padding: 0 16px; }
+    .hp-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--hp-border); border: 1px solid var(--hp-border); border-radius: 12px; overflow: hidden; }
+    @media (min-width: 768px) { .hp-stats-grid { grid-template-columns: repeat(4, 1fr); } .hp-stats { padding: 0 24px; } }
+    .hp-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 28px 12px; background: var(--hp-card); text-align: center; }
+    .hp-num { font: 700 clamp(2rem, 4.4vw, 3.25rem)/1 var(--ds-font-display); letter-spacing: -0.03em; color: var(--hp-purple-2); font-variant-numeric: tabular-nums; }
+    .hp-label { color: var(--hp-muted); font-size: 0.875rem; }
+
+    /* ---------- how it works ---------- */
+    .hp-steps { display: grid; grid-template-columns: 1fr; gap: 56px; margin: 0; padding: 0; list-style: none; }
+    @media (min-width: 768px) { .hp-steps { grid-template-columns: repeat(3, 1fr); gap: 56px; } }
+    .hp-step { position: relative; padding: 28px 24px; border: 1px solid var(--hp-border); border-radius: 12px; background: var(--hp-card); text-align: center; }
+    .hp-step:not(:last-child)::after { content: "\2193"; position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); color: var(--hp-purple-2); font-size: 1.75rem; line-height: 1; }
+    @media (min-width: 768px) { .hp-step:not(:last-child)::after { content: "\2192"; left: auto; right: -44px; bottom: auto; top: 50%; transform: translateY(-50%); } }
+    .hp-ico { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: rgba(124, 58, 237, 0.2); font-size: 1.5rem; }
+    .hp-step h3, .hp-card h3 { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; color: var(--hp-text); }
+    .hp-step p, .hp-card p { margin: 12px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--hp-muted); }
+    .hp-step-n { display: block; margin-bottom: 8px; color: var(--hp-purple-2); font: 500 0.8125rem/1 var(--ds-font-mono); }
+
+    /* ---------- feature grid ---------- */
+    .hp-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 0 auto; }
+    @media (min-width: 640px) { .hp-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hp-grid { grid-template-columns: repeat(3, 1fr); } }
+    .hp-card { display: block; position: relative; padding: 24px; border: 1px solid var(--hp-border); border-radius: 12px; background: var(--hp-card); color: inherit; text-decoration: none; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+    .hp-card .hp-ico { margin: 0 0 16px; }
+    .hp-card:hover, .hp-card:focus-visible {
+      transform: translateY(-4px); border-color: transparent; box-shadow: 0 10px 36px rgba(124, 58, 237, 0.2);
+      background: linear-gradient(var(--hp-card), var(--hp-card)) padding-box, linear-gradient(135deg, var(--hp-purple), var(--hp-purple-2)) border-box;
+    }
+    .hp-card:hover, .hp-card:focus-visible { color: inherit; }
+
+    /* fade-up on scroll: only when JS is running, so nothing is hidden without it */
+    @keyframes hp-up { from { opacity: 0; transform: translateY(18px); } }
+    .js .reveal { opacity: 0; }
+    .js .reveal.is-in { opacity: 1; animation: hp-up 0.6s ease backwards; animation-delay: calc(var(--i, 0) * 80ms); }
+    @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; } .js .reveal.is-in { animation: none; } }
+
+    /* ---------- analyzer ---------- */
+    .container.narrow { max-width: 800px; }
+    .analyzer { display: grid; gap: 16px; }
     .analyzer .project-textarea { min-height: 160px; }
     @media (min-width: 640px) { .analyzer .btn-block { width: auto; justify-self: start; } }
+    .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 24px; justify-content: center; }
+    .chips-label { color: var(--hp-muted); font-size: 0.8125rem; }
+    .chip { min-height: 36px; padding: 6px 14px; border: 1px solid var(--hp-border); border-radius: 999px; background: transparent; color: var(--hp-muted); font: inherit; font-size: 0.8125rem; cursor: pointer; transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; }
+    .chip:hover { color: var(--hp-text); border-color: var(--hp-purple); background: rgba(124, 58, 237, 0.1); }
+
+    /* ---------- why teams use it (real, checkable facts: no invented testimonials) ---------- */
+    .hp-proof { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 768px) { .hp-proof { grid-template-columns: repeat(3, 1fr); } }
+    .hp-fact { padding: 28px 24px; border: 1px solid var(--hp-border); border-radius: 12px; background: var(--hp-card); }
+    .hp-fact h3 { font-size: 1.125rem; font-weight: 700; color: var(--hp-text); }
+    .hp-fact p { margin: 12px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--hp-muted); }
+    .hp-fact a { color: var(--hp-purple-2); }
+
+    /* ---------- closing banner ---------- */
+    .hp-band { padding: 40px 16px 64px; }
+    @media (min-width: 768px) { .hp-band { padding: 40px 24px 96px; } }
+    .hp-band-card { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px; border-radius: 16px; text-align: center; color: var(--hp-on-grad); background: linear-gradient(135deg, var(--hp-grad-a), var(--hp-grad-b)); }
+    @media (min-width: 768px) { .hp-band-card { padding: 72px 48px; } }
+    .hp-band-card h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: inherit; text-wrap: balance; }
+    .hp-band-card p { margin: 16px auto 0; max-width: 52ch; color: rgba(255, 255, 255, 0.88); }
+    .hp-band-btn { --pulse: 255, 255, 255; margin-top: 32px; background: var(--hp-on-grad); border-color: var(--hp-on-grad); color: var(--hp-grad-a); font-weight: 600; }
+    .hp-band-btn:hover:not(:disabled) { background: #f3e8ff; border-color: #f3e8ff; color: var(--hp-grad-a); }
+    .hp-band-card .hp-small { margin-top: 20px; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.8); }
+    @media (max-width: 479px) { .hp-band-btn { width: 100%; } }
   </style>
+  <script>document.documentElement.classList.add('js');</script>
   <!-- Firebase (compat SDK v10, CDN) — must load before any app script -->
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
@@ -112,52 +248,137 @@
 
 
   <!-- ===== HERO ===== -->
-  <section class="hero-ds" id="hero">
+  <section class="hp-hero" id="hero">
     <div class="hero-grid" aria-hidden="true"></div>
-    <div class="container hero-ds-inner fade-in">
-      <h1>Win your next hackathon.</h1>
-      <p class="hero-ds-sub">Paste your problem statement. Get architecture, stack, pitch strategy, and a winning blueprint — in seconds.</p>
-      <div class="row hero-ds-cta">
-        <button class="btn-primary btn-lg" id="heroGenerateBtn">Analyze my idea</button>
-        <button class="btn-secondary btn-lg" id="heroShowcaseBtn">See a demo</button>
+    <div class="container hp-hero-inner fade-in">
+      <div class="hp-hero-copy">
+        <p class="hp-badge"><span aria-hidden="true">🔥</span> Live data from Devpost, Devfolio, MLH &amp; Unstop</p>
+        <h1>Win your next hackathon.</h1>
+        <p class="hp-lead">Built for Indian hackathons: SIH, HackWithInfy, ETHIndia and 100+ more. Paste a problem statement and get architecture, stack, pitch strategy and a winning blueprint in seconds.</p>
+        <div class="hp-cta">
+          <button class="btn-primary btn-lg hp-pulse" id="heroGenerateBtn"><span aria-hidden="true">🚀</span> Analyze my idea</button>
+          <a class="btn-secondary btn-lg" href="#how-it-works"><span aria-hidden="true">▶</span> Watch how it works</a>
+        </div>
+        <ul class="hp-trust" aria-label="Highlights">
+          <li><span aria-hidden="true">✓</span> No API key needed</li>
+          <li><span aria-hidden="true">✓</span> Works offline</li>
+          <li><span aria-hidden="true">✓</span> Free forever</li>
+          <li><span aria-hidden="true">✓</span> 30-second results</li>
+        </ul>
       </div>
-      <ul class="hero-ds-stats num" aria-label="Platform stats">
-        <li>128 hackathons tracked</li>
-        <li>18 analysis modules</li>
-        <li>1,000+ blueprints generated</li>
+      <div class="hp-hero-visual">
+        <div class="term" aria-hidden="true">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">rar analyze</span></div>
+          <div class="term-body">
+            <div class="tl tl-0"><span class="t-prompt">&gt;</span> <span class="t-key">Problem:</span> <span class="t-typed">"Smart waste management using IoT..."</span><span class="t-caret"></span></div>
+            <div class="tl tl-1"><span class="t-prompt">&gt;</span> <span class="t-key">Domain:</span> Smart City <span class="t-ok">✓</span></div>
+            <div class="tl tl-2"><span class="t-prompt">&gt;</span> <span class="t-key">Stack:</span> React PWA + FastAPI + Firebase</div>
+            <div class="tl tl-3"><span class="t-prompt">&gt;</span> <span class="t-key">Win Strategy:</span> Focus on real-time dashboard</div>
+            <div class="tl tl-4"><span class="t-prompt">&gt;</span> <span class="t-key">Judge Score Prediction:</span> <span class="t-score">8.2/10</span> ⭐</div>
+          </div>
+        </div>
+        <p class="term-note">Example output</p>
+        <p class="sr-only">Example: for the problem "Smart waste management using IoT", RAR returns the domain (Smart City), a suggested stack (React PWA, FastAPI, Firebase), a win strategy (focus on a real-time dashboard) and a predicted judge score of 8.2 out of 10.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS (all four are checkable: the first is read live from data/hackathons.json) ===== -->
+  <section class="hp-stats" aria-label="RAR in numbers">
+    <div class="container">
+      <ul class="hp-stats-grid">
+        <li class="hp-stat"><span class="hp-num" id="statHackathons" data-count="120" data-suffix="+">120+</span><span class="hp-label">Live hackathons tracked</span></li>
+        <li class="hp-stat"><span class="hp-num" data-count="18">18</span><span class="hp-label">AI analysis modules</span></li>
+        <li class="hp-stat"><span class="hp-num" data-count="1000" data-suffix="+">1,000+</span><span class="hp-label">Ready-made blueprints</span></li>
+        <li class="hp-stat"><span class="hp-num" data-count="4">4</span><span class="hp-label">Platforms tracked</span></li>
       </ul>
     </div>
   </section>
 
   <!-- ===== HOW IT WORKS (a real sequence, so numbered) ===== -->
-  <section class="section">
+  <section class="hp-section" id="how-it-works">
     <div class="container">
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num num">01</span>
-          <h3>Analyze</h3>
-          <p>Paste your problem statement and get an 18-module analysis: domain, hidden requirements, judging priorities, risks.</p>
+      <div class="hp-head">
+        <h2>From problem statement to winning strategy in 30 seconds</h2>
+      </div>
+      <ol class="hp-steps">
+        <li class="hp-step reveal" style="--i:0">
+          <span class="hp-ico" aria-hidden="true">📋</span>
+          <span class="hp-step-n">Step 1</span>
+          <h3>Paste your problem</h3>
+          <p>Drop in any hackathon problem statement. Works with SIH, HackWithInfy, ETHIndia, Smart City challenges and more.</p>
         </li>
-        <li class="step">
-          <span class="step-num num">02</span>
-          <h3>Strategy</h3>
-          <p>Judge psychology, pitch scripts, and a PRD in one click. Built from what winning teams actually ship.</p>
+        <li class="hp-step reveal" style="--i:1">
+          <span class="hp-ico" aria-hidden="true">🧠</span>
+          <span class="hp-step-n">Step 2</span>
+          <h3>AI analyzes 18 dimensions</h3>
+          <p>Domain detection, judge psychology, hidden requirements, risk flags and winning patterns from past winners.</p>
         </li>
-        <li class="step">
-          <span class="step-num num">03</span>
-          <h3>Win</h3>
-          <p>Compare stacks, assemble your team, and find the next live hackathon to enter.</p>
+        <li class="hp-step reveal" style="--i:2">
+          <span class="hp-ico" aria-hidden="true">🏆</span>
+          <span class="hp-step-n">Step 3</span>
+          <h3>Get your winning blueprint</h3>
+          <p>Architecture, tech stack, pitch script, PRD and judge Q&amp;A: everything your team needs to present with confidence.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- ===== PROBLEM STATEMENT ANALYZER ===== -->
-  <section class="section section--tight" id="analyzer">
+  <!-- ===== FEATURES ===== -->
+  <section class="hp-section" id="features">
+    <div class="container">
+      <div class="hp-head">
+        <h2>Everything you need to win</h2>
+        <p>18 AI-powered analysis modules in one place</p>
+      </div>
+      <div class="hp-grid">
+        <a class="hp-card reveal" style="--i:0" href="strategist.html">
+          <span class="hp-ico" aria-hidden="true">🎯</span>
+          <h3>Strategy Generator</h3>
+          <p>Full winning strategy in 30 seconds. Architecture, stack, pitch, PRD, all tailored to your exact problem statement.</p>
+        </a>
+        <a class="hp-card reveal" style="--i:1" href="strategist.html">
+          <span class="hp-ico" aria-hidden="true">🧠</span>
+          <h3>Judge Psychology</h3>
+          <p>Know what judges are really looking for. Predict scores, prepare for hard questions, avoid the mistakes that cost teams the win.</p>
+        </a>
+        <a class="hp-card reveal" style="--i:2" href="team_builder.html">
+          <span class="hp-ico" aria-hidden="true">👥</span>
+          <h3>Team Builder</h3>
+          <p>Assign roles based on your team's actual skills. Get a division of work plan optimized for your hackathon's time limit.</p>
+        </a>
+        <a class="hp-card reveal" style="--i:3" href="countdown.html">
+          <span class="hp-ico" aria-hidden="true">⚡</span>
+          <h3>Sprint Timer</h3>
+          <p>Built-in hackathon timer with milestone checkpoints. Never miss a submission deadline or demo prep window again.</p>
+        </a>
+        <a class="hp-card reveal" style="--i:4" href="hackathons.html">
+          <span class="hp-ico" aria-hidden="true">🔥</span>
+          <h3>Live Hackathons</h3>
+          <p>Upcoming hackathons from Devpost, Devfolio, MLH and Unstop, with deadlines, prizes and direct registration links. Updated daily, automatically.</p>
+        </a>
+        <a class="hp-card reveal" style="--i:5" href="strategist.html">
+          <span class="hp-ico" aria-hidden="true">📶</span>
+          <h3>Works Offline</h3>
+          <p>No internet? A built-in strategy engine still gives you a plan, so bad venue WiFi never leaves you with nothing.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM STATEMENT ANALYZER (analyzer card is unchanged) ===== -->
+  <section class="hp-section" id="analyzer">
     <div class="container narrow">
-      <div class="section-header">
-        <h2 class="section-title">Problem statement analyzer</h2>
-        <p class="section-subtitle">Pick the hackathon format, paste the statement, and RAR extracts domain, keywords, hidden requirements and judging priorities, then recommends an approach.</p>
+      <div class="hp-head">
+        <h2>Try it right now — free</h2>
+        <p>Paste any problem statement below. No sign-in required.</p>
+      </div>
+      <div class="chips" role="group" aria-label="Example problem statements">
+        <span class="chips-label">Try an example:</span>
+        <button type="button" class="chip" data-fill="Design a smart waste management system for urban areas that uses IoT sensors on bins and AI-based route optimisation to cut collection costs and overflow.">Smart waste management</button>
+        <button type="button" class="chip" data-fill="Build an AI-assisted diagnosis tool that helps rural clinics screen patients from symptoms and basic vitals, and refers high-risk cases to district hospitals.">Healthcare AI diagnosis</button>
+        <button type="button" class="chip" data-fill="Create a low-bandwidth financial access platform that lets rural users open accounts, send money and apply for micro-loans using only a feature phone or voice calls.">Rural fintech access</button>
+        <button type="button" class="chip" data-fill="Develop a tool that analyses legal documents such as rental agreements and contracts, highlights risky clauses and explains them in plain regional languages.">Legal document analysis</button>
       </div>
       <div class="card card--primary analyzer">
         <div class="pill-tabs" role="group" aria-label="Hackathon format">
@@ -171,6 +392,43 @@
         <button id="psaAnalyze" class="btn-primary btn-block">Analyze problem statement</button>
       </div>
       <div id="psaOutput" style="display:none;margin-top:1.5rem;"></div>
+    </div>
+  </section>
+
+  <!-- ===== WHY TEAMS USE IT =====
+       Deliberately NOT testimonials: only add quotes here that real users gave you permission to publish (name,
+       team and event as they approve them). Template, wrapped in <div class="hp-proof"> like the cards below:
+       <figure class="hp-fact"><blockquote><p>"…real quote…"</p></blockquote><figcaption>Name, team, event</figcaption></figure> -->
+  <section class="hp-section" id="why">
+    <div class="container">
+      <div class="hp-head">
+        <h2>Built for Indian hackathon teams</h2>
+        <p>What you can check for yourself</p>
+      </div>
+      <div class="hp-proof">
+        <div class="hp-fact reveal" style="--i:0">
+          <h3>Speaks Indian hackathon formats</h3>
+          <p>Dedicated analysis modes for SIH, HackWithInfy and ETHIndia problem statements. Each one judges differently, so the advice does too.</p>
+        </div>
+        <div class="hp-fact reveal" style="--i:1">
+          <h3>Real, current listings</h3>
+          <p>Hackathons pulled daily from Devpost, Devfolio and MLH, plus the big Unstop events, each with a registration link. Open the <a href="hackathons.html">live list</a> and verify any entry.</p>
+        </div>
+        <div class="hp-fact reveal" style="--i:2">
+          <h3>Open source</h3>
+          <p>The whole project is public on <a href="https://github.com/Revanthvu4661/HackathonMaster" target="_blank" rel="noopener noreferrer">GitHub</a>. Read the code, report a bug or suggest a feature.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLOSING BANNER ===== -->
+  <section class="hp-band" aria-labelledby="bandTitle">
+    <div class="hp-band-card reveal">
+      <h2 id="bandTitle">Ready to win your next hackathon?</h2>
+      <p>Build faster, pitch better and walk into the demo with a plan.</p>
+      <a class="btn-primary btn-lg hp-pulse hp-band-btn" href="strategist.html"><span aria-hidden="true">🚀</span> Start for free — no signup needed</a>
+      <p class="hp-small">Works offline · No API key · Free forever</p>
     </div>
   </section>
 
@@ -469,6 +727,61 @@ All arrays should have 3-5 items. Return ONLY valid JSON.`;
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js');
     }
+  </script>
+  <script>
+    // Home page behaviour (no libraries): example chips, count-up on scroll, fade-up on scroll.
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 1. Example chips fill the analyzer textarea
+      var input = document.getElementById('psaInput');
+      document.querySelectorAll('.chip[data-fill]').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          if (!input) return;
+          input.value = chip.getAttribute('data-fill');
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+          input.focus();
+        });
+      });
+
+      // 2. Count-up when a number scrolls into view. The first number is the real live count.
+      var nums = document.querySelectorAll('.hp-num[data-count]');
+      function fmt(el, n) { return n.toLocaleString('en-IN') + (el.getAttribute('data-suffix') || ''); }
+      function run(el) {
+        var to = +el.getAttribute('data-count');
+        if (reduce) { el.textContent = fmt(el, to); return; }
+        var t0 = performance.now(), dur = 1400;
+        (function tick(now) {
+          var p = Math.min(1, (now - t0) / dur), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(el, Math.round(to * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      }
+      function startCounters() {
+        if (!('IntersectionObserver' in window)) { nums.forEach(function (el) { run(el); }); return; }
+        nums.forEach(function (el) { el.textContent = fmt(el, 0); });
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+        }, { threshold: 0.4 });
+        nums.forEach(function (el) { io.observe(el); });
+      }
+      fetch('data/hackathons.json', { cache: 'no-cache' })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (d) {
+          var n = d.total || (d.hackathons || []).length, el = document.getElementById('statHackathons');
+          if (el && n) el.setAttribute('data-count', n);
+        })
+        .catch(function () { /* keep the printed fallback */ })
+        .then(startCounters);
+
+      // 3. Fade-up on scroll
+      var reveals = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || reduce) { reveals.forEach(function (el) { el.classList.add('is-in'); }); return; }
+      var rio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); rio.unobserve(e.target); } });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { rio.observe(el); });
+    })();
   </script>
 </body>
 
