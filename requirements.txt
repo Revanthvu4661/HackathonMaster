@@ -1,0 +1,4 @@
+# Web service (Render): serves the site via FastAPI. The daily hackathon fetcher has its own
+# dependencies in scripts/requirements.txt (used only by GitHub Actions).
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
