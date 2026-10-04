@@ -17,3 +17,16 @@ _dev/
 # Local env (if added later)
 .env
 .env.local
+
+# Backend secrets: never commit real keys (use backend/.env, see backend/.env.example)
+backend/.env
+backend/*-firebase-adminsdk-*.json
+*-firebase-adminsdk-*.json
+serviceAccount*.json
+# NOTE: do NOT ignore "*.json" globally: data/hackathons.json, manifest.json and firebase.json must stay
+# trackable (the daily GitHub Action runs `git add data/hackathons.json`, which fails if it is ignored).
+
+# Python
+__pycache__/
+*.pyc
+.venv/
