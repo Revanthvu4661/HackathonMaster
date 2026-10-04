@@ -390,7 +390,7 @@ body { padding-top: var(--nav-height); }
 /* Brand: one clickable flex container — logo + short name */
 .nav-brand {
   display: flex; align-items: center; gap: 10px;
-  color: var(--ds-text); text-decoration: none; flex: none;
+  color: var(--ds-text); text-decoration: none; flex: 0 1 auto; min-width: 0;   /* shrinkable: on narrow phones the text truncates instead of pushing the buttons off-screen */
   transition: opacity var(--t-color);
 }
 .nav-brand:hover { opacity: 0.85; color: var(--ds-text); text-decoration: none; }
@@ -402,7 +402,7 @@ body { padding-top: var(--nav-height); }
 .nav-brand:hover .brand-logo { transform: none; filter: none; }
 .brand-name {
   font-family: var(--ds-font-display); font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
-  color: var(--ds-text); line-height: 1; white-space: nowrap;
+  color: var(--ds-text); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .brand-accent { color: inherit; }
 @media (min-width: 768px) {
@@ -449,6 +449,11 @@ body { padding-top: var(--nav-height); }
 .nav-dropdown-menu .nav-link.active::after { content: none; }
 
 .nav-actions { display: flex; align-items: center; gap: var(--sp-sm); }
+.nav-actions { flex: none; }
+@media (max-width: 420px) {
+  .nav-inner { gap: var(--sp-sm); }
+  .nav-actions { gap: 0; }   /* 3 x 44px buttons = 132px; with the old 8px gaps the bar overflowed a 375px screen */
+}
 
 /* Hamburger: 24px icon in a 44px hit area */
 .hamburger {
