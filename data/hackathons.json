@@ -1,74 +1,7 @@
 {
-  "last_updated": "2026-10-09T08:32:33Z",
-  "total": 119,
+  "last_updated": "2026-10-10T08:09:29Z",
+  "total": 114,
   "hackathons": [
-    {
-      "id": "devfolio-wild-bugs",
-      "name": "Wild Bugs",
-      "platform": "Devfolio",
-      "theme": "Open Theme",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-09",
-      "deadline_ts": 1791570540,
-      "duration": "48h",
-      "mode": "Online",
-      "teamSize": "1-4",
-      "link": "https://wild-bugs.devfolio.co/",
-      "registrationUrl": "https://wild-bugs.devfolio.co/",
-      "status": "Closing Soon",
-      "tags": [
-        "Open"
-      ],
-      "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-bic",
-      "name": "Bharat Innovation Challenge 2.0",
-      "platform": "DevPost",
-      "theme": "Beginner Friendly",
-      "prize": "$10,600",
-      "prize_numeric": 10600,
-      "deadline": "2026-10-09",
-      "deadline_ts": 1791590399,
-      "duration": "22d",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://bic.devpost.com/",
-      "registrationUrl": "https://bic.devpost.com/",
-      "status": "Closing Soon",
-      "tags": [
-        "Beginner Friendly",
-        "Communication",
-        "Education",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-shiva-tech-prompt-wars",
-      "name": "Shiva Tech -Prompt Wars",
-      "platform": "DevPost",
-      "theme": "Beginner Friendly",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-09",
-      "deadline_ts": 1791590399,
-      "duration": "24h",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://shiva-tech-prompt-wars.devpost.com/",
-      "registrationUrl": "https://shiva-tech-prompt-wars.devpost.com/",
-      "status": "Closing Soon",
-      "tags": [
-        "Beginner Friendly",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
     {
       "id": "mlh-hackbios-f5",
       "name": "HackBIOS",
@@ -90,29 +23,7 @@
         "Bhilai, Chhattisgarh"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devfolio-codearambh",
-      "name": "CODEARAMBH 2.0",
-      "platform": "Devfolio",
-      "theme": "Open Theme",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-10",
-      "deadline_ts": 1791656100,
-      "duration": "28h",
-      "mode": "In-person",
-      "teamSize": "2-4",
-      "link": "https://codearambh.devfolio.co/",
-      "registrationUrl": "https://codearambh.devfolio.co/",
-      "status": "Closing Soon",
-      "tags": [
-        "Ghaziabad",
-        "Open"
-      ],
-      "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-qhack-india",
@@ -134,7 +45,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackathon-tecnm-campus-saltillo-2026",
@@ -157,7 +68,53 @@
         "Saltillo, Coahuila"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-bic",
+      "name": "Bharat Innovation Challenge 2.0",
+      "platform": "DevPost",
+      "theme": "Beginner Friendly",
+      "prize": "$10,600",
+      "prize_numeric": 10600,
+      "deadline": "2026-10-10",
+      "deadline_ts": 1791676799,
+      "duration": "23d",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://bic.devpost.com/",
+      "registrationUrl": "https://bic.devpost.com/",
+      "status": "Closing Soon",
+      "tags": [
+        "Beginner Friendly",
+        "Communication",
+        "Education",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-daimon-hackathon",
+      "name": "Build Multiplayer Data Science Agents · PyMC Labs",
+      "platform": "DevPost",
+      "theme": "Machine Learning/AI",
+      "prize": "See details",
+      "prize_numeric": 0,
+      "deadline": "2026-10-10",
+      "deadline_ts": 1791676799,
+      "duration": "24h",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://daimon-hackathon.devpost.com/",
+      "registrationUrl": "https://daimon-hackathon.devpost.com/",
+      "status": "Closing Soon",
+      "tags": [
+        "Machine Learning/AI",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-graphiques-challenge",
@@ -181,7 +138,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-hackyardbuild2026",
@@ -205,31 +162,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-ml-build-challenge-3",
-      "name": "ML Empowerment Build Challenge 3.0 - ($400,000 in prizes!)",
-      "platform": "DevPost",
-      "theme": "Beginner Friendly",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-10",
-      "deadline_ts": 1791676799,
-      "duration": "36d",
-      "mode": "Online",
-      "teamSize": "Varies",
-      "link": "https://ml-build-challenge-3.devpost.com/",
-      "registrationUrl": "https://ml-build-challenge-3.devpost.com/",
-      "status": "Closing Soon",
-      "tags": [
-        "Beginner Friendly",
-        "Machine Learning/AI",
-        "Social Good",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-palmetto-hacks",
@@ -252,53 +185,7 @@
         "Columbia, SC"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "mlh-hackphs-df",
-      "name": "hackPHS",
-      "platform": "MLH",
-      "theme": "Student Hackathon",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-11",
-      "deadline_ts": 1791736200,
-      "duration": "28h",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://hackphs.tech",
-      "registrationUrl": "https://hackphs.tech",
-      "status": "Closing Soon",
-      "tags": [
-        "MLH",
-        "Students",
-        "Princeton, New Jersey"
-      ],
-      "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "mlh-hacklanta-db",
-      "name": "Hacklanta",
-      "platform": "MLH",
-      "theme": "Student Hackathon",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-11",
-      "deadline_ts": 1791741600,
-      "duration": "47h",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://hacklanta.dev",
-      "registrationUrl": "https://hacklanta.dev",
-      "status": "Closing Soon",
-      "tags": [
-        "MLH",
-        "Students",
-        "Atlanta, Georgia"
-      ],
-      "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-innohacks-4-0",
@@ -321,7 +208,7 @@
         "Ghaziabad, Uttar Pradesh"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hack-knight-3d",
@@ -344,7 +231,7 @@
         "Flushing, New York"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hacknc-0e",
@@ -367,7 +254,7 @@
         "Chapel Hill, North Carolina"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackru-21",
@@ -390,7 +277,7 @@
         "Piscataway, New Jersey "
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-codered-orion",
@@ -413,30 +300,7 @@
         "Houston, Texas"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "mlh-knight-hacks-ix",
-      "name": "Knight Hacks IX",
-      "platform": "MLH",
-      "theme": "Student Hackathon",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-11",
-      "deadline_ts": 1791756000,
-      "duration": "50h",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://2026.knighthacks.org/",
-      "registrationUrl": "https://2026.knighthacks.org/",
-      "status": "Closing Soon",
-      "tags": [
-        "MLH",
-        "Students",
-        "Orlando, Florida"
-      ],
-      "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-aic-ic-2026",
@@ -452,14 +316,14 @@
       "teamSize": "Varies",
       "link": "https://aic-ic-2026.devpost.com/",
       "registrationUrl": "https://aic-ic-2026.devpost.com/",
-      "status": "Live",
+      "status": "Closing Soon",
       "tags": [
         "Machine Learning/AI",
         "Open Ended",
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-univabio",
@@ -483,7 +347,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-codestorm-futureforge",
@@ -506,7 +370,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-multimodal-ai-hackathon-2026-7",
@@ -528,7 +392,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-warriorhacks-2-0",
@@ -552,7 +416,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-codesprint-by-elitecoders",
@@ -576,7 +440,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-hack47-offgrid",
@@ -600,7 +464,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-indux-5-0-2026",
@@ -624,7 +488,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-next-founders",
@@ -648,124 +512,29 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
-      "id": "devpost-mlai-hackathon",
-      "name": "MLAI Hackathon 2026",
-      "platform": "DevPost",
-      "theme": "Databases",
-      "prize": "See details",
-      "prize_numeric": 0,
-      "deadline": "2026-10-16",
-      "deadline_ts": 1792195199,
-      "duration": "29d",
-      "mode": "Online",
-      "teamSize": "Varies",
-      "link": "https://mlai-hackathon.devpost.com/",
-      "registrationUrl": "https://mlai-hackathon.devpost.com/",
-      "status": "Live",
-      "tags": [
-        "Databases",
-        "Machine Learning/AI",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-svycay4e",
-      "name": "SVYCA Youth for Earth (Y4E) Hackathon",
-      "platform": "DevPost",
-      "theme": "Social Good",
-      "prize": "$2,700",
-      "prize_numeric": 2700,
+      "id": "devfolio-arkiv",
+      "name": "Arkiv: Global Tour Stop 🌍",
+      "platform": "Devfolio",
+      "theme": "Blockchain",
+      "prize": "$2,000",
+      "prize_numeric": 2000,
       "deadline": "2026-10-18",
-      "deadline_ts": 1792367999,
-      "duration": "29d",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://svycay4e.devpost.com/",
-      "registrationUrl": "https://svycay4e.devpost.com/",
-      "status": "Live",
-      "tags": [
-        "Social Good",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-eurekadev",
-      "name": "EurekaDev 2026",
-      "platform": "DevPost",
-      "theme": "Beginner Friendly",
-      "prize": "$19,122",
-      "prize_numeric": 19122,
-      "deadline": "2026-10-20",
-      "deadline_ts": 1792540799,
-      "duration": "24d",
+      "deadline_ts": 1792364340,
+      "duration": "10d",
       "mode": "Online",
-      "teamSize": "Varies",
-      "link": "https://eurekadev.devpost.com/",
-      "registrationUrl": "https://eurekadev.devpost.com/",
+      "teamSize": "1-5",
+      "link": "https://arkiv.devfolio.co/",
+      "registrationUrl": "https://arkiv.devfolio.co/",
       "status": "Live",
       "tags": [
-        "Beginner Friendly",
-        "Open Ended",
-        "Social Good",
+        "Blockchain",
         "Open"
       ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-amazonappdev2026",
-      "name": "Build, Ship, Shape: Amazon Developer Hackathon",
-      "platform": "DevPost",
-      "theme": "Machine Learning/AI",
-      "prize": "$138,000",
-      "prize_numeric": 138000,
-      "deadline": "2026-10-23",
-      "deadline_ts": 1792799999,
-      "duration": "54d",
-      "mode": "Online",
-      "teamSize": "Varies",
-      "link": "https://amazonappdev2026.devpost.com/",
-      "registrationUrl": "https://amazonappdev2026.devpost.com/",
-      "status": "Live",
-      "tags": [
-        "Machine Learning/AI",
-        "Open Ended",
-        "Productivity",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devpost-next-gen-hackathon",
-      "name": "Next Gen Hackathon 2026 -Bengaluru",
-      "platform": "DevPost",
-      "theme": "AR/VR",
-      "prize": "₹ 50,000",
-      "prize_numeric": 600,
-      "deadline": "2026-10-23",
-      "deadline_ts": 1792799999,
-      "duration": "53d",
-      "mode": "In-person",
-      "teamSize": "Varies",
-      "link": "https://next-gen-hackathon.devpost.com/",
-      "registrationUrl": "https://next-gen-hackathon.devpost.com/",
-      "status": "Live",
-      "tags": [
-        "AR/VR",
-        "IoT",
-        "Machine Learning/AI",
-        "Open"
-      ],
-      "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "source": "devfolio",
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-all-you-can-do-with-ai",
@@ -789,7 +558,31 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-banana-hacks-1111",
+      "name": "Banana Hacks",
+      "platform": "DevPost",
+      "theme": "Beginner Friendly",
+      "prize": "$500",
+      "prize_numeric": 500,
+      "deadline": null,
+      "deadline_ts": null,
+      "duration": "Varies",
+      "mode": "Online",
+      "teamSize": "Varies",
+      "link": "https://banana-hacks-1111.devpost.com/",
+      "registrationUrl": "https://banana-hacks-1111.devpost.com/",
+      "status": "Live",
+      "tags": [
+        "Beginner Friendly",
+        "Machine Learning/AI",
+        "Web",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-ensign-build",
@@ -813,7 +606,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "unstop-flipkart-grid",
@@ -836,7 +629,7 @@
         "Annual"
       ],
       "source": "unstop",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-forgehacks-2026",
@@ -860,7 +653,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "unstop-google-solution-challenge",
@@ -883,55 +676,124 @@
         "Annual"
       ],
       "source": "unstop",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
-      "id": "devpost-hackapertus",
-      "name": "Hack Apertus",
+      "id": "devpost-hacklanta",
+      "name": "Hacklanta",
       "platform": "DevPost",
-      "theme": "Education",
-      "prize": "€10,680",
-      "prize_numeric": 10680,
+      "theme": "Beginner Friendly",
+      "prize": "$14,000",
+      "prize_numeric": 14000,
       "deadline": null,
       "deadline_ts": null,
       "duration": "Varies",
       "mode": "In-person",
       "teamSize": "Varies",
-      "link": "https://hackapertus.devpost.com/",
-      "registrationUrl": "https://hackapertus.devpost.com/",
+      "link": "https://hacklanta.devpost.com/",
+      "registrationUrl": "https://hacklanta.devpost.com/",
       "status": "Live",
       "tags": [
+        "Beginner Friendly",
+        "Machine Learning/AI",
+        "Open Ended",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-hackphs2026",
+      "name": "hackPHS 2026",
+      "platform": "DevPost",
+      "theme": "Beginner Friendly",
+      "prize": "$1,000",
+      "prize_numeric": 1000,
+      "deadline": null,
+      "deadline_ts": null,
+      "duration": "Varies",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://hackphs2026.devpost.com/",
+      "registrationUrl": "https://hackphs2026.devpost.com/",
+      "status": "Live",
+      "tags": [
+        "Beginner Friendly",
+        "Open Ended",
+        "Web",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-hacks-for-humanity-2026",
+      "name": "Hacks for Humanity",
+      "platform": "DevPost",
+      "theme": "Beginner Friendly",
+      "prize": "$6,300",
+      "prize_numeric": 6300,
+      "deadline": null,
+      "deadline_ts": null,
+      "duration": "Varies",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://hacks-for-humanity-2026.devpost.com/",
+      "registrationUrl": "https://hacks-for-humanity-2026.devpost.com/",
+      "status": "Live",
+      "tags": [
+        "Beginner Friendly",
         "Education",
+        "Social Good",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-islanderhack-2026",
+      "name": "IslanderHack",
+      "platform": "DevPost",
+      "theme": "Machine Learning/AI",
+      "prize": "See details",
+      "prize_numeric": 0,
+      "deadline": null,
+      "deadline_ts": null,
+      "duration": "Varies",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://islanderhack-2026.devpost.com/",
+      "registrationUrl": "https://islanderhack-2026.devpost.com/",
+      "status": "Live",
+      "tags": [
         "Machine Learning/AI",
         "Social Good",
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
-      "id": "devpost-hyperbloom-october",
-      "name": "Hyperbloom October- UI/UX and Web Design",
+      "id": "devpost-knight-hacks-ix",
+      "name": "Knight Hacks IX",
       "platform": "DevPost",
-      "theme": "Design",
-      "prize": "$9,117",
-      "prize_numeric": 9117,
+      "theme": "Beginner Friendly",
+      "prize": "$317,784",
+      "prize_numeric": 317784,
       "deadline": null,
       "deadline_ts": null,
       "duration": "Varies",
-      "mode": "Online",
+      "mode": "In-person",
       "teamSize": "Varies",
-      "link": "https://hyperbloom-october.devpost.com/",
-      "registrationUrl": "https://hyperbloom-october.devpost.com/",
+      "link": "https://knight-hacks-ix.devpost.com/",
+      "registrationUrl": "https://knight-hacks-ix.devpost.com/",
       "status": "Live",
       "tags": [
-        "Design",
-        "Productivity",
-        "Web",
+        "Beginner Friendly",
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "unstop-microsoft-imagine-cup",
@@ -954,7 +816,7 @@
         "Annual"
       ],
       "source": "unstop",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "unstop-nasa-international-space-apps-challenge",
@@ -977,7 +839,53 @@
         "Annual"
       ],
       "source": "unstop",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-rect-hackathon",
+      "name": "RecT Solutions Hackathon: Beyond the CV 2026",
+      "platform": "DevPost",
+      "theme": "Databases",
+      "prize": "€2,000",
+      "prize_numeric": 2000,
+      "deadline": null,
+      "deadline_ts": null,
+      "duration": "Varies",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://rect-hackathon.devpost.com/",
+      "registrationUrl": "https://rect-hackathon.devpost.com/",
+      "status": "Live",
+      "tags": [
+        "Databases",
+        "DevOps",
+        "Machine Learning/AI",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
+    },
+    {
+      "id": "devpost-rutgers-health-hack-2026",
+      "name": "Rutgers Health Hack 2026",
+      "platform": "DevPost",
+      "theme": "Health",
+      "prize": "$10,000",
+      "prize_numeric": 10000,
+      "deadline": null,
+      "deadline_ts": null,
+      "duration": "Varies",
+      "mode": "In-person",
+      "teamSize": "Varies",
+      "link": "https://rutgers-health-hack-2026.devpost.com/",
+      "registrationUrl": "https://rutgers-health-hack-2026.devpost.com/",
+      "status": "Live",
+      "tags": [
+        "Health",
+        "Open"
+      ],
+      "source": "devpost",
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "unstop-smart-india-hackathon-sih",
@@ -1000,7 +908,7 @@
         "Annual"
       ],
       "source": "unstop",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devpost-devonomicsv1",
@@ -1024,7 +932,7 @@
         "Open"
       ],
       "source": "devpost",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "unstop-unstop-hackathons-hub",
@@ -1047,7 +955,7 @@
         "Rolling"
       ],
       "source": "unstop",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-winter-of-code-4",
@@ -1068,7 +976,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-biosv2",
@@ -1090,7 +998,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-hackonhills8",
@@ -1112,7 +1020,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-swamphacks-xii",
@@ -1135,7 +1043,7 @@
         "Gainesville, Florida"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-dubhacks-97",
@@ -1158,7 +1066,7 @@
         "Seattle, Washington"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-iku-womxn-in-stem-hackathon",
@@ -1181,7 +1089,7 @@
         "London, London"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-ucla-ai-hackathon-2026",
@@ -1204,7 +1112,7 @@
         "Los Angeles, CA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-technica-hacks-b8",
@@ -1227,7 +1135,7 @@
         "Hyattsville, Maryland"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hack-the-valley-9e",
@@ -1250,7 +1158,7 @@
         "Scarborough, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackgb",
@@ -1273,29 +1181,7 @@
         "Green Bay, WI"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
-    },
-    {
-      "id": "devfolio-arkiv",
-      "name": "Arkiv: Global Tour Stop 🌍",
-      "platform": "Devfolio",
-      "theme": "Blockchain",
-      "prize": "$2,000",
-      "prize_numeric": 2000,
-      "deadline": "2026-10-18",
-      "deadline_ts": 1792364340,
-      "duration": "10d",
-      "mode": "Online",
-      "teamSize": "1-5",
-      "link": "https://arkiv.devfolio.co/",
-      "registrationUrl": "https://arkiv.devfolio.co/",
-      "status": "Upcoming",
-      "tags": [
-        "Blockchain",
-        "Open"
-      ],
-      "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-girls-hoo-hack-2026",
@@ -1318,7 +1204,7 @@
         "Charlottesville, VA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-srijan-setu",
@@ -1331,7 +1217,7 @@
       "deadline_ts": 1792517400,
       "duration": "26h",
       "mode": "In-person",
-      "teamSize": "2-4",
+      "teamSize": "1-4",
       "link": "https://srijan-setu.devfolio.co/",
       "registrationUrl": "https://srijan-setu.devfolio.co/",
       "status": "Upcoming",
@@ -1340,7 +1226,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-hacker-house-goa-2026",
@@ -1362,7 +1248,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-innosprint-3",
@@ -1384,7 +1270,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-cal-hacks-13-0",
@@ -1407,7 +1293,7 @@
         "San Francisco, California"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-duquantum",
@@ -1430,7 +1316,7 @@
         "Durham, NC"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-sbuhacks-5f",
@@ -1453,7 +1339,7 @@
         "Stony Brook, New York"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hack-at-penn-state",
@@ -1476,7 +1362,7 @@
         "University Park, PA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-oxhack-26",
@@ -1499,7 +1385,7 @@
         "Oxford, England"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hacktx-26",
@@ -1522,7 +1408,7 @@
         "Austin, TX"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-tum",
@@ -1544,7 +1430,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-hacknauts26",
@@ -1566,7 +1452,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-hackodisha-6a",
@@ -1587,7 +1473,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackcbs-9-o",
@@ -1610,7 +1496,7 @@
         "New delhi, New delhi"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-ycp-hacks-2e",
@@ -1633,7 +1519,7 @@
         "York PA, PA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-communihacks",
@@ -1656,7 +1542,7 @@
         "Kitchener, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hacktrent-7e",
@@ -1679,7 +1565,7 @@
         "Peterborough, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-sheridan-datathon-2026",
@@ -1702,7 +1588,7 @@
         "Mississauga, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackrpi-2026",
@@ -1725,7 +1611,7 @@
         "Troy, New York"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-makecu-5d",
@@ -1748,7 +1634,7 @@
         "New York, New York"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-gullhacks",
@@ -1771,7 +1657,7 @@
         "Salisbury, MD"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-makeuc-d5",
@@ -1794,7 +1680,7 @@
         "Cincinnati , Ohio"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-tamu-datathon-ce",
@@ -1817,7 +1703,7 @@
         "College Station, Texas"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackcamp",
@@ -1840,7 +1726,7 @@
         "Vancovuer, British Columbia"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-sharkbyte-34",
@@ -1863,7 +1749,7 @@
         "Miami, FL"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackutd-06",
@@ -1886,7 +1772,7 @@
         "Richardson, Texas"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-genarrative-clash",
@@ -1909,7 +1795,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-haxfinity",
@@ -1931,7 +1817,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-devnexus2",
@@ -1953,7 +1839,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-emory-hacks-b9",
@@ -1976,7 +1862,7 @@
         "Atlanta, GA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackumass-19",
@@ -1999,7 +1885,7 @@
         "Amherst, MA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-nasa-s-space-apps-challenge-nyc",
@@ -2022,7 +1908,7 @@
         " Brooklyn, New York"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-unihack-bd",
@@ -2045,7 +1931,7 @@
         "Timișoara, Timiș"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-durhack-2026",
@@ -2068,7 +1954,7 @@
         "Durham, County Durham"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackeps",
@@ -2091,7 +1977,7 @@
         "Lleida, Lleida, Spain"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "devfolio-hack-with-gdg-s4",
@@ -2113,7 +1999,7 @@
         "Open"
       ],
       "source": "devfolio",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-deltahacks-d5",
@@ -2136,7 +2022,7 @@
         "Hamilton, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-nwhacks-29",
@@ -2159,7 +2045,7 @@
         "Vancouver, British Columbia"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-uofthacks-99",
@@ -2182,7 +2068,7 @@
         "Toronto, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-uottahack-9",
@@ -2205,7 +2091,7 @@
         "Ottawa, Ontario "
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hoya-hacks-39",
@@ -2228,7 +2114,7 @@
         "Washington, DC"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackville-2027",
@@ -2251,7 +2137,7 @@
         "Missisauga, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-ellehacks-39",
@@ -2274,7 +2160,7 @@
         "Toronto, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-ugahacks-ec",
@@ -2297,7 +2183,7 @@
         "Athens , Georgia"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hack-brown-2027",
@@ -2320,7 +2206,7 @@
         "Providence, RI"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hack-ncstate-e7",
@@ -2343,7 +2229,7 @@
         "Raleigh, North Carolina"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-innovateher-58",
@@ -2366,7 +2252,7 @@
         "West Lafayette, Indiana"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-spartahack-02",
@@ -2389,7 +2275,7 @@
         "East Lansing, Michigan"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-makeuoft-72",
@@ -2412,7 +2298,7 @@
         "Toronto, Ontario"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-sf-hacks-8c",
@@ -2435,7 +2321,7 @@
         "San Francisco, CA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-cuhackit-ba",
@@ -2458,7 +2344,7 @@
         "Clemson, SC"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-wichacks-0e",
@@ -2481,7 +2367,7 @@
         "Rochester, New York"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackhers-85",
@@ -2504,7 +2390,7 @@
         "New Brunswick, New Jersey"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackillinois-92",
@@ -2527,7 +2413,7 @@
         "Urbana, Illinois"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hacklytics-2027",
@@ -2550,7 +2436,7 @@
         "Atlanta, GA"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-revolutionuc-d9",
@@ -2573,7 +2459,7 @@
         "Cincinnati, Ohio"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-henhacks-30",
@@ -2596,7 +2482,7 @@
         "Newark, Delaware"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-kent-hack-enough-8e",
@@ -2619,7 +2505,7 @@
         "Kent, Ohio"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-diamondhacks-dc",
@@ -2642,7 +2528,7 @@
         "La Jolla, California "
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-marihacks-bc",
@@ -2665,7 +2551,7 @@
         "Montreal, Quebec"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-hackku27",
@@ -2688,7 +2574,7 @@
         "Lawrence, Kansas"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-wehack-36",
@@ -2711,7 +2597,7 @@
         "Richardson, TX"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     },
     {
       "id": "mlh-la-hacks-27",
@@ -2734,7 +2620,7 @@
         "Los Angeles, California"
       ],
       "source": "mlh",
-      "last_updated": "2026-10-09T08:32:33Z"
+      "last_updated": "2026-10-10T08:09:29Z"
     }
   ]
 }
